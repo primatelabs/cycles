@@ -1,9 +1,7 @@
 Cycles Renderer
 ===============
 
-Cycles is a path tracing renderer focused on interactivity and ease of use, while supporting many production features.
-
-https://www.cycles-renderer.org
+[Cycles](https://www.cycles-renderer.org) is a physically based production renderer developed by the Blender project. This repository is a fork that contains the changes to Cycles required to integrate it into [Geekbench](https://www.geekbench.com/), Primate Labs' cross-platform benchmark.
 
 ## Building
 
