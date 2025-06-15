@@ -50,7 +50,7 @@ if(POLICY CMP0074)
 endif()
 if(POLICY CMP0144)
   cmake_policy(SET CMP0144 NEW)
-endif() 
+endif()
 
 # Avoid having empty buildtype.
 set(CMAKE_BUILD_TYPE_INIT "Release")
@@ -110,20 +110,20 @@ set_property(DIRECTORY APPEND PROPERTY COMPILE_DEFINITIONS
 # Options.
 
 # Use precompiled library dependencies
-option(WITH_LIBS_PRECOMPILED        "Use precompiled library dependencies" ON)
+option(WITH_LIBS_PRECOMPILED        "Use precompiled library dependencies" OFF)
 
 # Library dependencies
-option(WITH_CYCLES_ALEMBIC          "Build with Alembic procedural support" ON)
+option(WITH_CYCLES_ALEMBIC          "Build with Alembic procedural support" OFF)
 option(WITH_CYCLES_EMBREE           "Build with Embree support" ON)
-option(WITH_CYCLES_LOGGING          "Build with logging support (using glog)" OFF)
-option(WITH_CYCLES_OPENCOLORIO      "Build with OpenColorIO support" ON)
-option(WITH_CYCLES_OPENIMAGEDENOISE "Build with OpenImageDenoise support" ON)
-option(WITH_CYCLES_OPENSUBDIV       "Build with OpenSubdiv support" ON)
-option(WITH_CYCLES_OPENVDB          "Build with OpenVDB support" ON)
+option(WITH_CYCLES_LOGGING          "Build with logging support (using glog)" ON)
+option(WITH_CYCLES_OPENCOLORIO      "Build with OpenColorIO support" OFF)
+option(WITH_CYCLES_OPENIMAGEDENOISE "Build with OpenImageDenoise support" OFF)
+option(WITH_CYCLES_OPENSUBDIV       "Build with OpenSubdiv support" OFF)
+option(WITH_CYCLES_OPENVDB          "Build with OpenVDB support" OFF)
 option(WITH_CYCLES_PUGIXML          "Build with XML support" ON)
-option(WITH_CYCLES_NANOVDB          "Build with NanoVDB support" ON)
-option(WITH_CYCLES_OSL              "Build with OSL support" ON)
-option(WITH_CYCLES_USD              "Build with USD support" ON)
+option(WITH_CYCLES_NANOVDB          "Build with NanoVDB support" OFF)
+option(WITH_CYCLES_OSL              "Build with OSL support" OFF)
+option(WITH_CYCLES_USD              "Build with USD support" OFF)
 
 option(WITH_LEGACY_LIBRARIES        "Build with older VFX platform 2024 libraries, for compatibility with Houdini or USD" OFF)
 
@@ -135,8 +135,8 @@ option(WITH_CYCLES_STANDALONE_GUI    "Build Cycles standalone with GUI" OFF)
 
 # NVIDIA CUDA & OptiX
 if(NOT APPLE AND NOT (WIN32 AND CMAKE_SYSTEM_PROCESSOR STREQUAL "ARM64"))
-  option(WITH_CYCLES_DEVICE_CUDA "Enable Cycles NVIDIA CUDA compute support" ON)
-  option(WITH_CYCLES_DEVICE_OPTIX "Enable Cycles NVIDIA OptiX support" ON)
+  option(WITH_CYCLES_DEVICE_CUDA "Enable Cycles NVIDIA CUDA compute support" OFF)
+  option(WITH_CYCLES_DEVICE_OPTIX "Enable Cycles NVIDIA OptiX support" OFF)
   mark_as_advanced(WITH_CYCLES_DEVICE_CUDA)
 
   option(WITH_CYCLES_CUDA_BINARIES "Build Cycles NVIDIA CUDA binaries" OFF)
@@ -150,7 +150,7 @@ Build cubins one after another (useful on machines with limited RAM)"
   )
   option(WITH_CUDA_DYNLOAD "\
 Dynamically load CUDA libraries at runtime (for developers, makes cuda-gdb work)"
-    ON
+    OFF
   )
 
   set(OPTIX_ROOT_DIR "" CACHE PATH "\
@@ -170,7 +170,7 @@ endif()
 
 # AMD HIP
 if(NOT APPLE AND NOT (WIN32 AND CMAKE_SYSTEM_PROCESSOR STREQUAL "ARM64"))
-  option(WITH_CYCLES_DEVICE_HIP "Enable Cycles AMD HIP support" ON)
+  option(WITH_CYCLES_DEVICE_HIP "Enable Cycles AMD HIP support" OFF)
   option(WITH_CYCLES_HIP_BINARIES "Build Cycles AMD HIP binaries" OFF)
   # Radeon VII (gfx906) not currently working with HIP SDK, so left out of the list.
   set(CYCLES_HIP_BINARIES_ARCH
@@ -190,7 +190,7 @@ endif()
 
 # Apple Metal
 if(APPLE)
-  option(WITH_CYCLES_DEVICE_METAL "Enable Cycles Apple Metal compute support" ON)
+  option(WITH_CYCLES_DEVICE_METAL "Enable Cycles Apple Metal compute support" OFF)
 endif()
 
 # oneAPI
@@ -223,7 +223,7 @@ oneAPI targets to build AOT binaries for"
 endif()
 
 # Hydra Render Delegate
-option(WITH_CYCLES_HYDRA_RENDER_DELEGATE "Build Cycles Hydra render delegate" ON)
+option(WITH_CYCLES_HYDRA_RENDER_DELEGATE "Build Cycles Hydra render delegate" OFF)
 
 # Error Checking
 option(WITH_STRICT_BUILD_OPTIONS "When requirements for a build option are not met, error instead of disabling the option" OFF)
