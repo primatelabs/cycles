@@ -11,15 +11,14 @@
 
 #include "integrator/denoiser.h"
 
+#include "pl/image_input.h"
+#include "pl/image_output.h"
+
 #include "session/buffers.h"
 
 #include "util/string.h"
 #include "util/unique_ptr.h"
 #include "util/vector.h"
-
-#include <OpenImageIO/imageio.h>
-
-OIIO_NAMESPACE_USING
 
 CCL_NAMESPACE_BEGIN
 

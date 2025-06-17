@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0 */
 
 #include "session/denoising.h"
-#include "device/cpu/device.h"
 
+#include <filesystem>
+
+#include "device/cpu/device.h"
 #include "util/map.h"
 #include "util/task.h"
-
-#include <OpenImageIO/filesystem.h>
 
 CCL_NAMESPACE_BEGIN
 
@@ -468,7 +468,7 @@ bool DenoiseImage::read_previous_pixels(const DenoiseImageLayer &layer,
 
 bool DenoiseImage::load(const string &in_filepath, string &error)
 {
-  if (!Filesystem::is_regular(in_filepath)) {
+  if (!std::filesystem::is_regular_file(in_filepath)) {
     error = "Couldn't find file: " + in_filepath;
     return false;
   }
@@ -508,6 +508,8 @@ bool DenoiseImage::load(const string &in_filepath, string &error)
 
 bool DenoiseImage::load_previous(const string &filepath, string &error)
 {
+  // TODO: Replace Filesystem with std::filesystem.
+#if 0
   if (!Filesystem::is_regular(filepath)) {
     error = "Couldn't find neighbor frame: " + filepath;
     return false;
@@ -535,10 +537,14 @@ bool DenoiseImage::load_previous(const string &filepath, string &error)
   in_previous = std::move(in_neighbor);
 
   return true;
+#endif
+  return false;
 }
 
 bool DenoiseImage::save_output(const string &out_filepath, string &error)
 {
+  // TODO: Replace Filesystem with std::filesystem.
+#if 0
   /* Save image with identical dimensions, channels and metadata. */
   ImageSpec out_spec = in_spec;
 
@@ -597,6 +603,8 @@ bool DenoiseImage::save_output(const string &out_filepath, string &error)
   }
 
   return ok;
+#endif
+  return false;
 }
 
 /* File pattern handling and outer loop over frames */

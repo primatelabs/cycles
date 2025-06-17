@@ -8,6 +8,7 @@
 
 #include "kernel/types.h"
 
+#include "pl/type_desc.h"
 #include "util/list.h"
 #include "util/param.h"
 #include "util/set.h"

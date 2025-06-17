@@ -4,19 +4,17 @@
 
 #pragma once
 
-/* OpenImageIO is used for all image file reading and writing. */
-
-#include <OpenImageIO/imageio.h>
-
 #include "util/half.h"
 #include "util/vector.h"
 
-CCL_NAMESPACE_BEGIN
+#include "pl/image_buf.h"
+#include "pl/image_buf_algo.h"
+#include "pl/image_input.h"
+#include "pl/image_io.h"
+#include "pl/image_output.h"
+#include "pl/image_spec.h"
 
-using OIIO::AutoStride;
-using OIIO::ImageInput;
-using OIIO::ImageOutput;
-using OIIO::ImageSpec;
+CCL_NAMESPACE_BEGIN
 
 template<typename T>
 void util_image_resize_pixels(const vector<T> &input_pixels,

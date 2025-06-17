@@ -4,15 +4,14 @@
 
 #include "session/merge.h"
 
+#include "pl/image_input.h"
+#include "pl/image_output.h"
+#include "pl/image_spec.h"
+#include "pl/type_desc.h"
 #include "util/array.h"
 #include "util/map.h"
 #include "util/time.h"
 #include "util/unique_ptr.h"
-
-#include <OpenImageIO/filesystem.h>
-#include <OpenImageIO/imageio.h>
-
-OIIO_NAMESPACE_USING
 
 CCL_NAMESPACE_BEGIN
 
@@ -476,6 +475,8 @@ static bool save_output(const string &filepath,
                         const array<float> &pixels,
                         string &error)
 {
+  // TODO: Replace Filesystem with std::filesystem.
+#if 0
   /* Write to temporary file path, so we merge images in place and don't
    * risk destroying files when something goes wrong in file saving. */
   const string extension = OIIO::Filesystem::extension(filepath);
@@ -519,6 +520,8 @@ static bool save_output(const string &filepath,
   }
 
   return ok;
+#endif
+  return false;
 }
 
 static void read_layer_samples(vector<MergeImage> &images,

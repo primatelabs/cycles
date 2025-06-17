@@ -6,11 +6,10 @@
 
 #include "scene/colorspace.h"
 
+#include "pl/image_buf.h"
+#include "pl/image_buf_algo.h"
 #include "util/image.h"
 #include "util/unique_ptr.h"
-
-#include <OpenImageIO/imagebuf.h>
-#include <OpenImageIO/imagebufalgo.h>
 
 CCL_NAMESPACE_BEGIN
 
@@ -54,20 +53,22 @@ void OIIOOutputDriver::write_render_tile(const Tile &tile)
   }
 
   /* Manipulate offset and stride to convert from bottom-up to top-down convention. */
-  OIIO::ImageBuf image_buffer(spec,
-                              pixels.data() + (height - 1) * width * 4,
-                              AutoStride,
-                              -width * 4 * sizeof(float),
-                              AutoStride);
+  ImageBuf image_buffer(spec,
+                        pixels.data() + (height - 1) * width * 4,
+                        AutoStride,
+                        -width * 4 * sizeof(float),
+                        AutoStride);
 
+#if 0
   /* Apply gamma correction for (some) non-linear file formats.
    * TODO: use OpenColorIO view transform if available. */
   if (ColorSpaceManager::detect_known_colorspace(
           u_colorspace_auto, "", image_output->format_name(), true) == u_colorspace_srgb)
   {
     const float g = 1.0f / 2.2f;
-    OIIO::ImageBufAlgo::pow(image_buffer, image_buffer, {g, g, g, 1.0f});
+    ImageBufAlgo::pow(image_buffer, image_buffer, {g, g, g, 1.0f});
   }
+#endif
 
   /* Write to disk and close */
   image_buffer.set_write_format(TypeDesc::FLOAT);
