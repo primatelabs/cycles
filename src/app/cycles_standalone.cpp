@@ -44,6 +44,7 @@ struct Options {
   int width, height;
   SceneParams scene_params;
   SessionParams session_params;
+  bool debug;
   bool quiet;
   bool show_help, interactive, pause;
   string output_filepath;
@@ -52,6 +53,14 @@ struct Options {
 
 static void session_print(const string &str)
 {
+  // Print the string on a new line, rather than overwriting the previous
+  // string on the same line, when in debug mode. This make it easier to see
+  // diagnostic messages that would otherwise be overwritten.
+  if (options.debug) {
+    printf("%s\n", str.c_str());
+    return;
+  }
+
   /* print with carriage return to overwrite previous */
   printf("\r%s", str.c_str());
 
@@ -379,6 +388,7 @@ static void options_parse(const int argc, const char **argv)
   options.height = 512;
   options.filepath = "";
   options.session = nullptr;
+  options.debug = false;
   options.quiet = false;
   options.session_params.use_auto_tile = false;
   options.session_params.tile_size = 0;
@@ -405,7 +415,6 @@ static void options_parse(const int argc, const char **argv)
   ArgParse ap;
   bool help = false;
   bool profile = false;
-  bool debug = false;
   bool version = false;
   int verbosity = 1;
 
@@ -443,7 +452,7 @@ static void options_parse(const int argc, const char **argv)
   ap.arg("--list-devices", &list).help("List information about all available devices");
   ap.arg("--profile", &profile).help("Enable profile logging");
 #ifdef WITH_CYCLES_LOGGING
-  ap.arg("--debug", &debug).help("Enable debug logging");
+  ap.arg("--debug", &options.debug).help("Enable debug logging");
   ap.arg("--verbose %d:VERBOSE").help("Set verbosity of the logger").action([&](auto argv) {
     parse_int(argv, &verbosity);
   });
@@ -457,7 +466,7 @@ static void options_parse(const int argc, const char **argv)
     exit(EXIT_FAILURE);
   }
 
-  if (debug) {
+  if (options.debug) {
     util_logging_start();
     util_logging_verbosity_set(verbosity);
   }
