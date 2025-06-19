@@ -21,6 +21,5 @@ static constexpr TypeDesc TypeFloatArray4(TypeDesc::FLOAT,
                                           4);
 
 using OIIO::ustring;
-using OIIO::ustringhash;
 
 CCL_NAMESPACE_END

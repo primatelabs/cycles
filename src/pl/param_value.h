@@ -12,7 +12,6 @@
 CCL_NAMESPACE_BEGIN
 
 using OIIO::ustring;
-using OIIO::ustringhash;
 
 /// ParamValue holds a named parameter and typed data. Usually, it owns the
 /// data (holding it in the struct itself if small enough, dynamically
@@ -132,10 +131,6 @@ class ParamValue {
     init_noclear(ustring(_name), TypeDesc::STRING, 1, &value, Copy(true), FromUstring(true));
   }
   ParamValue(string_view _name, string_view value) noexcept : ParamValue(_name, ustring(value)) {}
-  ParamValue(string_view _name, ustringhash value) noexcept
-  {
-    init_noclear(ustring(_name), TypeDesc::USTRINGHASH, 1, &value, Copy(true));
-  }
 
   // Set from string -- parse
   ParamValue(string_view _name, TypeDesc type, string_view value);

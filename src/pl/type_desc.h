@@ -47,7 +47,6 @@ struct TypeDesc {
     DOUBLE,       ///< 64-bit IEEE floating point values, (C/C++ `double`).
     STRING,       ///< Character string.
     PTR,          ///< A pointer value.
-    USTRINGHASH,  ///< A uint64 that is the hash of a ustring.
     LASTBASE
   };
 

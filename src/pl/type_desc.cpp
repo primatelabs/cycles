@@ -26,7 +26,6 @@ static int basetype_size[TypeDesc::LASTBASE] = {
     sizeof(double),              // DOUBLE
     sizeof(char *),              // STRING
     sizeof(void *),              // PTR
-    0                            // sizeof(ustringhash),         // USTRINGHASH
 };
 
 static bool isfloat[TypeDesc::LASTBASE] = {
@@ -45,7 +44,6 @@ static bool isfloat[TypeDesc::LASTBASE] = {
     1,  // DOUBLE
     0,  // STRING
     0,  // PTR
-    0,  // USTRINGHASH
 };
 
 }  // namespace
