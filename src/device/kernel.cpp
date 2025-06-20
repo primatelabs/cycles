@@ -4,6 +4,8 @@
 
 #include "device/kernel.h"
 
+#include <ostream>
+
 #ifndef __KERNEL_ONEAPI__
 #  include "util/log.h"
 #endif

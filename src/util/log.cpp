@@ -4,6 +4,8 @@
 
 #include "util/log.h"
 
+#include <ostream>
+
 #include "util/math.h"
 #include "util/string.h"
 
