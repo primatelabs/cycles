@@ -17,6 +17,7 @@ set(SRC
   image_output.cpp
   image_spec.cpp
   param_value.cpp
+  path.cpp
   png_image_output.cpp
   strong_param.cpp
   type_desc.cpp
@@ -31,6 +32,7 @@ set(SRC_HEADERS
   image_output.h
   image_spec.h
   param_value.h
+  path.h
   png_image_output.h
   strong_param.h
   type_desc.h

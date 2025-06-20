@@ -3,16 +3,16 @@
  * SPDX-License-Identifier: Apache-2.0 */
 
 #include "util/path.h"
+
+#include <filesystem>
+
+#include "pl/path.h"
 #include "util/algorithm.h"
 #include "util/map.h"
 #include "util/md5.h"
 #include "util/set.h"
 #include "util/string.h"
 #include "util/vector.h"
-
-#include <OpenImageIO/filesystem.h>
-#include <OpenImageIO/strutil.h>
-#include <OpenImageIO/sysutil.h>
 
 #include <cstdio>
 
@@ -342,7 +342,7 @@ string path_get(const string &sub)
   }
 
   if (cached_path.empty()) {
-    cached_path = path_dirname(OIIO::Sysutil::this_program_path());
+    cached_path = path_dirname(this_program_path());
   }
 
   return path_join(cached_path, sub);
@@ -351,7 +351,7 @@ string path_get(const string &sub)
 string path_user_get(const string &sub)
 {
   if (cached_user_path.empty()) {
-    cached_user_path = path_dirname(OIIO::Sysutil::this_program_path());
+    cached_user_path = path_dirname(this_program_path());
   }
 
   return path_join(cached_user_path, sub);
@@ -987,8 +987,8 @@ FILE *path_fopen(const string &path, const string &mode)
 
 static void path_cache_kernel_mark_used(const string &path)
 {
-  const std::time_t current_time = std::time(nullptr);
-  OIIO::Filesystem::last_write_time(path, current_time);
+  auto now = std::filesystem::file_time_type::clock::now();
+  std::filesystem::last_write_time(path, now);
 }
 
 bool path_cache_kernel_exists_and_mark_used(const string &path)
@@ -1013,7 +1013,7 @@ void path_cache_kernel_mark_added_and_clear_old(const string &new_path,
   /* Remove older kernels within the same directory. */
   directory_iterator it(dir);
   const directory_iterator it_end;
-  vector<pair<std::time_t, string>> same_kernel_types;
+  vector<pair<std::filesystem::file_time_type, string>> same_kernel_types;
 
   for (; it != it_end; ++it) {
     const string &path = it->path();
@@ -1021,7 +1021,7 @@ void path_cache_kernel_mark_added_and_clear_old(const string &new_path,
       continue;
     }
 
-    const std::time_t last_time = OIIO::Filesystem::last_write_time(path);
+    std::filesystem::file_time_type last_time = std::filesystem::last_write_time(path);
     same_kernel_types.emplace_back(last_time, path);
   }
 
