@@ -370,6 +370,8 @@ static void keyboard(unsigned char key)
 }
 #endif
 
+#if 0
+
 static void parse_int(OIIO::cspan<const char *> argv, int *i)
 {
   assert(argv.size() == 2);
@@ -538,6 +540,85 @@ static void options_parse(const int argc, const char **argv)
   }
 #endif
   else if (options.session_params.samples < 0) {
+    fprintf(stderr, "Invalid number of samples: %d\n", options.session_params.samples);
+    exit(EXIT_FAILURE);
+  }
+  else if (options.filepath.empty()) {
+    fprintf(stderr, "No file path specified\n");
+    exit(EXIT_FAILURE);
+  }
+}
+
+#endif
+
+static void options_parse(const int argc, const char **argv)
+{
+  options.width = 1024;
+  options.height = 512;
+  options.filepath = "";
+  options.output_filepath = "";
+  options.session = nullptr;
+  options.debug = true;
+  options.session_params.use_auto_tile = false;
+  options.session_params.tile_size = 0;
+
+  /* device names */
+  string device_names;
+  string devicename = "CPU";
+
+  /* List devices for which support is compiled in. */
+  const vector<DeviceType> types = Device::available_types();
+  for (const DeviceType type : types) {
+    if (!device_names.empty()) {
+      device_names += ", ";
+    }
+
+    device_names += Device::string_from_type(type);
+  }
+
+  /* parse options */
+  constexpr bool profile = false;
+  constexpr int verbosity = 1;
+
+  if (argc > 1) {
+    options.filepath = argv[1];
+  }
+
+  if (argc > 2) {
+    options.output_filepath = argv[2];
+  }
+
+  if (options.debug) {
+    util_logging_start();
+    util_logging_verbosity_set(verbosity);
+  }
+
+  options.session_params.use_profiling = profile;
+  options.scene_params.shadingsystem = SHADINGSYSTEM_SVM;
+
+#ifndef WITH_CYCLES_STANDALONE_GUI
+  options.session_params.background = true;
+#endif
+
+  if (options.session_params.tile_size > 0) {
+    options.session_params.use_auto_tile = true;
+  }
+
+  /* find matching device */
+  const DeviceType device_type = Device::type_from_string(devicename.c_str());
+  vector<DeviceInfo> devices = Device::available_devices(DEVICE_MASK(device_type));
+
+  bool device_available = false;
+  if (!devices.empty()) {
+    options.session_params.device = devices.front();
+    device_available = true;
+  }
+
+  /* handle invalid configurations */
+  if (options.session_params.device.type == DEVICE_NONE || !device_available) {
+    fprintf(stderr, "Unknown device: %s\n", devicename.c_str());
+    exit(EXIT_FAILURE);
+  } else if (options.session_params.samples < 0) {
     fprintf(stderr, "Invalid number of samples: %d\n", options.session_params.samples);
     exit(EXIT_FAILURE);
   }
