@@ -114,9 +114,9 @@ class NamedNestedSampleStats {
  * This allows to estimate the time spent per item. */
 class NamedSampleCountPair {
  public:
-  NamedSampleCountPair(const ustring &name, const uint64_t samples, const uint64_t hits);
+  NamedSampleCountPair(const string &name, const uint64_t samples, const uint64_t hits);
 
-  ustring name;
+  string name;
   uint64_t samples;
   uint64_t hits;
 };
@@ -127,9 +127,9 @@ class NamedSampleCountStats {
   NamedSampleCountStats();
 
   string full_report(const int indent_level = 0);
-  void add(const ustring &name, const uint64_t samples, const uint64_t hits);
+  void add(const string &name, const uint64_t samples, const uint64_t hits);
 
-  using entry_map = unordered_map<ustring, NamedSampleCountPair>;
+  using entry_map = unordered_map<string, NamedSampleCountPair>;
   entry_map entries;
 };
 

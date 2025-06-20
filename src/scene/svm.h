@@ -98,9 +98,9 @@ class SVMCompiler {
   void add_node(const int a = 0, const int b = 0, const int c = 0, const int d = 0);
   void add_node(ShaderNodeType type, const float3 &f);
   void add_node(const float4 &f);
-  uint attribute(ustring name);
+  uint attribute(string name);
   uint attribute(AttributeStandard std);
-  uint attribute_standard(ustring name);
+  uint attribute_standard(string name);
   uint encode_uchar4(const uint x, const uint y = 0, const uint z = 0, const uint w = 0);
   uint closure_mix_weight_offset()
   {

@@ -86,7 +86,7 @@ NODE_DEFINE(Object)
   SOCKET_TRANSFORM_ARRAY(motion, "Motion", array<Transform>());
   SOCKET_FLOAT(shadow_terminator_shading_offset, "Shadow Terminator Shading Offset", 0.0f);
   SOCKET_FLOAT(shadow_terminator_geometry_offset, "Shadow Terminator Geometry Offset", 0.1f);
-  SOCKET_STRING(asset_name, "Asset Name", ustring());
+  SOCKET_STRING(asset_name, "Asset Name", string());
 
   SOCKET_BOOLEAN(is_shadow_catcher, "Shadow Catcher", false);
 
@@ -100,7 +100,7 @@ NODE_DEFINE(Object)
 
   SOCKET_FLOAT(ao_distance, "AO Distance", 0.0f);
 
-  SOCKET_STRING(lightgroup, "Light Group", ustring());
+  SOCKET_STRING(lightgroup, "Light Group", string());
   SOCKET_UINT(receiver_light_set, "Light Set Index", 0);
   SOCKET_UINT64(light_set_membership, "Light Set Membership", LIGHT_LINK_MASK_ALL);
   SOCKET_UINT(blocker_shadow_set, "Shadow Set Index", 0);
@@ -1112,7 +1112,7 @@ string ObjectManager::get_cryptomatte_objects(Scene *scene)
 {
   string manifest = "{";
 
-  unordered_set<ustring> objects;
+  unordered_set<string> objects;
   for (Object *object : scene->objects) {
     if (objects.count(object->name)) {
       continue;
@@ -1128,7 +1128,7 @@ string ObjectManager::get_cryptomatte_objects(Scene *scene)
 string ObjectManager::get_cryptomatte_assets(Scene *scene)
 {
   string manifest = "{";
-  unordered_set<ustring> assets;
+  unordered_set<string> assets;
   for (Object *ob : scene->objects) {
     if (assets.count(ob->asset_name)) {
       continue;

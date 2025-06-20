@@ -166,7 +166,7 @@ static void session_init()
 
   /* add pass for output. */
   Pass *pass = options.scene->create_node<Pass>();
-  pass->set_name(ustring(options.output_pass.c_str()));
+  pass->set_name(string(options.output_pass.c_str()));
   pass->set_type(PASS_COMBINED);
 
   options.session->reset(options.session_params, session_buffer_params());

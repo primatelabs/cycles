@@ -358,7 +358,7 @@ void Hair::copy_center_to_motion_step(const int motion_step)
   }
 }
 
-void Hair::get_uv_tiles(ustring map, unordered_set<int> &tiles)
+void Hair::get_uv_tiles(string map, unordered_set<int> &tiles)
 {
   Attribute *attr;
 

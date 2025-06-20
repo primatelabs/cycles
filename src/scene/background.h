@@ -30,7 +30,7 @@ class Background : public Node {
 
   NODE_SOCKET_API(float, volume_step_size)
 
-  NODE_SOCKET_API(ustring, lightgroup)
+  NODE_SOCKET_API(string, lightgroup)
 
   Background();
   ~Background() override;

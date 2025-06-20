@@ -32,7 +32,7 @@ NODE_DEFINE(Background)
 
   SOCKET_NODE(shader, "Shader", Shader::get_node_type());
 
-  SOCKET_STRING(lightgroup, "Light Group", ustring());
+  SOCKET_STRING(lightgroup, "Light Group", string());
 
   return type;
 }

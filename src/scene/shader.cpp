@@ -443,7 +443,7 @@ unique_ptr<ShaderManager> ShaderManager::create(const int shadingsystem)
   return manager;
 }
 
-uint64_t ShaderManager::get_attribute_id(ustring name)
+uint64_t ShaderManager::get_attribute_id(string name)
 {
   const thread_scoped_spin_lock lock(attribute_lock_);
 
@@ -795,7 +795,7 @@ float3 ShaderManager::rec709_to_scene_linear(const float3 c)
 string ShaderManager::get_cryptomatte_materials(Scene *scene)
 {
   string manifest = "{";
-  unordered_set<ustring> materials;
+  unordered_set<string> materials;
   for (Shader *shader : scene->shaders) {
     if (materials.count(shader->name)) {
       continue;

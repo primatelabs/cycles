@@ -524,7 +524,7 @@ const char *OSLManager::shader_load_bytecode(const string &hash, const string &b
   return loaded_shaders.find(hash)->first.c_str();
 }
 
-uint64_t OSLShaderManager::get_attribute_id(ustring name)
+uint64_t OSLShaderManager::get_attribute_id(string name)
 {
   return name.hash();
 }
@@ -532,7 +532,7 @@ uint64_t OSLShaderManager::get_attribute_id(ustring name)
 uint64_t OSLShaderManager::get_attribute_id(AttributeStandard std)
 {
   /* if standard attribute, use geom: name convention */
-  const ustring stdname(string("geom:") + string(Attribute::standard_name(std)));
+  const string stdname(string("geom:") + string(Attribute::standard_name(std)));
   return stdname.hash();
 }
 
@@ -752,7 +752,7 @@ OSLNode *OSLShaderManager::osl_node(ShaderGraph *graph,
         socket_type = SocketType::STRING;
 
         if (!param->isoutput && param->validdefault) {
-          *(ustring *)node->input_default_value() = param->sdefault[0];
+          *(string *)node->input_default_value() = param->sdefault[0];
         }
       }
       else {
@@ -1080,7 +1080,7 @@ static TypeDesc array_typedesc(const TypeDesc typedesc, const int arraylength)
 
 void OSLCompiler::parameter(ShaderNode *node, const char *name)
 {
-  const ustring uname = ustring(name);
+  const string uname = string(name);
   const SocketType &socket = *(node->type->find_input(uname));
 
   switch (socket.type) {
@@ -1128,12 +1128,12 @@ void OSLCompiler::parameter(ShaderNode *node, const char *name)
       break;
     }
     case SocketType::STRING: {
-      ustring value = node->get_string(socket);
+      string value = node->get_string(socket);
       ss->Parameter(*current_group, uname, TypeString, &value);
       break;
     }
     case SocketType::ENUM: {
-      ustring value = node->get_string(socket);
+      string value = node->get_string(socket);
       ss->Parameter(*current_group, uname, TypeString, &value);
       break;
     }
@@ -1210,7 +1210,7 @@ void OSLCompiler::parameter(ShaderNode *node, const char *name)
       break;
     }
     case SocketType::STRING_ARRAY: {
-      const array<ustring> &value = node->get_string_array(socket);
+      const array<string> &value = node->get_string_array(socket);
       ss->Parameter(*current_group, uname, array_typedesc(TypeString, value.size()), value.data());
       break;
     }
@@ -1272,7 +1272,7 @@ void OSLCompiler::parameter(const char *name, const char *s)
   ss->Parameter(*current_group, name, TypeString, (const void *)&s);
 }
 
-void OSLCompiler::parameter(const char *name, ustring s)
+void OSLCompiler::parameter(const char *name, string s)
 {
   const char *str = s.c_str();
   ss->Parameter(*current_group, name, TypeString, (const void *)&str);
@@ -1308,7 +1308,7 @@ void OSLCompiler::parameter_color_array(const char *name, const array<float3> &f
   ss->Parameter(*current_group, name, type, table.data());
 }
 
-void OSLCompiler::parameter_attribute(const char *name, ustring s)
+void OSLCompiler::parameter_attribute(const char *name, string s)
 {
   if (Attribute::name_standard(s.c_str())) {
     parameter(name, (string("geom:") + s.c_str()).c_str());
@@ -1506,7 +1506,7 @@ void OSLCompiler::compile(Shader *shader)
   }
 }
 
-void OSLCompiler::parameter_texture(const char *name, ustring filename, ustring colorspace)
+void OSLCompiler::parameter_texture(const char *name, string filename, string colorspace)
 {
   /* Textured loaded through the OpenImageIO texture cache. For this
    * case we need to do runtime color space conversion. */
@@ -1522,7 +1522,7 @@ void OSLCompiler::parameter_texture(const char *name, const ImageHandle &handle)
    * name, which ends up being used in OSLRenderServices::get_texture_handle
    * to get handle again. Note that this name must be unique between multiple
    * render sessions as the render services are shared. */
-  const ustring filename(string_printf("@svm%d", texture_shared_unique_id++).c_str());
+  const string filename(string_printf("@svm%d", texture_shared_unique_id++).c_str());
   services->textures.insert(OSLUStringHash(filename),
                             OSLTextureHandle(OSLTextureHandle::SVM, handle.get_svm_slots()));
   parameter(name, filename);
@@ -1531,7 +1531,7 @@ void OSLCompiler::parameter_texture(const char *name, const ImageHandle &handle)
 void OSLCompiler::parameter_texture_ies(const char *name, const int svm_slot)
 {
   /* IES light textures stored in SVM. */
-  const ustring filename(string_printf("@svm%d", texture_shared_unique_id++).c_str());
+  const string filename(string_printf("@svm%d", texture_shared_unique_id++).c_str());
   services->textures.insert(OSLUStringHash(filename),
                             OSLTextureHandle(OSLTextureHandle::IES, svm_slot));
   parameter(name, filename);
@@ -1577,7 +1577,7 @@ void OSLCompiler::parameter(const char * /*name*/, int /*f*/) {}
 
 void OSLCompiler::parameter(const char * /*name*/, const char * /*s*/) {}
 
-void OSLCompiler::parameter(const char * /*name*/, ustring /*s*/) {}
+void OSLCompiler::parameter(const char * /*name*/, string /*s*/) {}
 
 void OSLCompiler::parameter(const char * /*name*/, const Transform & /*tfm*/) {}
 
@@ -1586,8 +1586,8 @@ void OSLCompiler::parameter_array(const char * /*name*/, const float /*f*/[], in
 void OSLCompiler::parameter_color_array(const char * /*name*/, const array<float3> & /*f*/) {}
 
 void OSLCompiler::parameter_texture(const char * /*name*/,
-                                    ustring /*filename*/,
-                                    ustring /*colorspace*/)
+                                    string /*filename*/,
+                                    string /*colorspace*/)
 {
 }
 

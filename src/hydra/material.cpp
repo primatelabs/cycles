@@ -43,7 +43,7 @@ TF_DEFINE_PRIVATE_TOKENS(CyclesMaterialTokens,
 
 // Simple class to handle remapping of USDPreviewSurface nodes and parameters to Cycles equivalents
 class UsdToCyclesMapping {
-  using ParamMap = std::unordered_map<TfToken, ustring, TfToken::HashFunctor>;
+  using ParamMap = std::unordered_map<TfToken, string, TfToken::HashFunctor>;
 
  public:
   UsdToCyclesMapping(const char *nodeType, ParamMap paramMap)
@@ -51,7 +51,7 @@ class UsdToCyclesMapping {
   {
   }
 
-  ustring nodeType() const
+  string nodeType() const
   {
     return _nodeType;
   }
@@ -100,7 +100,7 @@ class UsdToCyclesMapping {
   }
 
  private:
-  const ustring _nodeType;
+  const string _nodeType;
   ParamMap _paramMap;
 };
 
@@ -136,11 +136,11 @@ class UsdToCycles {
   const UsdToCyclesMapping UsdPreviewSurface = {
       "principled_bsdf",
       {
-          {TfToken("diffuseColor"), ustring("base_color")},
-          {TfToken("emissiveColor"), ustring("emission")},
-          {TfToken("specularColor"), ustring("specular")},
-          {TfToken("clearcoatRoughness"), ustring("coat_roughness")},
-          {TfToken("opacity"), ustring("alpha")},
+          {TfToken("diffuseColor"), string("base_color")},
+          {TfToken("emissiveColor"), string("emission")},
+          {TfToken("specularColor"), string("specular")},
+          {TfToken("clearcoatRoughness"), string("coat_roughness")},
+          {TfToken("opacity"), string("alpha")},
           // opacityThreshold
           // occlusion
           // displacement
@@ -148,14 +148,14 @@ class UsdToCycles {
   const UsdToCyclesTexture UsdUVTexture = {
       "image_texture",
       {
-          {CyclesMaterialTokens->st, ustring("vector")},
-          {CyclesMaterialTokens->wrapS, ustring("extension")},
-          {CyclesMaterialTokens->wrapT, ustring("extension")},
-          {TfToken("file"), ustring("filename")},
-          {TfToken("sourceColorSpace"), ustring("colorspace")},
+          {CyclesMaterialTokens->st, string("vector")},
+          {CyclesMaterialTokens->wrapS, string("extension")},
+          {CyclesMaterialTokens->wrapT, string("extension")},
+          {TfToken("file"), string("filename")},
+          {TfToken("sourceColorSpace"), string("colorspace")},
       }};
   const UsdToCyclesMapping UsdPrimvarReader = {"attribute",
-                                               {{TfToken("varname"), ustring("attribute")}}};
+                                               {{TfToken("varname"), string("attribute")}}};
 
  public:
   const UsdToCyclesMapping *findUsd(const TfToken &usdNodeType)
@@ -177,7 +177,7 @@ class UsdToCycles {
 
     return nullptr;
   }
-  const UsdToCyclesMapping *findCycles(const ustring & /*cyclesNodeType*/)
+  const UsdToCyclesMapping *findCycles(const string & /*cyclesNodeType*/)
   {
     return nullptr;
   }
@@ -431,7 +431,7 @@ void HdCyclesMaterial::PopulateShaderGraph(const HdMaterialNetwork2 &networkMap)
       // E.g. cycles_principled_bsdf or UsdPreviewSurface
       const std::string &nodeTypeId = nodeEntry.second.nodeTypeId.GetString();
 
-      ustring cyclesType(nodeTypeId);
+      string cyclesType(nodeTypeId);
       // Interpret a node type ID prefixed with cycles_<type> or cycles:<type> as a node of <type>
       if (nodeTypeId.rfind("cycles", 0) == 0) {
         cyclesType = nodeTypeId.substr(7);
@@ -539,7 +539,7 @@ void HdCyclesMaterial::PopulateShaderGraph(const HdMaterialNetwork2 &networkMap)
 
   // Create the instanceId AOV output
   {
-    const ustring instanceId(HdAovTokens->instanceId.GetString());
+    const string instanceId(HdAovTokens->instanceId.GetString());
 
     OutputAOVNode *aovNode = graph->create_node<OutputAOVNode>();
     aovNode->set_name(instanceId);

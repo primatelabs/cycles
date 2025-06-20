@@ -121,7 +121,7 @@ class OSLShaderManager : public ShaderManager {
     return true;
   }
 
-  uint64_t get_attribute_id(ustring name) override;
+  uint64_t get_attribute_id(string name) override;
   uint64_t get_attribute_id(AttributeStandard std) override;
 
   void device_update_specific(Device *device,
@@ -163,15 +163,15 @@ class OSLCompiler {
   void parameter_point(const char *name, const float3 f);
   void parameter(const char *name, const int f);
   void parameter(const char *name, const char *s);
-  void parameter(const char *name, ustring str);
+  void parameter(const char *name, string str);
   void parameter(const char *name, const Transform &tfm);
 
   void parameter_array(const char *name, const float f[], int arraylen);
   void parameter_color_array(const char *name, const array<float3> &f);
 
-  void parameter_attribute(const char *name, ustring s);
+  void parameter_attribute(const char *name, string s);
 
-  void parameter_texture(const char *name, ustring filename, ustring colorspace);
+  void parameter_texture(const char *name, string filename, string colorspace);
   void parameter_texture(const char *name, const ImageHandle &handle);
   void parameter_texture_ies(const char *name, const int svm_slot);
 

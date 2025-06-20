@@ -72,7 +72,7 @@ class ShaderInput {
   {
   }
 
-  ustring name() const
+  string name() const
   {
     return socket_type.ui_name;
   }
@@ -121,7 +121,7 @@ class ShaderOutput {
   {
   }
 
-  ustring name() const
+  string name() const
   {
     return socket_type.ui_name;
   }
@@ -153,8 +153,8 @@ class ShaderNode : public Node {
 
   ShaderInput *input(const char *name);
   ShaderOutput *output(const char *name);
-  ShaderInput *input(ustring name);
-  ShaderOutput *output(ustring name);
+  ShaderInput *input(string name);
+  ShaderOutput *output(string name);
 
   virtual ShaderNode *clone(ShaderGraph *graph) const = 0;
   virtual void attributes(Shader *shader, AttributeRequestSet *attributes);

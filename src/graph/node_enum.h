@@ -20,13 +20,13 @@ struct NodeEnum {
   }
   void insert(const char *x, const int y)
   {
-    const ustring ustr_x(x);
+    const string ustr_x(x);
 
     left[ustr_x] = y;
     right[y] = ustr_x;
   }
 
-  bool exists(ustring x) const
+  bool exists(string x) const
   {
     return left.find(x) != left.end();
   }
@@ -37,29 +37,29 @@ struct NodeEnum {
 
   int operator[](const char *x) const
   {
-    return left.find(ustring(x))->second;
+    return left.find(string(x))->second;
   }
-  int operator[](ustring x) const
+  int operator[](string x) const
   {
     return left.find(x)->second;
   }
-  ustring operator[](int y) const
+  string operator[](int y) const
   {
     return right.find(y)->second;
   }
 
-  unordered_map<ustring, int>::const_iterator begin() const
+  unordered_map<string, int>::const_iterator begin() const
   {
     return left.begin();
   }
-  unordered_map<ustring, int>::const_iterator end() const
+  unordered_map<string, int>::const_iterator end() const
   {
     return left.end();
   }
 
  private:
-  unordered_map<ustring, int> left;
-  unordered_map<int, ustring> right;
+  unordered_map<string, int> left;
+  unordered_map<int, string> right;
 };
 
 CCL_NAMESPACE_END

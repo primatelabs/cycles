@@ -4,6 +4,8 @@
 
 #pragma once
 
+#include <vector>
+
 #include "pl/image_io.h"
 #include "pl/param_value.h"
 #include "pl/type_desc.h"
@@ -52,7 +54,7 @@ class ImageSpec {
 
   void attribute(string_view name, string_view value);
 
-  void attribute(string_view name, ustring value);
+  void attribute(string_view name, string value);
 
   void attribute(string_view name, TypeDesc type, string_view value);
 

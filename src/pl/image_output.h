@@ -25,14 +25,14 @@ class ImageOutput {
   /// Return the name of the format implemented by this class.
   virtual const char *format_name(void) const = 0;
 
-  virtual int supports(string_view feature OIIO_MAYBE_UNUSED) const
+  virtual int supports(string_view feature) const
   {
     return false;
   }
 
   static unique_ptr create(string_view filename);
 
-  virtual bool open(const std::string &filename, const ImageSpec &spec) = 0;
+  virtual bool open(string_view filename, const ImageSpec &spec) = 0;
 
   virtual const ImageSpec &spec() const
   {

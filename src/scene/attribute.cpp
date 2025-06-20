@@ -15,7 +15,7 @@ CCL_NAMESPACE_BEGIN
 
 /* Attribute */
 
-Attribute::Attribute(ustring name,
+Attribute::Attribute(string name,
                      const TypeDesc type,
                      AttributeElement element,
                      Geometry *geom,
@@ -453,7 +453,7 @@ AttributeSet::AttributeSet(Geometry *geometry, AttributePrimitive prim)
 
 AttributeSet::~AttributeSet() = default;
 
-Attribute *AttributeSet::add(ustring name, const TypeDesc type, AttributeElement element)
+Attribute *AttributeSet::add(string name, const TypeDesc type, AttributeElement element)
 {
   Attribute *attr = find(name);
 
@@ -473,7 +473,7 @@ Attribute *AttributeSet::add(ustring name, const TypeDesc type, AttributeElement
   return &attributes.back();
 }
 
-Attribute *AttributeSet::find(ustring name) const
+Attribute *AttributeSet::find(string name) const
 {
   for (const Attribute &attr : attributes) {
     if (attr.name == name) {
@@ -484,7 +484,7 @@ Attribute *AttributeSet::find(ustring name) const
   return nullptr;
 }
 
-void AttributeSet::remove(ustring name)
+void AttributeSet::remove(string name)
 {
   Attribute *attr = find(name);
 
@@ -500,7 +500,7 @@ void AttributeSet::remove(ustring name)
   }
 }
 
-Attribute *AttributeSet::add(AttributeStandard std, ustring name)
+Attribute *AttributeSet::add(AttributeStandard std, string name)
 {
   Attribute *attr = nullptr;
 
@@ -806,7 +806,7 @@ bool AttributeSet::modified(AttrKernelDataType kernel_type) const
 
 /* AttributeRequest */
 
-AttributeRequest::AttributeRequest(ustring name_)
+AttributeRequest::AttributeRequest(string name_)
 {
   name = name_;
   std = ATTR_STD_NONE;
@@ -819,7 +819,7 @@ AttributeRequest::AttributeRequest(ustring name_)
 
 AttributeRequest::AttributeRequest(AttributeStandard std_)
 {
-  name = ustring();
+  name = string();
   std = std_;
 
   type = TypeFloat;
@@ -857,7 +857,7 @@ bool AttributeRequestSet::modified(const AttributeRequestSet &other)
   return false;
 }
 
-void AttributeRequestSet::add(ustring name)
+void AttributeRequestSet::add(string name)
 {
   for (const AttributeRequest &req : requests) {
     if (req.name == name) {
@@ -891,7 +891,7 @@ void AttributeRequestSet::add(AttributeRequestSet &reqs)
   }
 }
 
-void AttributeRequestSet::add_standard(ustring name)
+void AttributeRequestSet::add_standard(string name)
 {
   if (name.empty()) {
     return;
@@ -907,7 +907,7 @@ void AttributeRequestSet::add_standard(ustring name)
   }
 }
 
-bool AttributeRequestSet::find(ustring name)
+bool AttributeRequestSet::find(string name)
 {
   for (const AttributeRequest &req : requests) {
     if (req.name == name) {

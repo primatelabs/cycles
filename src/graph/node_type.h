@@ -76,21 +76,21 @@ struct SocketType {
                         (1 << 10) | (1 << 11) | (1 << 12)
   };
 
-  ustring name;
+  string name;
   Type type;
   int struct_offset;
   const void *default_value;
   const NodeEnum *enum_values;
   const NodeType *node_type;
   int flags;
-  ustring ui_name;
+  string ui_name;
   SocketModifiedFlags modified_flag_bit;
 
   size_t size() const;
   bool is_array() const;
   static size_t size(Type type);
   static size_t max_size();
-  static ustring type_name(Type type);
+  static string type_name(Type type);
   static void *zero_default_value();
   static bool is_float3(Type type);
 };
@@ -103,8 +103,8 @@ struct NodeType {
   explicit NodeType(Type type = NONE, const NodeType *base = nullptr);
   ~NodeType();
 
-  void register_input(ustring name,
-                      ustring ui_name,
+  void register_input(string name,
+                      string ui_name,
                       SocketType::Type type,
                       const int struct_offset,
                       const void *default_value,
@@ -112,14 +112,14 @@ struct NodeType {
                       const NodeType *node_type = nullptr,
                       int flags = 0,
                       int extra_flags = 0);
-  void register_output(ustring name, ustring ui_name, SocketType::Type type);
+  void register_output(string name, string ui_name, SocketType::Type type);
 
-  const SocketType *find_input(ustring name) const;
-  const SocketType *find_output(ustring name) const;
+  const SocketType *find_input(string name) const;
+  const SocketType *find_output(string name) const;
 
   using CreateFunc = unique_ptr<Node> (*)(const NodeType *);
 
-  ustring name;
+  string name;
   Type type;
   const NodeType *base;
   vector<SocketType, std::allocator<SocketType>> inputs;
@@ -130,8 +130,8 @@ struct NodeType {
                        CreateFunc create,
                        Type type = NONE,
                        const NodeType *base = nullptr);
-  static const NodeType *find(ustring name);
-  static unordered_map<ustring, NodeType> &types();
+  static const NodeType *find(string name);
+  static unordered_map<string, NodeType> &types();
 };
 
 /* Node Definition Macros
@@ -179,8 +179,8 @@ struct NodeType {
   { \
     static datatype defval = default_value; \
     static_assert(std::is_same_v<decltype(T::name), datatype>); \
-    type->register_input(ustring(#name), \
-                         ustring(ui_name), \
+    type->register_input(string(#name), \
+                         string(ui_name), \
                          TYPE, \
                          SOCKET_OFFSETOF(T, name), \
                          &defval, \
@@ -211,15 +211,15 @@ struct NodeType {
 #define SOCKET_POINT2(name, ui_name, default_value, ...) \
   SOCKET_DEFINE(name, ui_name, default_value, float2, SocketType::POINT2, 0, ##__VA_ARGS__)
 #define SOCKET_STRING(name, ui_name, default_value, ...) \
-  SOCKET_DEFINE(name, ui_name, default_value, ustring, SocketType::STRING, 0, ##__VA_ARGS__)
+  SOCKET_DEFINE(name, ui_name, default_value, string, SocketType::STRING, 0, ##__VA_ARGS__)
 #define SOCKET_TRANSFORM(name, ui_name, default_value, ...) \
   SOCKET_DEFINE(name, ui_name, default_value, Transform, SocketType::TRANSFORM, 0, ##__VA_ARGS__)
 #define SOCKET_ENUM(name, ui_name, values, default_value, ...) \
   { \
     static int defval = default_value; \
     assert(SOCKET_SIZEOF(T, name) == sizeof(int)); \
-    type->register_input(ustring(#name), \
-                         ustring(ui_name), \
+    type->register_input(string(#name), \
+                         string(ui_name), \
                          SocketType::ENUM, \
                          SOCKET_OFFSETOF(T, name), \
                          &defval, \
@@ -231,8 +231,8 @@ struct NodeType {
   { \
     static Node *defval = nullptr; \
     assert(SOCKET_SIZEOF(T, name) == sizeof(Node *)); \
-    type->register_input(ustring(#name), \
-                         ustring(ui_name), \
+    type->register_input(string(#name), \
+                         string(ui_name), \
                          SocketType::NODE, \
                          SOCKET_OFFSETOF(T, name), \
                          (const void *)&defval, \
@@ -266,7 +266,7 @@ struct NodeType {
       name, ui_name, default_value, array<float2>, SocketType::POINT2_ARRAY, 0, ##__VA_ARGS__)
 #define SOCKET_STRING_ARRAY(name, ui_name, default_value, ...) \
   SOCKET_DEFINE( \
-      name, ui_name, default_value, array<ustring>, SocketType::STRING_ARRAY, 0, ##__VA_ARGS__)
+      name, ui_name, default_value, array<string>, SocketType::STRING_ARRAY, 0, ##__VA_ARGS__)
 #define SOCKET_TRANSFORM_ARRAY(name, ui_name, default_value, ...) \
   SOCKET_DEFINE(name, \
                 ui_name, \
@@ -279,8 +279,8 @@ struct NodeType {
   { \
     static array<Node *> defval = {}; \
     assert(SOCKET_SIZEOF(T, name) == sizeof(array<Node *>)); \
-    type->register_input(ustring(#name), \
-                         ustring(ui_name), \
+    type->register_input(string(#name), \
+                         string(ui_name), \
                          SocketType::NODE_ARRAY, \
                          SOCKET_OFFSETOF(T, name), \
                          &defval, \
@@ -344,13 +344,13 @@ struct NodeType {
   SOCKET_DEFINE(name, \
                 ui_name, \
                 default_value, \
-                ustring, \
+                string, \
                 SocketType::STRING, \
                 SocketType::LINKABLE, \
                 ##__VA_ARGS__)
 #define SOCKET_IN_CLOSURE(name, ui_name, ...) \
-  type->register_input(ustring(#name), \
-                       ustring(ui_name), \
+  type->register_input(string(#name), \
+                       string(ui_name), \
                        SocketType::CLOSURE, \
                        0, \
                        nullptr, \
@@ -361,43 +361,43 @@ struct NodeType {
 
 #define SOCKET_OUT_BOOLEAN(name, ui_name) \
   { \
-    type->register_output(ustring(#name), ustring(ui_name), SocketType::BOOLEAN); \
+    type->register_output(string(#name), string(ui_name), SocketType::BOOLEAN); \
   }
 #define SOCKET_OUT_INT(name, ui_name) \
   { \
-    type->register_output(ustring(#name), ustring(ui_name), SocketType::INT); \
+    type->register_output(string(#name), string(ui_name), SocketType::INT); \
   }
 #define SOCKET_OUT_FLOAT(name, ui_name) \
   { \
-    type->register_output(ustring(#name), ustring(ui_name), SocketType::FLOAT); \
+    type->register_output(string(#name), string(ui_name), SocketType::FLOAT); \
   }
 #define SOCKET_OUT_COLOR(name, ui_name) \
   { \
-    type->register_output(ustring(#name), ustring(ui_name), SocketType::COLOR); \
+    type->register_output(string(#name), string(ui_name), SocketType::COLOR); \
   }
 #define SOCKET_OUT_VECTOR(name, ui_name) \
   { \
-    type->register_output(ustring(#name), ustring(ui_name), SocketType::VECTOR); \
+    type->register_output(string(#name), string(ui_name), SocketType::VECTOR); \
   }
 #define SOCKET_OUT_POINT(name, ui_name) \
   { \
-    type->register_output(ustring(#name), ustring(ui_name), SocketType::POINT); \
+    type->register_output(string(#name), string(ui_name), SocketType::POINT); \
   }
 #define SOCKET_OUT_NORMAL(name, ui_name) \
   { \
-    type->register_output(ustring(#name), ustring(ui_name), SocketType::NORMAL); \
+    type->register_output(string(#name), string(ui_name), SocketType::NORMAL); \
   }
 #define SOCKET_OUT_CLOSURE(name, ui_name) \
   { \
-    type->register_output(ustring(#name), ustring(ui_name), SocketType::CLOSURE); \
+    type->register_output(string(#name), string(ui_name), SocketType::CLOSURE); \
   }
 #define SOCKET_OUT_STRING(name, ui_name) \
   { \
-    type->register_output(ustring(#name), ustring(ui_name), SocketType::STRING); \
+    type->register_output(string(#name), string(ui_name), SocketType::STRING); \
   }
 #define SOCKET_OUT_ENUM(name, ui_name) \
   { \
-    type->register_output(ustring(#name), ustring(ui_name), SocketType::ENUM); \
+    type->register_output(string(#name), string(ui_name), SocketType::ENUM); \
   }
 
 CCL_NAMESPACE_END

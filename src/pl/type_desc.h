@@ -8,11 +8,13 @@
 
 #pragma once
 
-#include <OpenImageIO/ustring.h>
+#include <string_view>
+
+#include "pl/error.h"
 
 CCL_NAMESPACE_BEGIN
 
-using OIIO::string_view;
+using std::string_view;
 
 struct TypeDesc {
   /// BASETYPE is a simple enum describing the base data types that
@@ -93,7 +95,7 @@ struct TypeDesc {
 
   /// Construct from a BASETYPE and optional aggregateness, semantics,
   /// and arrayness.
-  OIIO_HOSTDEVICE constexpr TypeDesc(BASETYPE btype = UNKNOWN,
+   constexpr TypeDesc(BASETYPE btype = UNKNOWN,
                                      AGGREGATE agg = SCALAR,
                                      VECSEMANTICS semantics = NOSEMANTICS,
                                      int arraylen = 0) noexcept
@@ -106,14 +108,14 @@ struct TypeDesc {
   }
 
   /// Construct an array of a non-aggregate BASETYPE.
-  OIIO_HOSTDEVICE constexpr TypeDesc(BASETYPE btype, int arraylen) noexcept
+   constexpr TypeDesc(BASETYPE btype, int arraylen) noexcept
       : TypeDesc(btype, SCALAR, NOSEMANTICS, arraylen)
   {
   }
 
   /// Construct an array from BASETYPE, AGGREGATE, and array length,
   /// with unspecified (or moot) semantic hints.
-  OIIO_HOSTDEVICE constexpr TypeDesc(BASETYPE btype, AGGREGATE agg, int arraylen) noexcept
+   constexpr TypeDesc(BASETYPE btype, AGGREGATE agg, int arraylen) noexcept
       : TypeDesc(btype, agg, NOSEMANTICS, arraylen)
   {
   }
@@ -149,50 +151,44 @@ struct TypeDesc {
 
   /// Return the number of elements: 1 if not an array, or the array
   /// length. Invalid to call this for arrays of undetermined size.
-  OIIO_HOSTDEVICE constexpr size_t numelements() const noexcept
+   constexpr size_t numelements() const noexcept
   {
-    OIIO_DASSERT_MSG(arraylen >= 0,
-                     "Called numelements() on TypeDesc "
-                     "of array with unspecified length (%d)",
-                     arraylen);
+    PL_CHECK(arraylen >= 0);
     return (arraylen >= 1 ? arraylen : 1);
   }
 
   /// Return the number of basetype values: the aggregate count multiplied
   /// by the array length (or 1 if not an array). Invalid to call this
   /// for arrays of undetermined size.
-  OIIO_HOSTDEVICE constexpr size_t basevalues() const noexcept
+   constexpr size_t basevalues() const noexcept
   {
     return numelements() * aggregate;
   }
 
   /// Does this TypeDesc describe an array?
-  OIIO_HOSTDEVICE constexpr bool is_array() const noexcept
+   constexpr bool is_array() const noexcept
   {
     return (arraylen != 0);
   }
 
   /// Does this TypeDesc describe an array, but whose length is not
   /// specified?
-  OIIO_HOSTDEVICE constexpr bool is_unsized_array() const noexcept
+   constexpr bool is_unsized_array() const noexcept
   {
     return (arraylen < 0);
   }
 
   /// Does this TypeDesc describe an array, whose length is specified?
-  OIIO_HOSTDEVICE constexpr bool is_sized_array() const noexcept
+   constexpr bool is_sized_array() const noexcept
   {
     return (arraylen > 0);
   }
 
   /// Return the size, in bytes, of this type.
   ///
-  OIIO_HOSTDEVICE size_t size() const noexcept
+   size_t size() const noexcept
   {
-    OIIO_DASSERT_MSG(arraylen >= 0,
-                     "Called size() on TypeDesc "
-                     "of array with unspecified length (%d)",
-                     arraylen);
+    PL_CHECK(arraylen >= 0);
     size_t a = (size_t)(arraylen > 0 ? arraylen : 1);
     if (sizeof(size_t) > sizeof(int)) {
       // size_t has plenty of room for this multiplication
@@ -208,7 +204,7 @@ struct TypeDesc {
 
   /// Return the type of one element, i.e., strip out the array-ness.
   ///
-  OIIO_HOSTDEVICE constexpr TypeDesc elementtype() const noexcept
+   constexpr TypeDesc elementtype() const noexcept
   {
     TypeDesc t(*this);
     t.arraylen = 0;
@@ -217,14 +213,14 @@ struct TypeDesc {
 
   /// Return the size, in bytes, of one element of this type (that is,
   /// ignoring whether it's an array).
-  OIIO_HOSTDEVICE size_t elementsize() const noexcept
+   size_t elementsize() const noexcept
   {
     return aggregate * basesize();
   }
 
   /// Return just the underlying C scalar type, i.e., strip out the
   /// array-ness and the aggregateness.
-  OIIO_HOSTDEVICE constexpr TypeDesc scalartype() const
+   constexpr TypeDesc scalartype() const
   {
     return TypeDesc(BASETYPE(basetype));
   }
@@ -241,13 +237,13 @@ struct TypeDesc {
   bool is_signed() const noexcept;
 
   /// Shortcut: is it UNKNOWN?
-  OIIO_HOSTDEVICE constexpr bool is_unknown() const noexcept
+   constexpr bool is_unknown() const noexcept
   {
     return (basetype == UNKNOWN);
   }
 
   /// if (typedesc) is the same as asking whether it's not UNKNOWN.
-  OIIO_HOSTDEVICE constexpr operator bool() const noexcept
+   constexpr operator bool() const noexcept
   {
     return (basetype != UNKNOWN);
   }
@@ -260,7 +256,7 @@ struct TypeDesc {
 
   /// Compare two TypeDesc values for equality.
   ///
-  OIIO_HOSTDEVICE constexpr bool operator==(const TypeDesc &t) const noexcept
+   constexpr bool operator==(const TypeDesc &t) const noexcept
   {
     return basetype == t.basetype && aggregate == t.aggregate && vecsemantics == t.vecsemantics &&
            arraylen == t.arraylen;
@@ -268,43 +264,43 @@ struct TypeDesc {
 
   /// Compare two TypeDesc values for inequality.
   ///
-  OIIO_HOSTDEVICE constexpr bool operator!=(const TypeDesc &t) const noexcept
+   constexpr bool operator!=(const TypeDesc &t) const noexcept
   {
     return !(*this == t);
   }
 
   /// Compare a TypeDesc to a basetype (it's the same if it has the
   /// same base type and is not an aggregate or an array).
-  OIIO_HOSTDEVICE friend constexpr bool operator==(const TypeDesc &t, BASETYPE b) noexcept
+   friend constexpr bool operator==(const TypeDesc &t, BASETYPE b) noexcept
   {
     return (BASETYPE)t.basetype == b && (AGGREGATE)t.aggregate == SCALAR && !t.is_array();
   }
-  OIIO_HOSTDEVICE friend constexpr bool operator==(BASETYPE b, const TypeDesc &t) noexcept
+   friend constexpr bool operator==(BASETYPE b, const TypeDesc &t) noexcept
   {
     return (BASETYPE)t.basetype == b && (AGGREGATE)t.aggregate == SCALAR && !t.is_array();
   }
 
   /// Compare a TypeDesc to a basetype (it's the same if it has the
   /// same base type and is not an aggregate or an array).
-  OIIO_HOSTDEVICE friend constexpr bool operator!=(const TypeDesc &t, BASETYPE b) noexcept
+   friend constexpr bool operator!=(const TypeDesc &t, BASETYPE b) noexcept
   {
     return (BASETYPE)t.basetype != b || (AGGREGATE)t.aggregate != SCALAR || t.is_array();
   }
-  OIIO_HOSTDEVICE friend constexpr bool operator!=(BASETYPE b, const TypeDesc &t) noexcept
+   friend constexpr bool operator!=(BASETYPE b, const TypeDesc &t) noexcept
   {
     return (BASETYPE)t.basetype != b || (AGGREGATE)t.aggregate != SCALAR || t.is_array();
   }
 
   /// TypeDesc's are equivalent if they are equal, or if their only
   /// inequality is differing vector semantics.
-  OIIO_HOSTDEVICE friend constexpr bool equivalent(const TypeDesc &a, const TypeDesc &b) noexcept
+   friend constexpr bool equivalent(const TypeDesc &a, const TypeDesc &b) noexcept
   {
     return a.basetype == b.basetype && a.aggregate == b.aggregate &&
            (a.arraylen == b.arraylen || (a.is_unsized_array() && b.is_sized_array()) ||
             (a.is_sized_array() && b.is_unsized_array()));
   }
   /// Member version of equivalent
-  OIIO_HOSTDEVICE constexpr bool equivalent(const TypeDesc &b) const noexcept
+   constexpr bool equivalent(const TypeDesc &b) const noexcept
   {
     return this->basetype == b.basetype && this->aggregate == b.aggregate &&
            (this->arraylen == b.arraylen || (this->is_unsized_array() && b.is_sized_array()) ||
@@ -312,32 +308,32 @@ struct TypeDesc {
   }
 
   /// Is this a 2-vector aggregate (of the given type, float by default)?
-  OIIO_HOSTDEVICE constexpr bool is_vec2(BASETYPE b = FLOAT) const noexcept
+   constexpr bool is_vec2(BASETYPE b = FLOAT) const noexcept
   {
     return this->aggregate == VEC2 && this->basetype == b && !is_array();
   }
 
   /// Is this a 3-vector aggregate (of the given type, float by default)?
-  OIIO_HOSTDEVICE constexpr bool is_vec3(BASETYPE b = FLOAT) const noexcept
+   constexpr bool is_vec3(BASETYPE b = FLOAT) const noexcept
   {
     return this->aggregate == VEC3 && this->basetype == b && !is_array();
   }
 
   /// Is this a 4-vector aggregate (of the given type, float by default)?
-  OIIO_HOSTDEVICE constexpr bool is_vec4(BASETYPE b = FLOAT) const noexcept
+   constexpr bool is_vec4(BASETYPE b = FLOAT) const noexcept
   {
     return this->aggregate == VEC4 && this->basetype == b && !is_array();
   }
 
   /// Is this an array of aggregates that represents a 2D bounding box?
-  OIIO_HOSTDEVICE constexpr bool is_box2(BASETYPE b = FLOAT) const noexcept
+   constexpr bool is_box2(BASETYPE b = FLOAT) const noexcept
   {
     return this->aggregate == VEC2 && this->basetype == b && arraylen == 2 &&
            this->vecsemantics == BOX;
   }
 
   /// Is this an array of aggregates that represents a 3D bounding box?
-  OIIO_HOSTDEVICE constexpr bool is_box3(BASETYPE b = FLOAT) const noexcept
+   constexpr bool is_box3(BASETYPE b = FLOAT) const noexcept
   {
     return this->aggregate == VEC3 && this->basetype == b && arraylen == 2 &&
            this->vecsemantics == BOX;
@@ -345,7 +341,7 @@ struct TypeDesc {
 
   /// Demote the type to a non-array
   ///
-  OIIO_HOSTDEVICE void unarray(void) noexcept
+   void unarray(void) noexcept
   {
     arraylen = 0;
   }
@@ -443,7 +439,7 @@ template<> struct BaseTypeFromC<string_view> {
   static const TypeDesc::BASETYPE value = TypeDesc::STRING;
 };
 
-// template<> struct BaseTypeFromC<ustring> { static const TypeDesc::BASETYPE value =
+// template<> struct BaseTypeFromC<string> { static const TypeDesc::BASETYPE value =
 // TypeDesc::STRING; }; template<size_t S> struct BaseTypeFromC<char[S]> { static const
 // TypeDesc::BASETYPE value = TypeDesc::STRING; }; template<size_t S> struct BaseTypeFromC<const
 // char[S]> { static const TypeDesc::BASETYPE value = TypeDesc::STRING; };

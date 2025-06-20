@@ -8,16 +8,16 @@
 
 CCL_NAMESPACE_BEGIN
 
-using OSLUStringHash = OSL::ustringhash;
+using OSLUStringHash = OSL::stringhash;
 #if OSL_LIBRARY_VERSION_CODE >= 11400
-using OSLUStringRep = OSL::ustringhash;
+using OSLUStringRep = OSL::stringhash;
 #else
-using OSLUStringRep = OSL::ustringrep;
+using OSLUStringRep = OSL::stringrep;
 #endif
 
-static inline OSL::ustring to_ustring(OSLUStringHash h)
+static inline OSL::string to_string(OSLUStringHash h)
 {
-  return OSL::ustring::from_hash(h.hash());
+  return OSL::string::from_hash(h.hash());
 }
 
 CCL_NAMESPACE_END

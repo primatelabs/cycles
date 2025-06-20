@@ -19,13 +19,13 @@ class ImageInput {
 
   virtual ~ImageInput();
 
-  static unique_ptr open(const std::string &filename, const ImageSpec *config = nullptr);
+  static unique_ptr open(string_view filename, const ImageSpec *config = nullptr);
 
   static unique_ptr create(string_view filename);
 
-  virtual bool open(const std::string &name, ImageSpec &newspec) = 0;
+  virtual bool open(string_view name, ImageSpec &newspec) = 0;
 
-  virtual bool open(const std::string &name, ImageSpec &newspec, const ImageSpec &config)
+  virtual bool open(string_view name, ImageSpec &newspec, const ImageSpec &config)
   {
     return open(name, newspec);
   }

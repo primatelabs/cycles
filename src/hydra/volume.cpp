@@ -50,7 +50,7 @@ void HdCyclesVolume::Populate(HdSceneDelegate *sceneDelegate, HdDirtyBits dirtyB
       if (auto *const openvdbAsset = static_cast<HdCyclesField *>(
               sceneDelegate->GetRenderIndex().GetBprim(_tokens->openvdbAsset, field.fieldId)))
       {
-        const ustring name(field.fieldName.GetString());
+        const string name(field.fieldName.GetString());
 
         AttributeStandard std = ATTR_STD_NONE;
         if (name == Attribute::standard_name(ATTR_STD_VOLUME_DENSITY)) {

@@ -98,7 +98,7 @@ static void compute_vertex_normals(CachedData &cache, const double current_time)
   }
 
   CachedData::CachedAttribute &attr_normal = cache.add_attribute(
-      ustring("N"), cache.vertices.get_time_sampling());
+      string("N"), cache.vertices.get_time_sampling());
   attr_normal.std = ATTR_STD_VERTEX_NORMAL;
   attr_normal.element = ATTR_ELEMENT_VERTEX;
   attr_normal.type_desc = TypeNormal;
@@ -152,7 +152,7 @@ static void add_normals(const Int32ArraySamplePtr face_indices,
         return;
       }
 
-      CachedData::CachedAttribute &attr = cached_data.add_attribute(ustring(normals.getName()),
+      CachedData::CachedAttribute &attr = cached_data.add_attribute(string(normals.getName()),
                                                                     *normals.getTimeSampling());
       attr.std = ATTR_STD_VERTEX_NORMAL;
 
@@ -188,7 +188,7 @@ static void add_normals(const Int32ArraySamplePtr face_indices,
         return;
       }
 
-      CachedData::CachedAttribute &attr = cached_data.add_attribute(ustring(normals.getName()),
+      CachedData::CachedAttribute &attr = cached_data.add_attribute(string(normals.getName()),
                                                                     *normals.getTimeSampling());
       attr.std = ATTR_STD_VERTEX_NORMAL;
 
@@ -918,7 +918,7 @@ static void read_attribute_loop(AlembicProcedural *proc,
     }
   }
 
-  CachedData::CachedAttribute &attribute = cache.add_attribute(ustring(name),
+  CachedData::CachedAttribute &attribute = cache.add_attribute(string(name),
                                                                *param.getTimeSampling());
 
   using abc_type = typename TRAIT::value_type;

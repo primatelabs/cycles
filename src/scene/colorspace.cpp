@@ -20,19 +20,19 @@ namespace OCIO = OCIO_NAMESPACE;
 CCL_NAMESPACE_BEGIN
 
 /* Builtin colorspaces. */
-ustring u_colorspace_auto;
-ustring u_colorspace_raw("__builtin_raw");
-ustring u_colorspace_srgb("__builtin_srgb");
+string u_colorspace_auto;
+string u_colorspace_raw("__builtin_raw");
+string u_colorspace_srgb("__builtin_srgb");
 
 /* Cached data. */
 #ifdef WITH_OCIO
 static thread_mutex cache_colorspaces_mutex;
 static thread_mutex cache_processors_mutex;
-static unordered_map<ustring, ustring> cached_colorspaces;
-static unordered_map<ustring, OCIO::ConstProcessorRcPtr> cached_processors;
+static unordered_map<string, string> cached_colorspaces;
+static unordered_map<string, OCIO::ConstProcessorRcPtr> cached_processors;
 #endif
 
-ColorSpaceProcessor *ColorSpaceManager::get_processor(ustring colorspace)
+ColorSpaceProcessor *ColorSpaceManager::get_processor(string colorspace)
 {
 #ifdef WITH_OCIO
   /* Only use this for OpenColorIO color spaces, not the builtin ones. */
@@ -78,7 +78,7 @@ ColorSpaceProcessor *ColorSpaceManager::get_processor(ustring colorspace)
 #endif
 }
 
-bool ColorSpaceManager::colorspace_is_data(ustring colorspace)
+bool ColorSpaceManager::colorspace_is_data(string colorspace)
 {
   if (colorspace == u_colorspace_auto || colorspace == u_colorspace_raw ||
       colorspace == u_colorspace_srgb)
@@ -112,7 +112,7 @@ bool ColorSpaceManager::colorspace_is_data(ustring colorspace)
 #endif
 }
 
-ustring ColorSpaceManager::detect_known_colorspace(ustring colorspace,
+string ColorSpaceManager::detect_known_colorspace(string colorspace,
                                                    const char *file_colorspace,
                                                    const char *file_format,
                                                    bool is_float)
@@ -196,7 +196,7 @@ ustring ColorSpaceManager::detect_known_colorspace(ustring colorspace,
 #endif
 }
 
-void ColorSpaceManager::is_builtin_colorspace(ustring colorspace,
+void ColorSpaceManager::is_builtin_colorspace(string colorspace,
                                               bool &is_scene_linear,
                                               bool &is_srgb)
 {
@@ -378,7 +378,7 @@ inline void processor_apply_pixels_grayscale(const OCIO::Processor *processor,
 
 template<typename T>
 void ColorSpaceManager::to_scene_linear(
-    ustring colorspace, T *pixels, const size_t num_pixels, bool is_rgba, bool compress_as_srgb)
+    string colorspace, T *pixels, const size_t num_pixels, bool is_rgba, bool compress_as_srgb)
 {
 #ifdef WITH_OCIO
   const OCIO::Processor *processor = (const OCIO::Processor *)get_processor(colorspace);
@@ -477,9 +477,9 @@ void ColorSpaceManager::init_fallback_config()
 }
 
 /* Template instantiations so we don't have to inline functions. */
-template void ColorSpaceManager::to_scene_linear(ustring, uchar *, size_t, bool, bool);
-template void ColorSpaceManager::to_scene_linear(ustring, ushort *, size_t, bool, bool);
-template void ColorSpaceManager::to_scene_linear(ustring, half *, size_t, bool, bool);
-template void ColorSpaceManager::to_scene_linear(ustring, float *, size_t, bool, bool);
+template void ColorSpaceManager::to_scene_linear(string, uchar *, size_t, bool, bool);
+template void ColorSpaceManager::to_scene_linear(string, ushort *, size_t, bool, bool);
+template void ColorSpaceManager::to_scene_linear(string, half *, size_t, bool, bool);
+template void ColorSpaceManager::to_scene_linear(string, float *, size_t, bool, bool);
 
 CCL_NAMESPACE_END

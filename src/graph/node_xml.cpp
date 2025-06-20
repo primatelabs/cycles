@@ -4,6 +4,8 @@
 
 #ifdef WITH_PUGIXML
 
+#  include <sstream>
+
 #  include "graph/node_xml.h"
 #  include "graph/node.h"
 
@@ -46,7 +48,7 @@ void xml_read_node(XMLReader &reader, Node *node, const xml_node xml_node)
 {
   const xml_attribute name_attr = xml_node.attribute("name");
   if (name_attr) {
-    node->name = ustring(name_attr.value());
+    node->name = string(name_attr.value());
   }
 
   for (const SocketType &socket : node->type->inputs) {
@@ -153,7 +155,7 @@ void xml_read_node(XMLReader &reader, Node *node, const xml_node xml_node)
         break;
       }
       case SocketType::ENUM: {
-        const ustring value(attr.value());
+        const string value(attr.value());
         if (socket.enum_values->exists(value)) {
           node->set(socket, value);
         }
@@ -169,10 +171,10 @@ void xml_read_node(XMLReader &reader, Node *node, const xml_node xml_node)
         vector<string> tokens;
         string_split(tokens, attr.value());
 
-        array<ustring> value;
+        array<string> value;
         value.resize(tokens.size());
         for (size_t i = 0; i < value.size(); i++) {
-          value[i] = ustring(tokens[i]);
+          value[i] = string(tokens[i]);
         }
         node->set(socket, value);
         break;
@@ -192,8 +194,8 @@ void xml_read_node(XMLReader &reader, Node *node, const xml_node xml_node)
         break;
       }
       case SocketType::NODE: {
-        const ustring value(attr.value());
-        const map<ustring, Node *>::iterator it = reader.node_map.find(value);
+        const string value(attr.value());
+        const map<string, Node *>::iterator it = reader.node_map.find(value);
         if (it != reader.node_map.end()) {
           Node *value_node = it->second;
           if (value_node->is_a(socket.node_type)) {
@@ -209,7 +211,7 @@ void xml_read_node(XMLReader &reader, Node *node, const xml_node xml_node)
         array<Node *> value;
         value.resize(tokens.size());
         for (size_t i = 0; i < value.size(); i++) {
-          const map<ustring, Node *>::iterator it = reader.node_map.find(ustring(tokens[i]));
+          const map<string, Node *>::iterator it = reader.node_map.find(string(tokens[i]));
           if (it != reader.node_map.end()) {
             Node *value_node = it->second;
             value[i] = (value_node->is_a(socket.node_type)) ? value_node : nullptr;
@@ -358,7 +360,7 @@ xml_node xml_write_node(Node *node, xml_node xml_root)
       }
       case SocketType::STRING_ARRAY: {
         std::stringstream ss;
-        const array<ustring> &value = node->get_string_array(socket);
+        const array<string> &value = node->get_string_array(socket);
         for (size_t i = 0; i < value.size(); i++) {
           ss << value[i];
           if (i != value.size() - 1) {

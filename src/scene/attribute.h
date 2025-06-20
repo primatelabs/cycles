@@ -44,7 +44,7 @@ enum AttrKernelDataType { FLOAT = 0, FLOAT2 = 1, FLOAT3 = 2, FLOAT4 = 3, UCHAR4 
 
 class Attribute {
  public:
-  ustring name;
+  string name;
   AttributeStandard std;
 
   TypeDesc type;
@@ -54,7 +54,7 @@ class Attribute {
 
   bool modified;
 
-  Attribute(ustring name,
+  Attribute(string name,
             const TypeDesc type,
             AttributeElement element,
             Geometry *geom,
@@ -64,7 +64,7 @@ class Attribute {
   Attribute &operator=(const Attribute &other) = delete;
   ~Attribute();
 
-  void set(ustring name, const TypeDesc type, AttributeElement element);
+  void set(string name, const TypeDesc type, AttributeElement element);
   void resize(Geometry *geom, AttributePrimitive prim, bool reserve_only);
   void resize(const size_t num_elements);
 
@@ -185,11 +185,11 @@ class AttributeSet {
   AttributeSet(AttributeSet &&) = default;
   ~AttributeSet();
 
-  Attribute *add(ustring name, const TypeDesc type, AttributeElement element);
-  Attribute *find(ustring name) const;
-  void remove(ustring name);
+  Attribute *add(string name, const TypeDesc type, AttributeElement element);
+  Attribute *find(string name) const;
+  void remove(string name);
 
-  Attribute *add(AttributeStandard std, ustring name = ustring());
+  Attribute *add(AttributeStandard std, string name = string());
   Attribute *find(AttributeStandard std) const;
   void remove(AttributeStandard std);
 
@@ -231,14 +231,14 @@ class AttributeSet {
 
 class AttributeRequest {
  public:
-  ustring name;
+  string name;
   AttributeStandard std;
 
   /* temporary variables used by GeometryManager */
   TypeDesc type;
   AttributeDescriptor desc;
 
-  explicit AttributeRequest(ustring name_);
+  explicit AttributeRequest(string name_);
   explicit AttributeRequest(AttributeStandard std);
 };
 
@@ -253,12 +253,12 @@ class AttributeRequestSet {
   AttributeRequestSet();
   ~AttributeRequestSet();
 
-  void add(ustring name);
+  void add(string name);
   void add(AttributeStandard std);
   void add(AttributeRequestSet &reqs);
-  void add_standard(ustring name);
+  void add_standard(string name);
 
-  bool find(ustring name);
+  bool find(string name);
   bool find(AttributeStandard std);
 
   size_t size();

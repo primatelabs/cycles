@@ -126,12 +126,12 @@ class Geometry : public Node {
 
   /* Attribute Requests */
   bool need_attribute(Scene *scene, AttributeStandard std);
-  bool need_attribute(Scene *scene, ustring name);
+  bool need_attribute(Scene *scene, string name);
 
   AttributeRequestSet needed_attributes();
 
   /* UDIM */
-  virtual void get_uv_tiles(ustring map, unordered_set<int> &tiles) = 0;
+  virtual void get_uv_tiles(string map, unordered_set<int> &tiles) = 0;
 
   /* Convert between normalized -1..1 motion time and index in the
    * VERTEX_MOTION attribute. */

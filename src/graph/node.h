@@ -27,7 +27,7 @@ struct Transform;
     /* Explicitly cast to base class to use `Node::type` even if the derived class defines \
      * `type`. */ \
     const Node *self_node = this; \
-    static const SocketType *socket = self_node->type->find_input(ustring(string_name)); \
+    static const SocketType *socket = self_node->type->find_input(string(string_name)); \
     return socket; \
   } \
   bool name##_is_modified() const \
@@ -89,7 +89,7 @@ struct NodeOwner {
 };
 
 struct Node {
-  explicit Node(const NodeType *type, ustring name = ustring());
+  explicit Node(const NodeType *type, string name = string());
   virtual ~Node() = 0;
 
   /* set values */
@@ -101,7 +101,7 @@ struct Node {
   void set(const SocketType &input, const float2 value);
   void set(const SocketType &input, const float3 value);
   void set(const SocketType &input, const char *value);
-  void set(const SocketType &input, ustring value);
+  void set(const SocketType &input, string value);
   void set(const SocketType &input, const Transform &value);
   void set(const SocketType &input, Node *value);
 
@@ -121,7 +121,7 @@ struct Node {
   void set(const SocketType &input, array<float> &value);
   void set(const SocketType &input, array<float2> &value);
   void set(const SocketType &input, array<float3> &value);
-  void set(const SocketType &input, array<ustring> &value);
+  void set(const SocketType &input, array<string> &value);
   void set(const SocketType &input, array<Transform> &value);
   void set(const SocketType &input, array<Node *> &value);
 
@@ -133,7 +133,7 @@ struct Node {
   float get_float(const SocketType &input) const;
   float2 get_float2(const SocketType &input) const;
   float3 get_float3(const SocketType &input) const;
-  ustring get_string(const SocketType &input) const;
+  string get_string(const SocketType &input) const;
   Transform get_transform(const SocketType &input) const;
   Node *get_node(const SocketType &input) const;
 
@@ -143,7 +143,7 @@ struct Node {
   const array<float> &get_float_array(const SocketType &input) const;
   const array<float2> &get_float2_array(const SocketType &input) const;
   const array<float3> &get_float3_array(const SocketType &input) const;
-  const array<ustring> &get_string_array(const SocketType &input) const;
+  const array<string> &get_string_array(const SocketType &input) const;
   const array<Transform> &get_transform_array(const SocketType &input) const;
   const array<Node *> &get_node_array(const SocketType &input) const;
 
@@ -175,7 +175,7 @@ struct Node {
 
   void print_modified_sockets() const;
 
-  ustring name;
+  string name;
   const NodeType *type;
 
   const NodeOwner *get_owner() const;

@@ -15,7 +15,7 @@
 HDCYCLES_NAMESPACE_OPEN_SCOPE
 
 void ApplyPrimvars(AttributeSet &attributes,
-                   const ustring &name,
+                   const string &name,
                    VtValue value,
                    AttributeElement elem,
                    AttributeStandard std)

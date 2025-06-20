@@ -50,7 +50,7 @@ size_t SocketType::size(Type type)
     case CLOSURE:
       return 0;
     case STRING:
-      return sizeof(ustring);
+      return sizeof(string);
     case ENUM:
       return sizeof(int);
     case TRANSFORM:
@@ -75,7 +75,7 @@ size_t SocketType::size(Type type)
     case POINT2_ARRAY:
       return sizeof(array<float2>);
     case STRING_ARRAY:
-      return sizeof(array<ustring>);
+      return sizeof(array<string>);
     case TRANSFORM_ARRAY:
       return sizeof(array<Transform>);
     case NODE_ARRAY:
@@ -97,25 +97,25 @@ void *SocketType::zero_default_value()
   return &zero_transform;
 }
 
-ustring SocketType::type_name(Type type)
+string SocketType::type_name(Type type)
 {
-  static const ustring names[] = {ustring("undefined"),
+  static const string names[] = {string("undefined"),
 
-                                  ustring("boolean"),       ustring("float"),
-                                  ustring("int"),           ustring("uint"),
-                                  ustring("uint64"),        ustring("color"),
-                                  ustring("vector"),        ustring("point"),
-                                  ustring("normal"),        ustring("point2"),
-                                  ustring("closure"),       ustring("string"),
-                                  ustring("enum"),          ustring("transform"),
-                                  ustring("node"),
+                                  string("boolean"),       string("float"),
+                                  string("int"),           string("uint"),
+                                  string("uint64"),        string("color"),
+                                  string("vector"),        string("point"),
+                                  string("normal"),        string("point2"),
+                                  string("closure"),       string("string"),
+                                  string("enum"),          string("transform"),
+                                  string("node"),
 
-                                  ustring("array_boolean"), ustring("array_float"),
-                                  ustring("array_int"),     ustring("array_color"),
-                                  ustring("array_vector"),  ustring("array_point"),
-                                  ustring("array_normal"),  ustring("array_point2"),
-                                  ustring("array_string"),  ustring("array_transform"),
-                                  ustring("array_node")};
+                                  string("array_boolean"), string("array_float"),
+                                  string("array_int"),     string("array_color"),
+                                  string("array_vector"),  string("array_point"),
+                                  string("array_normal"),  string("array_point2"),
+                                  string("array_string"),  string("array_transform"),
+                                  string("array_node")};
 
   constexpr size_t num_names = sizeof(names) / sizeof(*names);
   static_assert(num_names == NUM_TYPES);
@@ -141,8 +141,8 @@ NodeType::NodeType(Type type, const NodeType *base) : type(type), base(base)
 
 NodeType::~NodeType() = default;
 
-void NodeType::register_input(ustring name,
-                              ustring ui_name,
+void NodeType::register_input(string name,
+                              string ui_name,
                               SocketType::Type type,
                               const int struct_offset,
                               const void *default_value,
@@ -165,7 +165,7 @@ void NodeType::register_input(ustring name,
   inputs.push_back(socket);
 }
 
-void NodeType::register_output(ustring name, ustring ui_name, SocketType::Type type)
+void NodeType::register_output(string name, string ui_name, SocketType::Type type)
 {
   SocketType socket;
   socket.name = name;
@@ -179,7 +179,7 @@ void NodeType::register_output(ustring name, ustring ui_name, SocketType::Type t
   outputs.push_back(socket);
 }
 
-const SocketType *NodeType::find_input(ustring name) const
+const SocketType *NodeType::find_input(string name) const
 {
   for (const SocketType &socket : inputs) {
     if (socket.name == name) {
@@ -190,7 +190,7 @@ const SocketType *NodeType::find_input(ustring name) const
   return nullptr;
 }
 
-const SocketType *NodeType::find_output(ustring name) const
+const SocketType *NodeType::find_output(string name) const
 {
   for (const SocketType &socket : outputs) {
     if (socket.name == name) {
@@ -203,15 +203,15 @@ const SocketType *NodeType::find_output(ustring name) const
 
 /* Node Type Registry */
 
-unordered_map<ustring, NodeType> &NodeType::types()
+unordered_map<string, NodeType> &NodeType::types()
 {
-  static unordered_map<ustring, NodeType> _types;
+  static unordered_map<string, NodeType> _types;
   return _types;
 }
 
 NodeType *NodeType::add(const char *name_, CreateFunc create_, Type type_, const NodeType *base_)
 {
-  const ustring name(name_);
+  const string name(name_);
 
   if (types().find(name) != types().end()) {
     fprintf(stderr, "Node type %s registered twice!\n", name_);
@@ -227,9 +227,9 @@ NodeType *NodeType::add(const char *name_, CreateFunc create_, Type type_, const
   return type;
 }
 
-const NodeType *NodeType::find(ustring name)
+const NodeType *NodeType::find(string name)
 {
-  const unordered_map<ustring, NodeType>::iterator it = types().find(name);
+  const unordered_map<string, NodeType>::iterator it = types().find(name);
   return (it == types().end()) ? nullptr : &it->second;
 }
 

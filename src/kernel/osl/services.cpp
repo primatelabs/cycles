@@ -57,65 +57,65 @@ static void copy_matrix(OSL::Matrix44 &m, const ProjectionTransform &tfm)
   memcpy((float *)&m, (const float *)&t, sizeof(m));
 }
 
-/* static ustrings */
-ustring OSLRenderServices::u_distance("distance");
-ustring OSLRenderServices::u_index("index");
-ustring OSLRenderServices::u_world("world");
-ustring OSLRenderServices::u_camera("camera");
-ustring OSLRenderServices::u_screen("screen");
-ustring OSLRenderServices::u_raster("raster");
-ustring OSLRenderServices::u_ndc("NDC");
-ustring OSLRenderServices::u_object_location("object:location");
-ustring OSLRenderServices::u_object_color("object:color");
-ustring OSLRenderServices::u_object_alpha("object:alpha");
-ustring OSLRenderServices::u_object_index("object:index");
-ustring OSLRenderServices::u_object_is_light("object:is_light");
-ustring OSLRenderServices::u_bump_map_normal("geom:bump_map_normal");
-ustring OSLRenderServices::u_geom_dupli_generated("geom:dupli_generated");
-ustring OSLRenderServices::u_geom_dupli_uv("geom:dupli_uv");
-ustring OSLRenderServices::u_material_index("material:index");
-ustring OSLRenderServices::u_object_random("object:random");
-ustring OSLRenderServices::u_particle_index("particle:index");
-ustring OSLRenderServices::u_particle_random("particle:random");
-ustring OSLRenderServices::u_particle_age("particle:age");
-ustring OSLRenderServices::u_particle_lifetime("particle:lifetime");
-ustring OSLRenderServices::u_particle_location("particle:location");
-ustring OSLRenderServices::u_particle_rotation("particle:rotation");
-ustring OSLRenderServices::u_particle_size("particle:size");
-ustring OSLRenderServices::u_particle_velocity("particle:velocity");
-ustring OSLRenderServices::u_particle_angular_velocity("particle:angular_velocity");
-ustring OSLRenderServices::u_geom_numpolyvertices("geom:numpolyvertices");
-ustring OSLRenderServices::u_geom_trianglevertices("geom:trianglevertices");
-ustring OSLRenderServices::u_geom_polyvertices("geom:polyvertices");
-ustring OSLRenderServices::u_geom_name("geom:name");
-ustring OSLRenderServices::u_geom_undisplaced("geom:undisplaced");
-ustring OSLRenderServices::u_is_smooth("geom:is_smooth");
-ustring OSLRenderServices::u_is_curve("geom:is_curve");
-ustring OSLRenderServices::u_curve_thickness("geom:curve_thickness");
-ustring OSLRenderServices::u_curve_length("geom:curve_length");
-ustring OSLRenderServices::u_curve_tangent_normal("geom:curve_tangent_normal");
-ustring OSLRenderServices::u_curve_random("geom:curve_random");
-ustring OSLRenderServices::u_is_point("geom:is_point");
-ustring OSLRenderServices::u_point_radius("geom:point_radius");
-ustring OSLRenderServices::u_point_position("geom:point_position");
-ustring OSLRenderServices::u_point_random("geom:point_random");
-ustring OSLRenderServices::u_normal_map_normal("geom:normal_map_normal");
-ustring OSLRenderServices::u_path_ray_length("path:ray_length");
-ustring OSLRenderServices::u_path_ray_depth("path:ray_depth");
-ustring OSLRenderServices::u_path_diffuse_depth("path:diffuse_depth");
-ustring OSLRenderServices::u_path_glossy_depth("path:glossy_depth");
-ustring OSLRenderServices::u_path_transparent_depth("path:transparent_depth");
-ustring OSLRenderServices::u_path_transmission_depth("path:transmission_depth");
-ustring OSLRenderServices::u_trace("trace");
-ustring OSLRenderServices::u_hit("hit");
-ustring OSLRenderServices::u_hitdist("hitdist");
-ustring OSLRenderServices::u_N("N");
-ustring OSLRenderServices::u_Ng("Ng");
-ustring OSLRenderServices::u_P("P");
-ustring OSLRenderServices::u_I("I");
-ustring OSLRenderServices::u_u("u");
-ustring OSLRenderServices::u_v("v");
-ustring OSLRenderServices::u_empty;
+/* static strings */
+string OSLRenderServices::u_distance("distance");
+string OSLRenderServices::u_index("index");
+string OSLRenderServices::u_world("world");
+string OSLRenderServices::u_camera("camera");
+string OSLRenderServices::u_screen("screen");
+string OSLRenderServices::u_raster("raster");
+string OSLRenderServices::u_ndc("NDC");
+string OSLRenderServices::u_object_location("object:location");
+string OSLRenderServices::u_object_color("object:color");
+string OSLRenderServices::u_object_alpha("object:alpha");
+string OSLRenderServices::u_object_index("object:index");
+string OSLRenderServices::u_object_is_light("object:is_light");
+string OSLRenderServices::u_bump_map_normal("geom:bump_map_normal");
+string OSLRenderServices::u_geom_dupli_generated("geom:dupli_generated");
+string OSLRenderServices::u_geom_dupli_uv("geom:dupli_uv");
+string OSLRenderServices::u_material_index("material:index");
+string OSLRenderServices::u_object_random("object:random");
+string OSLRenderServices::u_particle_index("particle:index");
+string OSLRenderServices::u_particle_random("particle:random");
+string OSLRenderServices::u_particle_age("particle:age");
+string OSLRenderServices::u_particle_lifetime("particle:lifetime");
+string OSLRenderServices::u_particle_location("particle:location");
+string OSLRenderServices::u_particle_rotation("particle:rotation");
+string OSLRenderServices::u_particle_size("particle:size");
+string OSLRenderServices::u_particle_velocity("particle:velocity");
+string OSLRenderServices::u_particle_angular_velocity("particle:angular_velocity");
+string OSLRenderServices::u_geom_numpolyvertices("geom:numpolyvertices");
+string OSLRenderServices::u_geom_trianglevertices("geom:trianglevertices");
+string OSLRenderServices::u_geom_polyvertices("geom:polyvertices");
+string OSLRenderServices::u_geom_name("geom:name");
+string OSLRenderServices::u_geom_undisplaced("geom:undisplaced");
+string OSLRenderServices::u_is_smooth("geom:is_smooth");
+string OSLRenderServices::u_is_curve("geom:is_curve");
+string OSLRenderServices::u_curve_thickness("geom:curve_thickness");
+string OSLRenderServices::u_curve_length("geom:curve_length");
+string OSLRenderServices::u_curve_tangent_normal("geom:curve_tangent_normal");
+string OSLRenderServices::u_curve_random("geom:curve_random");
+string OSLRenderServices::u_is_point("geom:is_point");
+string OSLRenderServices::u_point_radius("geom:point_radius");
+string OSLRenderServices::u_point_position("geom:point_position");
+string OSLRenderServices::u_point_random("geom:point_random");
+string OSLRenderServices::u_normal_map_normal("geom:normal_map_normal");
+string OSLRenderServices::u_path_ray_length("path:ray_length");
+string OSLRenderServices::u_path_ray_depth("path:ray_depth");
+string OSLRenderServices::u_path_diffuse_depth("path:diffuse_depth");
+string OSLRenderServices::u_path_glossy_depth("path:glossy_depth");
+string OSLRenderServices::u_path_transparent_depth("path:transparent_depth");
+string OSLRenderServices::u_path_transmission_depth("path:transmission_depth");
+string OSLRenderServices::u_trace("trace");
+string OSLRenderServices::u_hit("hit");
+string OSLRenderServices::u_hitdist("hitdist");
+string OSLRenderServices::u_N("N");
+string OSLRenderServices::u_Ng("Ng");
+string OSLRenderServices::u_P("P");
+string OSLRenderServices::u_I("I");
+string OSLRenderServices::u_u("u");
+string OSLRenderServices::u_v("v");
+string OSLRenderServices::u_empty;
 
 ImageManager *OSLRenderServices::image_manager = nullptr;
 
@@ -573,7 +573,7 @@ ccl_device_template_spec bool set_attribute(const int i,
   return false;
 }
 
-ccl_device_template_spec bool set_attribute(ustring str,
+ccl_device_template_spec bool set_attribute(string str,
                                             const TypeDesc type,
                                             bool derivatives,
                                             void *val)
@@ -581,7 +581,7 @@ ccl_device_template_spec bool set_attribute(ustring str,
   if (type.basetype == TypeDesc::STRING && type.aggregate == TypeDesc::SCALAR &&
       type.arraylen == 0)
   {
-    ustring *sval = (ustring *)val;
+    string *sval = (string *)val;
     sval[0] = str;
 
     if (derivatives) {
@@ -804,7 +804,7 @@ bool OSLRenderServices::get_object_standard_attribute(
     return set_attribute_float3_3(P, type, derivatives, val);
   }
   if (name == u_geom_name) {
-    const ustring object_name = kg->osl.globals->object_names[sd->object];
+    const string object_name = kg->osl.globals->object_names[sd->object];
     return set_attribute(object_name, type, derivatives, val);
   }
   if (name == u_is_smooth) {
@@ -1000,11 +1000,11 @@ bool OSLRenderServices::get_userdata(
 OSL::TextureSystem::TextureHandle *OSLRenderServices::get_texture_handle(
     OSLUStringHash filename, OSL::ShadingContext *context, const OSL::TextureOpt *opt)
 {
-  return get_texture_handle(to_ustring(filename), context, opt);
+  return get_texture_handle(to_string(filename), context, opt);
 }
 
 OSL::TextureSystem::TextureHandle *OSLRenderServices::get_texture_handle(
-    OSL::ustring filename, OSL::ShadingContext * /*context*/, const OSL::TextureOpt * /*options*/)
+    OSL::string filename, OSL::ShadingContext * /*context*/, const OSL::TextureOpt * /*options*/)
 {
   OSLTextureHandleMap::iterator it = textures.find(filename);
 
@@ -1018,7 +1018,7 @@ OSL::TextureSystem::TextureHandle *OSLRenderServices::get_texture_handle(
 
     /* Get handle from OpenImageIO. */
     OSL::TextureSystem *ts = m_texturesys;
-    OSL::TextureSystem::TextureHandle *handle = ts->get_texture_handle(to_ustring(filename));
+    OSL::TextureSystem::TextureHandle *handle = ts->get_texture_handle(to_string(filename));
     if (handle == nullptr) {
       return nullptr;
     }
@@ -1234,7 +1234,7 @@ bool OSLRenderServices::texture(OSLUStringHash filename,
                              dresultdt);
       }
       else {
-        status = ts->texture(to_ustring(filename),
+        status = ts->texture(to_string(filename),
                              options,
                              s,
                              t,
@@ -1340,7 +1340,7 @@ bool OSLRenderServices::texture3d(OSLUStringHash filename,
                                dresultdr);
       }
       else {
-        status = ts->texture3d(to_ustring(filename),
+        status = ts->texture3d(to_string(filename),
                                options,
                                P,
                                dPdx,
@@ -1423,7 +1423,7 @@ bool OSLRenderServices::environment(OSLUStringHash filename,
   }
   else {
     status = ts->environment(
-        to_ustring(filename), options, R, dRdx, dRdy, nchannels, result, dresultds, dresultdt);
+        to_string(filename), options, R, dRdx, dRdy, nchannels, result, dresultds, dresultdt);
   }
 
   if (!status) {
@@ -1468,7 +1468,7 @@ bool OSLRenderServices::get_texture_info(OSLUStringHash filename,
       return ts->get_texture_info(handle->oiio_handle,
                                   texture_thread_info,
                                   subimage,
-                                  to_ustring(dataname),
+                                  to_string(dataname),
                                   datatype,
                                   data);
     }
@@ -1476,7 +1476,7 @@ bool OSLRenderServices::get_texture_info(OSLUStringHash filename,
 
   /* Get texture info from OpenImageIO, slower using filename. */
   return ts->get_texture_info(
-      to_ustring(filename), subimage, to_ustring(dataname), datatype, data);
+      to_string(filename), subimage, to_string(dataname), datatype, data);
 }
 
 int OSLRenderServices::pointcloud_search(OSL::ShaderGlobals *sg,

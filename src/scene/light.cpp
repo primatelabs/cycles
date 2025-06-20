@@ -169,7 +169,7 @@ void Light::apply_transform(const Transform & /*tfm*/, const bool /*apply_to_mot
   /* To be implemented when this becomes actual geometry. */
 }
 
-void Light::get_uv_tiles(ustring /*map*/, unordered_set<int> & /*tiles*/)
+void Light::get_uv_tiles(string /*map*/, unordered_set<int> & /*tiles*/)
 {
   /* To be implemented when this becomes actual geometry. */
 }

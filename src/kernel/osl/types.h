@@ -18,9 +18,9 @@ CCL_NAMESPACE_BEGIN
 using DeviceString = size_t;
 #elif defined(OPENIMAGEIO_USTRING_H)
 #  if OSL_LIBRARY_VERSION_CODE >= 11400
-using DeviceString = ustringhash;
+using DeviceString = stringhash;
 #  else
-using DeviceString = ustring;
+using DeviceString = string;
 #  endif
 #else
 using DeviceString = const char *;
@@ -38,7 +38,7 @@ ccl_device_inline DeviceString make_string(const char *str, const size_t hash)
   return hash;
 #elif defined(OPENIMAGEIO_USTRING_H)
   (void)hash; /* Ignored in release builds. */
-  const DeviceString result = ustring(str);
+  const DeviceString result = string(str);
   kernel_assert(result.hash() == hash);
   return result;
 #else

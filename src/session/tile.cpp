@@ -103,7 +103,7 @@ static bool node_socket_to_image_spec_atttributes(ImageSpec *image_spec,
 
   switch (socket.type) {
     case SocketType::ENUM: {
-      const ustring value = node->get_string(socket);
+      const string value = node->get_string(socket);
 
       /* Validate that the node is consistent with the node type definition. */
       const NodeEnum &enum_values = *socket.enum_values;
@@ -148,8 +148,8 @@ static bool node_socket_from_image_spec_atttributes(Node *node,
 
   switch (socket.type) {
     case SocketType::ENUM: {
-      /* TODO(sergey): Avoid construction of `ustring` by using `string_view` in the Node API. */
-      const ustring value(image_spec.get_string_attribute(attr_name, ""));
+      /* TODO(sergey): Avoid construction of `string` by using `string_view` in the Node API. */
+      const string value(image_spec.get_string_attribute(attr_name, ""));
 
       /* Validate that the node is consistent with the node type definition. */
       const NodeEnum &enum_values = *socket.enum_values;
@@ -164,8 +164,8 @@ static bool node_socket_from_image_spec_atttributes(Node *node,
     }
 
     case SocketType::STRING:
-      /* TODO(sergey): Avoid construction of `ustring` by using `string_view` in the Node API. */
-      node->set(socket, ustring(image_spec.get_string_attribute(attr_name, "")));
+      /* TODO(sergey): Avoid construction of `string` by using `string_view` in the Node API. */
+      node->set(socket, string(image_spec.get_string_attribute(attr_name, "")));
       return true;
 
     case SocketType::INT:

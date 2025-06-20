@@ -4,6 +4,8 @@
 
 #include "util/task.h"
 
+#include <assert.h>
+
 #include "util/log.h"
 #include "util/time.h"
 

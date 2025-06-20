@@ -52,7 +52,7 @@ PNGImageOutput::~PNGImageOutput()
   close();
 }
 
-bool PNGImageOutput::open(const std::string &filename, const ImageSpec &spec)
+bool PNGImageOutput::open(string_view filename, const ImageSpec &spec)
 {
   spec_ = spec;
   ofs_.open(filename, std::ios::out | std::ios::binary);

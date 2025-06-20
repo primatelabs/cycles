@@ -14,7 +14,7 @@
 HDCYCLES_NAMESPACE_OPEN_SCOPE
 
 void ApplyPrimvars(CCL_NS::AttributeSet &attributes,
-                   const CCL_NS::ustring &name,
+                   const CCL_NS::string &name,
                    PXR_NS::VtValue value,
                    CCL_NS::AttributeElement elem,
                    CCL_NS::AttributeStandard std);

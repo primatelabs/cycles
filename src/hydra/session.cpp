@@ -71,7 +71,7 @@ HdCyclesSession::HdCyclesSession(const SessionParams &params)
     graph->connect(diffuseNode->output("BSDF"), graph->output()->input("Surface"));
 
     // Create the instanceId AOV output
-    const ustring instanceId(HdAovTokens->instanceId.GetString());
+    const string instanceId(HdAovTokens->instanceId.GetString());
 
     OutputAOVNode *aovNode = graph->create_node<OutputAOVNode>();
     aovNode->set_name(instanceId);
@@ -161,7 +161,7 @@ void HdCyclesSession::SyncAovBindings(const HdRenderPassAovBindingVector &aovBin
     Pass *pass = scene->create_node<Pass>();
     pass->set_type(type);
     pass->set_mode(mode);
-    pass->set_name(ustring(aovBinding.aovName.GetString()));
+    pass->set_name(string(aovBinding.aovName.GetString()));
   }
 }
 

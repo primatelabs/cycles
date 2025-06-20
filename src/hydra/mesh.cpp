@@ -310,7 +310,7 @@ void HdCyclesMesh::PopulatePrimvars(HdSceneDelegate *sceneDelegate)
         continue;
       }
 
-      const ustring name(desc.name.GetString());
+      const string name(desc.name.GetString());
 
       AttributeStandard std = ATTR_STD_NONE;
       if (desc.role == HdPrimvarRoleTokens->textureCoordinate) {

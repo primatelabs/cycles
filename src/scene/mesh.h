@@ -214,7 +214,7 @@ class Mesh : public Geometry {
   void update_generated(Scene *scene);
   void update_tangents(Scene *scene);
 
-  void get_uv_tiles(ustring map, unordered_set<int> &tiles) override;
+  void get_uv_tiles(string map, unordered_set<int> &tiles) override;
 
   void pack_shaders(Scene *scene, uint *shader);
   void pack_normals(packed_float3 *vnormal);

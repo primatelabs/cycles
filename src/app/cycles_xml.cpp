@@ -206,7 +206,7 @@ static void xml_read_alembic(XMLReadState &state, const xml_node graph_node)
     if (string_iequals(node.name(), "object")) {
       string path;
       if (xml_read_string(&path, node, "path")) {
-        const ustring object_path(path, 0);
+        const string object_path(path, 0);
         AlembicObject *object = proc->get_or_create_object(object_path);
 
         array<Node *> used_shaders = object->get_used_shaders();
@@ -228,10 +228,10 @@ static void xml_read_shader_graph(XMLReadState &state, Shader *shader, const xml
 
   /* local state, shader nodes can't link to nodes outside the shader graph */
   XMLReader graph_reader;
-  graph_reader.node_map[ustring("output")] = graph->output();
+  graph_reader.node_map[string("output")] = graph->output();
 
   for (xml_node node = graph_node.first_child(); node; node = node.next_sibling()) {
-    ustring node_name(node.name());
+    string node_name(node.name());
 
     if (node_name == "connect") {
       /* connect nodes */
@@ -242,10 +242,10 @@ static void xml_read_shader_graph(XMLReadState &state, Shader *shader, const xml
       string_split(to_tokens, node.attribute("to").value());
 
       if (from_tokens.size() == 2 && to_tokens.size() == 2) {
-        const ustring from_node_name(from_tokens[0]);
-        const ustring from_socket_name(from_tokens[1]);
-        const ustring to_node_name(to_tokens[0]);
-        const ustring to_socket_name(to_tokens[1]);
+        const string from_node_name(from_tokens[0]);
+        const string from_socket_name(from_tokens[1]);
+        const string to_node_name(to_tokens[0]);
+        const string to_socket_name(to_tokens[1]);
 
         /* find nodes and sockets */
         ShaderOutput *output = nullptr;
@@ -255,7 +255,7 @@ static void xml_read_shader_graph(XMLReadState &state, Shader *shader, const xml
           ShaderNode *fromnode = (ShaderNode *)graph_reader.node_map[from_node_name];
 
           for (ShaderOutput *out : fromnode->outputs) {
-            if (string_iequals(out->socket_type.name.string(), from_socket_name.string())) {
+            if (string_iequals(out->socket_type.name, from_socket_name)) {
               output = out;
             }
           }
@@ -275,7 +275,7 @@ static void xml_read_shader_graph(XMLReadState &state, Shader *shader, const xml
           ShaderNode *tonode = (ShaderNode *)graph_reader.node_map[to_node_name];
 
           for (ShaderInput *in : tonode->inputs) {
-            if (string_iequals(in->socket_type.name.string(), to_socket_name.string())) {
+            if (string_iequals(in->socket_type.name, to_socket_name)) {
               input = in;
             }
           }
@@ -364,12 +364,12 @@ static void xml_read_shader_graph(XMLReadState &state, Shader *shader, const xml
 
     if (node_name == "image_texture") {
       ImageTextureNode *img = (ImageTextureNode *)snode;
-      const ustring filename(path_join(state.base, img->get_filename().string()));
+      const string filename(path_join(state.base, img->get_filename()));
       img->set_filename(filename);
     }
     else if (node_name == "environment_texture") {
       EnvironmentTextureNode *env = (EnvironmentTextureNode *)snode;
-      const ustring filename(path_join(state.base, env->get_filename().string()));
+      const string filename(path_join(state.base, env->get_filename()));
       env->set_filename(filename);
     }
   }

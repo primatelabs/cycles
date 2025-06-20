@@ -134,7 +134,7 @@ class Hair : public Geometry {
   }
 
   /* UDIM */
-  void get_uv_tiles(ustring map, unordered_set<int> &tiles) override;
+  void get_uv_tiles(string map, unordered_set<int> &tiles) override;
 
   /* BVH */
   void pack_curves(Scene *scene,

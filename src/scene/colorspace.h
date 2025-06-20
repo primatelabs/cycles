@@ -8,9 +8,9 @@
 
 CCL_NAMESPACE_BEGIN
 
-extern ustring u_colorspace_auto;
-extern ustring u_colorspace_raw;
-extern ustring u_colorspace_srgb;
+extern string u_colorspace_auto;
+extern string u_colorspace_raw;
+extern string u_colorspace_srgb;
 
 class ColorSpaceProcessor;
 
@@ -19,24 +19,24 @@ class ColorSpaceManager {
   /* Convert used specified colorspace to a colorspace that we are able to
    * convert to and from. If the colorspace is u_colorspace_auto, we auto
    * detect a colospace. */
-  static ustring detect_known_colorspace(ustring colorspace,
+  static string detect_known_colorspace(string colorspace,
                                          const char *file_colorspace,
                                          const char *file_format,
                                          bool is_float);
 
   /* Test if colorspace is for non-color data. */
-  static bool colorspace_is_data(ustring colorspace);
+  static bool colorspace_is_data(string colorspace);
 
   /* Convert pixels in the specified colorspace to scene linear color for
    * rendering. Must be a colorspace returned from detect_known_colorspace. */
   template<typename T>
   static void to_scene_linear(
-      ustring colorspace, T *pixels, const size_t num_pixels, bool is_rgba, bool compress_as_srgb);
+      string colorspace, T *pixels, const size_t num_pixels, bool is_rgba, bool compress_as_srgb);
 
   /* Efficiently convert pixels to scene linear colorspace at render time,
    * for OSL where the image texture cache contains original pixels. The
    * handle is valid for the lifetime of the application. */
-  static ColorSpaceProcessor *get_processor(ustring colorspace);
+  static ColorSpaceProcessor *get_processor(string colorspace);
   static void to_scene_linear(ColorSpaceProcessor *processor, float *pixel, const int channels);
 
   /* Clear memory when the application exits. Invalidates all processors. */
@@ -49,7 +49,7 @@ class ColorSpaceManager {
   static void init_fallback_config();
 
  private:
-  static void is_builtin_colorspace(ustring colorspace, bool &is_scene_linear, bool &is_srgb);
+  static void is_builtin_colorspace(string colorspace, bool &is_scene_linear, bool &is_srgb);
 };
 
 CCL_NAMESPACE_END

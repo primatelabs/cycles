@@ -35,7 +35,7 @@ class ImageParams {
   InterpolationType interpolation = INTERPOLATION_LINEAR;
   ExtensionType extension = EXTENSION_CLIP;
   ImageAlphaType alpha_type = IMAGE_ALPHA_AUTO;
-  ustring colorspace;
+  string colorspace;
   float frame = 0.0f;
 
   ImageParams() : colorspace(u_colorspace_raw) {}
@@ -60,7 +60,7 @@ class ImageMetaData {
   ImageDataType type;
 
   /* Optional color space, defaults to raw. */
-  ustring colorspace;
+  string colorspace;
   string colorspace_file_hint;
   const char *colorspace_file_format;
 
@@ -103,7 +103,7 @@ class ImageLoader {
   virtual string name() const = 0;
 
   /* Optional for OSL texture cache. */
-  virtual ustring osl_filepath() const;
+  virtual string osl_filepath() const;
 
   /* Optional for tiled textures loaded externally. */
   virtual int get_tile_number() const;

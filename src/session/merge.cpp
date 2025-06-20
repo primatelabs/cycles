@@ -170,7 +170,7 @@ static bool parse_channels(const ImageSpec &in_spec,
   /* If file contains a single unnamed layer, name it after the first layer metadata we find. */
   if (file_layers.size() == 1 && file_layers.find("") != file_layers.end()) {
     for (const ParamValue &attrib : in_spec.extra_attribs) {
-      const string attrib_name = attrib.name().string();
+      const string attrib_name = attrib.name();
       if (string_startswith(attrib_name, "cycles.") && string_endswith(attrib_name, ".samples")) {
         /* Extract layer name. */
         const size_t start = strlen("cycles.");
@@ -196,7 +196,7 @@ static bool parse_channels(const ImageSpec &in_spec,
       layer.samples = 1;
     }
     else if (layer.samples < 1) {
-      const string sample_string = in_spec.get_string_attribute("cycles." + name + ".samples", "");
+      const string sample_string(in_spec.get_string_attribute("cycles." + name + ".samples", ""));
       if (!sample_string.empty()) {
         if (!sscanf(sample_string.c_str(), "%d", &layer.samples)) {
           error = "Failed to parse samples metadata: " + sample_string;
@@ -284,7 +284,7 @@ static void merge_render_time(ImageSpec &spec,
   double time = 0.0;
 
   for (const MergeImage &image : images) {
-    const string time_str = image.in->spec().get_string_attribute(name, "");
+    const string time_str(image.in->spec().get_string_attribute(name, ""));
     time += time_human_readable_to_seconds(time_str);
   }
 
@@ -305,7 +305,7 @@ static void merge_layer_render_time(ImageSpec &spec,
   double time = 0.0;
 
   for (const MergeImage &image : images) {
-    const string time_str = image.in->spec().get_string_attribute(name, "");
+    const string time_str(image.in->spec().get_string_attribute(name, ""));
     time += time_human_readable_to_seconds(time_str);
   }
 

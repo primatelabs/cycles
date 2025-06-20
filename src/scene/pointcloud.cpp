@@ -160,7 +160,7 @@ void PointCloud::copy_center_to_motion_step(const int motion_step)
   }
 }
 
-void PointCloud::get_uv_tiles(ustring map, unordered_set<int> &tiles)
+void PointCloud::get_uv_tiles(string map, unordered_set<int> &tiles)
 {
   Attribute *attr;
 

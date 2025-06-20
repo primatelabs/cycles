@@ -283,7 +283,7 @@ void HdCyclesLight::PopulateShaderGraph(HdSceneDelegate *sceneDelegate)
       coordNode->set_use_transform(true);
 
       IESLightNode *iesNode = graph->create_node<IESLightNode>();
-      iesNode->set_filename(ustring(filename));
+      iesNode->set_filename(string(filename));
 
       graph->connect(coordNode->output("Normal"), iesNode->input("Vector"));
       graph->connect(iesNode->output("Fac"), outputNode->input("Strength"));
@@ -308,7 +308,7 @@ void HdCyclesLight::PopulateShaderGraph(HdSceneDelegate *sceneDelegate)
         coordNode->set_use_transform(true);
 
         textureNode = graph->create_node<EnvironmentTextureNode>();
-        static_cast<EnvironmentTextureNode *>(textureNode)->set_filename(ustring(filename));
+        static_cast<EnvironmentTextureNode *>(textureNode)->set_filename(string(filename));
 
         graph->connect(coordNode->output("Object"), textureNode->input("Vector"));
 
@@ -318,7 +318,7 @@ void HdCyclesLight::PopulateShaderGraph(HdSceneDelegate *sceneDelegate)
         GeometryNode *coordNode = graph->create_node<GeometryNode>();
 
         textureNode = graph->create_node<ImageTextureNode>();
-        static_cast<ImageTextureNode *>(textureNode)->set_filename(ustring(filename));
+        static_cast<ImageTextureNode *>(textureNode)->set_filename(string(filename));
 
         graph->connect(coordNode->output("Parametric"), textureNode->input("Vector"));
       }

@@ -379,7 +379,7 @@ bool DenoiseImage::parse_channels(const ImageSpec &in_spec, string &error)
     /* If the sample value isn't set yet, check if there is a layer-specific one in the input file.
      */
     if (layer.samples < 1) {
-      const string sample_string = in_spec.get_string_attribute("cycles." + name + ".samples", "");
+      const string sample_string(in_spec.get_string_attribute("cycles." + name + ".samples", ""));
       if (!sample_string.empty()) {
         if (!sscanf(sample_string.c_str(), "%d", &layer.samples)) {
           error = "Failed to parse samples metadata: " + sample_string;

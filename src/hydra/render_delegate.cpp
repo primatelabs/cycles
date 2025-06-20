@@ -473,7 +473,7 @@ void HdCyclesDelegate::SetRenderSetting(const PXR_NS::TfToken &key, const PXR_NS
   else {
     const std::string &keyString = key.GetString();
     if (keyString.rfind("cycles:integrator:", 0) == 0) {
-      const ustring socketName(keyString, sizeof("cycles:integrator:") - 1);
+      const string socketName(keyString, sizeof("cycles:integrator:") - 1);
       if (const SocketType *socket = scene->integrator->type->find_input(socketName)) {
         SetNodeValue(scene->integrator, *socket, value);
         ++_settingsVersion;
@@ -508,7 +508,7 @@ VtValue HdCyclesDelegate::GetRenderSetting(const TfToken &key) const
 
   const std::string &keyString = key.GetString();
   if (keyString.rfind("cycles:integrator:", 0) == 0) {
-    const ustring socketName(keyString, sizeof("cycles:integrator:") - 1);
+    const string socketName(keyString, sizeof("cycles:integrator:") - 1);
     if (const SocketType *socket = scene->integrator->type->find_input(socketName)) {
       return GetNodeValue(scene->integrator, *socket);
     }

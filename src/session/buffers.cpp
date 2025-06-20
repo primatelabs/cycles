@@ -42,9 +42,9 @@ NODE_DEFINE(BufferPass)
 
   SOCKET_ENUM(type, "Type", *pass_type_enum, PASS_COMBINED);
   SOCKET_ENUM(mode, "Mode", *pass_mode_enum, static_cast<int>(PassMode::DENOISED));
-  SOCKET_STRING(name, "Name", ustring());
+  SOCKET_STRING(name, "Name", string());
   SOCKET_BOOLEAN(include_albedo, "Include Albedo", false);
-  SOCKET_STRING(lightgroup, "Light Group", ustring());
+  SOCKET_STRING(lightgroup, "Light Group", string());
 
   SOCKET_INT(offset, "Offset", -1);
 
@@ -89,8 +89,8 @@ NODE_DEFINE(BufferParams)
   SOCKET_INT(full_width, "Full Width", 0);
   SOCKET_INT(full_height, "Full Height", 0);
 
-  SOCKET_STRING(layer, "Layer", ustring());
-  SOCKET_STRING(view, "View", ustring());
+  SOCKET_STRING(layer, "Layer", string());
+  SOCKET_STRING(view, "View", string());
   SOCKET_INT(samples, "Samples", 0);
   SOCKET_FLOAT(exposure, "Exposure", 1.0f);
   SOCKET_BOOLEAN(use_approximate_shadow_catcher, "Use Approximate Shadow Catcher", false);

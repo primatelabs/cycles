@@ -19,23 +19,23 @@ bool OIIOImageLoader::load_metadata(const ImageDeviceFeatures & /*features*/,
                                     ImageMetaData &metadata)
 {
   /* Perform preliminary checks, with meaningful logging. */
-  if (!path_exists(filepath.string())) {
-    VLOG_WARNING << "File '" << filepath.string() << "' does not exist.";
+  if (!path_exists(filepath)) {
+    VLOG_WARNING << "File '" << filepath << "' does not exist.";
     return false;
   }
-  if (path_is_directory(filepath.string())) {
-    VLOG_WARNING << "File '" << filepath.string() << "' is a directory, can't use as image.";
+  if (path_is_directory(filepath)) {
+    VLOG_WARNING << "File '" << filepath << "' is a directory, can't use as image.";
     return false;
   }
 
-  unique_ptr<ImageInput> in(ImageInput::create(filepath.string()));
+  unique_ptr<ImageInput> in(ImageInput::create(filepath));
 
   if (!in) {
     return false;
   }
 
   ImageSpec spec;
-  if (!in->open(filepath.string(), spec)) {
+  if (!in->open(filepath, spec)) {
     return false;
   }
 
@@ -173,12 +173,12 @@ bool OIIOImageLoader::load_pixels(const ImageMetaData &metadata,
   unique_ptr<ImageInput> in = nullptr;
 
   /* NOTE: Error logging is done in meta data acquisition. */
-  if (!path_exists(filepath.string()) || path_is_directory(filepath.string())) {
+  if (!path_exists(filepath) || path_is_directory(filepath)) {
     return false;
   }
 
   /* load image from file through OIIO */
-  in = unique_ptr<ImageInput>(ImageInput::create(filepath.string()));
+  in = unique_ptr<ImageInput>(ImageInput::create(filepath));
   if (!in) {
     return false;
   }
@@ -191,7 +191,7 @@ bool OIIOImageLoader::load_pixels(const ImageMetaData &metadata,
    * much precision loss when we load it as half float to do a color-space transform. */
   config.attribute("oiio:UnassociatedAlpha", 1);
 
-  if (!in->open(filepath.string(), spec, config)) {
+  if (!in->open(filepath, spec, config)) {
     return false;
   }
 
@@ -249,10 +249,10 @@ bool OIIOImageLoader::load_pixels(const ImageMetaData &metadata,
 
 string OIIOImageLoader::name() const
 {
-  return path_filename(filepath.string());
+  return path_filename(filepath);
 }
 
-ustring OIIOImageLoader::osl_filepath() const
+string OIIOImageLoader::osl_filepath() const
 {
   return filepath;
 }

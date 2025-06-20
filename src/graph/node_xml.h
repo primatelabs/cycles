@@ -15,7 +15,7 @@ CCL_NAMESPACE_BEGIN
 struct Node;
 
 struct XMLReader {
-  map<ustring, Node *> node_map;
+  map<string, Node *> node_map;
 };
 
 void xml_read_node(XMLReader &reader, Node *node, const xml_node xml_node);

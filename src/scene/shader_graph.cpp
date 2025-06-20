@@ -112,7 +112,7 @@ ShaderOutput *ShaderNode::output(const char *name)
   return nullptr;
 }
 
-ShaderInput *ShaderNode::input(ustring name)
+ShaderInput *ShaderNode::input(string name)
 {
   for (ShaderInput *socket : inputs) {
     if (socket->name() == name) {
@@ -123,7 +123,7 @@ ShaderInput *ShaderNode::input(ustring name)
   return nullptr;
 }
 
-ShaderOutput *ShaderNode::output(ustring name)
+ShaderOutput *ShaderNode::output(string name)
 {
   for (ShaderOutput *socket : outputs) {
     if (socket->name() == name) {
@@ -604,7 +604,7 @@ void ShaderGraph::deduplicate_nodes()
 
   ShaderNodeSet scheduled;
   ShaderNodeSet done;
-  map<ustring, ShaderNodeSet> candidates;
+  map<string, ShaderNodeSet> candidates;
   queue<ShaderNode *> traverse_queue;
   int num_deduplicated = 0;
 

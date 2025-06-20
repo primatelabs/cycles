@@ -78,7 +78,7 @@ class PointCloud : public Geometry {
   }
 
   /* UDIM */
-  void get_uv_tiles(ustring map, unordered_set<int> &tiles) override;
+  void get_uv_tiles(string map, unordered_set<int> &tiles) override;
 
   PrimitiveType primitive_type() const override;
 

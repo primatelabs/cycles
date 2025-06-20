@@ -8,23 +8,23 @@
 
 CCL_NAMESPACE_BEGIN
 
-void ParamValue::init_noclear(ustring _name,
+void ParamValue::init_noclear(string _name,
                               TypeDesc _type,
                               int _nvalues,
                               const void *_value,
                               Copy _copy,
-                              FromUstring _from_ustring) noexcept
+                              FromUstring _from_string) noexcept
 {
-  init_noclear(_name, _type, _nvalues, INTERP_CONSTANT, _value, _copy, _from_ustring);
+  init_noclear(_name, _type, _nvalues, INTERP_CONSTANT, _value, _copy, _from_string);
 }
 
-void ParamValue::init_noclear(ustring _name,
+void ParamValue::init_noclear(string _name,
                               TypeDesc _type,
                               int _nvalues,
                               Interp _interp,
                               const void *_value,
                               Copy _copy,
-                              FromUstring _from_ustring) noexcept
+                              FromUstring _from_string) noexcept
 {
   m_name = _name;
   m_type = _type;
@@ -53,14 +53,14 @@ void ParamValue::init_noclear(ustring _name,
       m_nonlocal = true;
     }
     // FIXME: Implement
-    if (m_type.basetype == TypeDesc::STRING && !_from_ustring) {
+    if (m_type.basetype == TypeDesc::STRING && !_from_string) {
       exit(-1);
     }
 #if 0
-    if (m_type.basetype == TypeDesc::STRING && !_from_ustring) {
-      // Convert non-ustrings to ustrings
-      for (ustring &u : as_span<ustring>())
-        u = ustring(u.c_str());
+    if (m_type.basetype == TypeDesc::STRING && !_from_string) {
+      // Convert non-strings to strings
+      for (string &u : as_span<string>())
+        u = string(u.c_str());
     }
 #endif
   }

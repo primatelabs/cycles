@@ -27,9 +27,9 @@ class BufferPass : public Node {
 
   PassType type = PASS_NONE;
   PassMode mode = PassMode::NOISY;
-  ustring name;
+  string name;
   bool include_albedo = false;
-  ustring lightgroup;
+  string lightgroup;
 
   int offset = -1;
 
@@ -93,8 +93,8 @@ class BufferParams : public Node {
 
   /* Properties which are used for accessing buffer pixels outside of scene graph. */
   vector<BufferPass> passes;
-  ustring layer;
-  ustring view;
+  string layer;
+  string view;
   int samples = 0;
   float exposure = 1.0f;
   bool use_approximate_shadow_catcher = false;

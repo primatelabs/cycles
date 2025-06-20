@@ -17,7 +17,7 @@ CCL_NAMESPACE_BEGIN
  * On vertices, triangles, curve keys, curves, meshes and volume grids.
  * Most of the code for attribute reading is in the primitive files.
  *
- * Lookup of attributes is different between OSL and SVM, as OSL is ustring
+ * Lookup of attributes is different between OSL and SVM, as OSL is string
  * based while for SVM we use integer ids. */
 
 ccl_device_inline AttributeDescriptor attribute_not_found()

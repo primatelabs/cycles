@@ -64,31 +64,31 @@ template<> float3 convertToCycles<float3>(const VtValue &value)
   return zero_float3();
 }
 
-template<> ustring convertToCycles<ustring>(const VtValue &value)
+template<> string convertToCycles<string>(const VtValue &value)
 {
   if (value.IsHolding<TfToken>()) {
-    return ustring(value.UncheckedGet<TfToken>().GetString());
+    return string(value.UncheckedGet<TfToken>().GetString());
   }
   if (value.IsHolding<std::string>()) {
-    return ustring(value.UncheckedGet<std::string>());
+    return string(value.UncheckedGet<std::string>());
   }
   if (value.IsHolding<SdfAssetPath>()) {
     const SdfAssetPath &path = value.UncheckedGet<SdfAssetPath>();
-    return ustring(path.GetResolvedPath());
+    return string(path.GetResolvedPath());
   }
 
   if (value.CanCast<TfToken>()) {
-    return convertToCycles<ustring>(VtValue::Cast<TfToken>(value));
+    return convertToCycles<string>(VtValue::Cast<TfToken>(value));
   }
   if (value.CanCast<std::string>()) {
-    return convertToCycles<ustring>(VtValue::Cast<std::string>(value));
+    return convertToCycles<string>(VtValue::Cast<std::string>(value));
   }
   if (value.CanCast<SdfAssetPath>()) {
-    return convertToCycles<ustring>(VtValue::Cast<SdfAssetPath>(value));
+    return convertToCycles<string>(VtValue::Cast<SdfAssetPath>(value));
   }
 
-  TF_WARN("Could not convert VtValue to ustring");
-  return ustring();
+  TF_WARN("Could not convert VtValue to string");
+  return string();
 }
 
 template<typename Matrix>
@@ -220,50 +220,50 @@ template<> array<float3> convertToCyclesArray<float3, GfVec3f>(const VtValue &va
   return array<float3>();
 }
 
-template<> array<ustring> convertToCyclesArray<ustring, void>(const VtValue &value)
+template<> array<string> convertToCyclesArray<string, void>(const VtValue &value)
 {
   using SdfPathArray = VtArray<SdfAssetPath>;
 
   if (value.IsHolding<VtStringArray>()) {
     const auto &valueData = value.UncheckedGet<VtStringArray>();
-    array<ustring> cyclesArray;
+    array<string> cyclesArray;
     cyclesArray.reserve(valueData.size());
     for (const auto &element : valueData) {
-      cyclesArray.push_back_reserved(ustring(element));
+      cyclesArray.push_back_reserved(string(element));
     }
     return cyclesArray;
   }
   if (value.IsHolding<VtTokenArray>()) {
     const auto &valueData = value.UncheckedGet<VtTokenArray>();
-    array<ustring> cyclesArray;
+    array<string> cyclesArray;
     cyclesArray.reserve(valueData.size());
     for (const auto &element : valueData) {
-      cyclesArray.push_back_reserved(ustring(element.GetString()));
+      cyclesArray.push_back_reserved(string(element.GetString()));
     }
     return cyclesArray;
   }
   if (value.IsHolding<SdfPathArray>()) {
     const auto &valueData = value.UncheckedGet<SdfPathArray>();
-    array<ustring> cyclesArray;
+    array<string> cyclesArray;
     cyclesArray.reserve(valueData.size());
     for (const auto &element : valueData) {
-      cyclesArray.push_back_reserved(ustring(element.GetResolvedPath()));
+      cyclesArray.push_back_reserved(string(element.GetResolvedPath()));
     }
     return cyclesArray;
   }
 
   if (value.CanCast<VtStringArray>()) {
-    return convertToCyclesArray<ustring, void>(VtValue::Cast<VtStringArray>(value));
+    return convertToCyclesArray<string, void>(VtValue::Cast<VtStringArray>(value));
   }
   if (value.CanCast<VtTokenArray>()) {
-    return convertToCyclesArray<ustring, void>(VtValue::Cast<VtTokenArray>(value));
+    return convertToCyclesArray<string, void>(VtValue::Cast<VtTokenArray>(value));
   }
   if (value.CanCast<SdfPathArray>()) {
-    return convertToCyclesArray<ustring, void>(VtValue::Cast<SdfPathArray>(value));
+    return convertToCyclesArray<string, void>(VtValue::Cast<SdfPathArray>(value));
   }
 
-  TF_WARN("Could not convert VtValue to array<ustring>");
-  return array<ustring>();
+  TF_WARN("Could not convert VtValue to array<string>");
+  return array<string>();
 }
 
 template<typename MatrixArray> array<Transform> convertToCyclesTransformArray(const VtValue &value)
@@ -329,7 +329,7 @@ template<> VtValue convertFromCycles<float3>(const float3 &value)
   return VtValue(convertedValue);
 }
 
-template<> VtValue convertFromCycles<ustring>(const ustring &value)
+template<> VtValue convertFromCycles<string>(const string &value)
 {
   return VtValue(value.string());
 }
@@ -391,7 +391,7 @@ template<> VtValue convertFromCyclesArray<float3, GfVec3f>(const array<float3> &
   return VtValue(convertedValue);
 }
 
-template<> VtValue convertFromCyclesArray<ustring, void>(const array<ustring> &value)
+template<> VtValue convertFromCyclesArray<string, void>(const array<string> &value)
 {
   VtStringArray convertedValue;
   convertedValue.reserve(value.size());
@@ -446,12 +446,12 @@ void SetNodeValue(Node *node, const SocketType &socket, const VtValue &value)
       // Handled by node connections
       break;
     case SocketType::STRING:
-      node->set(socket, convertToCycles<ustring>(value));
+      node->set(socket, convertToCycles<string>(value));
       break;
     case SocketType::ENUM:
       // Enum's can accept a string or an int
       if (value.IsHolding<TfToken>() || value.IsHolding<std::string>()) {
-        node->set(socket, convertToCycles<ustring>(value));
+        node->set(socket, convertToCycles<string>(value));
       }
       else {
         node->set(socket, convertToCycles<int>(value));
@@ -494,7 +494,7 @@ void SetNodeValue(Node *node, const SocketType &socket, const VtValue &value)
       break;
     }
     case SocketType::STRING_ARRAY: {
-      auto cyclesArray = convertToCyclesArray<ustring, void>(value);
+      auto cyclesArray = convertToCyclesArray<string, void>(value);
       node->set(socket, cyclesArray);
       break;
     }
@@ -560,7 +560,7 @@ VtValue GetNodeValue(const Node *node, const SocketType &socket)
     case SocketType::POINT2_ARRAY:
       return convertFromCyclesArray<float2, GfVec2f>(node->get_float2_array(socket));
     case SocketType::STRING_ARRAY:
-      return convertFromCyclesArray<ustring, void>(node->get_string_array(socket));
+      return convertFromCyclesArray<string, void>(node->get_string_array(socket));
     case SocketType::TRANSFORM_ARRAY:
       return convertFromCyclesArray<Transform, void>(node->get_transform_array(socket));
     case SocketType::NODE_ARRAY: {

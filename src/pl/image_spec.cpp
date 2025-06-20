@@ -72,7 +72,7 @@ void ImageSpec::attribute(string_view name, unsigned int value)
   PL_NOT_IMPLEMENTED();
 }
 
-void ImageSpec::attribute(string_view name, ustring value)
+void ImageSpec::attribute(string_view name, string value)
 {
   PL_NOT_IMPLEMENTED();
 }

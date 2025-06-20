@@ -407,7 +407,7 @@ void SVMCompiler::add_node(const float4 &f)
       __float_as_int(f.x), __float_as_int(f.y), __float_as_int(f.z), __float_as_int(f.w)));
 }
 
-uint SVMCompiler::attribute(ustring name)
+uint SVMCompiler::attribute(string name)
 {
   return scene->shader_manager->get_attribute_id(name);
 }
@@ -417,7 +417,7 @@ uint SVMCompiler::attribute(AttributeStandard std)
   return scene->shader_manager->get_attribute_id(std);
 }
 
-uint SVMCompiler::attribute_standard(ustring name)
+uint SVMCompiler::attribute_standard(string name)
 {
   const AttributeStandard std = Attribute::name_standard(name.c_str());
   return (std) ? attribute(std) : attribute(name);

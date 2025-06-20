@@ -15,7 +15,7 @@ CCL_NAMESPACE_BEGIN
 
 NodeOwner::~NodeOwner() = default;
 
-Node::Node(const NodeType *type_, ustring name_) : name(name_), type(type_)
+Node::Node(const NodeType *type_, string name_) : name(name_), type(type_)
 {
   assert(type);
 
@@ -94,10 +94,10 @@ void Node::set(const SocketType &input, const float3 value)
 
 void Node::set(const SocketType &input, const char *value)
 {
-  set(input, ustring(value));
+  set(input, string(value));
 }
 
-void Node::set(const SocketType &input, ustring value)
+void Node::set(const SocketType &input, string value)
 {
   if (input.type == SocketType::STRING) {
     set_if_different(input, value);
@@ -159,7 +159,7 @@ void Node::set(const SocketType &input, array<float3> &value)
   set_if_different(input, value);
 }
 
-void Node::set(const SocketType &input, array<ustring> &value)
+void Node::set(const SocketType &input, array<string> &value)
 {
   assert(input.type == SocketType::STRING_ARRAY);
   set_if_different(input, value);
@@ -220,18 +220,18 @@ float3 Node::get_float3(const SocketType &input) const
   return get_socket_value<float3>(this, input);
 }
 
-ustring Node::get_string(const SocketType &input) const
+string Node::get_string(const SocketType &input) const
 {
   if (input.type == SocketType::STRING) {
-    return get_socket_value<ustring>(this, input);
+    return get_socket_value<string>(this, input);
   }
   if (input.type == SocketType::ENUM) {
     const NodeEnum &enm = *input.enum_values;
     const int intvalue = get_socket_value<int>(this, input);
-    return (enm.exists(intvalue)) ? enm[intvalue] : ustring();
+    return (enm.exists(intvalue)) ? enm[intvalue] : string();
   }
   assert(0);
-  return ustring();
+  return string();
 }
 
 Transform Node::get_transform(const SocketType &input) const
@@ -277,10 +277,10 @@ const array<float3> &Node::get_float3_array(const SocketType &input) const
   return get_socket_value<array<float3>>(this, input);
 }
 
-const array<ustring> &Node::get_string_array(const SocketType &input) const
+const array<string> &Node::get_string_array(const SocketType &input) const
 {
   assert(input.type == SocketType::STRING_ARRAY);
-  return get_socket_value<array<ustring>>(this, input);
+  return get_socket_value<array<string>>(this, input);
 }
 
 const array<Transform> &Node::get_transform_array(const SocketType &input) const
@@ -355,7 +355,7 @@ void Node::copy_value(const SocketType &socket, const Node &other, const SocketT
         copy_array<float2>(this, socket, &other, other_socket);
         break;
       case SocketType::STRING_ARRAY:
-        copy_array<ustring>(this, socket, &other, other_socket);
+        copy_array<string>(this, socket, &other, other_socket);
         break;
       case SocketType::TRANSFORM_ARRAY:
         copy_array<Transform>(this, socket, &other, other_socket);
@@ -417,7 +417,7 @@ void Node::set_value(const SocketType &socket, const Node &other, const SocketTy
         set(socket, get_socket_value<array<float2>>(&other, socket));
         break;
       case SocketType::STRING_ARRAY:
-        set(socket, get_socket_value<array<ustring>>(&other, socket));
+        set(socket, get_socket_value<array<string>>(&other, socket));
         break;
       case SocketType::TRANSFORM_ARRAY:
         set(socket, get_socket_value<array<Transform>>(&other, socket));
@@ -457,7 +457,7 @@ void Node::set_value(const SocketType &socket, const Node &other, const SocketTy
         set(socket, get_socket_value<float2>(&other, socket));
         break;
       case SocketType::STRING:
-        set(socket, get_socket_value<ustring>(&other, socket));
+        set(socket, get_socket_value<string>(&other, socket));
         break;
       case SocketType::ENUM:
         set(socket, get_socket_value<int>(&other, socket));
@@ -517,7 +517,7 @@ bool Node::equals_value(const Node &other, const SocketType &socket) const
     case SocketType::CLOSURE:
       return true;
     case SocketType::STRING:
-      return is_value_equal<ustring>(this, &other, socket);
+      return is_value_equal<string>(this, &other, socket);
     case SocketType::ENUM:
       return is_value_equal<int>(this, &other, socket);
     case SocketType::TRANSFORM:
@@ -542,7 +542,7 @@ bool Node::equals_value(const Node &other, const SocketType &socket) const
     case SocketType::POINT2_ARRAY:
       return is_array_equal<float2>(this, &other, socket);
     case SocketType::STRING_ARRAY:
-      return is_array_equal<ustring>(this, &other, socket);
+      return is_array_equal<string>(this, &other, socket);
     case SocketType::TRANSFORM_ARRAY:
       return is_array_equal<Transform>(this, &other, socket);
     case SocketType::NODE_ARRAY:
@@ -607,10 +607,10 @@ void float3_array_hash(const Node *node, const SocketType &socket, MD5Hash &md5)
 
 void Node::hash(MD5Hash &md5)
 {
-  md5.append(type->name.string());
+  md5.append(type->name);
 
   for (const SocketType &socket : type->inputs) {
-    md5.append(socket.name.string());
+    md5.append(socket.name);
 
     switch (socket.type) {
       case SocketType::BOOLEAN:
@@ -646,7 +646,7 @@ void Node::hash(MD5Hash &md5)
       case SocketType::CLOSURE:
         break;
       case SocketType::STRING:
-        value_hash<ustring>(this, socket, md5);
+        value_hash<string>(this, socket, md5);
         break;
       case SocketType::ENUM:
         value_hash<int>(this, socket, md5);
@@ -683,7 +683,7 @@ void Node::hash(MD5Hash &md5)
         array_hash<float2>(this, socket, md5);
         break;
       case SocketType::STRING_ARRAY:
-        array_hash<ustring>(this, socket, md5);
+        array_hash<string>(this, socket, md5);
         break;
       case SocketType::TRANSFORM_ARRAY:
         array_hash<Transform>(this, socket, md5);
@@ -757,7 +757,7 @@ size_t Node::get_total_size_in_bytes() const
         total_size += array_size_in_bytes<float2>(this, socket);
         break;
       case SocketType::STRING_ARRAY:
-        total_size += array_size_in_bytes<ustring>(this, socket);
+        total_size += array_size_in_bytes<string>(this, socket);
         break;
       case SocketType::TRANSFORM_ARRAY:
         total_size += array_size_in_bytes<Transform>(this, socket);

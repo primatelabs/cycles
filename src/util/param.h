@@ -7,7 +7,7 @@
 /* Parameter value lists from OpenImageIO are used to store custom properties
  * on various data, which can then later be used in shaders. */
 
-#include <OpenImageIO/ustring.h>
+#include <string>
 
 #include "pl/param_value.h"
 #include "pl/type_desc.h"
@@ -20,6 +20,6 @@ static constexpr TypeDesc TypeFloatArray4(TypeDesc::FLOAT,
                                           TypeDesc::NOSEMANTICS,
                                           4);
 
-using OIIO::ustring;
+using std::string;
 
 CCL_NAMESPACE_END

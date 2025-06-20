@@ -181,7 +181,7 @@ class OSLRenderServices : public OSL::RendererServices {
                   void *val,
                   bool derivatives) override;
 
-  OSL::TextureSystem::TextureHandle *get_texture_handle(OSL::ustring filename,
+  OSL::TextureSystem::TextureHandle *get_texture_handle(OSL::string filename,
                                                         OSL::ShadingContext *context,
                                                         const OSL::TextureOpt *options) override;
   OSL::TextureSystem::TextureHandle *get_texture_handle(OSLUStringHash filename,
@@ -258,66 +258,66 @@ class OSLRenderServices : public OSL::RendererServices {
                                             bool derivatives,
                                             void *val);
 
-  static ustring u_distance;
-  static ustring u_index;
-  static ustring u_world;
-  static ustring u_camera;
-  static ustring u_screen;
-  static ustring u_raster;
-  static ustring u_ndc;
-  static ustring u_object_location;
-  static ustring u_object_color;
-  static ustring u_object_alpha;
-  static ustring u_object_index;
-  static ustring u_object_is_light;
-  static ustring u_bump_map_normal;
-  static ustring u_geom_dupli_generated;
-  static ustring u_geom_dupli_uv;
-  static ustring u_material_index;
-  static ustring u_object_random;
-  static ustring u_particle_index;
-  static ustring u_particle_random;
-  static ustring u_particle_age;
-  static ustring u_particle_lifetime;
-  static ustring u_particle_location;
-  static ustring u_particle_rotation;
-  static ustring u_particle_size;
-  static ustring u_particle_velocity;
-  static ustring u_particle_angular_velocity;
-  static ustring u_geom_numpolyvertices;
-  static ustring u_geom_trianglevertices;
-  static ustring u_geom_polyvertices;
-  static ustring u_geom_name;
-  static ustring u_geom_undisplaced;
-  static ustring u_is_smooth;
-  static ustring u_is_curve;
-  static ustring u_curve_thickness;
-  static ustring u_curve_length;
-  static ustring u_curve_tangent_normal;
-  static ustring u_curve_random;
-  static ustring u_is_point;
-  static ustring u_point_position;
-  static ustring u_point_radius;
-  static ustring u_point_random;
-  static ustring u_normal_map_normal;
-  static ustring u_path_ray_length;
-  static ustring u_path_ray_depth;
-  static ustring u_path_diffuse_depth;
-  static ustring u_path_glossy_depth;
-  static ustring u_path_transparent_depth;
-  static ustring u_path_transmission_depth;
-  static ustring u_trace;
-  static ustring u_hit;
-  static ustring u_hitdist;
-  static ustring u_N;
-  static ustring u_Ng;
-  static ustring u_P;
-  static ustring u_I;
-  static ustring u_u;
-  static ustring u_v;
-  static ustring u_empty;
-  static ustring u_at_bevel;
-  static ustring u_at_ao;
+  static string u_distance;
+  static string u_index;
+  static string u_world;
+  static string u_camera;
+  static string u_screen;
+  static string u_raster;
+  static string u_ndc;
+  static string u_object_location;
+  static string u_object_color;
+  static string u_object_alpha;
+  static string u_object_index;
+  static string u_object_is_light;
+  static string u_bump_map_normal;
+  static string u_geom_dupli_generated;
+  static string u_geom_dupli_uv;
+  static string u_material_index;
+  static string u_object_random;
+  static string u_particle_index;
+  static string u_particle_random;
+  static string u_particle_age;
+  static string u_particle_lifetime;
+  static string u_particle_location;
+  static string u_particle_rotation;
+  static string u_particle_size;
+  static string u_particle_velocity;
+  static string u_particle_angular_velocity;
+  static string u_geom_numpolyvertices;
+  static string u_geom_trianglevertices;
+  static string u_geom_polyvertices;
+  static string u_geom_name;
+  static string u_geom_undisplaced;
+  static string u_is_smooth;
+  static string u_is_curve;
+  static string u_curve_thickness;
+  static string u_curve_length;
+  static string u_curve_tangent_normal;
+  static string u_curve_random;
+  static string u_is_point;
+  static string u_point_position;
+  static string u_point_radius;
+  static string u_point_random;
+  static string u_normal_map_normal;
+  static string u_path_ray_length;
+  static string u_path_ray_depth;
+  static string u_path_diffuse_depth;
+  static string u_path_glossy_depth;
+  static string u_path_transparent_depth;
+  static string u_path_transmission_depth;
+  static string u_trace;
+  static string u_hit;
+  static string u_hitdist;
+  static string u_N;
+  static string u_Ng;
+  static string u_P;
+  static string u_I;
+  static string u_u;
+  static string u_v;
+  static string u_empty;
+  static string u_at_bevel;
+  static string u_at_ao;
 
   /* Texture system and texture handle map are part of the services instead of
    * globals to be shared between different render sessions. This saves memory,

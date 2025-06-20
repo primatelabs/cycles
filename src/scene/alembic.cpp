@@ -99,7 +99,7 @@ void CachedData::clear()
   attributes.clear();
 }
 
-CachedData::CachedAttribute &CachedData::add_attribute(const ustring &name,
+CachedData::CachedAttribute &CachedData::add_attribute(const string &name,
                                                        const TimeSampling &time_sampling)
 {
   for (auto &attr : attributes) {
@@ -428,7 +428,7 @@ NODE_DEFINE(AlembicObject)
 {
   NodeType *type = NodeType::add("alembic_object", create);
 
-  SOCKET_STRING(path, "Alembic Path", ustring());
+  SOCKET_STRING(path, "Alembic Path", string());
   SOCKET_NODE_ARRAY(used_shaders, "Used Shaders", Shader::get_node_type());
 
   SOCKET_BOOLEAN(ignore_subdivision, "Ignore Subdivision", true);
@@ -776,8 +776,8 @@ NODE_DEFINE(AlembicProcedural)
 {
   NodeType *type = NodeType::add("alembic", create);
 
-  SOCKET_STRING(filepath, "Filename", ustring());
-  SOCKET_STRING_ARRAY(layers, "Layers", array<ustring>());
+  SOCKET_STRING(filepath, "Filename", string());
+  SOCKET_STRING_ARRAY(layers, "Layers", array<string>());
   SOCKET_FLOAT(frame, "Frame", 1.0f);
   SOCKET_FLOAT(start_frame, "Start Frame", 1.0f);
   SOCKET_FLOAT(end_frame, "End Frame", 1.0f);
@@ -880,7 +880,7 @@ void AlembicProcedural::generate(Scene *scene, Progress &progress)
     std::vector<std::string> filenames;
     filenames.emplace_back(filepath.c_str());
 
-    for (const ustring &layer : layers) {
+    for (const string &layer : layers) {
       filenames.emplace_back(layer.c_str());
     }
 
@@ -985,7 +985,7 @@ void AlembicProcedural::tag_update(Scene *scene)
   scene->procedural_manager->tag_update();
 }
 
-AlembicObject *AlembicProcedural::get_or_create_object(const ustring &path)
+AlembicObject *AlembicProcedural::get_or_create_object(const string &path)
 {
   for (Node *node : nodes) {
     AlembicObject *object = static_cast<AlembicObject *>(node);

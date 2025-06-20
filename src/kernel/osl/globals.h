@@ -60,7 +60,7 @@ struct OSLGlobals {
   using ObjectNameMap = unordered_map<OSLUStringHash, int>;
 
   ObjectNameMap object_name_map;
-  vector<ustring> object_names;
+  vector<string> object_names;
 };
 
 /* trace() call result */

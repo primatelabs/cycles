@@ -6,11 +6,7 @@
 
 #include <cstring>
 #include <string>
-
-/* Use string view implementation from OIIO.
- * Ideally, need to switch to `std::string_view`, but this first requires getting rid of using
- * namespace OIIO as it causes symbol collision. */
-#include <OpenImageIO/string_view.h>
+#include <string_view>
 
 #include "util/vector.h"
 
@@ -19,9 +15,8 @@ CCL_NAMESPACE_BEGIN
 struct float4;
 
 using std::string;
+using std::string_view;
 using std::to_string;
-
-using OIIO::string_view;
 
 #ifdef __GNUC__
 #  define PRINTF_ATTRIBUTE __attribute__((format(printf, 1, 2)))

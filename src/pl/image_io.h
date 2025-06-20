@@ -4,14 +4,9 @@
 
 #pragma once
 
-/* Use string view implementation from OIIO.
- * Ideally, need to switch to `std::string_view`, but this first requires getting rid of using
- * namespace OIIO as it causes symbol collision. */
-#include <OpenImageIO/string_view.h>
+#include <string_view>
 
 CCL_NAMESPACE_BEGIN
-
-using OIIO::string_view;
 
 // Stride lengths between pixels, scanlines or planes.
 using stride_t = int64_t;

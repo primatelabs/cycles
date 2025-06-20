@@ -8,7 +8,7 @@
 
 CCL_NAMESPACE_BEGIN
 
-ImageInput::unique_ptr ImageInput::open(const std::string &filename, const ImageSpec *config)
+ImageInput::unique_ptr ImageInput::open(string_view filename, const ImageSpec *config)
 {
   PL_NOT_IMPLEMENTED();
   return nullptr;

@@ -148,7 +148,7 @@ string NamedNestedSampleStats::full_report(const int indent_level, uint64_t tota
 
 /* Named sample count pairs. */
 
-NamedSampleCountPair::NamedSampleCountPair(const ustring &name,
+NamedSampleCountPair::NamedSampleCountPair(const string &name,
                                            const uint64_t samples,
                                            const uint64_t hits)
     : name(name), samples(samples), hits(hits)
@@ -157,7 +157,7 @@ NamedSampleCountPair::NamedSampleCountPair(const ustring &name,
 
 NamedSampleCountStats::NamedSampleCountStats() = default;
 
-void NamedSampleCountStats::add(const ustring &name, const uint64_t samples, const uint64_t hits)
+void NamedSampleCountStats::add(const string &name, const uint64_t samples, const uint64_t hits)
 {
   const entry_map::iterator entry = entries.find(name);
   if (entry != entries.end()) {

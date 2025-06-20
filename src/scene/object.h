@@ -45,7 +45,7 @@ class Object : public Node {
   NODE_SOCKET_API(int, pass_id)
   NODE_SOCKET_API(float3, color)
   NODE_SOCKET_API(float, alpha)
-  NODE_SOCKET_API(ustring, asset_name)
+  NODE_SOCKET_API(string, asset_name)
   vector<ParamValue> attributes;
   NODE_SOCKET_API(uint, visibility)
   NODE_SOCKET_API_ARRAY(array<Transform>, motion)
@@ -68,7 +68,7 @@ class Object : public Node {
 
   NODE_SOCKET_API(float, ao_distance)
 
-  NODE_SOCKET_API(ustring, lightgroup)
+  NODE_SOCKET_API(string, lightgroup)
   NODE_SOCKET_API(uint, receiver_light_set)
   NODE_SOCKET_API(uint64_t, light_set_membership)
   NODE_SOCKET_API(uint, blocker_shadow_set)

@@ -117,7 +117,7 @@ class Scene : public NodeOwner {
   string name;
 
   /* Maps from Light group names to their pass ID. */
-  map<ustring, int> lightgroups;
+  map<string, int> lightgroups;
 
   /* data */
   unique_ptr<BVH> bvh;

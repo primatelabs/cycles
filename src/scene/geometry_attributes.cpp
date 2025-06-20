@@ -41,7 +41,7 @@ bool Geometry::need_attribute(Scene *scene, AttributeStandard std)
   return false;
 }
 
-bool Geometry::need_attribute(Scene * /*scene*/, ustring name)
+bool Geometry::need_attribute(Scene * /*scene*/, string name)
 {
   if (name.empty()) {
     return false;

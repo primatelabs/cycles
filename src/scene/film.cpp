@@ -450,10 +450,10 @@ int Film::get_aov_offset(Scene *scene, string name, bool &is_color)
 
 bool Film::update_lightgroups(Scene *scene)
 {
-  map<ustring, int> lightgroups;
+  map<string, int> lightgroups;
   int i = 0;
   for (const Pass *pass : scene->passes) {
-    const ustring lightgroup = pass->get_lightgroup();
+    const string lightgroup = pass->get_lightgroup();
     if (!lightgroup.empty()) {
       if (!lightgroups.count(lightgroup)) {
         lightgroups[lightgroup] = i++;
@@ -613,7 +613,7 @@ void Film::add_auto_pass(Scene *scene, PassType type, PassMode mode, const char 
   unique_ptr<Pass> pass = make_unique<Pass>();
   pass->set_type(type);
   pass->set_mode(mode);
-  pass->set_name(ustring((name) ? name : ""));
+  pass->set_name(string((name) ? name : ""));
   pass->is_auto_ = true;
 
   pass->set_owner(scene);

@@ -4,14 +4,15 @@
 
 #pragma once
 
-#include <OpenImageIO/ustring.h>
+#include <string>
 
+#include "pl/error.h"
 #include "pl/strong_param.h"
 #include "pl/type_desc.h"
 
 CCL_NAMESPACE_BEGIN
 
-using OIIO::ustring;
+using std::string;
 
 /// ParamValue holds a named parameter and typed data. Usually, it owns the
 /// data (holding it in the struct itself if small enough, dynamically
@@ -40,7 +41,7 @@ using OIIO::ustring;
 /// are themselves pointers, and even if the number of values is 1. In other
 /// words, it's behaving as if you're always pointing it to an array even if
 /// the "array" has only one element. This is extra confusing for strings,
-/// because the strings themselves are `char*` (or ustring), so the pointer
+/// because the strings themselves are `char*` (or string), so the pointer
 /// you need to pass is `char**`. For this reason, there are also convenience
 /// constructors for simple types such as a single int, float, or string.
 ///
@@ -83,7 +84,7 @@ class ParamValue {
     m_data.ptr = nullptr;
   }
 
-  ParamValue(const ustring &_name,
+  ParamValue(const string &_name,
              TypeDesc _type,
              int _nvalues,
              const void *_value,
@@ -91,7 +92,7 @@ class ParamValue {
   {
     init_noclear(_name, _type, _nvalues, _value, _copy);
   }
-  ParamValue(const ustring &_name,
+  ParamValue(const string &_name,
              TypeDesc _type,
              int _nvalues,
              Interp _interp,
@@ -106,7 +107,7 @@ class ParamValue {
              const void *_value,
              Copy _copy = Copy(true)) noexcept
   {
-    init_noclear(ustring(_name), _type, _nvalues, _value, _copy);
+    init_noclear(string(_name), _type, _nvalues, _value, _copy);
   }
   ParamValue(string_view _name,
              TypeDesc _type,
@@ -115,22 +116,22 @@ class ParamValue {
              const void *_value,
              Copy _copy = Copy(true)) noexcept
   {
-    init_noclear(ustring(_name), _type, _nvalues, _interp, _value, _copy);
+    init_noclear(string(_name), _type, _nvalues, _interp, _value, _copy);
   }
 
   ParamValue(string_view _name, int value) noexcept
   {
-    init_noclear(ustring(_name), TypeDesc::INT, 1, &value);
+    init_noclear(string(_name), TypeDesc::INT, 1, &value);
   }
   ParamValue(string_view _name, float value) noexcept
   {
-    init_noclear(ustring(_name), TypeDesc::FLOAT, 1, &value);
+    init_noclear(string(_name), TypeDesc::FLOAT, 1, &value);
   }
-  ParamValue(string_view _name, ustring value) noexcept
+  ParamValue(string_view _name, string value) noexcept
   {
-    init_noclear(ustring(_name), TypeDesc::STRING, 1, &value, Copy(true), FromUstring(true));
+    init_noclear(string(_name), TypeDesc::STRING, 1, &value, Copy(true), FromUstring(true));
   }
-  ParamValue(string_view _name, string_view value) noexcept : ParamValue(_name, ustring(value)) {}
+  ParamValue(string_view _name, string_view value) noexcept : ParamValue(_name, string(value)) {}
 
   // Set from string -- parse
   ParamValue(string_view _name, TypeDesc type, string_view value);
@@ -161,7 +162,7 @@ class ParamValue {
     clear_value();
   }
 
-  void init(ustring _name,
+  void init(string _name,
             TypeDesc _type,
             int _nvalues,
             Interp _interp,
@@ -171,7 +172,7 @@ class ParamValue {
     clear_value();
     init_noclear(_name, _type, _nvalues, _interp, _value, _copy);
   }
-  void init(ustring _name,
+  void init(string _name,
             TypeDesc _type,
             int _nvalues,
             const void *_value,
@@ -185,7 +186,7 @@ class ParamValue {
             const void *_value,
             Copy _copy = Copy(true)) noexcept
   {
-    init(ustring(_name), _type, _nvalues, _value, _copy);
+    init(string(_name), _type, _nvalues, _value, _copy);
   }
   void init(string_view _name,
             TypeDesc _type,
@@ -194,7 +195,7 @@ class ParamValue {
             const void *_value,
             Copy _copy = Copy(true)) noexcept
   {
-    init(ustring(_name), _type, _nvalues, _interp, _value, _copy);
+    init(string(_name), _type, _nvalues, _interp, _value, _copy);
   }
 
   // Assignment
@@ -203,12 +204,12 @@ class ParamValue {
 
   // FIXME -- some time in the future (after more cleanup), we should make
   // name() return a string_view, and use uname() for the rare time when
-  // the caller truly requires the ustring.
-  const ustring &name() const noexcept
+  // the caller truly requires the string.
+  const string &name() const noexcept
   {
     return m_name;
   }
-  const ustring &uname() const noexcept
+  const string &uname() const noexcept
   {
     return m_name;
   }
@@ -272,11 +273,11 @@ class ParamValue {
 
   // Use with extreme caution! This is just doing a cast. You'd better
   // be really sure you are asking for the right type. Note that for
-  // "string" data, you can get<ustring> or get<char*>, but it's not
+  // "string" data, you can get<string> or get<char*>, but it's not
   // a std::string.
   template<typename T> const T &get(int i = 0) const noexcept
   {
-    OIIO_DASSERT(i >= 0 && i < int(m_nvalues * m_type.basevalues()) &&
+    PL_CHECK(i >= 0 && i < int(m_nvalues * m_type.basevalues()) &&
                  "OIIO::ParamValue::get() range check");
     return (reinterpret_cast<const T *>(data()))[i];
   }
@@ -304,16 +305,9 @@ class ParamValue {
   /// no matter how large it is).
   std::string get_string(int maxsize = 64) const;
   std::string get_string_indexed(int index) const;
-  /// Convert any type to a ustring value. An optional maximum number of
-  /// elements is also passed. Same behavior as get_string, but returning a
-  /// ustring. For an array or aggregate, at most `maxsize` elements are
-  /// returned (if `maxsize` is 0, all elements are returned, no matter how
-  /// large it is).
-  ustring get_ustring(int maxsize = 64) const;
-  ustring get_ustring_indexed(int index) const;
 
  private:
-  ustring m_name;   ///< data name
+  string m_name;   ///< data name
   TypeDesc m_type;  ///< data type, which may itself be an array
   union {
     char localval[16];
@@ -324,19 +318,19 @@ class ParamValue {
   bool m_copy = false;
   bool m_nonlocal = false;
 
-  void init_noclear(ustring _name,
+  void init_noclear(string _name,
                     TypeDesc _type,
                     int _nvalues,
                     const void *_value,
                     Copy _copy = Copy(true),
-                    FromUstring _from_ustring = FromUstring(false)) noexcept;
-  void init_noclear(ustring _name,
+                    FromUstring _from_string = FromUstring(false)) noexcept;
+  void init_noclear(string _name,
                     TypeDesc _type,
                     int _nvalues,
                     Interp _interp,
                     const void *_value,
                     Copy _copy = Copy(true),
-                    FromUstring _from_ustring = FromUstring(false)) noexcept;
+                    FromUstring _from_string = FromUstring(false)) noexcept;
   void clear_value() noexcept;
 };
 

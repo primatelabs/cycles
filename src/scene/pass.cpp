@@ -128,9 +128,9 @@ NODE_DEFINE(Pass)
 
   SOCKET_ENUM(type, "Type", *pass_type_enum, PASS_COMBINED);
   SOCKET_ENUM(mode, "Mode", *pass_mode_enum, static_cast<int>(PassMode::DENOISED));
-  SOCKET_STRING(name, "Name", ustring());
+  SOCKET_STRING(name, "Name", string());
   SOCKET_BOOLEAN(include_albedo, "Include Albedo", false);
-  SOCKET_STRING(lightgroup, "Light Group", ustring());
+  SOCKET_STRING(lightgroup, "Light Group", string());
 
   return type;
 }
@@ -391,7 +391,7 @@ const Pass *Pass::find(const unique_ptr_vector<Pass> &passes, const string &name
 const Pass *Pass::find(const unique_ptr_vector<Pass> &passes,
                        PassType type,
                        PassMode mode,
-                       const ustring &lightgroup)
+                       const string &lightgroup)
 {
   for (const Pass *pass : passes) {
     if (pass->get_type() != type || pass->get_mode() != mode ||

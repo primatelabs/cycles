@@ -55,7 +55,7 @@ template<typename T> class ShaderNodeBuilder {
 
   template<typename V> ShaderNodeBuilder &set_param(const string &input_name, V value)
   {
-    const SocketType *input_socket = node_->type->find_input(ustring(input_name.c_str()));
+    const SocketType *input_socket = node_->type->find_input(string(input_name.c_str()));
     EXPECT_NE((void *)nullptr, input_socket);
     node_->set(*input_socket, value);
     return *this;
@@ -114,7 +114,7 @@ class ShaderGraphBuilder {
   ShaderGraphBuilder &add_attribute(const string &name)
   {
     return (*this).add_node(
-        ShaderNodeBuilder<AttributeNode>(*graph_, name).set_param("attribute", ustring(name)));
+        ShaderNodeBuilder<AttributeNode>(*graph_, name).set_param("attribute", string(name)));
   }
 
   ShaderGraphBuilder &output_closure(const string &from)

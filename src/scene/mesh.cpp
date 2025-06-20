@@ -124,7 +124,7 @@ static void mikk_compute_tangents(Attribute *attr_uv, Mesh *mesh, const bool nee
   const float3 *normal = attr_vN->data_float3();
   const float2 *uv = (attr_uv) ? attr_uv->data_float2() : nullptr;
 
-  const ustring name = ustring((attr_uv) ? attr_uv->name.string() + ".tangent" :
+  const string name = string((attr_uv) ? attr_uv->name + ".tangent" :
                                            Attribute::standard_name(ATTR_STD_UV_TANGENT));
   Attribute *attr;
   if (attr_uv == nullptr || attr_uv->std == ATTR_STD_UV) {
@@ -137,8 +137,8 @@ static void mikk_compute_tangents(Attribute *attr_uv, Mesh *mesh, const bool nee
   /* Create bitangent sign attribute. */
   float *tangent_sign = nullptr;
   if (need_sign) {
-    const ustring name_sign = ustring((attr_uv) ?
-                                          attr_uv->name.string() + ".tangent_sign" :
+    const string name_sign = string((attr_uv) ?
+                                          attr_uv->name + ".tangent_sign" :
                                           Attribute::standard_name(ATTR_STD_UV_TANGENT_SIGN));
     Attribute *attr_sign;
     if (attr_uv == nullptr || attr_uv->std == ATTR_STD_UV) {
@@ -526,7 +526,7 @@ void Mesh::copy_center_to_motion_step(const int motion_step)
   }
 }
 
-void Mesh::get_uv_tiles(ustring map, unordered_set<int> &tiles)
+void Mesh::get_uv_tiles(string map, unordered_set<int> &tiles)
 {
   Attribute *attr;
   Attribute *subd_attr;
@@ -779,7 +779,7 @@ void Mesh::update_tangents(Scene *scene)
   /* This runs after tessellation, so it only affects attributes and not subd_attributes. */
   assert(attributes.find(ATTR_STD_VERTEX_NORMAL));
 
-  ccl::set<ustring> uv_maps;
+  ccl::set<string> uv_maps;
   Attribute *attr_std_uv = attributes.find(ATTR_STD_UV);
 
   /* Standard UVs. */
@@ -793,7 +793,7 @@ void Mesh::update_tangents(Scene *scene)
       continue;
     }
 
-    const ustring tangent_name = ustring(attr.name.string() + ".tangent");
+    const string tangent_name = string(attr.name + ".tangent");
 
     if (need_attribute(scene, tangent_name) && !attributes.find(tangent_name)) {
       mikk_compute_tangents(&attr, this, true); /* sign */

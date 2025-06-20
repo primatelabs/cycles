@@ -72,7 +72,7 @@ class Light : public Geometry {
   /* Geometry */
   void compute_bounds() override;
   void apply_transform(const Transform &tfm, const bool apply_to_motion) override;
-  void get_uv_tiles(ustring map, unordered_set<int> &tiles) override;
+  void get_uv_tiles(string map, unordered_set<int> &tiles) override;
   PrimitiveType primitive_type() const override;
 
   friend class LightManager;

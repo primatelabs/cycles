@@ -30,7 +30,7 @@ class PNGImageOutput : public ImageOutput {
     return (feature == "alpha");
   }
 
-  virtual bool open(const std::string &filename, const ImageSpec &newspec);
+  virtual bool open(string_view filename, const ImageSpec &newspec);
 
   virtual bool close();
 

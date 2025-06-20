@@ -52,9 +52,9 @@ class Pass : public Node {
 
   NODE_SOCKET_API(PassType, type)
   NODE_SOCKET_API(PassMode, mode)
-  NODE_SOCKET_API(ustring, name)
+  NODE_SOCKET_API(string, name)
   NODE_SOCKET_API(bool, include_albedo)
-  NODE_SOCKET_API(ustring, lightgroup)
+  NODE_SOCKET_API(string, lightgroup)
 
   Pass();
 
@@ -85,7 +85,7 @@ class Pass : public Node {
   static const Pass *find(const unique_ptr_vector<Pass> &passes,
                           PassType type,
                           PassMode mode = PassMode::NOISY,
-                          const ustring &lightgroup = ustring());
+                          const string &lightgroup = string());
 
   /* Returns PASS_UNUSED if there is no corresponding pass. */
   static int get_offset(const unique_ptr_vector<Pass> &passes, const Pass *pass);

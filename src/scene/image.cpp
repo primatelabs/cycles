@@ -280,9 +280,9 @@ void ImageMetaData::detect_colorspace()
 
 ImageLoader::ImageLoader() = default;
 
-ustring ImageLoader::osl_filepath() const
+string ImageLoader::osl_filepath() const
 {
-  return ustring();
+  return string();
 }
 
 int ImageLoader::get_tile_number() const
@@ -842,7 +842,7 @@ void ImageManager::device_free_image(Device * /*unused*/, size_t slot)
 
   if (osl_texture_system) {
 #ifdef WITH_OSL
-    const ustring filepath = img->loader->osl_filepath();
+    const string filepath = img->loader->osl_filepath();
     if (!filepath.empty()) {
       ((OSL::TextureSystem *)osl_texture_system)->invalidate(filepath);
     }

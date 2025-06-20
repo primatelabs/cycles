@@ -216,7 +216,7 @@ NODE_DEFINE(ImageTextureNode)
 
   TEXTURE_MAPPING_DEFINE(ImageTextureNode);
 
-  SOCKET_STRING(filename, "Filename", ustring());
+  SOCKET_STRING(filename, "Filename", string());
   SOCKET_STRING(colorspace, "Colorspace", u_colorspace_auto);
 
   static NodeEnum alpha_type_enum;
@@ -310,7 +310,7 @@ void ImageTextureNode::cull_tiles(Scene *scene, ShaderGraph *graph)
   }
 
   ShaderInput *vector_in = input("Vector");
-  ustring attribute;
+  string attribute;
   if (vector_in->link) {
     ShaderNode *node = vector_in->link->parent;
     if (node->type == UVMapNode::get_node_type()) {
@@ -373,7 +373,7 @@ void ImageTextureNode::compile(SVMCompiler &compiler)
   if (handle.empty()) {
     cull_tiles(compiler.scene, compiler.current_graph);
     ImageManager *image_manager = compiler.scene->image_manager.get();
-    handle = image_manager->add_image(filename.string(), image_params(), tiles);
+    handle = image_manager->add_image(filename, image_params(), tiles);
   }
 
   /* All tiles have the same metadata. */
@@ -453,13 +453,13 @@ void ImageTextureNode::compile(OSLCompiler &compiler)
 
   if (handle.empty()) {
     ImageManager *image_manager = compiler.scene->image_manager.get();
-    handle = image_manager->add_image(filename.string(), image_params());
+    handle = image_manager->add_image(filename, image_params());
   }
 
   const ImageMetaData metadata = handle.metadata();
   const bool is_float = metadata.is_float();
   const bool compress_as_srgb = metadata.compress_as_srgb;
-  const ustring known_colorspace = metadata.colorspace;
+  const string known_colorspace = metadata.colorspace;
 
   if (handle.svm_slot() == -1) {
     compiler.parameter_texture(
@@ -497,7 +497,7 @@ NODE_DEFINE(EnvironmentTextureNode)
 
   TEXTURE_MAPPING_DEFINE(EnvironmentTextureNode);
 
-  SOCKET_STRING(filename, "Filename", ustring());
+  SOCKET_STRING(filename, "Filename", string());
   SOCKET_STRING(colorspace, "Colorspace", u_colorspace_auto);
 
   static NodeEnum alpha_type_enum;
@@ -575,7 +575,7 @@ void EnvironmentTextureNode::compile(SVMCompiler &compiler)
 
   if (handle.empty()) {
     ImageManager *image_manager = compiler.scene->image_manager.get();
-    handle = image_manager->add_image(filename.string(), image_params());
+    handle = image_manager->add_image(filename, image_params());
   }
 
   const ImageMetaData metadata = handle.metadata();
@@ -603,7 +603,7 @@ void EnvironmentTextureNode::compile(OSLCompiler &compiler)
 {
   if (handle.empty()) {
     ImageManager *image_manager = compiler.scene->image_manager.get();
-    handle = image_manager->add_image(filename.string(), image_params());
+    handle = image_manager->add_image(filename, image_params());
   }
 
   tex_mapping.compile(compiler);
@@ -611,7 +611,7 @@ void EnvironmentTextureNode::compile(OSLCompiler &compiler)
   const ImageMetaData metadata = handle.metadata();
   const bool is_float = metadata.is_float();
   const bool compress_as_srgb = metadata.compress_as_srgb;
-  const ustring known_colorspace = metadata.colorspace;
+  const string known_colorspace = metadata.colorspace;
 
   if (handle.svm_slot() == -1) {
     compiler.parameter_texture(
@@ -1428,8 +1428,8 @@ NODE_DEFINE(IESLightNode)
 
   TEXTURE_MAPPING_DEFINE(IESLightNode);
 
-  SOCKET_STRING(ies, "IES", ustring());
-  SOCKET_STRING(filename, "File Name", ustring());
+  SOCKET_STRING(ies, "IES", string());
+  SOCKET_STRING(filename, "File Name", string());
 
   SOCKET_IN_FLOAT(strength, "Strength", 1.0f);
   SOCKET_IN_POINT(vector, "Vector", zero_float3(), SocketType::LINK_TEXTURE_INCOMING);
@@ -1468,10 +1468,10 @@ void IESLightNode::get_slot()
 
   if (slot == -1) {
     if (ies.empty()) {
-      slot = light_manager->add_ies_from_file(filename.string());
+      slot = light_manager->add_ies_from_file(filename);
     }
     else {
-      slot = light_manager->add_ies(ies.string());
+      slot = light_manager->add_ies(ies);
     }
   }
 }
@@ -1862,7 +1862,7 @@ NODE_DEFINE(PointDensityTextureNode)
 {
   NodeType *type = NodeType::add("point_density_texture", create, NodeType::SHADER);
 
-  SOCKET_STRING(filename, "Filename", ustring());
+  SOCKET_STRING(filename, "Filename", string());
 
   static NodeEnum space_enum;
   space_enum.insert("object", NODE_TEX_VOXEL_SPACE_OBJECT);
@@ -1943,7 +1943,7 @@ void PointDensityTextureNode::compile(SVMCompiler &compiler)
 
   if (handle.empty()) {
     ImageManager *image_manager = compiler.scene->image_manager.get();
-    handle = image_manager->add_image(filename.string(), image_params());
+    handle = image_manager->add_image(filename, image_params());
   }
 
   const int slot = handle.svm_slot();
@@ -1994,7 +1994,7 @@ void PointDensityTextureNode::compile(OSLCompiler &compiler)
 
   if (handle.empty()) {
     ImageManager *image_manager = compiler.scene->image_manager.get();
-    handle = image_manager->add_image(filename.string(), image_params());
+    handle = image_manager->add_image(filename, image_params());
   }
 
   compiler.parameter_texture("filename", handle);
@@ -2167,15 +2167,15 @@ bool ConvertNode::register_types()
 
   for (size_t i = 0; i < num_types; i++) {
     const SocketType::Type from = types[i];
-    const ustring from_name(SocketType::type_name(from));
-    const ustring from_value_name("value_" + from_name.string());
+    const string from_name(SocketType::type_name(from));
+    const string from_value_name("value_" + from_name);
 
     for (size_t j = 0; j < num_types; j++) {
       const SocketType::Type to = types[j];
-      const ustring to_name(SocketType::type_name(to));
-      const ustring to_value_name("value_" + to_name.string());
+      const string to_name(SocketType::type_name(to));
+      const string to_value_name("value_" + to_name);
 
-      const string node_name = "convert_" + from_name.string() + "_to_" + to_name.string();
+      const string node_name = "convert_" + from_name + "_to_" + to_name;
       NodeType *type = NodeType::add(node_name.c_str(), create, NodeType::SHADER);
 
       type->register_input(from_value_name,
@@ -3555,9 +3555,9 @@ NODE_DEFINE(PrincipledVolumeNode)
 {
   NodeType *type = NodeType::add("principled_volume", create, NodeType::SHADER);
 
-  SOCKET_IN_STRING(density_attribute, "Density Attribute", ustring());
-  SOCKET_IN_STRING(color_attribute, "Color Attribute", ustring());
-  SOCKET_IN_STRING(temperature_attribute, "Temperature Attribute", ustring());
+  SOCKET_IN_STRING(density_attribute, "Density Attribute", string());
+  SOCKET_IN_STRING(color_attribute, "Color Attribute", string());
+  SOCKET_IN_STRING(temperature_attribute, "Temperature Attribute", string());
 
   SOCKET_IN_COLOR(color, "Color", make_float3(0.5f, 0.5f, 0.5f));
   SOCKET_IN_FLOAT(density, "Density", 1.0f);
@@ -3578,8 +3578,8 @@ NODE_DEFINE(PrincipledVolumeNode)
 PrincipledVolumeNode::PrincipledVolumeNode() : VolumeNode(get_node_type())
 {
   closure = CLOSURE_VOLUME_HENYEY_GREENSTEIN_ID;
-  density_attribute = ustring("density");
-  temperature_attribute = ustring("temperature");
+  density_attribute = string("density");
+  temperature_attribute = string("temperature");
 }
 
 void PrincipledVolumeNode::attributes(Shader *shader, AttributeRequestSet *attributes)
@@ -3648,13 +3648,13 @@ void PrincipledVolumeNode::compile(SVMCompiler &compiler)
 void PrincipledVolumeNode::compile(OSLCompiler &compiler)
 {
   if (Attribute::name_standard(density_attribute.c_str())) {
-    density_attribute = ustring("geom:" + density_attribute.string());
+    density_attribute = string("geom:" + density_attribute);
   }
   if (Attribute::name_standard(color_attribute.c_str())) {
-    color_attribute = ustring("geom:" + color_attribute.string());
+    color_attribute = string("geom:" + color_attribute);
   }
   if (Attribute::name_standard(temperature_attribute.c_str())) {
-    temperature_attribute = ustring("geom:" + temperature_attribute.string());
+    temperature_attribute = string("geom:" + temperature_attribute);
   }
 
   compiler.add(this, "node_principled_volume");
@@ -4232,7 +4232,7 @@ NODE_DEFINE(UVMapNode)
 {
   NodeType *type = NodeType::add("uvmap", create, NodeType::SHADER);
 
-  SOCKET_STRING(attribute, "attribute", ustring());
+  SOCKET_STRING(attribute, "attribute", string());
   SOCKET_IN_BOOLEAN(from_dupli, "from dupli", false);
 
   SOCKET_OUT_POINT(UV, "UV");
@@ -4830,28 +4830,28 @@ void VolumeInfoNode::expand(ShaderGraph *graph)
   ShaderOutput *color_out = output("Color");
   if (!color_out->links.empty()) {
     AttributeNode *attr = graph->create_node<AttributeNode>();
-    attr->set_attribute(ustring("color"));
+    attr->set_attribute(string("color"));
     graph->relink(color_out, attr->output("Color"));
   }
 
   ShaderOutput *density_out = output("Density");
   if (!density_out->links.empty()) {
     AttributeNode *attr = graph->create_node<AttributeNode>();
-    attr->set_attribute(ustring("density"));
+    attr->set_attribute(string("density"));
     graph->relink(density_out, attr->output("Fac"));
   }
 
   ShaderOutput *flame_out = output("Flame");
   if (!flame_out->links.empty()) {
     AttributeNode *attr = graph->create_node<AttributeNode>();
-    attr->set_attribute(ustring("flame"));
+    attr->set_attribute(string("flame"));
     graph->relink(flame_out, attr->output("Fac"));
   }
 
   ShaderOutput *temperature_out = output("Temperature");
   if (!temperature_out->links.empty()) {
     AttributeNode *attr = graph->create_node<AttributeNode>();
-    attr->set_attribute(ustring("temperature"));
+    attr->set_attribute(string("temperature"));
     graph->relink(temperature_out, attr->output("Fac"));
   }
 }
@@ -4864,7 +4864,7 @@ NODE_DEFINE(VertexColorNode)
 {
   NodeType *type = NodeType::add("vertex_color", create, NodeType::SHADER);
 
-  SOCKET_STRING(layer_name, "Layer Name", ustring());
+  SOCKET_STRING(layer_name, "Layer Name", string());
   SOCKET_OUT_COLOR(color, "Color");
   SOCKET_OUT_FLOAT(alpha, "Alpha");
 
@@ -4932,7 +4932,7 @@ void VertexColorNode::compile(OSLCompiler &compiler)
   compiler.parameter("bump_filter_width", bump_filter_width);
 
   if (layer_name.empty()) {
-    compiler.parameter("layer_name", ustring("geom:vertex_color"));
+    compiler.parameter("layer_name", string("geom:vertex_color"));
   }
   else {
     if (Attribute::name_standard(layer_name.c_str()) != ATTR_STD_NONE) {
@@ -6059,7 +6059,7 @@ NODE_DEFINE(AttributeNode)
 {
   NodeType *type = NodeType::add("attribute", create, NodeType::SHADER);
 
-  SOCKET_STRING(attribute, "Attribute", ustring());
+  SOCKET_STRING(attribute, "Attribute", string());
 
   SOCKET_OUT_COLOR(color, "Color");
   SOCKET_OUT_VECTOR(vector, "Vector");
@@ -6660,7 +6660,7 @@ NODE_DEFINE(OutputAOVNode)
   SOCKET_IN_COLOR(color, "Color", zero_float3());
   SOCKET_IN_FLOAT(value, "Value", 0.0f);
 
-  SOCKET_STRING(name, "AOV Name", ustring(""));
+  SOCKET_STRING(name, "AOV Name", string(""));
 
   return type;
 }
@@ -6673,9 +6673,9 @@ OutputAOVNode::OutputAOVNode() : ShaderNode(get_node_type())
 
 void OutputAOVNode::simplify_settings(Scene *scene)
 {
-  offset = scene->film->get_aov_offset(scene, name.string(), is_color);
+  offset = scene->film->get_aov_offset(scene, name, is_color);
   if (offset == -1) {
-    offset = scene->film->get_aov_offset(scene, name.string(), is_color);
+    offset = scene->film->get_aov_offset(scene, name, is_color);
   }
 
   if (offset == -1 || is_color) {
@@ -7522,7 +7522,7 @@ char *OSLNode::input_default_value()
   return (char *)this + align_up(sizeof(OSLNode), 16) + inputs_size;
 }
 
-void OSLNode::add_input(ustring name, SocketType::Type socket_type, const int flags)
+void OSLNode::add_input(string name, SocketType::Type socket_type, const int flags)
 {
   char *memory = input_default_value();
   const size_t offset = memory - (char *)this;
@@ -7530,7 +7530,7 @@ void OSLNode::add_input(ustring name, SocketType::Type socket_type, const int fl
       name, name, socket_type, offset, memory, nullptr, nullptr, flags | SocketType::LINKABLE);
 }
 
-void OSLNode::add_output(ustring name, SocketType::Type socket_type)
+void OSLNode::add_output(string name, SocketType::Type socket_type)
 {
   const_cast<NodeType *>(type)->register_output(name, name, socket_type);
 }
@@ -7564,7 +7564,7 @@ NODE_DEFINE(NormalMapNode)
   space_enum.insert("blender_world", NODE_NORMAL_MAP_BLENDER_WORLD);
   SOCKET_ENUM(space, "Space", space_enum, NODE_NORMAL_MAP_TANGENT);
 
-  SOCKET_STRING(attribute, "Attribute", ustring());
+  SOCKET_STRING(attribute, "Attribute", string());
 
   SOCKET_IN_FLOAT(strength, "Strength", 1.0f);
   SOCKET_IN_COLOR(color, "Color", make_float3(0.5f, 0.5f, 1.0f));
@@ -7584,8 +7584,8 @@ void NormalMapNode::attributes(Shader *shader, AttributeRequestSet *attributes)
       attributes->add(ATTR_STD_UV_TANGENT_SIGN);
     }
     else {
-      attributes->add(ustring((string(attribute.c_str()) + ".tangent").c_str()));
-      attributes->add(ustring((string(attribute.c_str()) + ".tangent_sign").c_str()));
+      attributes->add(string((string(attribute.c_str()) + ".tangent").c_str()));
+      attributes->add(string((string(attribute.c_str()) + ".tangent_sign").c_str()));
     }
   }
 
@@ -7606,9 +7606,9 @@ void NormalMapNode::compile(SVMCompiler &compiler)
       attr_sign = compiler.attribute(ATTR_STD_UV_TANGENT_SIGN);
     }
     else {
-      attr = compiler.attribute(ustring((string(attribute.c_str()) + ".tangent").c_str()));
+      attr = compiler.attribute(string((string(attribute.c_str()) + ".tangent").c_str()));
       attr_sign = compiler.attribute(
-          ustring((string(attribute.c_str()) + ".tangent_sign").c_str()));
+          string((string(attribute.c_str()) + ".tangent_sign").c_str()));
     }
   }
 
@@ -7625,13 +7625,13 @@ void NormalMapNode::compile(OSLCompiler &compiler)
 {
   if (space == NODE_NORMAL_MAP_TANGENT) {
     if (attribute.empty()) {
-      compiler.parameter("attr_name", ustring("geom:tangent"));
-      compiler.parameter("attr_sign_name", ustring("geom:tangent_sign"));
+      compiler.parameter("attr_name", string("geom:tangent"));
+      compiler.parameter("attr_sign_name", string("geom:tangent_sign"));
     }
     else {
-      compiler.parameter("attr_name", ustring((string(attribute.c_str()) + ".tangent").c_str()));
+      compiler.parameter("attr_name", string((string(attribute.c_str()) + ".tangent").c_str()));
       compiler.parameter("attr_sign_name",
-                         ustring((string(attribute.c_str()) + ".tangent_sign").c_str()));
+                         string((string(attribute.c_str()) + ".tangent_sign").c_str()));
     }
   }
 
@@ -7656,7 +7656,7 @@ NODE_DEFINE(TangentNode)
   axis_enum.insert("z", NODE_TANGENT_AXIS_Z);
   SOCKET_ENUM(axis, "Axis", axis_enum, NODE_TANGENT_AXIS_X);
 
-  SOCKET_STRING(attribute, "Attribute", ustring());
+  SOCKET_STRING(attribute, "Attribute", string());
 
   SOCKET_OUT_NORMAL(tangent, "Tangent");
 
@@ -7673,7 +7673,7 @@ void TangentNode::attributes(Shader *shader, AttributeRequestSet *attributes)
         attributes->add(ATTR_STD_UV_TANGENT);
       }
       else {
-        attributes->add(ustring((string(attribute.c_str()) + ".tangent").c_str()));
+        attributes->add(string((string(attribute.c_str()) + ".tangent").c_str()));
       }
     }
     else {
@@ -7694,7 +7694,7 @@ void TangentNode::compile(SVMCompiler &compiler)
       attr = compiler.attribute(ATTR_STD_UV_TANGENT);
     }
     else {
-      attr = compiler.attribute(ustring((string(attribute.c_str()) + ".tangent").c_str()));
+      attr = compiler.attribute(string((string(attribute.c_str()) + ".tangent").c_str()));
     }
   }
   else {
@@ -7711,10 +7711,10 @@ void TangentNode::compile(OSLCompiler &compiler)
 {
   if (direction_type == NODE_TANGENT_UVMAP) {
     if (attribute.empty()) {
-      compiler.parameter("attr_name", ustring("geom:tangent"));
+      compiler.parameter("attr_name", string("geom:tangent"));
     }
     else {
-      compiler.parameter("attr_name", ustring((string(attribute.c_str()) + ".tangent").c_str()));
+      compiler.parameter("attr_name", string((string(attribute.c_str()) + ".tangent").c_str()));
     }
   }
 
@@ -7828,7 +7828,7 @@ NODE_DEFINE(VectorDisplacementNode)
   space_enum.insert("world", NODE_NORMAL_MAP_WORLD);
 
   SOCKET_ENUM(space, "Space", space_enum, NODE_NORMAL_MAP_TANGENT);
-  SOCKET_STRING(attribute, "Attribute", ustring());
+  SOCKET_STRING(attribute, "Attribute", string());
 
   SOCKET_IN_COLOR(vector, "Vector", zero_float3());
   SOCKET_IN_FLOAT(midlevel, "Midlevel", 0.0f);
@@ -7858,8 +7858,8 @@ void VectorDisplacementNode::attributes(Shader *shader, AttributeRequestSet *att
       attributes->add(ATTR_STD_UV_TANGENT_SIGN);
     }
     else {
-      attributes->add(ustring((string(attribute.c_str()) + ".tangent").c_str()));
-      attributes->add(ustring((string(attribute.c_str()) + ".tangent_sign").c_str()));
+      attributes->add(string((string(attribute.c_str()) + ".tangent").c_str()));
+      attributes->add(string((string(attribute.c_str()) + ".tangent_sign").c_str()));
     }
   }
 
@@ -7881,9 +7881,9 @@ void VectorDisplacementNode::compile(SVMCompiler &compiler)
       attr_sign = compiler.attribute(ATTR_STD_UV_TANGENT_SIGN);
     }
     else {
-      attr = compiler.attribute(ustring((string(attribute.c_str()) + ".tangent").c_str()));
+      attr = compiler.attribute(string((string(attribute.c_str()) + ".tangent").c_str()));
       attr_sign = compiler.attribute(
-          ustring((string(attribute.c_str()) + ".tangent_sign").c_str()));
+          string((string(attribute.c_str()) + ".tangent_sign").c_str()));
     }
   }
 
@@ -7902,13 +7902,13 @@ void VectorDisplacementNode::compile(OSLCompiler &compiler)
 {
   if (space == NODE_NORMAL_MAP_TANGENT) {
     if (attribute.empty()) {
-      compiler.parameter("attr_name", ustring("geom:tangent"));
-      compiler.parameter("attr_sign_name", ustring("geom:tangent_sign"));
+      compiler.parameter("attr_name", string("geom:tangent"));
+      compiler.parameter("attr_sign_name", string("geom:tangent_sign"));
     }
     else {
-      compiler.parameter("attr_name", ustring((string(attribute.c_str()) + ".tangent").c_str()));
+      compiler.parameter("attr_name", string((string(attribute.c_str()) + ".tangent").c_str()));
       compiler.parameter("attr_sign_name",
-                         ustring((string(attribute.c_str()) + ".tangent_sign").c_str()));
+                         string((string(attribute.c_str()) + ".tangent_sign").c_str()));
     }
   }
 

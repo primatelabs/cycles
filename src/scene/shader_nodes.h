@@ -105,8 +105,8 @@ class ImageTextureNode : public ImageSlotTextureNode {
   ImageParams image_params() const;
 
   /* Parameters. */
-  NODE_SOCKET_API(ustring, filename)
-  NODE_SOCKET_API(ustring, colorspace)
+  NODE_SOCKET_API(string, filename)
+  NODE_SOCKET_API(string, colorspace)
   NODE_SOCKET_API(ImageAlphaType, alpha_type)
   NODE_SOCKET_API(NodeImageProjection, projection)
   NODE_SOCKET_API(InterpolationType, interpolation)
@@ -139,8 +139,8 @@ class EnvironmentTextureNode : public ImageSlotTextureNode {
   ImageParams image_params() const;
 
   /* Parameters. */
-  NODE_SOCKET_API(ustring, filename)
-  NODE_SOCKET_API(ustring, colorspace)
+  NODE_SOCKET_API(string, filename)
+  NODE_SOCKET_API(string, colorspace)
   NODE_SOCKET_API(ImageAlphaType, alpha_type)
   NODE_SOCKET_API(NodeEnvironmentProjection, projection)
   NODE_SOCKET_API(InterpolationType, interpolation)
@@ -203,7 +203,7 @@ class OutputAOVNode : public ShaderNode {
   NODE_SOCKET_API(float, value)
   NODE_SOCKET_API(float3, color)
 
-  NODE_SOCKET_API(ustring, name)
+  NODE_SOCKET_API(string, name)
 
   /* Don't allow output node de-duplication. */
   bool equals(const ShaderNode & /*other*/) override
@@ -362,7 +362,7 @@ class PointDensityTextureNode : public ShaderNode {
   }
 
   /* Parameters. */
-  NODE_SOCKET_API(ustring, filename)
+  NODE_SOCKET_API(string, filename)
   NODE_SOCKET_API(NodeTexVoxelSpace, space)
   NODE_SOCKET_API(InterpolationType, interpolation)
   NODE_SOCKET_API(Transform, tfm)
@@ -387,8 +387,8 @@ class IESLightNode : public TextureNode {
   ~IESLightNode() override;
   ShaderNode *clone(ShaderGraph *graph) const override;
 
-  NODE_SOCKET_API(ustring, filename)
-  NODE_SOCKET_API(ustring, ies)
+  NODE_SOCKET_API(string, filename)
+  NODE_SOCKET_API(string, ies)
 
   NODE_SOCKET_API(float, strength)
   NODE_SOCKET_API(float3, vector)
@@ -448,7 +448,7 @@ class ConvertNode : public ShaderNode {
     float3 value_point;
     float3 value_normal;
   };
-  ustring value_string;
+  string value_string;
 
   static const int MAX_TYPE = 13;
   static bool register_types();
@@ -854,9 +854,9 @@ class PrincipledVolumeNode : public VolumeNode {
     return true;
   }
 
-  NODE_SOCKET_API(ustring, density_attribute)
-  NODE_SOCKET_API(ustring, color_attribute)
-  NODE_SOCKET_API(ustring, temperature_attribute)
+  NODE_SOCKET_API(string, density_attribute)
+  NODE_SOCKET_API(string, color_attribute)
+  NODE_SOCKET_API(string, temperature_attribute)
 
   NODE_SOCKET_API(float, anisotropy)
   NODE_SOCKET_API(float3, absorption_color)
@@ -984,7 +984,7 @@ class UVMapNode : public ShaderNode {
     return true;
   }
 
-  NODE_SOCKET_API(ustring, attribute)
+  NODE_SOCKET_API(string, attribute)
   NODE_SOCKET_API(bool, from_dupli)
 };
 
@@ -1078,7 +1078,7 @@ class VertexColorNode : public ShaderNode {
     return true;
   }
 
-  NODE_SOCKET_API(ustring, layer_name)
+  NODE_SOCKET_API(string, layer_name)
 };
 
 class ValueNode : public ShaderNode {
@@ -1305,7 +1305,7 @@ class AttributeNode : public ShaderNode {
     return true;
   }
 
-  NODE_SOCKET_API(ustring, attribute)
+  NODE_SOCKET_API(string, attribute)
 };
 
 class CameraNode : public ShaderNode {
@@ -1577,8 +1577,8 @@ class OSLNode final : public ShaderNode {
   void attributes(Shader *shader, AttributeRequestSet *attributes) override;
 
   char *input_default_value();
-  void add_input(ustring name, SocketType::Type type, const int flags = 0);
-  void add_output(ustring name, SocketType::Type type);
+  void add_input(string name, SocketType::Type type, const int flags = 0);
+  void add_output(string name, SocketType::Type type);
 
   SHADER_NODE_NO_CLONE_CLASS(OSLNode)
 
@@ -1625,7 +1625,7 @@ class NormalMapNode : public ShaderNode {
   }
 
   NODE_SOCKET_API(NodeNormalMapSpace, space)
-  NODE_SOCKET_API(ustring, attribute)
+  NODE_SOCKET_API(string, attribute)
   NODE_SOCKET_API(float, strength)
   NODE_SOCKET_API(float3, color)
 };
@@ -1645,7 +1645,7 @@ class TangentNode : public ShaderNode {
 
   NODE_SOCKET_API(NodeTangentDirectionType, direction_type)
   NODE_SOCKET_API(NodeTangentAxis, axis)
-  NODE_SOCKET_API(ustring, attribute)
+  NODE_SOCKET_API(string, attribute)
 };
 
 class BevelNode : public ShaderNode {
@@ -1696,7 +1696,7 @@ class VectorDisplacementNode : public ShaderNode {
   }
 
   NODE_SOCKET_API(NodeNormalMapSpace, space)
-  NODE_SOCKET_API(ustring, attribute)
+  NODE_SOCKET_API(string, attribute)
   NODE_SOCKET_API(float3, vector)
   NODE_SOCKET_API(float, midlevel)
   NODE_SOCKET_API(float, scale)

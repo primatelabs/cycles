@@ -322,7 +322,7 @@ struct CachedData {
     AttributeStandard std;
     AttributeElement element;
     TypeDesc type_desc;
-    ustring name;
+    string name;
     DataStore<array<char>> data{};
   };
 
@@ -330,7 +330,7 @@ struct CachedData {
 
   void clear();
 
-  CachedAttribute &add_attribute(const ustring &name,
+  CachedAttribute &add_attribute(const string &name,
                                  const Alembic::Abc::TimeSampling &time_sampling);
 
   bool is_constant() const;
@@ -356,7 +356,7 @@ class AlembicObject : public Node {
   NODE_DECLARE
 
   /* Path to the IObject inside of the archive. */
-  NODE_SOCKET_API(ustring, path)
+  NODE_SOCKET_API(string, path)
 
   /* Shaders used for rendering. */
   NODE_SOCKET_API_ARRAY(array<Node *>, used_shaders)
@@ -468,11 +468,11 @@ class AlembicProcedural : public Procedural {
   NODE_DECLARE
 
   /* The file path to the Alembic archive */
-  NODE_SOCKET_API(ustring, filepath)
+  NODE_SOCKET_API(string, filepath)
 
   /* Layers for the Alembic archive. Layers are in the order in which they override data, with the
    * latter elements overriding the former ones. */
-  NODE_SOCKET_API_ARRAY(array<ustring>, layers)
+  NODE_SOCKET_API_ARRAY(array<string>, layers)
 
   /* The current frame to render. */
   NODE_SOCKET_API(float, frame)
@@ -522,7 +522,7 @@ class AlembicProcedural : public Procedural {
    * to `generate`, it will be ignored.
    *
    * Returns a pointer to an existing or a newly created AlembicObject for the given path. */
-  AlembicObject *get_or_create_object(const ustring &path);
+  AlembicObject *get_or_create_object(const string &path);
 
  private:
   /* Load the data for all the objects whose data has not yet been loaded. */
