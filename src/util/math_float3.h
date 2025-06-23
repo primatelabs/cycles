@@ -334,7 +334,7 @@ ccl_device_inline float3 sqrt(const float3 a)
 
 ccl_device_inline float3 floor(const float3 a)
 {
-#  ifdef __KERNEL_SSE__
+#  if defined(__KERNEL_SSE42__) && defined(__KERNEL_SSE__)
   return float3(_mm_floor_ps(a));
 #  else
   return make_float3(floorf(a.x), floorf(a.y), floorf(a.z));
@@ -343,7 +343,7 @@ ccl_device_inline float3 floor(const float3 a)
 
 ccl_device_inline float3 ceil(const float3 a)
 {
-#  ifdef __KERNEL_SSE__
+#  if defined(__KERNEL_SSE42__) && defined(__KERNEL_SSE__)
   return float3(_mm_ceil_ps(a));
 #  else
   return make_float3(ceilf(a.x), ceilf(a.y), ceilf(a.z));

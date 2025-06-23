@@ -470,7 +470,7 @@ ccl_device_inline float4 fmod(const float4 a, const float b)
 
 ccl_device_inline float4 floor(const float4 a)
 {
-#  ifdef __KERNEL_SSE__
+#  ifdef __KERNEL_SSE42__
 #    if defined(__KERNEL_NEON__)
   return float4(vrndmq_f32(a));
 #    else
