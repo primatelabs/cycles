@@ -23,7 +23,7 @@ using testing::AnyNumber;
 using testing::HasSubstr;
 using testing::ScopedMockLog;
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 namespace {
 
@@ -1538,4 +1538,4 @@ TEST_F(RenderGraph, constant_fold_convert_color_float_color)
   graph.finalize(scene.get());
 }
 
-CCL_NAMESPACE_END
+}

@@ -9,7 +9,7 @@
 #include "util/param.h"
 #include "util/transform.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Node Type */
 
@@ -907,4 +907,4 @@ void Node::print_modified_sockets() const
   }
 }
 
-CCL_NAMESPACE_END
+}

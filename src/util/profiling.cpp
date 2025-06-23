@@ -9,7 +9,7 @@
 
 #include "util/profiling.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 Profiler::Profiler() : do_stop_worker(true) {}
 
@@ -163,4 +163,4 @@ bool Profiler::active() const
   return (worker != nullptr);
 }
 
-CCL_NAMESPACE_END
+}

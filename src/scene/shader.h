@@ -24,7 +24,7 @@
 #include "util/types.h"
 #include "util/unique_ptr.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 class Device;
 class DeviceScene;
@@ -257,4 +257,4 @@ class ShaderManager {
   bool is_rec709;
 };
 
-CCL_NAMESPACE_END
+}

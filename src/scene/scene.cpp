@@ -33,7 +33,7 @@
 #include "util/log.h"
 #include "util/progress.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 Scene ::Scene(const SceneParams &params_, Device *device)
     : name("Scene"),
@@ -1017,4 +1017,4 @@ template<> void Scene::delete_nodes(const set<Pass *> &nodes, const NodeOwner *o
   film->tag_modified();
 }
 
-CCL_NAMESPACE_END
+}

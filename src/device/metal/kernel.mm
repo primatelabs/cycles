@@ -23,7 +23,7 @@
 #  include "util/time.h"
 #  include "util/unique_ptr.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 const char *kernel_type_as_string(MetalPipelineType pso_type)
 {
@@ -914,6 +914,6 @@ void MetalDeviceKernels::static_deinitialize()
   }
 }
 
-CCL_NAMESPACE_END
+}
 
 #endif /* WITH_METAL */

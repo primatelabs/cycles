@@ -7,7 +7,7 @@
 #include "kernel/svm/util.h"
 #include "util/hash.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /*
  * SPDX-License-Identifier: MIT
@@ -1203,4 +1203,4 @@ ccl_device_noinline int svm_node_tex_voronoi(KernelGlobals kg,
   return offset;
 }
 
-CCL_NAMESPACE_END
+}

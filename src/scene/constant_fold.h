@@ -7,7 +7,7 @@
 #include "kernel/svm/types.h"
 #include "util/types.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 class Scene;
 class ShaderGraph;
@@ -59,4 +59,4 @@ class ConstantFolder {
   void fold_mapping(NodeMappingType type) const;
 };
 
-CCL_NAMESPACE_END
+}

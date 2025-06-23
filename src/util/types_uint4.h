@@ -6,7 +6,7 @@
 
 #include "util/types_base.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 #ifndef __KERNEL_NATIVE_VECTOR_TYPES__
 struct uint4 {
@@ -34,4 +34,4 @@ ccl_device_inline uint4 make_uint4(const uint x, const uint y, uint z, const uin
 }
 #endif /* __KERNEL_NATIVE_VECTOR_TYPES__ */
 
-CCL_NAMESPACE_END
+}

@@ -8,7 +8,7 @@
 
 #include "util/string.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Give current time in seconds in double precision, with good accuracy. */
 
@@ -72,4 +72,4 @@ class scoped_callback_timer {
 string time_human_readable_from_seconds(const double seconds);
 double time_human_readable_to_seconds(const string &time_string);
 
-CCL_NAMESPACE_END
+}

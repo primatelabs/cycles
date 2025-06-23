@@ -10,7 +10,7 @@
 
 #include "kernel/util/differential.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Ray */
 
@@ -568,4 +568,4 @@ ccl_device_inline int integrator_state_transparent_bounce(ConstIntegratorShadowS
 }
 #endif
 
-CCL_NAMESPACE_END
+}

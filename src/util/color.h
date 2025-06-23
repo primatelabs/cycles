@@ -7,7 +7,7 @@
 #include "util/math.h"
 #include "util/types.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 ccl_device uchar float_to_byte(const float val)
 {
@@ -436,4 +436,4 @@ ccl_device_inline float3 safe_divide_even_color(const float3 a, const float3 b)
   return make_float3(x, y, z);
 }
 
-CCL_NAMESPACE_END
+}

@@ -12,7 +12,7 @@
 
 #include "util/tbb.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 EdgeDice::EdgeDice(const SubdParams &params_,
                    const int num_verts,
@@ -414,4 +414,4 @@ void EdgeDice::dice(const DiagSplit &split)
   });
 }
 
-CCL_NAMESPACE_END
+}

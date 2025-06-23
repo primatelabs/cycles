@@ -8,7 +8,7 @@
 
 #include "pl/image_buf.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 namespace ImageBufAlgo {
 
@@ -16,4 +16,4 @@ bool pow(ImageBuf &dst, const ImageBuf &A, const std::vector<float> &B);
 
 }  // namespace ImageBufAlgo
 
-CCL_NAMESPACE_END
+}

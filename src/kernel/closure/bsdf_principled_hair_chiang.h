@@ -17,7 +17,7 @@
 
 #include "kernel/util/colorspace.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 struct ChiangHairBSDF {
   SHADER_CLOSURE_BASE;
@@ -477,4 +477,4 @@ ccl_device Spectrum bsdf_hair_chiang_albedo(const ccl_private ShaderData *sd,
   return exp(-sqrt(bsdf->sigma) * roughness_scale) + make_spectrum(f);
 }
 
-CCL_NAMESPACE_END
+}

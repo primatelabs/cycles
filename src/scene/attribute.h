@@ -15,7 +15,7 @@
 #include "util/types.h"
 #include "util/vector.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 class Attribute;
 class AttributeRequest;
@@ -267,4 +267,4 @@ class AttributeRequestSet {
   bool modified(const AttributeRequestSet &other);
 };
 
-CCL_NAMESPACE_END
+}

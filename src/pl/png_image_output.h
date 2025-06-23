@@ -9,7 +9,7 @@
 
 #include "pl/image_output.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 class PNGImageOutput : public ImageOutput {
  public:
@@ -41,4 +41,4 @@ class PNGImageOutput : public ImageOutput {
                            stride_t zstride = AutoStride);
 };
 
-CCL_NAMESPACE_END
+}

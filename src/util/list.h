@@ -6,8 +6,8 @@
 
 #include <list>
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 using std::list;
 
-CCL_NAMESPACE_END
+}

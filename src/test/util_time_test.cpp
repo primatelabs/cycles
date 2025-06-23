@@ -6,7 +6,7 @@
 
 #include "util/time.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 TEST(time_human_readable_to_seconds, Empty)
 {
@@ -54,4 +54,4 @@ TEST(time_human_readable_to_seconds, HoursMinutesSeconds)
   EXPECT_EQ(time_human_readable_from_seconds(203652.1), "56:34:12.10");
 }
 
-CCL_NAMESPACE_END
+}

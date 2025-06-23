@@ -22,7 +22,7 @@
  * functionality requires RTTI, which is disabled for OSL kernel. */
 #include <tbb/spin_mutex.h>
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 using thread_mutex = std::mutex;
 using thread_scoped_lock = std::unique_lock<std::mutex>;
@@ -70,4 +70,4 @@ class thread_scoped_spin_lock {
   thread_spin_lock &lock_;
 };
 
-CCL_NAMESPACE_END
+}

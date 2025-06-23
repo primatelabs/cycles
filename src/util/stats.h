@@ -6,7 +6,7 @@
 
 #include "util/atomic.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 class Stats {
  public:
@@ -31,4 +31,4 @@ class Stats {
   size_t mem_peak;
 };
 
-CCL_NAMESPACE_END
+}

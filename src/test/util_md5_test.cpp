@@ -6,7 +6,7 @@
 
 #include "util/md5.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 TEST(util, util_md5_string)
 {
@@ -14,4 +14,4 @@ TEST(util, util_md5_string)
   EXPECT_EQ(util_md5_string("Hello, World!"), "65A8E27D8879283831B664BD8B7F0AD4");
 }
 
-CCL_NAMESPACE_END
+}

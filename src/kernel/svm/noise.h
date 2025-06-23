@@ -11,7 +11,7 @@
 #include "util/math.h"
 #include "util/types.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* **** Perlin Noise **** */
 
@@ -758,4 +758,4 @@ ccl_device_inline float noise_4d(const float4 p)
   return 0.5f * snoise_4d(p) + 0.5f;
 }
 
-CCL_NAMESPACE_END
+}

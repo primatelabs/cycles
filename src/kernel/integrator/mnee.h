@@ -53,7 +53,7 @@
 #define MNEE_PROJECTION_DISTANCE_MULTIPLIER 2.f
 // NOLINTEND
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Manifold struct containing the local differential geometry quantity */
 struct ManifoldVertex {
@@ -1120,4 +1120,4 @@ ccl_device_forceinline int kernel_path_mnee_sample(KernelGlobals kg,
   return 0;
 }
 
-CCL_NAMESPACE_END
+}

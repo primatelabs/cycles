@@ -21,7 +21,7 @@
 #  include <cmath>   // IWYU pragma: export
 #endif
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Float Pi variations */
 
@@ -889,4 +889,4 @@ ccl_device_inline Interval<T> intervals_intersection(const ccl_private Interval<
   return {max(first.min, second.min), min(first.max, second.max)};
 }
 
-CCL_NAMESPACE_END
+}

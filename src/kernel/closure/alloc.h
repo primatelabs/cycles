@@ -6,7 +6,7 @@
 
 #include "kernel/types.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 ccl_device ccl_private ShaderClosure *closure_alloc(ccl_private ShaderData *sd,
                                                     const int size,
@@ -82,4 +82,4 @@ ccl_device_inline ccl_private ShaderClosure *bsdf_alloc(ccl_private ShaderData *
   return nullptr;
 }
 
-CCL_NAMESPACE_END
+}

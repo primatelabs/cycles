@@ -6,7 +6,7 @@
 
 #include "kernel/svm/util.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Map Range Node */
 
@@ -164,4 +164,4 @@ ccl_device_noinline int svm_node_vector_map_range(KernelGlobals kg,
   return offset;
 }
 
-CCL_NAMESPACE_END
+}

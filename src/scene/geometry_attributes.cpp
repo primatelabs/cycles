@@ -19,7 +19,7 @@
 
 #include "util/progress.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 bool Geometry::need_attribute(Scene *scene, AttributeStandard std)
 {
@@ -606,4 +606,4 @@ void GeometryManager::device_update_attributes(Device *device,
   scene->object_manager->device_update_geom_offsets(device, dscene, scene);
 }
 
-CCL_NAMESPACE_END
+}

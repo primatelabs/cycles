@@ -16,7 +16,7 @@
 #include "util/unique_ptr.h"
 #include "util/vector.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 class Device;
 class DeviceScene;
@@ -151,4 +151,4 @@ class LightManager {
   uint32_t update_flags;
 };
 
-CCL_NAMESPACE_END
+}

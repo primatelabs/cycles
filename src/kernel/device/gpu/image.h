@@ -4,7 +4,7 @@
 
 #pragma once
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 #if !defined __KERNEL_METAL__
 #  ifdef WITH_NANOVDB
@@ -356,4 +356,4 @@ ccl_device float4 kernel_tex_image_interp_3d(KernelGlobals kg,
   }
 }
 
-CCL_NAMESPACE_END
+}

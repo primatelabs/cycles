@@ -25,7 +25,7 @@
 
 #  include "kernel/device/hip/globals.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 class HIPDevice;
 
@@ -1080,6 +1080,6 @@ int HIPDevice::get_device_default_attribute(hipDeviceAttribute_t attribute,
   return value;
 }
 
-CCL_NAMESPACE_END
+}
 
 #endif

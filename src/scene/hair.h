@@ -6,7 +6,7 @@
 
 #include "scene/geometry.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 struct KernelCurveSegment;
 
@@ -149,4 +149,4 @@ class Hair : public Geometry {
   bool update_shadow_transparency(Device *device, Scene *scene, Progress &progress);
 };
 
-CCL_NAMESPACE_END
+}

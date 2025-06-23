@@ -12,11 +12,11 @@
 #  pragma GCC diagnostic ignored "-Wuninitialized"
 #endif
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Assertions inside the kernel only work for the CPU device, so we wrap it in
  * a macro which is empty for other devices */
 
 #define kernel_assert(cond) assert(cond)
 
-CCL_NAMESPACE_END
+}

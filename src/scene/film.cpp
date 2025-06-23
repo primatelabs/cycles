@@ -18,7 +18,7 @@
 #include "util/math_cdf.h"
 #include "util/time.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Pixel Filter */
 
@@ -736,4 +736,4 @@ uint Film::get_kernel_features(const Scene *scene) const
   return kernel_features;
 }
 
-CCL_NAMESPACE_END
+}

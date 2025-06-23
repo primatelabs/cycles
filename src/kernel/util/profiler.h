@@ -8,7 +8,7 @@
 #  include "util/profiling.h"  // IWYU pragma: export
 #endif
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 #ifndef __KERNEL_GPU__
 #  define PROFILING_INIT(kg, event) \
@@ -25,4 +25,4 @@ CCL_NAMESPACE_BEGIN
 #  define PROFILING_SHADER(object, shader)
 #endif /* !__KERNEL_GPU__ */
 
-CCL_NAMESPACE_END
+}

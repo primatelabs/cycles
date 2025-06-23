@@ -14,7 +14,7 @@
 #  include <climits>
 #endif
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 #define NANOVDB_USE_SINGLE_ROOT_KEY
 #define NANOVDB_DATA_ALIGNMENT 32  // NOLINT
@@ -439,4 +439,4 @@ template<typename BuildT> class CachedReadAccessor {
 
 }  // namespace nanovdb
 
-CCL_NAMESPACE_END
+}

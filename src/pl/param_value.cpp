@@ -8,7 +8,7 @@
 
 #include "pl/error.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 void ParamValue::init_noclear(string _name,
                               TypeDesc _type,
@@ -103,4 +103,4 @@ void ParamValue::clear_value() noexcept
   PL_NOT_IMPLEMENTED();
 }
 
-CCL_NAMESPACE_END
+}

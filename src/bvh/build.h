@@ -17,7 +17,7 @@
 #include "util/unique_ptr.h"
 #include "util/vector.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 class Boundbox;
 class BVHBuildTask;
@@ -141,4 +141,4 @@ class BVHBuild {
   BVHUnaligned unaligned_heuristic;
 };
 
-CCL_NAMESPACE_END
+}

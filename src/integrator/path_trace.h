@@ -19,7 +19,7 @@
 #include "util/unique_ptr.h"
 #include "util/vector.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 class AdaptiveSampling;
 class Device;
@@ -358,4 +358,4 @@ class PathTrace {
   } full_frame_state_;
 };
 
-CCL_NAMESPACE_END
+}

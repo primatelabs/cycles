@@ -12,7 +12,7 @@
 
 #include "kernel/util/colorspace.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Wavelength to RGB */
 
@@ -34,4 +34,4 @@ ccl_device_noinline void svm_node_wavelength(KernelGlobals kg,
   stack_store_float3(stack, color_out, color);
 }
 
-CCL_NAMESPACE_END
+}

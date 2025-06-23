@@ -10,7 +10,7 @@
 #include "util/unique_ptr.h"
 #include "util/vector.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 enum ProfilingEvent : uint32_t {
   PROFILING_UNKNOWN,
@@ -166,4 +166,4 @@ class ProfilingWithShaderHelper : public ProfilingHelper {
   }
 };
 
-CCL_NAMESPACE_END
+}

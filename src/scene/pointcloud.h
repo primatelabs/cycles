@@ -6,7 +6,7 @@
 
 #include "scene/geometry.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 class PointCloud : public Geometry {
  public:
@@ -95,4 +95,4 @@ class PointCloud : public Geometry {
   friend class ObjectManager;
 };
 
-CCL_NAMESPACE_END
+}

@@ -14,7 +14,7 @@
 
 #include "kernel/util/colorspace.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Blackbody Node */
 
@@ -33,4 +33,4 @@ ccl_device_noinline void svm_node_blackbody(KernelGlobals kg,
   stack_store_float3(stack, col_offset, color_rgb);
 }
 
-CCL_NAMESPACE_END
+}

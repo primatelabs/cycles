@@ -8,7 +8,7 @@
 
 #include "util/types.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 class Device;
 class DeviceScene;
@@ -43,4 +43,4 @@ class Background : public Node {
   Shader *get_shader(const Scene *scene);
 };
 
-CCL_NAMESPACE_END
+}

@@ -24,7 +24,7 @@
 
 #include "util/math_intersect.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /**
  * Use the barycentric coordinates to get the intersection location
@@ -145,4 +145,4 @@ ccl_device_inline bool motion_triangle_intersect_local(KernelGlobals kg,
 }
 #endif /* __BVH_LOCAL__ */
 
-CCL_NAMESPACE_END
+}

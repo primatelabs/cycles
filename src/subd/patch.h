@@ -7,7 +7,7 @@
 #include "util/boundbox.h"
 #include "util/types.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 class Patch {
  public:
@@ -44,4 +44,4 @@ class BicubicPatch final : public Patch {
   BoundBox bound();
 };
 
-CCL_NAMESPACE_END
+}

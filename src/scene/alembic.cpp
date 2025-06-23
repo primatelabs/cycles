@@ -24,7 +24,7 @@
 
 using namespace Alembic::AbcGeom;
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* TODO(kevindietrich): motion blur support. */
 
@@ -1561,6 +1561,6 @@ void AlembicProcedural::build_caches(Progress &progress)
   VLOG_WORK << "AlembicProcedural memory usage : " << string_human_readable_size(memory_used);
 }
 
-CCL_NAMESPACE_END
+}
 
 #endif

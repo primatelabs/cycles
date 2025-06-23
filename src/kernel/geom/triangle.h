@@ -15,7 +15,7 @@
 #include "kernel/geom/attribute.h"
 #include "kernel/geom/object.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Evaluate a quantity at barycentric coordinates u, v, given the values at three triangle
  * vertices. */
@@ -281,4 +281,4 @@ ccl_device T triangle_attribute(KernelGlobals kg,
   return make_zero<T>();
 }
 
-CCL_NAMESPACE_END
+}

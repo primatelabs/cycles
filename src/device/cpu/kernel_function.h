@@ -7,7 +7,7 @@
 #include "util/debug.h"   // IWYU pragma: keep
 #include "util/system.h"  // IWYU pragma: keep
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* A wrapper around per-microarchitecture variant of a kernel function.
  *
@@ -68,4 +68,4 @@ template<typename FunctionType> class CPUKernelFunction {
   KernelInfo kernel_info_;
 };
 
-CCL_NAMESPACE_END
+}

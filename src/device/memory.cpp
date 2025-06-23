@@ -5,7 +5,7 @@
 #include "device/memory.h"
 #include "device/device.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Device Memory */
 
@@ -244,4 +244,4 @@ void device_texture::copy_to_device()
   device_copy_to();
 }
 
-CCL_NAMESPACE_END
+}

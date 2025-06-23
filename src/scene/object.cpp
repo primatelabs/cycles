@@ -25,7 +25,7 @@
 #include "util/tbb.h"
 #include "util/vector.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Global state of object transform update. */
 
@@ -1142,4 +1142,4 @@ string ObjectManager::get_cryptomatte_assets(Scene *scene)
   return manifest;
 }
 
-CCL_NAMESPACE_END
+}

@@ -7,7 +7,7 @@
 #include "util/list.h"
 #include "util/vector.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 class Device;
 class DeviceScene;
@@ -39,4 +39,4 @@ class LookupTables {
   void remove_table(size_t *offset);
 };
 
-CCL_NAMESPACE_END
+}

@@ -14,7 +14,7 @@
 
 #include "kernel/svm/util.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 #ifdef __SHADER_RAYTRACE__
 
@@ -144,4 +144,4 @@ ccl_device_noinline
 
 #endif /* __SHADER_RAYTRACE__ */
 
-CCL_NAMESPACE_END
+}

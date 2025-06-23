@@ -13,7 +13,7 @@
 
 #include "kernel/util/differential.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 #ifdef __SUBSURFACE__
 
@@ -217,4 +217,4 @@ ccl_device_inline bool subsurface_disk(KernelGlobals kg,
 
 #endif /* __SUBSURFACE__ */
 
-CCL_NAMESPACE_END
+}

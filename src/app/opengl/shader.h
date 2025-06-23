@@ -6,7 +6,7 @@
 
 #include "util/types.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 class OpenGLShader {
  public:
@@ -43,4 +43,4 @@ class OpenGLShader {
   bool shader_compile_attempted_ = false;
 };
 
-CCL_NAMESPACE_END
+}

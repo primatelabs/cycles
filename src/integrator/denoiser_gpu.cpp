@@ -15,7 +15,7 @@
 
 #include "util/log.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 DenoiserGPU::DenoiserGPU(Device *denoiser_device, const DenoiseParams &params)
     : Denoiser(denoiser_device, params)
@@ -376,4 +376,4 @@ void DenoiserGPU::denoise_pass(DenoiseContext &context, PassType pass_type)
   denoiser_queue_->synchronize();
 }
 
-CCL_NAMESPACE_END
+}

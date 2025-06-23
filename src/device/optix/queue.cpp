@@ -10,7 +10,7 @@
 #  define __KERNEL_OPTIX__
 #  include "kernel/device/optix/globals.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* CUDADeviceQueue */
 
@@ -193,6 +193,6 @@ bool OptiXDeviceQueue::enqueue(DeviceKernel kernel,
   return !(optix_device->have_error());
 }
 
-CCL_NAMESPACE_END
+}
 
 #endif /* WITH_OPTIX */

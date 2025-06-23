@@ -17,7 +17,7 @@
 #include "util/texture.h"  // IWYU pragma: keep
 #include "util/unique_ptr.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 struct OSLGlobals;
 
@@ -96,4 +96,4 @@ using KernelGlobals = const ThreadKernelGlobalsCPU *;
 #define kernel_data_array(name) (kg->name.data)
 #define kernel_data (kg->data)
 
-CCL_NAMESPACE_END
+}

@@ -14,7 +14,7 @@
 
 #include "kernel/bvh/bvh.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 ccl_device_forceinline bool integrator_intersect_skip_lights(KernelGlobals kg,
                                                              IntegratorState state)
@@ -428,4 +428,4 @@ ccl_device void integrator_intersect_closest(KernelGlobals kg,
       kg, state, &isect, render_buffer, hit);
 }
 
-CCL_NAMESPACE_END
+}

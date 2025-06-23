@@ -4,6 +4,6 @@
 
 #include "device/graphics_interop.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
-CCL_NAMESPACE_END
+}

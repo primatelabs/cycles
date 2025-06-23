@@ -84,7 +84,7 @@
 #  include "kernel/svm/bevel.h"
 #endif
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 #ifdef __KERNEL_USE_DATA_CONSTANTS__
 #  define SVM_CASE(node) \
@@ -491,4 +491,4 @@ ccl_device void svm_eval_nodes(KernelGlobals kg,
   }
 }
 
-CCL_NAMESPACE_END
+}

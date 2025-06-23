@@ -14,7 +14,7 @@
 #include <SDL.h>
 #include <epoxy/gl.h>
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* structs */
 
@@ -353,4 +353,4 @@ void window_redraw()
   V.redraw = true;
 }
 
-CCL_NAMESPACE_END
+}

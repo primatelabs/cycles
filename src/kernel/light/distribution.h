@@ -8,7 +8,7 @@
 
 #include "kernel/light/common.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Simple CDF based sampling over all lights in the scene, without taking into
  * account shading position or normal. */
@@ -57,4 +57,4 @@ ccl_device_inline float light_distribution_pdf_lamp(KernelGlobals kg)
   return kernel_data.integrator.distribution_pdf_lights;
 }
 
-CCL_NAMESPACE_END
+}

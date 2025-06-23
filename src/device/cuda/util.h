@@ -12,7 +12,7 @@
 #    include <cuda.h>
 #  endif
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 class CUDADevice;
 
@@ -48,6 +48,6 @@ const char *cuewCompilerPath();
 int cuewCompilerVersion();
 #  endif /* WITH_CUDA_DYNLOAD */
 
-CCL_NAMESPACE_END
+}
 
 #endif /* WITH_CUDA */

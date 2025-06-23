@@ -8,7 +8,7 @@
 
 #include "util/math_intersect.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Importance sampling.
  *
@@ -534,4 +534,4 @@ ccl_device_forceinline bool area_light_tree_parameters(const ccl_global KernelLi
   return front_facing && shape_above_surface;
 }
 
-CCL_NAMESPACE_END
+}

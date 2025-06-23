@@ -25,7 +25,7 @@
 
 #include "util/log.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* BVH Parameters. */
 
@@ -147,4 +147,4 @@ unique_ptr<BVH> BVH::create(const BVHParams &params,
   return nullptr;
 }
 
-CCL_NAMESPACE_END
+}

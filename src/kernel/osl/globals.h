@@ -21,7 +21,7 @@
 using std::isfinite;
 #  endif
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 class OSLRenderServices;
 class ColorSpaceProcessor;
@@ -98,6 +98,6 @@ struct OSLThreadData {
   OSLThreadData &operator=(OSLThreadData &&other) = delete;
 };
 
-CCL_NAMESPACE_END
+}
 
 #endif

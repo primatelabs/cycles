@@ -13,7 +13,7 @@
 #    include "hipew.h"
 #  endif
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 class HIPDevice;
 
@@ -96,6 +96,6 @@ static inline bool hipSupportsDeviceOIDN(const int hipDevId)
   return (arch == "gfx1030" || arch == "gfx1100" || arch == "gfx1101" || arch == "gfx1102");
 }
 
-CCL_NAMESPACE_END
+}
 
 #endif /* WITH_HIP */

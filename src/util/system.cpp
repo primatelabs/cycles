@@ -20,7 +20,7 @@
 #  include <unistd.h>
 #endif
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 int system_console_width()
 {
@@ -254,4 +254,4 @@ uint64_t system_self_process_id()
 #endif
 }
 
-CCL_NAMESPACE_END
+}

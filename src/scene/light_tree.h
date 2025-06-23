@@ -15,7 +15,7 @@
 #include <atomic>
 #include <variant>
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Orientation Bounds
  *
@@ -463,4 +463,4 @@ class LightTree {
   void add_mesh(Scene *scene, Mesh *mesh, const int object_id);
 };
 
-CCL_NAMESPACE_END
+}

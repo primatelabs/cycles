@@ -7,7 +7,7 @@
 #include "kernel/svm/math_util.h"
 #include "kernel/svm/util.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 ccl_device_noinline void svm_node_gamma(ccl_private ShaderData *sd,
                                         ccl_private float *stack,
@@ -25,4 +25,4 @@ ccl_device_noinline void svm_node_gamma(ccl_private ShaderData *sd,
   }
 }
 
-CCL_NAMESPACE_END
+}

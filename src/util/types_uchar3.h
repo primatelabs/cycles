@@ -6,7 +6,7 @@
 
 #include "util/types_base.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 #ifndef __KERNEL_NATIVE_VECTOR_TYPES__
 struct uchar3 {
@@ -36,4 +36,4 @@ ccl_device_inline uchar3 make_uchar3(const uchar x, const uchar y, uchar z)
 }
 #endif /* __KERNEL_NATIVE_VECTOR_TYPES__ */
 
-CCL_NAMESPACE_END
+}

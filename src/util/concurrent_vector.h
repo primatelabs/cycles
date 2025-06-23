@@ -12,8 +12,8 @@
 
 #include <tbb/concurrent_vector.h>
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 using tbb::concurrent_vector;
 
-CCL_NAMESPACE_END
+}

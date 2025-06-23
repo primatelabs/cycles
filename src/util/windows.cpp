@@ -8,7 +8,7 @@
 
 #include "util/windows.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 bool system_windows_version_at_least(const int major, const int build)
 {
@@ -39,4 +39,4 @@ bool system_windows_version_at_least(const int major, const int build)
 #endif
 }
 
-CCL_NAMESPACE_END
+}

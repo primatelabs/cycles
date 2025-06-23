@@ -30,7 +30,7 @@
 #  include <cstdlib>
 #endif
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 void *util_aligned_malloc(const size_t size, const int alignment)
 {
@@ -70,4 +70,4 @@ void util_aligned_free(void *ptr, const size_t size)
 #endif
 }
 
-CCL_NAMESPACE_END
+}

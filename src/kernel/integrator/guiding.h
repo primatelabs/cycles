@@ -16,7 +16,7 @@
 
 #include "util/color.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Utilities. */
 
@@ -620,4 +620,4 @@ ccl_device_forceinline float guiding_phase_pdf(KernelGlobals kg,
 #endif
 }
 
-CCL_NAMESPACE_END
+}

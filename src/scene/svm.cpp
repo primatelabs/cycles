@@ -20,7 +20,7 @@
 #include "util/progress.h"
 #include "util/task.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Shader Manager */
 
@@ -1000,4 +1000,4 @@ SVMCompiler::CompilerState::CompilerState(ShaderGraph *graph)
   node_feature_mask = 0;
 }
 
-CCL_NAMESPACE_END
+}

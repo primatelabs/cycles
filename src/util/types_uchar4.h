@@ -6,7 +6,7 @@
 
 #include "util/types_base.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 #ifndef __KERNEL_NATIVE_VECTOR_TYPES__
 struct uchar4 {
@@ -42,4 +42,4 @@ ccl_device_inline bool operator==(const uchar4 a, const uchar4 b)
 
 #endif /* __KERNEL_NATIVE_VECTOR_TYPES__ */
 
-CCL_NAMESPACE_END
+}

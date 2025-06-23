@@ -24,7 +24,7 @@
 #include "util/path.h"
 #include "util/progress.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 static void shade_background_pixels(Device *device,
                                     DeviceScene *dscene,
@@ -1562,4 +1562,4 @@ void LightManager::device_update_ies(DeviceScene *dscene)
   }
 }
 
-CCL_NAMESPACE_END
+}

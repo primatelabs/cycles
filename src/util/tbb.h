@@ -23,7 +23,7 @@
 #  include <tbb/global_control.h>
 #endif
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 using tbb::blocked_range;
 using tbb::enumerable_thread_specific;
@@ -55,4 +55,4 @@ static inline void parallel_for_cancel()
 #endif
 }
 
-CCL_NAMESPACE_END
+}

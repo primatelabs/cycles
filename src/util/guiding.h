@@ -11,7 +11,7 @@
 
 #include "util/system.h"  // IWYU pragma: keep
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 static int guiding_device_type()
 {
@@ -37,4 +37,4 @@ static inline bool guiding_supported()
   return guiding_device_type() != 0;
 }
 
-CCL_NAMESPACE_END
+}

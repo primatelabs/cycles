@@ -7,7 +7,7 @@
 #include "kernel/svm/math_util.h"
 #include "kernel/svm/util.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 ccl_device_noinline void svm_node_math(KernelGlobals kg,
                                        ccl_private ShaderData *sd,
@@ -73,4 +73,4 @@ ccl_device_noinline int svm_node_vector_math(KernelGlobals kg,
   return offset;
 }
 
-CCL_NAMESPACE_END
+}

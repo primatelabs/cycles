@@ -6,7 +6,7 @@
 
 #include "kernel/film/write.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Check whether the pixel has converged and should not be sampled anymore. */
 
@@ -158,4 +158,4 @@ ccl_device void film_adaptive_sampling_filter_y(KernelGlobals kg,
   }
 }
 
-CCL_NAMESPACE_END
+}

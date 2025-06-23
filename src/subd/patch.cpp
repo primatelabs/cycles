@@ -9,7 +9,7 @@
 #include "util/math.h"
 #include "util/types.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* De Casteljau Evaluation */
 
@@ -116,4 +116,4 @@ BoundBox BicubicPatch::bound()
   return bbox;
 }
 
-CCL_NAMESPACE_END
+}

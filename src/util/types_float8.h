@@ -11,7 +11,7 @@
 #include "util/types_float4.h"
 #include "util/types_int8.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* float8 is a reserved type in Metal that has not been implemented. For
  * that reason this is named vfloat8 and not using native vector types. */
@@ -131,4 +131,4 @@ ccl_device_inline vint8 make_vint8(const vfloat8 f)
 #endif
 }
 
-CCL_NAMESPACE_END
+}

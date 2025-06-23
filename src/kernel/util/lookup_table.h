@@ -7,7 +7,7 @@
 #include "kernel/globals.h"
 #include "kernel/types.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Interpolated lookup table access */
 
@@ -71,4 +71,4 @@ ccl_device float lookup_table_read_3D(KernelGlobals kg,
   return (1.0f - t) * data0 + t * data1;
 }
 
-CCL_NAMESPACE_END
+}

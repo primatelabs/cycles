@@ -14,7 +14,7 @@
 #include "util/texture.h"
 #include "util/types.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 class Device;
 class GPUDevice;
@@ -613,4 +613,4 @@ class device_texture : public device_memory {
   }
 };
 
-CCL_NAMESPACE_END
+}

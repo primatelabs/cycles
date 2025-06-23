@@ -12,7 +12,7 @@
 #include "util/guiding.h"
 #include "util/openimagedenoise.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 unique_ptr<Device> device_cpu_create(const DeviceInfo &info,
                                      Stats &stats,
@@ -56,4 +56,4 @@ string device_cpu_capabilities()
   return capabilities;
 }
 
-CCL_NAMESPACE_END
+}

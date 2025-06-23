@@ -8,7 +8,7 @@
 
 #include "util/string.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 static int kIndentNumSpaces = 2;
 
@@ -352,4 +352,4 @@ void SceneUpdateStats::clear()
   procedurals.times.clear();
 }
 
-CCL_NAMESPACE_END
+}

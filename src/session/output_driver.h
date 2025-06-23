@@ -8,7 +8,7 @@
 #include "util/string.h"
 #include "util/types.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Output driver for reading render buffers.
  *
@@ -67,4 +67,4 @@ class OutputDriver {
   }
 };
 
-CCL_NAMESPACE_END
+}

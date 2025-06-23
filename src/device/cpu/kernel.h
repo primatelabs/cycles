@@ -7,7 +7,7 @@
 #include "device/cpu/kernel_function.h"
 #include "util/half.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 struct ThreadKernelGlobalsCPU;
 struct KernelFilmConvert;
@@ -121,4 +121,4 @@ class CPUKernels {
   CPUKernels();
 };
 
-CCL_NAMESPACE_END
+}

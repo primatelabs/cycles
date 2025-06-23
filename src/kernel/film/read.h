@@ -12,7 +12,7 @@
 
 #include "util/color.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* --------------------------------------------------------------------
  * Common utilities.
@@ -563,4 +563,4 @@ ccl_device_inline void film_apply_pass_pixel_overlays_rgba(
   }
 }
 
-CCL_NAMESPACE_END
+}

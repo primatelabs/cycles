@@ -6,7 +6,7 @@
 
 #include "pl/error.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 bool ImageBufAlgo::pow(ImageBuf &dst, const ImageBuf &A, const std::vector<float> &b)
 {
@@ -14,4 +14,4 @@ bool ImageBufAlgo::pow(ImageBuf &dst, const ImageBuf &A, const std::vector<float
   return true;
 }
 
-CCL_NAMESPACE_END
+}

@@ -6,7 +6,7 @@
 
 #include "kernel/types.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 struct GuidingParams {
   /* The subset of path guiding parameters that can trigger a creation/rebuild
@@ -34,4 +34,4 @@ struct GuidingParams {
   }
 };
 
-CCL_NAMESPACE_END
+}

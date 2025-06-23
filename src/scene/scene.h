@@ -17,7 +17,7 @@
 #include "util/unique_ptr.h"
 #include "util/unique_ptr_vector.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 class AlembicProcedural;
 class AttributeRequestSet;
@@ -289,4 +289,4 @@ template<> void Scene::delete_nodes(const set<Shader *> &nodes, const NodeOwner 
 template<> void Scene::delete_nodes(const set<Procedural *> &nodes, const NodeOwner *owner);
 template<> void Scene::delete_nodes(const set<Pass *> &nodes, const NodeOwner *owner);
 
-CCL_NAMESPACE_END
+}

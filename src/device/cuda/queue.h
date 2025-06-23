@@ -11,7 +11,7 @@
 
 #  include "device/cuda/util.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 class CUDADevice;
 class device_memory;
@@ -51,6 +51,6 @@ class CUDADeviceQueue : public DeviceQueue {
   void assert_success(CUresult result, const char *operation);
 };
 
-CCL_NAMESPACE_END
+}
 
 #endif /* WITH_CUDA */

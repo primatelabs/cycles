@@ -9,7 +9,7 @@
 #include "scene/tabulated_sobol.h"
 #include "util/hash.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 void tabulated_sobol_generate_4D(float4 points[], const int size, const int rng_seed)
 {
@@ -66,4 +66,4 @@ void tabulated_sobol_generate_4D(float4 points[], const int size, const int rng_
   }
 }
 
-CCL_NAMESPACE_END
+}

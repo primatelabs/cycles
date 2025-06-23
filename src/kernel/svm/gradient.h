@@ -6,7 +6,7 @@
 
 #include "kernel/svm/util.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Gradient */
 
@@ -79,4 +79,4 @@ ccl_device_noinline void svm_node_tex_gradient(ccl_private ShaderData *sd,
   }
 }
 
-CCL_NAMESPACE_END
+}

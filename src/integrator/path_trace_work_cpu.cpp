@@ -21,7 +21,7 @@
 
 #include "util/tbb.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Create TBB arena for execution of path tracing and rendering tasks. */
 static inline tbb::task_arena local_tbb_arena_create(const Device *device)
@@ -391,4 +391,4 @@ void PathTraceWorkCPU::guiding_push_sample_data_to_global_storage(ThreadKernelGl
 }
 #endif
 
-CCL_NAMESPACE_END
+}

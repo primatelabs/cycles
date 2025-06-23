@@ -12,7 +12,7 @@
 
 #  include <Metal/Metal.h>
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 class BVHMetal : public BVH {
  public:
@@ -62,6 +62,6 @@ class BVHMetal : public BVH {
   void set_accel_struct(id<MTLAccelerationStructure> new_accel_struct);
 };
 
-CCL_NAMESPACE_END
+}
 
 #endif /* WITH_METAL */

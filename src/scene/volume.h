@@ -8,7 +8,7 @@
 
 #include "scene/mesh.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 class Volume : public Mesh {
  public:
@@ -24,4 +24,4 @@ class Volume : public Mesh {
   void clear(bool preserve_shaders = false) override;
 };
 
-CCL_NAMESPACE_END
+}

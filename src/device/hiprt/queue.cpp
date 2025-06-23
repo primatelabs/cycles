@@ -12,7 +12,7 @@
 
 #  include "kernel/device/hiprt/globals.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 HIPRTDeviceQueue::HIPRTDeviceQueue(HIPRTDevice *device)
     : HIPDeviceQueue((HIPDevice *)device), hiprt_device_(device)
@@ -79,6 +79,6 @@ bool HIPRTDeviceQueue::enqueue(DeviceKernel kernel,
   return !(hiprt_device_->have_error());
 }
 
-CCL_NAMESPACE_END
+}
 
 #endif /* WITH_HIPRT */

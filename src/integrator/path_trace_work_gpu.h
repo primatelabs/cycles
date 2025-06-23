@@ -17,7 +17,7 @@
 
 #include "util/vector.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 struct KernelWorkTile;
 
@@ -176,4 +176,4 @@ class PathTraceWorkGPU : public PathTraceWork {
   int max_active_main_path_index_;
 };
 
-CCL_NAMESPACE_END
+}

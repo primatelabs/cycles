@@ -12,7 +12,7 @@
 #include <cstdio>
 #include <cstring>
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 // NOLINTBEGIN
 #define T_MASK ((uint32_t)~0)
@@ -382,4 +382,4 @@ string util_md5_string(const string &str)
   return md5.get_hex();
 }
 
-CCL_NAMESPACE_END
+}

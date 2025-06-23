@@ -20,7 +20,7 @@
 
 #include "kernel/closure/bsdf_microfacet.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 ccl_device int bsdf_ashikhmin_shirley_setup(ccl_private MicrofacetBsdf *bsdf)
 {
@@ -222,4 +222,4 @@ ccl_device int bsdf_ashikhmin_shirley_sample(const ccl_private ShaderClosure *sc
   return label;
 }
 
-CCL_NAMESPACE_END
+}

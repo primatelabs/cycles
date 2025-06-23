@@ -7,7 +7,7 @@
 #include "util/string.h"
 #include "util/types_base.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 struct KernelLightTreeNode;
 class LightTree;
@@ -23,4 +23,4 @@ void klight_tree_plot_to_file(uint root_index,
                               const KernelLightTreeNode *knodes,
                               const string &filename);
 
-CCL_NAMESPACE_END
+}

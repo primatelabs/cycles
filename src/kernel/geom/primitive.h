@@ -20,7 +20,7 @@
 #include "kernel/geom/triangle.h"
 #include "kernel/geom/volume.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Surface Attributes
  *
@@ -284,4 +284,4 @@ ccl_device_forceinline float4 primitive_motion_vector(KernelGlobals kg,
   return make_float4(motion_pre.x, motion_pre.y, motion_post.x, motion_post.y);
 }
 
-CCL_NAMESPACE_END
+}

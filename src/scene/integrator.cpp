@@ -23,7 +23,7 @@
 #include "util/task.h"
 #include "util/time.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 NODE_DEFINE(Integrator)
 {
@@ -474,4 +474,4 @@ GuidingParams Integrator::get_guiding_params(const Device *device) const
   guiding_params.roughness_threshold = guiding_roughness_threshold * guiding_roughness_threshold;
   return guiding_params;
 }
-CCL_NAMESPACE_END
+}

@@ -27,7 +27,7 @@
 #  include "scene/object.h"
 #  include "scene/pointcloud.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 static void get_hiprt_transform(float matrix[][4], Transform &tfm)
 {
@@ -1182,6 +1182,6 @@ void HIPRTDevice::build_bvh(BVH *bvh, Progress &progress, bool refit)
     scene = build_tlas(bvh_rt, bvh_rt->objects, options, refit);
   }
 }
-CCL_NAMESPACE_END
+}
 
 #endif

@@ -6,7 +6,7 @@
 
 #include "pl/error.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 std::string this_program_path()
 {
@@ -14,5 +14,5 @@ std::string this_program_path()
   return "";
 }
 
-CCL_NAMESPACE_END
+}
 

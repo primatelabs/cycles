@@ -20,7 +20,7 @@
 #include "util/progress.h"
 #include "util/types.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 NODE_DEFINE(Volume)
 {
@@ -757,4 +757,4 @@ void GeometryManager::create_volume_mesh(const Scene *scene, Volume *volume, Pro
             << "Mb.";
 }
 
-CCL_NAMESPACE_END
+}

@@ -18,7 +18,7 @@
 #  endif
 #endif /* WITH_CUDA */
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 bool device_cuda_init()
 {
@@ -356,4 +356,4 @@ string device_cuda_capabilities()
 #endif /* WITH_CUDA */
 }
 
-CCL_NAMESPACE_END
+}

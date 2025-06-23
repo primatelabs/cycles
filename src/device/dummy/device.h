@@ -6,7 +6,7 @@
 
 #include "util/unique_ptr.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 class Device;
 class DeviceInfo;
@@ -18,4 +18,4 @@ unique_ptr<Device> device_dummy_create(const DeviceInfo &info,
                                        Profiler &profiler,
                                        bool headless);
 
-CCL_NAMESPACE_END
+}

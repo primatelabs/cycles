@@ -11,7 +11,7 @@
 
 #include "util/string.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 class SessionParams;
 class TileManager;
@@ -502,4 +502,4 @@ int calculate_resolution_for_divider(const int width,
                                      const int height,
                                      const int resolution_divider);
 
-CCL_NAMESPACE_END
+}

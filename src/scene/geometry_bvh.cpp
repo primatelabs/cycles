@@ -20,7 +20,7 @@
 #include "util/log.h"
 #include "util/progress.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 void Geometry::compute_bvh(Device *device,
                            DeviceScene *dscene,
@@ -191,4 +191,4 @@ void GeometryManager::device_update_bvh(Device *device,
 #endif
 }
 
-CCL_NAMESPACE_END
+}

@@ -7,7 +7,7 @@
 #include "util/half.h"
 #include "util/types.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Display driver for efficient interactive display of renders.
  *
@@ -132,4 +132,4 @@ class DisplayDriver {
   virtual void draw(const Params &params) = 0;
 };
 
-CCL_NAMESPACE_END
+}

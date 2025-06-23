@@ -21,7 +21,7 @@
 #  endif
 #endif
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 #ifdef WITH_OPENVDB
 struct NumChannelsOp {
@@ -311,4 +311,4 @@ openvdb::GridBase::ConstPtr VDBImageLoader::get_grid()
 }
 #endif
 
-CCL_NAMESPACE_END
+}

@@ -19,7 +19,7 @@
 #include "util/math_float3.h"
 #include "util/math_intersect.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 ccl_device_inline bool triangle_intersect(KernelGlobals kg,
                                           ccl_private Intersection *isect,
@@ -164,4 +164,4 @@ ccl_device_inline void triangle_shader_setup(KernelGlobals kg, ccl_private Shade
 #endif
 }
 
-CCL_NAMESPACE_END
+}

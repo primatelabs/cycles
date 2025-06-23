@@ -11,7 +11,7 @@
 #include "util/unique_ptr.h"
 #include "util/vector.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Convenient vector of unique_ptr.
  * - Indexing and iterators return the pointer value directly.
@@ -173,4 +173,4 @@ template<typename T> class unique_ptr_vector {
   }
 };
 
-CCL_NAMESPACE_END
+}

@@ -8,7 +8,7 @@
 
 #include "kernel/bvh/util.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Motion Curve Primitive
  *
@@ -151,4 +151,4 @@ ccl_device_inline void motion_curve_keys(KernelGlobals kg,
 
 #endif
 
-CCL_NAMESPACE_END
+}

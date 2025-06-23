@@ -10,7 +10,7 @@
 #include "util/thread.h"
 #include "util/unique_ptr.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 class TaskPool;
 class TaskScheduler;
@@ -129,4 +129,4 @@ class DedicatedTaskPool {
   unique_ptr<thread> worker_thread;
 };
 
-CCL_NAMESPACE_END
+}

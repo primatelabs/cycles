@@ -8,7 +8,7 @@
 
 #include "util/types_int2.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 class BufferParams;
 
@@ -98,4 +98,4 @@ class WorkTileScheduler {
   int total_work_size_ = 0;
 };
 
-CCL_NAMESPACE_END
+}

@@ -13,7 +13,7 @@
 #include "util/unique_ptr.h"
 #include "util/vector.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 class BoundBox;
 class BVHNode;
@@ -89,4 +89,4 @@ class BVH {
       const vector<Object *> &objects);
 };
 
-CCL_NAMESPACE_END
+}

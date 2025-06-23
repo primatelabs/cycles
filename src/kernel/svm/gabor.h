@@ -24,7 +24,7 @@
 
 #include "util/hash.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* The original Gabor noise paper specifies that the impulses count for each cell should be
  * computed by sampling a Poisson distribution whose mean is the impulse density. However,
@@ -390,4 +390,4 @@ ccl_device_noinline int svm_node_tex_gabor(KernelGlobals kg,
   return offset;
 }
 
-CCL_NAMESPACE_END
+}

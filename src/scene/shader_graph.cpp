@@ -15,7 +15,7 @@
 #include "util/md5.h"
 #include "util/queue.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 namespace {
 
@@ -1268,4 +1268,4 @@ void ShaderGraph::dump_graph(const char *filename)
   fclose(fd);
 }
 
-CCL_NAMESPACE_END
+}

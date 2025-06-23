@@ -9,7 +9,7 @@
 
 #include "util/color.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Classes for interpolation to use float math for byte value, for precision. */
 template<typename T> struct SubdFloat {
@@ -564,4 +564,4 @@ void SubdAttributeInterpolation::setup_attribute_type(const Attribute &subd_attr
   }
 }
 
-CCL_NAMESPACE_END
+}

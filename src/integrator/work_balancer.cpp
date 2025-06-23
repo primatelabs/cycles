@@ -6,7 +6,7 @@
 
 #include "util/math_base.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 void work_balance_do_initial(vector<WorkBalanceInfo> &work_balance_infos)
 {
@@ -85,4 +85,4 @@ bool work_balance_do_rebalance(vector<WorkBalanceInfo> &work_balance_infos)
   return true;
 }
 
-CCL_NAMESPACE_END
+}

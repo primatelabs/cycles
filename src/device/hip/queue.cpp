@@ -10,7 +10,7 @@
 #  include "device/hip/graphics_interop.h"
 #  include "device/hip/kernel.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* HIPDeviceQueue */
 
@@ -226,6 +226,6 @@ unique_ptr<DeviceGraphicsInterop> HIPDeviceQueue::graphics_interop_create()
   return make_unique<HIPDeviceGraphicsInterop>(this);
 }
 
-CCL_NAMESPACE_END
+}
 
 #endif /* WITH_HIP */

@@ -6,9 +6,9 @@
 
 #include <memory>
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 using std::make_unique;
 using std::unique_ptr;
 
-CCL_NAMESPACE_END
+}

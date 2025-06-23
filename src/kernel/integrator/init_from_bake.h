@@ -14,7 +14,7 @@
 
 #include "kernel/sample/pattern.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* In order to perform anti-aliasing during baking, we jitter the input barycentric coordinates
  * (which are for the center of the texel) within the texel.
@@ -341,4 +341,4 @@ ccl_device bool integrator_init_from_bake(KernelGlobals kg,
   return true;
 }
 
-CCL_NAMESPACE_END
+}

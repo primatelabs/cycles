@@ -6,7 +6,7 @@
 
 #include "kernel/integrator/state_flow.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 #ifdef __SHADOW_LINKING__
 
@@ -67,4 +67,4 @@ ccl_device_inline bool shadow_linking_schedule_intersection_kernel(KernelGlobals
 
 #endif /* __SHADOW_LINKING__ */
 
-CCL_NAMESPACE_END
+}

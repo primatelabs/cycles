@@ -12,7 +12,7 @@
 
 #include "kernel/util/differential.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Bump Node */
 template<uint node_feature_mask>
@@ -238,4 +238,4 @@ ccl_device_noinline int svm_node_vector_displacement(KernelGlobals kg,
   return offset;
 }
 
-CCL_NAMESPACE_END
+}

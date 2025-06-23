@@ -10,7 +10,7 @@
 
 #include "util/system.h"  // IWYU pragma: keep
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 static inline bool openimagedenoise_supported()
 {
@@ -29,4 +29,4 @@ static inline bool openimagedenoise_supported()
 #endif
 }
 
-CCL_NAMESPACE_END
+}

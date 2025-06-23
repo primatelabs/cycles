@@ -6,7 +6,7 @@
 
 #include "util/types_base.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 #ifndef __KERNEL_NATIVE_VECTOR_TYPES__
 struct int2 {
@@ -36,4 +36,4 @@ ccl_device_inline int2 make_int2(const int x, const int y)
 }
 #endif /* __KERNEL_NATIVE_VECTOR_TYPES__ */
 
-CCL_NAMESPACE_END
+}

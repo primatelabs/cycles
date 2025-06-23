@@ -8,7 +8,7 @@
 
 #define CHECK_ALIGNMENT(ptr, align) EXPECT_EQ((size_t)ptr % align, 0)
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 TEST(util_aligned_malloc, aligned_malloc_16)
 {
@@ -27,4 +27,4 @@ TEST(util_aligned_malloc, aligned_malloc_32)
 }
 #endif /* __APPLE__ */
 
-CCL_NAMESPACE_END
+}

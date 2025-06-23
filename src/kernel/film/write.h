@@ -14,7 +14,7 @@
 #  define __ATOMIC_PASS_WRITE__
 #endif
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Get pointer to pixel in render buffer. */
 
@@ -129,4 +129,4 @@ ccl_device_inline float4 kernel_read_pass_float4(ccl_global float *ccl_restrict 
   return make_float4(buffer[0], buffer[1], buffer[2], buffer[3]);
 }
 
-CCL_NAMESPACE_END
+}

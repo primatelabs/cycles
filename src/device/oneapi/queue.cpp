@@ -10,7 +10,7 @@
 
 #  include "kernel/device/oneapi/kernel.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 struct KernelExecutionInfo {
   double elapsed_summary = 0.0;
@@ -137,6 +137,6 @@ void OneapiDeviceQueue::copy_from_device(device_memory &mem)
   oneapi_device_->mem_copy_from(mem);
 }
 
-CCL_NAMESPACE_END
+}
 
 #endif /* WITH_ONEAPI */

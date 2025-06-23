@@ -12,7 +12,7 @@
 #define OPTIX_DEFINE_ABI_VERSION_ONLY
 #include <optix_function_table.h>
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Utilities. */
 
@@ -682,4 +682,4 @@ ccl_device_intersect bool scene_intersect_volume(KernelGlobals kg,
 }
 #endif
 
-CCL_NAMESPACE_END
+}

@@ -11,9 +11,9 @@
 #  include <iterator>
 #endif
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 using std::set;
 using std::unordered_set;
 
-CCL_NAMESPACE_END
+}

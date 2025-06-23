@@ -7,7 +7,7 @@
 #include "kernel/svm/mapping_util.h"
 #include "kernel/svm/util.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Mapping Node */
 
@@ -75,4 +75,4 @@ ccl_device_noinline int svm_node_min_max(KernelGlobals kg,
   return offset;
 }
 
-CCL_NAMESPACE_END
+}

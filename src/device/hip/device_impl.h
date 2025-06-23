@@ -15,7 +15,7 @@
 #    include "hipew.h"
 #  endif
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 class DeviceQueue;
 
@@ -108,6 +108,6 @@ class HIPDevice : public GPUDevice {
   int get_device_default_attribute(hipDeviceAttribute_t attribute, const int default_value);
 };
 
-CCL_NAMESPACE_END
+}
 
 #endif

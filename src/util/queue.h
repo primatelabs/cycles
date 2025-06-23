@@ -6,8 +6,8 @@
 
 #include <queue>
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 using std::queue;
 
-CCL_NAMESPACE_END
+}

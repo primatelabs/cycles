@@ -16,7 +16,7 @@
 #  include <pwd.h>
 #  include <sys/shm.h>
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 string MetalInfo::get_device_name(id<MTLDevice> device)
 {
@@ -177,6 +177,6 @@ MetalBufferPool::~MetalBufferPool()
   temp_buffers.clear();
 }
 
-CCL_NAMESPACE_END
+}
 
 #endif /* WITH_METAL */

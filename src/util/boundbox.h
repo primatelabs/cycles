@@ -11,7 +11,7 @@
 #include "util/transform.h"
 #include "util/types.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* 3D BoundBox */
 
@@ -267,4 +267,4 @@ class BoundBox2D {
   }
 };
 
-CCL_NAMESPACE_END
+}

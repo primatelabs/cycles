@@ -11,7 +11,7 @@
 #  include "device/optix/util.h"  // IWYU pragma: keep
 #  include "kernel/osl/globals.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 class BVHOptiX;
 struct KernelParamsOptiX;
@@ -118,6 +118,6 @@ class OptiXDevice : public CUDADevice {
   OSLGlobals *get_cpu_osl_memory() override;
 };
 
-CCL_NAMESPACE_END
+}
 
 #endif /* WITH_OPTIX */

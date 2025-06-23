@@ -7,7 +7,7 @@
 #include "util/math_base.h"
 #include "util/vector.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Evaluate CDF of a given functor with given range and resolution. */
 template<typename Functor>
@@ -58,4 +58,4 @@ void util_cdf_inverted(const int resolution,
   util_cdf_invert(resolution, from, to, cdf, make_symmetric, inv_cdf);
 }
 
-CCL_NAMESPACE_END
+}

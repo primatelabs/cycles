@@ -8,7 +8,7 @@
 #include "util/boundbox.h"
 #include "util/math.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Transform Inverse */
 
@@ -199,4 +199,4 @@ Transform transform_from_viewplane(BoundBox2D &viewplane)
          transform_translate(-viewplane.left, -viewplane.bottom, 0.0f);
 }
 
-CCL_NAMESPACE_END
+}

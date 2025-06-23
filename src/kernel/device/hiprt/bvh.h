@@ -6,7 +6,7 @@
 
 #include "kernel/device/hiprt/common.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 ccl_device_inline bool scene_intersect_valid(const ccl_private Ray *ray)
 {
@@ -245,4 +245,4 @@ ccl_device_intersect bool scene_intersect_volume(KernelGlobals kg,
 }
 #endif /* __VOLUME__ */
 
-CCL_NAMESPACE_END
+}

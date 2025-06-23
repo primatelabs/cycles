@@ -20,8 +20,8 @@
 
 #endif /* _WIN32 */
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 bool system_windows_version_at_least(const int major, const int build);
 
-CCL_NAMESPACE_END
+}

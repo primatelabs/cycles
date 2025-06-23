@@ -7,7 +7,7 @@
 #include "kernel/svm/color_util.h"
 #include "kernel/svm/util.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Node */
 
@@ -127,4 +127,4 @@ ccl_device_noinline void svm_node_mix_vector_non_uniform(ccl_private ShaderData 
   stack_store_float3(stack, result_offset, result);
 }
 
-CCL_NAMESPACE_END
+}

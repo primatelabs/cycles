@@ -12,7 +12,7 @@
 #include "util/string.h"
 #include "util/unique_ptr.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 class Device;
 class device_memory;
@@ -184,4 +184,4 @@ class DeviceQueue {
   bool is_per_kernel_performance_ = false;
 };
 
-CCL_NAMESPACE_END
+}

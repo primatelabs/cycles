@@ -7,7 +7,7 @@
 #include "util/math.h"
 #include "util/types.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* [0, uint_max] -> [0.0, 1.0) */
 ccl_device_forceinline float uint_to_float_excl(const uint n)
@@ -560,4 +560,4 @@ static inline uint hash_string(const char *str)
 }
 #endif
 
-CCL_NAMESPACE_END
+}

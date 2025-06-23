@@ -22,7 +22,7 @@
 #include "util/unique_ptr.h"
 #include "util/vector.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 class BVH;
 class DeviceQueue;
@@ -404,4 +404,4 @@ class GPUDevice : public Device {
                                    const size_t size) = 0;
 };
 
-CCL_NAMESPACE_END
+}

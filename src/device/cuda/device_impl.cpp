@@ -26,7 +26,7 @@
 
 #  include "kernel/device/cuda/globals.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 class CUDADevice;
 
@@ -1111,6 +1111,6 @@ int CUDADevice::get_device_default_attribute(CUdevice_attribute attribute, const
   return value;
 }
 
-CCL_NAMESPACE_END
+}
 
 #endif

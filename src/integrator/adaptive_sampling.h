@@ -4,7 +4,7 @@
 
 #pragma once
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 class AdaptiveSampling {
  public:
@@ -40,4 +40,4 @@ class AdaptiveSampling {
   float threshold = 0.0f;
 };
 
-CCL_NAMESPACE_END
+}

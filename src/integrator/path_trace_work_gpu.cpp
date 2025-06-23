@@ -17,7 +17,7 @@
 
 #include "kernel/types.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 static size_t estimate_single_state_size(const uint kernel_features)
 {
@@ -1275,4 +1275,4 @@ int PathTraceWorkGPU::kernel_max_active_main_path_index(DeviceKernel kernel)
                                            max_active_main_path_index_;
 }
 
-CCL_NAMESPACE_END
+}

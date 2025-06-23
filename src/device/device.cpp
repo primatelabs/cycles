@@ -32,7 +32,7 @@
 #include "util/types.h"
 #include "util/vector.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 bool Device::need_types_update = true;
 bool Device::need_devices_update = true;
@@ -835,4 +835,4 @@ bool DeviceInfo::contains_device_type(const DeviceType type) const
   return false;
 }
 
-CCL_NAMESPACE_END
+}

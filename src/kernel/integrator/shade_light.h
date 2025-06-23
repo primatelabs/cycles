@@ -9,7 +9,7 @@
 #include "kernel/light/light.h"
 #include "kernel/light/sample.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 ccl_device_inline void integrate_light(KernelGlobals kg,
                                        IntegratorState state,
@@ -92,4 +92,4 @@ ccl_device void integrator_shade_light(KernelGlobals kg,
    * scene geometry. */
 }
 
-CCL_NAMESPACE_END
+}

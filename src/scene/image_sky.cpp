@@ -8,7 +8,7 @@
 
 #include "sky_model.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 SkyLoader::SkyLoader(const float sun_elevation,
                      const float altitude,
@@ -76,4 +76,4 @@ bool SkyLoader::equals(const ImageLoader & /*other*/) const
   return false;
 }
 
-CCL_NAMESPACE_END
+}

@@ -12,7 +12,7 @@
 #include "util/math.h"
 #include "util/types.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Equirectangular coordinates <-> Cartesian direction */
 
@@ -349,4 +349,4 @@ ccl_device_inline void spherical_stereo_transform(ccl_constant KernelCamera *cam
   }
 }
 
-CCL_NAMESPACE_END
+}

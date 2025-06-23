@@ -12,7 +12,7 @@
 #include "util/path.h"
 #include "util/string.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 static string get_node_id(const LightTreeNode &node)
 {
@@ -324,4 +324,4 @@ void klight_tree_plot_to_file(uint root, const KernelLightTreeNode *knodes, cons
   fclose(file);
 }
 
-CCL_NAMESPACE_END
+}

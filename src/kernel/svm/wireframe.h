@@ -14,7 +14,7 @@
 #include "kernel/util/differential.h"
 #include "util/math_base.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Wireframe Node */
 
@@ -113,4 +113,4 @@ ccl_device_noinline void svm_node_wireframe(KernelGlobals kg,
   }
 }
 
-CCL_NAMESPACE_END
+}

@@ -20,7 +20,7 @@
 #include "util/types.h"
 #include "util/vector.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 class Device;
 class DeviceScene;
@@ -193,4 +193,4 @@ class ObjectManager {
                                                int *num_objects);
 };
 
-CCL_NAMESPACE_END
+}

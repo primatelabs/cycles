@@ -13,7 +13,7 @@
 
 #include "graph/node.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 const char *pass_type_as_string(const PassType type);
 
@@ -95,4 +95,4 @@ class Pass : public Node {
 
 std::ostream &operator<<(std::ostream &os, const Pass &pass);
 
-CCL_NAMESPACE_END
+}

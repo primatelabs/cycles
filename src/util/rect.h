@@ -7,7 +7,7 @@
 #include "util/math_base.h"
 #include "util/types_int4.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Rectangles are represented as a int4 containing the coordinates of the lower-left and
  * upper-right corners in the order (x0, y0, x1, y1). */
@@ -58,4 +58,4 @@ ccl_device_inline int rect_size(const int4 rect)
   return (rect.z - rect.x) * (rect.w - rect.y);
 }
 
-CCL_NAMESPACE_END
+}

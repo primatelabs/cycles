@@ -8,7 +8,7 @@
 
 #  include "device/cuda/queue.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 class OptiXDevice;
 
@@ -24,6 +24,6 @@ class OptiXDeviceQueue : public CUDADeviceQueue {
                const DeviceKernelArguments &args) override;
 };
 
-CCL_NAMESPACE_END
+}
 
 #endif /* WITH_OPTIX */

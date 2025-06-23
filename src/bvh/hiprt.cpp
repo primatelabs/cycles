@@ -11,7 +11,7 @@
 
 #  include "device/hiprt/device_impl.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 BVHHIPRT::BVHHIPRT(const BVHParams &params,
                    const vector<Geometry *> &geometry,
@@ -38,6 +38,6 @@ BVHHIPRT::~BVHHIPRT()
   hiprtDestroyGeometry(hiprt_context, hiprt_geom);
 }
 
-CCL_NAMESPACE_END
+}
 
 #endif

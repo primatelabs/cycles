@@ -13,7 +13,7 @@
 #include "util/time.h"
 #include "util/unique_ptr.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Merge Image Layer */
 
@@ -611,4 +611,4 @@ bool ImageMerger::run()
   return save_output(output, out_spec, out_pixels, error);
 }
 
-CCL_NAMESPACE_END
+}

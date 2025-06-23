@@ -19,7 +19,7 @@
 
 #include "scene/image.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 class VDBImageLoader : public ImageLoader {
  public:
@@ -60,4 +60,4 @@ class VDBImageLoader : public ImageLoader {
 #endif
 };
 
-CCL_NAMESPACE_END
+}

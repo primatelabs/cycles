@@ -7,6 +7,6 @@
 /* Argument Parsing for command line, we use the OpenImageIO
  * library because it has nice functions to do this. */
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
-CCL_NAMESPACE_END
+}

@@ -35,7 +35,7 @@
 #include "util/guiding.h"  // IWYU pragma: keep
 #include "util/unique_ptr.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 class CPUDevice : public Device {
  public:
@@ -93,4 +93,4 @@ class CPUDevice : public Device {
   bool load_kernels(uint /*kernel_features*/) override;
 };
 
-CCL_NAMESPACE_END
+}

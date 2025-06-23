@@ -7,7 +7,7 @@
 #include "pl/image_output.h"
 #include "pl/image_spec.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 class ImageBuf {
  protected:
@@ -43,4 +43,4 @@ class ImageBuf {
   bool write(ImageOutput *out) const;
 };
 
-CCL_NAMESPACE_END
+}

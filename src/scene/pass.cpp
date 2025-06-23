@@ -6,7 +6,7 @@
 
 #include "util/log.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 const char *pass_type_as_string(const PassType type)
 {
@@ -438,4 +438,4 @@ std::ostream &operator<<(std::ostream &os, const Pass &pass)
   return os;
 }
 
-CCL_NAMESPACE_END
+}

@@ -11,7 +11,7 @@
 #  include "util/map.h"
 #  include "util/unique_ptr.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 class DeviceQueue;
 
@@ -151,6 +151,6 @@ class OneapiDevice : public GPUDevice {
   bool usm_memset(SyclQueue *queue, void *usm_ptr, unsigned char value, const size_t num_bytes);
 };
 
-CCL_NAMESPACE_END
+}
 
 #endif

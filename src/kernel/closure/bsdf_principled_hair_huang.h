@@ -16,7 +16,7 @@
 #include "kernel/closure/bsdf_util.h"
 #include "kernel/sample/lcg.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 struct HuangHairExtra {
   /* Optional modulation factors. */
@@ -930,4 +930,4 @@ ccl_device Spectrum bsdf_hair_huang_albedo(const ccl_private ShaderData *sd,
   return safe_divide(A - 2.0f * f * A + f, one_spectrum() - f * A);
 }
 
-CCL_NAMESPACE_END
+}

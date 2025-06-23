@@ -15,7 +15,7 @@
 
 #include "kernel/util/colorspace.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 ccl_device void kernel_displace_evaluate(KernelGlobals kg,
                                          const ccl_global KernelShaderEvalInput *input,
@@ -115,4 +115,4 @@ ccl_device void kernel_curve_shadow_transparency_evaluate(
 #endif
 }
 
-CCL_NAMESPACE_END
+}

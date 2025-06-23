@@ -10,7 +10,7 @@
 
 #  include <Metal/Metal.h>
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 class MetalDevice;
 
@@ -128,6 +128,6 @@ void static_deinitialize();
 
 } /* namespace MetalDeviceKernels */
 
-CCL_NAMESPACE_END
+}
 
 #endif /* WITH_METAL */

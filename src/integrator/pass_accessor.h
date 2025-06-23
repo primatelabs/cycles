@@ -7,7 +7,7 @@
 #include "scene/pass.h"
 #include "util/half.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 class RenderBuffers;
 class BufferPass;
@@ -155,4 +155,4 @@ class PassAccessor {
   int num_samples_ = 0;
 };
 
-CCL_NAMESPACE_END
+}

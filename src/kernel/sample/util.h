@@ -7,7 +7,7 @@
 #include "util/math.h"
 #include "util/types.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /*
  * Performs base-2 Owen scrambling on a reversed-bit unsigned integer.
@@ -76,4 +76,4 @@ ccl_device_inline uint morton2d(const uint x, const uint y)
   return (expand_bits(x) << 1) | expand_bits(y);
 }
 
-CCL_NAMESPACE_END
+}

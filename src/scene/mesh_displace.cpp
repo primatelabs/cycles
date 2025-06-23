@@ -13,7 +13,7 @@
 
 #include "util/progress.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Fill in coordinates for mesh displacement shader evaluation on device. */
 static int fill_shader_input(const Scene *scene,
@@ -323,4 +323,4 @@ bool GeometryManager::displace(Device *device, Scene *scene, Mesh *mesh, Progres
   return true;
 }
 
-CCL_NAMESPACE_END
+}

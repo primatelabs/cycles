@@ -12,7 +12,7 @@
 #include "util/string.h"
 #include "util/unique_ptr.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 class ImageManager;
 class LightManager;
@@ -1702,4 +1702,4 @@ class VectorDisplacementNode : public ShaderNode {
   NODE_SOCKET_API(float, scale)
 };
 
-CCL_NAMESPACE_END
+}

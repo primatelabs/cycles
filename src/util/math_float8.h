@@ -9,7 +9,7 @@
 #include "util/types_float8.h"
 #include "util/types_int8.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 ccl_device_inline vfloat8 zero_vfloat8()
 {
@@ -468,4 +468,4 @@ template<size_t i> ccl_device_forceinline float extract(const vfloat8 a)
 }
 #endif
 
-CCL_NAMESPACE_END
+}

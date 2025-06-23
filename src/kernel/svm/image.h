@@ -15,7 +15,7 @@
 
 #include "util/color.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 ccl_device float4
 svm_image_texture(KernelGlobals kg, const int id, const float x, float y, const uint flags)
@@ -270,4 +270,4 @@ ccl_device_noinline void svm_node_tex_environment(KernelGlobals kg,
   }
 }
 
-CCL_NAMESPACE_END
+}

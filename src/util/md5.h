@@ -14,7 +14,7 @@
 
 #include "util/string.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 class MD5Hash {
  public:
@@ -37,4 +37,4 @@ class MD5Hash {
 
 string util_md5_string(const string &str);
 
-CCL_NAMESPACE_END
+}

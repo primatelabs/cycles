@@ -8,7 +8,7 @@
 
 #include "kernel/svm/util.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Fresnel Node */
 
@@ -77,4 +77,4 @@ ccl_device_noinline void svm_node_layer_weight(ccl_private ShaderData *sd,
   stack_store_float(stack, out_offset, f);
 }
 
-CCL_NAMESPACE_END
+}

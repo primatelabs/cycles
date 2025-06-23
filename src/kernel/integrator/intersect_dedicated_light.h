@@ -14,7 +14,7 @@
 
 #include "kernel/sample/lcg.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 #ifdef __SHADOW_LINKING__
 
@@ -231,4 +231,4 @@ ccl_device void integrator_intersect_dedicated_light(KernelGlobals kg, Integrato
                                                                                            state);
 }
 
-CCL_NAMESPACE_END
+}

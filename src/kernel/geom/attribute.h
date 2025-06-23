@@ -9,7 +9,7 @@
 
 #include "util/color.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Attributes
  *
@@ -145,4 +145,4 @@ ccl_device Transform primitive_attribute_matrix(KernelGlobals kg, const Attribut
   return attribute_data_fetch<Transform>(kg, desc.offset);
 }
 
-CCL_NAMESPACE_END
+}

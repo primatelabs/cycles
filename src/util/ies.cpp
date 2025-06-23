@@ -8,7 +8,7 @@
 #include "util/math.h"
 #include "util/string.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 // NOTE: For some reason gcc-7.2 does not instantiate this version of the
 // allocator here (used in IESTextParser). Works fine for gcc-6, gcc-7.3 and gcc-8.
@@ -406,4 +406,4 @@ IESFile::~IESFile()
   clear();
 }
 
-CCL_NAMESPACE_END
+}

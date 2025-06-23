@@ -16,7 +16,7 @@
 #    include <cudaGL.h>
 #  endif
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 class DeviceQueue;
 
@@ -108,6 +108,6 @@ class CUDADevice : public GPUDevice {
   int get_device_default_attribute(CUdevice_attribute attribute, const int default_value);
 };
 
-CCL_NAMESPACE_END
+}
 
 #endif

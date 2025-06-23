@@ -6,7 +6,7 @@
 
 #include "kernel/device/cpu/kernel.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 #define KERNEL_FUNCTIONS(name) KERNEL_NAME_EVAL(cpu, name), KERNEL_NAME_EVAL(cpu_avx2, name)
 
@@ -50,4 +50,4 @@ CPUKernels::CPUKernels()
 #undef REGISTER_KERNEL_FILM_CONVERT
 #undef KERNEL_FUNCTIONS
 
-CCL_NAMESPACE_END
+}

@@ -8,7 +8,7 @@
 
 #include "util/log.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 PathTraceDisplay::PathTraceDisplay(unique_ptr<DisplayDriver> driver) : driver_(std::move(driver))
 {
@@ -251,4 +251,4 @@ void PathTraceDisplay::flush()
   driver_->flush();
 }
 
-CCL_NAMESPACE_END
+}

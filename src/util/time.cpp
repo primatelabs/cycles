@@ -18,7 +18,7 @@
 #  include "util/windows.h"
 #endif
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 #ifdef _WIN32
 double time_dt()
@@ -126,4 +126,4 @@ double time_human_readable_to_seconds(const string &time_string)
   return result;
 }
 
-CCL_NAMESPACE_END
+}

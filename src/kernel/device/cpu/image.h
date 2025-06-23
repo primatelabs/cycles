@@ -13,7 +13,7 @@
 
 #include "util/half.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Make template functions private so symbols don't conflict between kernels with different
  * instruction sets. */
@@ -937,4 +937,4 @@ ccl_device float4 kernel_tex_image_interp_3d(KernelGlobals kg,
 
 } /* Namespace. */
 
-CCL_NAMESPACE_END
+}

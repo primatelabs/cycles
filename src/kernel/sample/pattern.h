@@ -11,7 +11,7 @@
 
 #include "util/hash.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Pseudo random numbers, uncomment this for debugging correlations. Only run
  * this single threaded on a CPU for repeatable results. */
@@ -190,4 +190,4 @@ ccl_device_inline bool sample_is_class_A(const int pattern, const int sample)
    */
   return popcount(uint(sample) & 0xaaaaaaaa) & 1;
 }
-CCL_NAMESPACE_END
+}

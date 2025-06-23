@@ -14,7 +14,7 @@
 #include "util/transform.h"
 #include "util/types.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 class Device;
 class DeviceScene;
@@ -216,4 +216,4 @@ class Camera : public Node {
   float3 transform_raster_to_world(const float raster_x, const float raster_y);
 };
 
-CCL_NAMESPACE_END
+}

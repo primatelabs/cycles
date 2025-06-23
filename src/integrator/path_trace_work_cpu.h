@@ -13,7 +13,7 @@
 
 #include "util/vector.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 struct KernelWorkTile;
 struct ThreadKernelGlobalsCPU;
@@ -85,4 +85,4 @@ class PathTraceWorkCPU : public PathTraceWork {
   vector<ThreadKernelGlobalsCPU> kernel_thread_globals_;
 };
 
-CCL_NAMESPACE_END
+}

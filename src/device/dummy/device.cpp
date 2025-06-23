@@ -6,7 +6,7 @@
 #include "device/device.h"
 #include "device/queue.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Dummy device for when creating an appropriate rendering device fails. */
 
@@ -51,4 +51,4 @@ unique_ptr<Device> device_dummy_create(const DeviceInfo &info,
   return make_unique<DummyDevice>(info, stats, profiler, headless);
 }
 
-CCL_NAMESPACE_END
+}

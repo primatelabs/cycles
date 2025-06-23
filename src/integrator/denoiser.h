@@ -13,7 +13,7 @@
 #include "device/device.h"
 #include "util/unique_ptr.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 class BufferParams;
 class Device;
@@ -129,4 +129,4 @@ class Denoiser {
   DenoiseParams params_;
 };
 
-CCL_NAMESPACE_END
+}

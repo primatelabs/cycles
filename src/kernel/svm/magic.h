@@ -6,7 +6,7 @@
 
 #include "kernel/svm/util.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Magic */
 
@@ -130,4 +130,4 @@ ccl_device_noinline int svm_node_tex_magic(KernelGlobals kg,
   return offset;
 }
 
-CCL_NAMESPACE_END
+}

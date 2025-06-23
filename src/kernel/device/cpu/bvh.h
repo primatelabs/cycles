@@ -29,7 +29,7 @@
 #include "kernel/integrator/state_util.h"
 #include "kernel/sample/lcg.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 #ifdef __KERNEL_ONEAPI__
 using numhit_t = uint16_t;
@@ -957,4 +957,4 @@ ccl_device_intersect uint kernel_embree_intersect_volume(KernelGlobals kg,
 }
 #endif
 
-CCL_NAMESPACE_END
+}

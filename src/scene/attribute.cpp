@@ -11,7 +11,7 @@
 #include "util/log.h"
 #include "util/transform.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Attribute */
 
@@ -939,4 +939,4 @@ void AttributeRequestSet::clear()
   requests.clear();
 }
 
-CCL_NAMESPACE_END
+}

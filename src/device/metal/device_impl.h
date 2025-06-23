@@ -16,7 +16,7 @@
 
 #  include <Metal/Metal.h>
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 class DeviceQueue;
 
@@ -192,6 +192,6 @@ class MetalDevice : public Device {
   void update_bvh(BVHMetal *bvh_metal);
 };
 
-CCL_NAMESPACE_END
+}
 
 #endif

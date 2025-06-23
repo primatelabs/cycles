@@ -6,7 +6,7 @@
 
 #include "kernel/integrator/subsurface.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 ccl_device void integrator_intersect_subsurface(KernelGlobals kg, IntegratorState state)
 {
@@ -21,4 +21,4 @@ ccl_device void integrator_intersect_subsurface(KernelGlobals kg, IntegratorStat
   integrator_path_terminate(kg, state, DEVICE_KERNEL_INTEGRATOR_INTERSECT_SUBSURFACE);
 }
 
-CCL_NAMESPACE_END
+}

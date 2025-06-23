@@ -7,7 +7,7 @@
 #include "integrator/denoiser.h"
 #include "util/thread.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Implementation of a CPU based denoiser which uses OpenImageDenoise library. */
 class OIDNDenoiser : public Denoiser {
@@ -31,4 +31,4 @@ class OIDNDenoiser : public Denoiser {
   static thread_mutex mutex_;
 };
 
-CCL_NAMESPACE_END
+}

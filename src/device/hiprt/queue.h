@@ -11,7 +11,7 @@
 
 #  include "device/hip/queue.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 class HIPRTDevice;
 
@@ -27,6 +27,6 @@ class HIPRTDeviceQueue : public HIPDeviceQueue {
   HIPRTDevice *hiprt_device_;
 };
 
-CCL_NAMESPACE_END
+}
 
 #endif /* WITH_HIPRT */

@@ -6,7 +6,7 @@
 
 #include "util/vector.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 struct WorkBalanceInfo {
   /* Time spent performing corresponding work. */
@@ -27,4 +27,4 @@ void work_balance_do_initial(vector<WorkBalanceInfo> &work_balance_infos);
  * Returns true if the balancing did change. */
 bool work_balance_do_rebalance(vector<WorkBalanceInfo> &work_balance_infos);
 
-CCL_NAMESPACE_END
+}

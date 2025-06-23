@@ -6,7 +6,7 @@
 
 #include "util/path.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* ******** Tests for path_filename() ******** */
 
@@ -386,4 +386,4 @@ TEST(util_path_is_relative, relative_unixdir_on_windows)
 }
 #endif /* _WIN32 */
 
-CCL_NAMESPACE_END
+}

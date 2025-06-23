@@ -7,7 +7,7 @@
 #include "integrator/tile.h"
 #include "util/math.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 TEST(tile_calculate_best_size, Basic)
 {
@@ -36,4 +36,4 @@ TEST(tile_calculate_best_size, Extreme)
             TileSize(1, 1, 1024));
 }
 
-CCL_NAMESPACE_END
+}

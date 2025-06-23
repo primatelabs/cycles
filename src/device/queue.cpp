@@ -11,7 +11,7 @@
 
 #include <iomanip>
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 DeviceQueue::DeviceQueue(Device *device) : device(device)
 {
@@ -100,4 +100,4 @@ string DeviceQueue::debug_active_kernels()
   return device_kernel_mask_as_string(last_kernels_enqueued_);
 }
 
-CCL_NAMESPACE_END
+}

@@ -20,7 +20,7 @@
 #include "util/unique_ptr.h"
 #include "util/vector.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Denoiser pipeline */
 
@@ -169,4 +169,4 @@ class DenoiseTask {
   bool load_input_pixels(const int layer);
 };
 
-CCL_NAMESPACE_END
+}

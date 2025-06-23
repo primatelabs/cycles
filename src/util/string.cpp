@@ -18,7 +18,7 @@
 #  endif
 #endif /* _WIN32 */
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 string string_printf(const char *format, ...)
 {
@@ -291,4 +291,4 @@ string string_human_readable_number(size_t num)
   return p;
 }
 
-CCL_NAMESPACE_END
+}

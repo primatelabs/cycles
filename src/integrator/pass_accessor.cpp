@@ -8,7 +8,7 @@
 
 #include "util/log.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* --------------------------------------------------------------------
  * Pass input information.
@@ -314,4 +314,4 @@ bool PassAccessor::set_render_tile_pixels(RenderBuffers *render_buffers, const S
   return true;
 }
 
-CCL_NAMESPACE_END
+}

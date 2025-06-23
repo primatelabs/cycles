@@ -10,7 +10,7 @@
 #include "pl/param_value.h"
 #include "pl/type_desc.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 class ImageSpec {
  public:
@@ -74,4 +74,4 @@ class ImageSpec {
                                    string_view default_value = string_view()) const;
 };
 
-CCL_NAMESPACE_END
+}

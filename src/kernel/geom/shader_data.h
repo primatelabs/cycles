@@ -18,7 +18,7 @@
 
 #include "kernel/util/differential.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* ShaderData setup from incoming ray */
 
@@ -445,4 +445,4 @@ ccl_device_inline void shader_setup_from_volume(KernelGlobals kg,
 }
 #endif /* __VOLUME__ */
 
-CCL_NAMESPACE_END
+}

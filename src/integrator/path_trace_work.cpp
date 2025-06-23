@@ -16,7 +16,7 @@
 
 #include "kernel/types.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 unique_ptr<PathTraceWork> PathTraceWork::create(Device *device,
                                                 Film *film,
@@ -202,4 +202,4 @@ PassAccessor::Destination PathTraceWork::get_display_destination_template(
   return destination;
 }
 
-CCL_NAMESPACE_END
+}

@@ -15,7 +15,7 @@
 #  include "kernel/osl/osl.h"
 #endif
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 template<typename ConstIntegratorGenericState>
 ccl_device void displacement_shader_eval(KernelGlobals kg,
@@ -40,4 +40,4 @@ ccl_device void displacement_shader_eval(KernelGlobals kg,
   }
 }
 
-CCL_NAMESPACE_END
+}

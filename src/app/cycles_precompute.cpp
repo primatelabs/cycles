@@ -15,7 +15,7 @@
 
 #include <iostream>
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 static float precompute_ggx_E(const float rough, const float mu, const float3 rand)
 {
@@ -285,7 +285,7 @@ static bool cycles_precompute(std::string name)
   return true;
 }
 
-CCL_NAMESPACE_END
+}
 
 int main(const int argc, const char **argv)
 {

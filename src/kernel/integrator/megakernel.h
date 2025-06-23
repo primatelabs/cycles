@@ -16,7 +16,7 @@
 #include "kernel/integrator/shade_surface.h"
 #include "kernel/integrator/shade_volume.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 ccl_device void integrator_megakernel(KernelGlobals kg,
                                       IntegratorState state,
@@ -108,4 +108,4 @@ ccl_device void integrator_megakernel(KernelGlobals kg,
   }
 }
 
-CCL_NAMESPACE_END
+}

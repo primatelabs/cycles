@@ -30,7 +30,7 @@
  * Total local stack size would be number of threads * HIPRT_SHARED_STACK_SIZE. */
 #define HIPRT_THREAD_GROUP_SIZE 256
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 struct KernelGlobalsGPU {
   hiprtGlobalStackBuffer global_stack_buffer;
@@ -148,4 +148,4 @@ typedef hiprtEmptyInstanceStack Instance_Stack;
 #define kernel_data_array(name) (kernel_params.name)
 #define kernel_integrator_state kernel_params.integrator_state
 
-CCL_NAMESPACE_END
+}

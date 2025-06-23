@@ -13,7 +13,7 @@
 #include "util/algorithm.h"
 #include "util/task.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 static const int BVH_SORT_THRESHOLD = 4096;
 
@@ -187,4 +187,4 @@ void bvh_reference_sort(const int start,
   }
 }
 
-CCL_NAMESPACE_END
+}

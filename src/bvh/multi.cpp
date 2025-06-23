@@ -4,7 +4,7 @@
 
 #include "bvh/multi.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 BVHMulti::BVHMulti(const BVHParams &params_,
                    const vector<Geometry *> &geometry_,
@@ -21,4 +21,4 @@ void BVHMulti::replace_geometry(const vector<Geometry *> &geometry,
   }
 }
 
-CCL_NAMESPACE_END
+}

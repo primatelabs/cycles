@@ -6,7 +6,7 @@
 
 #include "pl/error.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 ImageInput::unique_ptr ImageInput::open(string_view filename, const ImageSpec *config)
 {
@@ -46,4 +46,4 @@ std::string ImageInput::geterror(bool clear) const
   return std::string();
 }
 
-CCL_NAMESPACE_END
+}

@@ -16,7 +16,7 @@
 
 #include "kernel/geom/shader_data.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 ccl_device Spectrum integrator_eval_background_shader(KernelGlobals kg,
                                                       IntegratorState state,
@@ -207,4 +207,4 @@ ccl_device void integrator_shade_background(KernelGlobals kg,
   integrator_path_terminate(kg, state, DEVICE_KERNEL_INTEGRATOR_SHADE_BACKGROUND);
 }
 
-CCL_NAMESPACE_END
+}

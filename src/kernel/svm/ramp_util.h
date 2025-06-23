@@ -7,7 +7,7 @@
 #include "util/math.h"
 #include "util/types.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* NOTE: svm_ramp.h, svm_ramp_util.h and node_ramp_util.h must stay consistent */
 
@@ -77,4 +77,4 @@ ccl_device float float_ramp_lookup(
   return result;
 }
 
-CCL_NAMESPACE_END
+}

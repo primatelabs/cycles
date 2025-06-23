@@ -8,7 +8,7 @@
 
 #include "integrator/pass_accessor.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 struct KernelFilmConvert;
 
@@ -58,4 +58,4 @@ class PassAccessorCPU : public PassAccessor {
 #undef DECLARE_PASS_ACCESSOR
 };
 
-CCL_NAMESPACE_END
+}

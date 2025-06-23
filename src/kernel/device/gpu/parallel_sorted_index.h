@@ -4,7 +4,7 @@
 
 #pragma once
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Given an array of states, build an array of indices for which the states
  * are active and sorted by a given key. The prefix sum of the number of active
@@ -172,4 +172,4 @@ __device__ void gpu_parallel_sorted_index_array(const uint state_index,
   }
 }
 
-CCL_NAMESPACE_END
+}

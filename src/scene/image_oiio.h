@@ -6,7 +6,7 @@
 
 #include "scene/image.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 class OIIOImageLoader : public ImageLoader {
  public:
@@ -30,4 +30,4 @@ class OIIOImageLoader : public ImageLoader {
   string filepath;
 };
 
-CCL_NAMESPACE_END
+}

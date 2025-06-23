@@ -10,7 +10,7 @@
 #include "bvh/build.h"
 #include "bvh/params.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 class BVHBuild;
 class Hair;
@@ -231,4 +231,4 @@ class BVHMixedSplit {
   }
 };
 
-CCL_NAMESPACE_END
+}

@@ -7,7 +7,7 @@
 #  include "device/cuda/kernel.h"
 #  include "device/cuda/device_impl.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 void CUDADeviceKernels::load(CUDADevice *device)
 {
@@ -52,6 +52,6 @@ bool CUDADeviceKernels::available(DeviceKernel kernel) const
   return kernels_[(int)kernel].function != nullptr;
 }
 
-CCL_NAMESPACE_END
+}
 
 #endif /* WITH_CUDA */

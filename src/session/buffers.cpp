@@ -7,7 +7,7 @@
 #include "device/device.h"
 #include "session/buffers.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* --------------------------------------------------------------------
  * Convert part information to an index of `BufferParams::pass_offset_`.
@@ -366,4 +366,4 @@ void render_buffers_host_copy_denoised(RenderBuffers *dst,
   }
 }
 
-CCL_NAMESPACE_END
+}

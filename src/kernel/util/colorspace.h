@@ -8,7 +8,7 @@
 
 #include "util/types_spectrum.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 ccl_device float3 xyz_to_rgb(KernelGlobals kg, const float3 xyz)
 {
@@ -51,4 +51,4 @@ ccl_device float spectrum_to_gray(KernelGlobals kg, Spectrum c)
   return linear_rgb_to_gray(kg, spectrum_to_rgb(c));
 }
 
-CCL_NAMESPACE_END
+}

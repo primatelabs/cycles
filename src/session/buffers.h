@@ -14,7 +14,7 @@
 #include "util/unique_ptr.h"
 #include "util/vector.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 class Device;
 struct DeviceDrawParams;
@@ -182,4 +182,4 @@ void render_buffers_host_copy_denoised(RenderBuffers *dst,
                                        const BufferParams &src_params,
                                        const size_t src_offset = 0);
 
-CCL_NAMESPACE_END
+}

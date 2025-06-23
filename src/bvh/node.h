@@ -11,7 +11,7 @@
 #include "util/types.h"
 #include "util/unique_ptr.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 enum BVH_STAT {
   BVH_STAT_NODE_COUNT,
@@ -199,4 +199,4 @@ class LeafNode : public BVHNode {
   int hi;
 };
 
-CCL_NAMESPACE_END
+}

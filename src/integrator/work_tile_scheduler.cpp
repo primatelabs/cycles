@@ -9,7 +9,7 @@
 #include "session/buffers.h"
 #include "util/log.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 WorkTileScheduler::WorkTileScheduler() = default;
 
@@ -136,4 +136,4 @@ bool WorkTileScheduler::get_work(KernelWorkTile *work_tile_, const int max_work_
   return true;
 }
 
-CCL_NAMESPACE_END
+}

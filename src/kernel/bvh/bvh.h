@@ -51,7 +51,7 @@ static constexpr sycl::specialization_id<RTCFeatureFlags> oneapi_embree_features
 #  define IF_NOT_USING_EMBREE
 #endif
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 #ifdef __BVH2__
 
@@ -387,4 +387,4 @@ ccl_device_intersect uint scene_intersect_volume(KernelGlobals kg,
 
 #endif /* __BVH2__ */
 
-CCL_NAMESPACE_END
+}

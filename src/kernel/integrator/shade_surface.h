@@ -26,7 +26,7 @@
 #include "kernel/types.h"
 #include "util/math_intersect.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 ccl_device_forceinline void integrate_surface_shader_setup(KernelGlobals kg,
                                                            ConstIntegratorState state,
@@ -872,4 +872,4 @@ ccl_device_forceinline void integrator_shade_surface_mnee(
 #endif
 }
 
-CCL_NAMESPACE_END
+}

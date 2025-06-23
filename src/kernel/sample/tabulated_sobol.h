@@ -9,7 +9,7 @@
 #include "util/hash.h"
 
 #pragma once
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 ccl_device uint tabulated_sobol_shuffled_sample_index(KernelGlobals kg,
                                                       uint sample,
@@ -175,4 +175,4 @@ ccl_device float4 tabulated_sobol_sample_4D(KernelGlobals kg,
   return make_float4(x, y, z, w);
 }
 
-CCL_NAMESPACE_END
+}

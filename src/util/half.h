@@ -11,7 +11,7 @@
 #  include "util/simd.h"  // IWYU pragma: keep
 #endif
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Half Floats */
 
@@ -175,4 +175,4 @@ ccl_device_inline half4 float4_to_half4_display(const float4 f)
 #endif
 }
 
-CCL_NAMESPACE_END
+}

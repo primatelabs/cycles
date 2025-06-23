@@ -11,7 +11,7 @@
 
 #include "kernel/geom/shader_data.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 ccl_device_inline bool shadow_intersections_has_remaining(const uint num_hits)
 {
@@ -181,4 +181,4 @@ ccl_device void integrator_shade_shadow(KernelGlobals kg,
   integrator_shadow_path_terminate(kg, state, DEVICE_KERNEL_INTEGRATOR_SHADE_SHADOW);
 }
 
-CCL_NAMESPACE_END
+}

@@ -6,7 +6,7 @@
 
 #include "pl/error.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 ImageBuf::ImageBuf(
     const ImageSpec &spec, void *buffer, stride_t xstride, stride_t ystride, stride_t zstride)
@@ -47,4 +47,4 @@ bool ImageBuf::write(ImageOutput *out) const
   return ok;
 }
 
-CCL_NAMESPACE_END
+}

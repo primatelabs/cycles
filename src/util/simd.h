@@ -57,7 +57,7 @@
 #  define SIMD_SET_FLUSH_TO_ZERO
 #endif
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Data structures used by SSE classes. */
 #ifdef __KERNEL_SSE2__
@@ -482,4 +482,4 @@ __forceinline uint64_t bitscan(const uint64_t value)
 /* do nothing */
 #endif
 
-CCL_NAMESPACE_END
+}

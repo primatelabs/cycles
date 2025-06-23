@@ -6,7 +6,7 @@
 
 #include "util/types_base.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 #ifndef __KERNEL_NATIVE_VECTOR_TYPES__
 
@@ -16,4 +16,4 @@ struct ushort4 {
 
 #endif
 
-CCL_NAMESPACE_END
+}

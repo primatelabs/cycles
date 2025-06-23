@@ -7,7 +7,7 @@
 #include <limits>
 #include <string_view>
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 // Stride lengths between pixels, scanlines or planes.
 using stride_t = int64_t;
@@ -18,4 +18,4 @@ using imagesize_t = uint64_t;
 // Constant that indicates stride lengths should be computed.
 const stride_t AutoStride = std::numeric_limits<stride_t>::min();
 
-CCL_NAMESPACE_END
+}

@@ -12,7 +12,7 @@
 #    include <cuda.h>
 #  endif
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 class CUDADevice;
 class CUDADeviceQueue;
@@ -49,6 +49,6 @@ class CUDADeviceGraphicsInterop : public DeviceGraphicsInterop {
   CUgraphicsResource cu_graphics_resource_ = nullptr;
 };
 
-CCL_NAMESPACE_END
+}
 
 #endif

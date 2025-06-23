@@ -7,7 +7,7 @@
 #include "kernel/geom/volume.h"
 #include "kernel/svm/util.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* TODO(sergey): Think of making it more generic volume-type attribute
  * sampler.
@@ -64,4 +64,4 @@ ccl_device_noinline int svm_node_tex_voxel(KernelGlobals kg,
   return offset;
 }
 
-CCL_NAMESPACE_END
+}

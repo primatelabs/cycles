@@ -6,7 +6,7 @@
 
 #include "util/types_base.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 #ifndef __KERNEL_NATIVE_VECTOR_TYPES__
 struct ccl_try_align(16) int3
@@ -150,4 +150,4 @@ ccl_device_inline packed_int3 make_packed_int3(const int x, const int y, int z)
   return a;
 }
 
-CCL_NAMESPACE_END
+}

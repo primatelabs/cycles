@@ -6,7 +6,7 @@
 
 #include "kernel/svm/util.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Clamp Node */
 
@@ -38,4 +38,4 @@ ccl_device_noinline int svm_node_clamp(KernelGlobals kg,
   return offset;
 }
 
-CCL_NAMESPACE_END
+}

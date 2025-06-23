@@ -6,7 +6,7 @@
 
 #include "util/types_base.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 #ifndef __KERNEL_NATIVE_VECTOR_TYPES__
 struct uint3 {
@@ -88,4 +88,4 @@ ccl_device_inline packed_uint3 make_packed_uint3(const uint x, const uint y, uin
   return a;
 }
 
-CCL_NAMESPACE_END
+}

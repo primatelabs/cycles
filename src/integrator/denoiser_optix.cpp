@@ -12,7 +12,7 @@
 
 #  include <optix_denoiser_tiling.h>
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 #  if OPTIX_ABI_VERSION >= 60
 using ::optixUtilDenoiserInvokeTiled;
@@ -439,6 +439,6 @@ bool OptiXDenoiser::denoise_run(const DenoiseContext &context, const DenoisePass
   return true;
 }
 
-CCL_NAMESPACE_END
+}
 
 #endif

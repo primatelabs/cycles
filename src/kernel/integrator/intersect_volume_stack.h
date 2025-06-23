@@ -11,7 +11,7 @@
 #include "kernel/integrator/intersect_closest.h"
 #include "kernel/integrator/volume_stack.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 ccl_device void integrator_volume_stack_update_for_subsurface(KernelGlobals kg,
                                                               IntegratorState state,
@@ -247,4 +247,4 @@ ccl_device void integrator_intersect_volume_stack(KernelGlobals kg, IntegratorSt
 #endif
 }
 
-CCL_NAMESPACE_END
+}

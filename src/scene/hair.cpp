@@ -16,7 +16,7 @@
 #include "util/progress.h"
 #include "util/tbb.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Hair Curve */
 void Hair::Curve::bounds_grow(const int k, const float4 *keys, BoundBox &bounds) const
@@ -647,4 +647,4 @@ bool Hair::update_shadow_transparency(Device *device, Scene *scene, Progress &pr
   return true;
 }
 
-CCL_NAMESPACE_END
+}

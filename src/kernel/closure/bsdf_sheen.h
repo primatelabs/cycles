@@ -13,7 +13,7 @@
 
 #include "kernel/util/lookup_table.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 struct SheenBsdf {
   SHADER_CLOSURE_BASE;
@@ -118,4 +118,4 @@ ccl_device int bsdf_sheen_sample(const ccl_private ShaderClosure *sc,
   return LABEL_REFLECT | LABEL_DIFFUSE;
 }
 
-CCL_NAMESPACE_END
+}

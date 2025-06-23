@@ -16,7 +16,7 @@
 #include "util/types.h"
 #include "util/vector.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 class BVH;
 class Device;
@@ -282,4 +282,4 @@ class GeometryManager {
   void device_update_volume_images(Device *device, Scene *scene, Progress &progress);
 };
 
-CCL_NAMESPACE_END
+}

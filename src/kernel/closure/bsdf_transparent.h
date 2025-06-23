@@ -11,7 +11,7 @@
 
 #include "kernel/closure/alloc.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 ccl_device void bsdf_transparent_setup(ccl_private ShaderData *sd,
                                        const Spectrum weight,
@@ -85,4 +85,4 @@ ccl_device int bsdf_transparent_sample(const ccl_private ShaderClosure *sc,
   return LABEL_TRANSMIT | LABEL_TRANSPARENT;
 }
 
-CCL_NAMESPACE_END
+}

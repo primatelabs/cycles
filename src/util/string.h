@@ -10,7 +10,7 @@
 
 #include "util/vector.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 struct float4;
 
@@ -61,4 +61,4 @@ string string_human_readable_size(const size_t size);
 /* Make a string from a unit-less quantity in human readable form. */
 string string_human_readable_number(const size_t num);
 
-CCL_NAMESPACE_END
+}

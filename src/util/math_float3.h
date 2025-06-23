@@ -10,7 +10,7 @@
 #include "util/types_float3.h"
 #include "util/types_float4.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 ccl_device_inline float3 zero_float3()
 {
@@ -625,4 +625,4 @@ ccl_device_inline float2 map_to_sphere(const float3 co)
   return make_float2(u, v);
 }
 
-CCL_NAMESPACE_END
+}

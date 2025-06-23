@@ -6,7 +6,7 @@
 
 #include "util/math.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 AdaptiveSampling::AdaptiveSampling() = default;
 
@@ -54,4 +54,4 @@ bool AdaptiveSampling::need_filter(const int sample) const
   return (sample & (adaptive_step - 1)) == (adaptive_step - 1);
 }
 
-CCL_NAMESPACE_END
+}

@@ -26,7 +26,7 @@
 #define TO_VEC3(v) OSL::Vec3(v.x, v.y, v.z)
 #define TO_FLOAT3(v) make_float3(v[0], v[1], v[2])
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 static_assert(sizeof(OSLClosure) == sizeof(OSL::ClosureColor) &&
               sizeof(OSLClosureAdd) == sizeof(OSL::ClosureAdd) &&
@@ -276,4 +276,4 @@ void osl_eval_nodes<SHADER_TYPE_DISPLACEMENT>(const ThreadKernelGlobalsCPU *kg,
   sd->P = TO_FLOAT3(globals->P);
 }
 
-CCL_NAMESPACE_END
+}

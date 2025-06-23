@@ -6,7 +6,7 @@
 #include "device/device.h"
 #include "device/memory.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 DeviceScene::DeviceScene(Device *device)
     : bvh_nodes(device, "bvh_nodes", MEM_GLOBAL),
@@ -59,4 +59,4 @@ DeviceScene::DeviceScene(Device *device)
   memset((void *)&data, 0, sizeof(data));
 }
 
-CCL_NAMESPACE_END
+}

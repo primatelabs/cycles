@@ -20,7 +20,7 @@
 #  include "kernel/osl/osl.h"
 #endif
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Guiding */
 
@@ -1200,4 +1200,4 @@ ccl_device void surface_shader_eval(KernelGlobals kg,
   }
 }
 
-CCL_NAMESPACE_END
+}

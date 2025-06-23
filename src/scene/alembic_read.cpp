@@ -15,7 +15,7 @@
 
 using namespace Alembic::AbcGeom;
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 static float3 make_float3_from_yup(const V3f &v)
 {
@@ -1107,6 +1107,6 @@ void read_attributes(AlembicProcedural *proc,
   cache.invalidate_last_loaded_time(true);
 }
 
-CCL_NAMESPACE_END
+}
 
 #endif

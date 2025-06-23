@@ -9,7 +9,7 @@
 
 #include <string>
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Get width in characters of the current console output. */
 int system_console_width();
@@ -24,4 +24,4 @@ size_t system_physical_ram();
 /* Get identifier of the currently running process. */
 uint64_t system_self_process_id();
 
-CCL_NAMESPACE_END
+}

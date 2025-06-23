@@ -6,7 +6,7 @@
 
 #include "util/ies.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 TEST(util_ies, invalid)
 {
@@ -15,4 +15,4 @@ TEST(util_ies, invalid)
   EXPECT_FALSE(ies_file.load("Hello, World!"));
 }
 
-CCL_NAMESPACE_END
+}

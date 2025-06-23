@@ -6,7 +6,7 @@
 
 #include <cstddef>
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Minimum alignment needed by all CPU native data types (SSE, AVX). */
 #define MIN_ALIGNMENT_CPU_DATA_TYPES 16  // NOLINT
@@ -32,4 +32,4 @@ template<typename T> void util_aligned_delete(T *t)
   }
 }
 
-CCL_NAMESPACE_END
+}

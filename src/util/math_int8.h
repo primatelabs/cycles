@@ -9,7 +9,7 @@
 #include "util/types_float8.h"
 #include "util/types_int8.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 #ifndef __KERNEL_GPU__
 ccl_device_inline vint8 operator+(const vint8 a, const vint8 b)
@@ -350,4 +350,4 @@ template<> __forceinline const vint8 shuffle<0, 1, 0, 1>(const vint8 b)
 }
 #endif
 
-CCL_NAMESPACE_END
+}

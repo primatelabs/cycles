@@ -9,7 +9,7 @@
 #include "kernel/closure/alloc.h"
 #include "kernel/closure/bsdf_diffuse.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 struct Bssrdf {
   SHADER_CLOSURE_BASE;
@@ -350,4 +350,4 @@ ccl_device int bssrdf_setup(ccl_private ShaderData *sd,
   return flag;
 }
 
-CCL_NAMESPACE_END
+}

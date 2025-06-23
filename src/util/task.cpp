@@ -9,7 +9,7 @@
 #include "util/log.h"
 #include "util/time.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Task Pool */
 
@@ -240,4 +240,4 @@ string TaskPool::Summary::full_report() const
   return report;
 }
 
-CCL_NAMESPACE_END
+}

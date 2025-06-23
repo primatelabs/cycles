@@ -12,7 +12,7 @@
 
 #include "util/hash.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Geometry Node */
 
@@ -277,4 +277,4 @@ ccl_device_noinline void svm_node_point_info(KernelGlobals kg,
 
 #endif
 
-CCL_NAMESPACE_END
+}

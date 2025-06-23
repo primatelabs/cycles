@@ -6,7 +6,7 @@
 
 #include "kernel/integrator/state_flow.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Check whether current surface bounce is where path is to be split for the shadow catcher. */
 ccl_device_inline bool kernel_shadow_catcher_is_path_split_bounce(KernelGlobals kg,
@@ -77,4 +77,4 @@ ccl_device_forceinline bool kernel_shadow_catcher_is_object_pass(const uint32_t 
 
 #endif /* __SHADOW_CATCHER__ */
 
-CCL_NAMESPACE_END
+}

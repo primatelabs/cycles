@@ -18,7 +18,7 @@
 #  endif
 #endif /* WITH_ONEAPI */
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 bool device_oneapi_init()
 {
@@ -172,4 +172,4 @@ string device_oneapi_capabilities()
   return capabilities;
 }
 
-CCL_NAMESPACE_END
+}

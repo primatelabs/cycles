@@ -7,7 +7,7 @@
 #include "integrator/adaptive_sampling.h"
 #include "util/vector.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 TEST(AdaptiveSampling, schedule_samples)
 {
@@ -101,4 +101,4 @@ TEST(AdaptiveSampling, need_filter)
   EXPECT_EQ(actual_samples_to_filter, expected_samples_to_filter);
 }
 
-CCL_NAMESPACE_END
+}

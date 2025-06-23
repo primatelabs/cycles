@@ -7,7 +7,7 @@
 #include "util/hash.h"
 #include "util/math_float2.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 class Patch;
 
@@ -224,4 +224,4 @@ class SubPatch {
   }
 };
 
-CCL_NAMESPACE_END
+}

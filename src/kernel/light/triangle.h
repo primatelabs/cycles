@@ -15,7 +15,7 @@
 #include "util/math_fast.h"
 #include "util/math_intersect.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* returns true if the triangle is has motion blur or an instancing transform applied */
 ccl_device_inline bool triangle_world_space_vertices(
@@ -336,4 +336,4 @@ ccl_device_forceinline bool triangle_light_tree_parameters(
   return front_facing && shape_above_surface;
 }
 
-CCL_NAMESPACE_END
+}

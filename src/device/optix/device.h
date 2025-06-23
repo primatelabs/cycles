@@ -7,7 +7,7 @@
 #include "util/unique_ptr.h"
 #include "util/vector.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 class Device;
 class DeviceInfo;
@@ -23,4 +23,4 @@ unique_ptr<Device> device_optix_create(const DeviceInfo &info,
 
 void device_optix_info(const vector<DeviceInfo> &cuda_devices, vector<DeviceInfo> &devices);
 
-CCL_NAMESPACE_END
+}

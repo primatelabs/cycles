@@ -30,7 +30,7 @@ namespace OCIO = OCIO_NAMESPACE;
 
 #include "scene/shader.tables"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 thread_mutex ShaderManager::lookup_table_mutex;
 
@@ -960,4 +960,4 @@ size_t ShaderManager::ensure_bsdf_table_impl(DeviceScene *dscene,
   return bsdf_tables[table];
 }
 
-CCL_NAMESPACE_END
+}

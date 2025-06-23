@@ -7,7 +7,7 @@
 #include "util/map.h"
 #include "util/param.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Enum
  *
@@ -62,4 +62,4 @@ struct NodeEnum {
   unordered_map<int, string> right;
 };
 
-CCL_NAMESPACE_END
+}

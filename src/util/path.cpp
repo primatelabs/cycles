@@ -40,7 +40,7 @@
 #  include "util/windows.h"
 #endif
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 #ifdef _WIN32
 #  if defined(_MSC_VER) || defined(__MINGW64__)
@@ -1027,4 +1027,4 @@ void path_cache_kernel_mark_added_and_clear_old(const string &new_path,
   }
 }
 
-CCL_NAMESPACE_END
+}

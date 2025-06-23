@@ -20,7 +20,7 @@
 
 #include "kernel/util/colorspace.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Closure Nodes */
 
@@ -1438,4 +1438,4 @@ ccl_device void svm_node_set_normal(KernelGlobals kg,
   stack_store_float3(stack, out_normal, normal);
 }
 
-CCL_NAMESPACE_END
+}

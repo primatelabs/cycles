@@ -12,7 +12,7 @@
 #include <cstddef>
 #include <functional>
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 class Mesh;
 class Attribute;
@@ -75,4 +75,4 @@ class SubdAttributeInterpolation {
   template<typename T> void setup_attribute_type(const Attribute &subd_attr, Attribute &mesh_attr);
 };
 
-CCL_NAMESPACE_END
+}

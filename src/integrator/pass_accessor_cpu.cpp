@@ -12,7 +12,7 @@
 
 #include "kernel/types.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* --------------------------------------------------------------------
  * Kernel processing.
@@ -121,4 +121,4 @@ DEFINE_PASS_ACCESSOR(float4)
 
 #undef DEFINE_PASS_ACCESSOR
 
-CCL_NAMESPACE_END
+}

@@ -6,7 +6,7 @@
 
 #include "util/transform.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Node Socket Type */
 
@@ -233,4 +233,4 @@ const NodeType *NodeType::find(string name)
   return (it == types().end()) ? nullptr : &it->second;
 }
 
-CCL_NAMESPACE_END
+}

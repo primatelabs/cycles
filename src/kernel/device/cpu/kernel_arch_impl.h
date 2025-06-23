@@ -38,7 +38,7 @@
 #endif   /* KERNEL_STUB */
 // clang-format on
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* --------------------------------------------------------------------
  * Integrator.
@@ -293,4 +293,4 @@ KERNEL_FILM_CONVERT_FUNCTION(float4, false)
 #undef STUB_ASSERT
 #undef KERNEL_ARCH
 
-CCL_NAMESPACE_END
+}

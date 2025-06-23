@@ -9,7 +9,7 @@
 #include "session/buffers.h"
 #include "util/unique_ptr.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 class BufferParams;
 class Device;
@@ -191,4 +191,4 @@ class PathTraceWork {
   const bool *cancel_requested_flag_ = nullptr;
 };
 
-CCL_NAMESPACE_END
+}

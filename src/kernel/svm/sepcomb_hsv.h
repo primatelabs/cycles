@@ -8,7 +8,7 @@
 
 #include "util/color.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 ccl_device_noinline int svm_node_combine_hsv(KernelGlobals kg,
                                              ccl_private ShaderData *sd,
@@ -62,4 +62,4 @@ ccl_device_noinline int svm_node_separate_hsv(KernelGlobals kg,
   return offset;
 }
 
-CCL_NAMESPACE_END
+}

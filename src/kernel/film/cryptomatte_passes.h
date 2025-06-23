@@ -6,7 +6,7 @@
 
 #include "kernel/globals.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Element of ID pass stored in the render buffers.
  * It is `float2` semantically, but it must be unaligned since the offset of ID passes in the
@@ -93,4 +93,4 @@ ccl_device_inline void film_cryptomatte_post(KernelGlobals kg,
   film_sort_cryptomatte_slots(cryptomatte_buffer, 2 * kernel_data.film.cryptomatte_depth);
 }
 
-CCL_NAMESPACE_END
+}

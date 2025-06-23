@@ -8,7 +8,7 @@
 
 #include "kernel/util/colorspace.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Conversion Nodes */
 
@@ -67,4 +67,4 @@ ccl_device_noinline void svm_node_convert(KernelGlobals kg,
   }
 }
 
-CCL_NAMESPACE_END
+}

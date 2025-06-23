@@ -6,7 +6,7 @@
 
 #include "util/math.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Curve functions */
 
@@ -57,4 +57,4 @@ void curvebounds(float *lower, float *upper, float3 *p, const int dim)
   *lower = min(*lower, min(exa, exb));
 }
 
-CCL_NAMESPACE_END
+}

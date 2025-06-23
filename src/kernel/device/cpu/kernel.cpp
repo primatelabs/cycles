@@ -12,7 +12,7 @@
 #define KERNEL_ARCH cpu
 #include "kernel/device/cpu/kernel_arch_impl.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Memory Copy */
 
@@ -45,4 +45,4 @@ void kernel_global_memory_copy(KernelGlobalsCPU *kg,
   }
 }
 
-CCL_NAMESPACE_END
+}

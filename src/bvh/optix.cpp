@@ -9,7 +9,7 @@
 
 #  include "bvh/optix.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 BVHOptiX::BVHOptiX(const BVHParams &params_,
                    const vector<Geometry *> &geometry_,
@@ -32,6 +32,6 @@ BVHOptiX::~BVHOptiX()
   device->release_bvh(this);
 }
 
-CCL_NAMESPACE_END
+}
 
 #endif /* WITH_OPTIX */

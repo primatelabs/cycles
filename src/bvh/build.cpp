@@ -26,7 +26,7 @@
 #include "util/stack_allocator.h"
 #include "util/time.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Constructor / Destructor */
 
@@ -1310,4 +1310,4 @@ void BVHBuild::rotate(BVHNode *node, const int max_depth)
   child->bounds = merge(child->children[0]->bounds, child->children[1]->bounds);
 }
 
-CCL_NAMESPACE_END
+}

@@ -10,7 +10,7 @@
 #include "util/log.h"
 #include "util/progress.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Particle System */
 
@@ -128,4 +128,4 @@ bool ParticleSystemManager::need_update() const
   return need_update_;
 }
 
-CCL_NAMESPACE_END
+}

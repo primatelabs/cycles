@@ -15,7 +15,7 @@
 
 #include "kernel/util/differential.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Attribute Node */
 
@@ -380,4 +380,4 @@ ccl_device_noinline void svm_node_attr_bump_dy(KernelGlobals kg,
   }
 }
 
-CCL_NAMESPACE_END
+}

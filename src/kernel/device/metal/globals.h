@@ -12,7 +12,7 @@
 #include "util/color.h"
 #include "util/texture.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 struct KernelParamsMetal {
 
@@ -36,4 +36,4 @@ using KernelGlobals = const ccl_global KernelGlobalsGPU *ccl_restrict;
 #define kernel_data_array(name) launch_params_metal.name
 #define kernel_integrator_state launch_params_metal.integrator_state
 
-CCL_NAMESPACE_END
+}

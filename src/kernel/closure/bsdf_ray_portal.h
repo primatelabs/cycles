@@ -8,7 +8,7 @@
 
 #include "kernel/closure/alloc.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 struct RayPortalClosure {
   SHADER_CLOSURE_BASE;
@@ -57,4 +57,4 @@ ccl_device Spectrum bsdf_ray_portal_eval(const ccl_private ShaderClosure *sc,
   return zero_spectrum();
 }
 
-CCL_NAMESPACE_END
+}

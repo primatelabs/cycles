@@ -7,7 +7,7 @@
 #  include "device/hip/util.h"
 #  include "device/hip/device_impl.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 HIPContextScope::HIPContextScope(HIPDevice *device) : device(device)
 {
@@ -69,6 +69,6 @@ bool hipSupportsDriver()
   return true;
 }
 
-CCL_NAMESPACE_END
+}
 
 #endif /* WITH_HIP */

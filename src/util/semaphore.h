@@ -6,7 +6,7 @@
 
 #include "util/thread.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Counting Semaphore
  *
@@ -41,4 +41,4 @@ class thread_counting_semaphore {
   int count;
 };
 
-CCL_NAMESPACE_END
+}

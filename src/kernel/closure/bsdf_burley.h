@@ -10,7 +10,7 @@
 #include "kernel/closure/bsdf_util.h"
 #include "kernel/sample/mapping.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 #ifdef __OSL__
 
@@ -87,4 +87,4 @@ ccl_device int bsdf_burley_sample(ccl_private const ShaderClosure *sc,
 
 #endif /* __OSL__ */
 
-CCL_NAMESPACE_END
+}

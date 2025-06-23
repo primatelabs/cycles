@@ -14,7 +14,7 @@
 #  include <system_error>
 #endif
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 thread::thread(std::function<void()> run_cb) : run_cb_(run_cb), joined_(false)
 {
@@ -61,4 +61,4 @@ bool thread::join()
 #endif
 }
 
-CCL_NAMESPACE_END
+}

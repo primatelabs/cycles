@@ -14,7 +14,7 @@
 #include "util/color.h"
 #include "util/texture.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Not actually used, just a nullptr pointer that gets passed everywhere, which we
  * hope gets optimized out by the compiler. */
@@ -53,4 +53,4 @@ extern "C"
 #define kernel_data_fetch(name, index) kernel_params.name[(index)]
 #define kernel_integrator_state kernel_params.integrator_state
 
-CCL_NAMESPACE_END
+}

@@ -11,7 +11,7 @@
 #include "kernel/util/differential.h"
 #include "kernel/util/lookup_table.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Perspective Camera */
 
@@ -481,4 +481,4 @@ ccl_device_inline float3 camera_world_to_ndc(KernelGlobals kg,
   return make_float3(uv.x, uv.y, 0.0f);
 }
 
-CCL_NAMESPACE_END
+}

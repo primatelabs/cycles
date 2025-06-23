@@ -21,7 +21,7 @@
 
 #include "kernel/geom/shader_data.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 #ifdef __VOLUME__
 
@@ -1211,4 +1211,4 @@ ccl_device void integrator_shade_volume(KernelGlobals kg,
 #endif /* __VOLUME__ */
 }
 
-CCL_NAMESPACE_END
+}

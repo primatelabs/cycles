@@ -6,7 +6,7 @@
 
 #include <OSL/oslconfig.h>
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 using OSLUStringHash = OSL::stringhash;
 #if OSL_LIBRARY_VERSION_CODE >= 11400
@@ -20,4 +20,4 @@ static inline OSL::string to_string(OSLUStringHash h)
   return OSL::string::from_hash(h.hash());
 }
 
-CCL_NAMESPACE_END
+}

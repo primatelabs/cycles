@@ -22,7 +22,7 @@
 #include "util/tbb.h"
 #include "util/time.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 PathTrace::PathTrace(Device *device,
                      Device *denoise_device,
@@ -1475,4 +1475,4 @@ void PathTrace::guiding_update_structures()
 #endif
 }
 
-CCL_NAMESPACE_END
+}

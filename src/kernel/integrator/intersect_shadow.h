@@ -13,7 +13,7 @@
 #include "kernel/integrator/state_flow.h"
 #include "kernel/integrator/state_util.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Visibility for the shadow ray. */
 ccl_device_forceinline uint integrate_intersect_shadow_visibility(KernelGlobals kg,
@@ -187,4 +187,4 @@ ccl_device void integrator_intersect_shadow(KernelGlobals kg, IntegratorShadowSt
       kg, state, DEVICE_KERNEL_INTEGRATOR_INTERSECT_SHADOW, DEVICE_KERNEL_INTEGRATOR_SHADE_SHADOW);
 }
 
-CCL_NAMESPACE_END
+}

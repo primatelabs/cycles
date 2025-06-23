@@ -7,7 +7,7 @@
 #include "kernel/svm/fractal_noise.h"
 #include "kernel/svm/util.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Wave */
 
@@ -135,4 +135,4 @@ ccl_device_noinline int svm_node_tex_wave(KernelGlobals kg,
   return offset;
 }
 
-CCL_NAMESPACE_END
+}

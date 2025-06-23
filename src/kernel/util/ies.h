@@ -6,7 +6,7 @@
 
 #include "kernel/globals.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* IES Light */
 
@@ -130,4 +130,4 @@ ccl_device_inline float kernel_ies_interp(KernelGlobals kg,
   return max(cubic_interp(a, b, c, d, h_frac), 0.0f);
 }
 
-CCL_NAMESPACE_END
+}

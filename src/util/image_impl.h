@@ -7,7 +7,7 @@
 #include "util/image.h"
 #include "util/math_base.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 namespace {
 
@@ -161,4 +161,4 @@ void util_image_resize_pixels(const vector<T> &input_pixels,
   }
 }
 
-CCL_NAMESPACE_END
+}

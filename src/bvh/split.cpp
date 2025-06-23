@@ -17,7 +17,7 @@
 
 #include "util/algorithm.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Object Split */
 
@@ -572,4 +572,4 @@ void BVHSpatialSplit::split_reference(const BVHBuild &builder,
   right = BVHReference(right_bounds, ref.prim_index(), ref.prim_object(), ref.prim_type());
 }
 
-CCL_NAMESPACE_END
+}

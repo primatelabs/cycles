@@ -9,7 +9,7 @@
 
 #include <ostream>
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 std::ostream &operator<<(std::ostream &os, const TileSize &tile_size)
 {
@@ -104,4 +104,4 @@ TileSize tile_calculate_best_size(const bool accel_rt,
   return tile_size;
 }
 
-CCL_NAMESPACE_END
+}

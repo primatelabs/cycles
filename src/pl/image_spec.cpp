@@ -6,7 +6,7 @@
 
 #include "pl/error.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 ImageSpec::ImageSpec(TypeDesc format)
     : width(0),
@@ -95,4 +95,4 @@ string_view ImageSpec::get_string_attribute(string_view name, string_view defaul
   return default_value;
 }
 
-CCL_NAMESPACE_END
+}

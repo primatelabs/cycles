@@ -18,7 +18,7 @@
 #include "util/types.h"
 #include "util/vector.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 class Mesh;
 class Patch;
@@ -95,4 +95,4 @@ class DiagSplit {
   }
 };
 
-CCL_NAMESPACE_END
+}

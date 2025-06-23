@@ -26,7 +26,7 @@
 #  define OPTIX_FUNCTION_TABLE_SYMBOL g_optixFunctionTable
 #endif
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 bool device_optix_init()
 {
@@ -120,4 +120,4 @@ unique_ptr<Device> device_optix_create(const DeviceInfo &info,
 #endif
 }
 
-CCL_NAMESPACE_END
+}

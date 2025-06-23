@@ -6,7 +6,7 @@
 
 #include "kernel/types.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* See "Tracing Ray Differentials", Homan Igehy, 1999. */
 
@@ -161,4 +161,4 @@ ccl_device void differential_dudv_compact(ccl_private differential *du,
   differential_dudv(du, dv, dPdu, dPdv, differential_from_compact(Ng, dP), Ng);
 }
 
-CCL_NAMESPACE_END
+}

@@ -4,7 +4,7 @@
 
 #pragma once
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Stack */
 
@@ -520,4 +520,4 @@ enum ClosureType {
 /* Treat closure as singular if the squared roughness is below this threshold. */
 #define BSDF_ROUGHNESS_SQ_THRESH 2e-10f
 
-CCL_NAMESPACE_END
+}

@@ -14,7 +14,7 @@
 #include "util/unique_ptr.h"
 #include "util/vector.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 // NOLINTBEGIN
 #define BVH_NODE_SIZE 4
@@ -95,4 +95,4 @@ class BVH2 : public BVH {
   void pack_instances(const size_t nodes_size, const size_t leaf_nodes_size);
 };
 
-CCL_NAMESPACE_END
+}

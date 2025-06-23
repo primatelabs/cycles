@@ -25,7 +25,7 @@
 
 #include "util/math_fast.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Consine of the angle subtended by the smallest enclosing sphere of the node bounding box. */
 ccl_device float light_tree_cos_bound_subtended_angle(const KernelBoundingBox bbox,
@@ -934,4 +934,4 @@ ccl_device float light_tree_pdf(KernelGlobals kg,
       kg, P, N, 0.0f, path_flag, emitter_object, emitter_id, object_receiver);
 }
 
-CCL_NAMESPACE_END
+}

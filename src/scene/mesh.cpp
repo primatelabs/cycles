@@ -22,7 +22,7 @@
 
 #include "mikktspace.hh"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Tangent Space */
 
@@ -883,4 +883,4 @@ PrimitiveType Mesh::primitive_type() const
   return has_motion_blur() ? PRIMITIVE_MOTION_TRIANGLE : PRIMITIVE_TRIANGLE;
 }
 
-CCL_NAMESPACE_END
+}

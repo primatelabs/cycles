@@ -11,7 +11,7 @@
 
 #include "util/atomic.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Control Flow
  *
@@ -228,4 +228,4 @@ ccl_device_forceinline void integrator_shadow_path_terminate(KernelGlobals kg,
 
 #endif
 
-CCL_NAMESPACE_END
+}

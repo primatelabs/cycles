@@ -8,7 +8,7 @@
 #include "util/types_float2.h"
 #include "util/types_int4.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 #ifndef __KERNEL_NATIVE_VECTOR_TYPES__
 #  ifdef __KERNEL_ONEAPI__
@@ -168,4 +168,4 @@ struct packed_float3 {
 
 static_assert(sizeof(packed_float3) == 12, "packed_float3 expected to be exactly 12 bytes");
 
-CCL_NAMESPACE_END
+}

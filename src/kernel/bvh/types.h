@@ -4,7 +4,7 @@
 
 #pragma once
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Don't inline intersect functions on GPU, this is faster */
 #ifdef __KERNEL_GPU__
@@ -30,4 +30,4 @@ CCL_NAMESPACE_BEGIN
 
 #define BVH_FEATURE(f) (((BVH_FUNCTION_FEATURES) & (f)) != 0)
 
-CCL_NAMESPACE_END
+}

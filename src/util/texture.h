@@ -6,7 +6,7 @@
 
 #include "util/transform.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Color to use when textures are not found. */
 enum {
@@ -90,4 +90,4 @@ struct TextureInfo {
   Transform transform_3d = transform_zero();
 };
 
-CCL_NAMESPACE_END
+}

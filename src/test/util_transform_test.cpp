@@ -7,7 +7,7 @@
 #include "util/transform.h"
 #include "util/vector.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 TEST(transform_motion_decompose, Degenerated)
 {
@@ -38,4 +38,4 @@ TEST(transform_motion_decompose, Degenerated)
   }
 }
 
-CCL_NAMESPACE_END
+}

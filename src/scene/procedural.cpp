@@ -8,7 +8,7 @@
 
 #include "util/progress.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 NODE_ABSTRACT_DEFINE(Procedural)
 {
@@ -66,4 +66,4 @@ bool ProceduralManager::need_update() const
   return need_update_;
 }
 
-CCL_NAMESPACE_END
+}

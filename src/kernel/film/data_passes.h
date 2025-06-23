@@ -13,7 +13,7 @@
 #include "kernel/film/cryptomatte_passes.h"
 #include "kernel/film/write.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 ccl_device_inline size_t film_write_cryptomatte_pass(ccl_global float *ccl_restrict buffer,
                                                      const size_t depth,
@@ -215,4 +215,4 @@ ccl_device_inline void film_write_data_passes_background(
 #endif
 }
 
-CCL_NAMESPACE_END
+}

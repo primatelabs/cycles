@@ -8,7 +8,7 @@
 
 #include "util/log.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 DebugFlags::CPU::CPU()
 {
@@ -100,4 +100,4 @@ void DebugFlags::reset()
   metal.reset();
 }
 
-CCL_NAMESPACE_END
+}

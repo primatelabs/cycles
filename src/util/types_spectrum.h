@@ -6,7 +6,7 @@
 
 #include "util/types_float3.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 #define SPECTRUM_CHANNELS 3
 
@@ -25,4 +25,4 @@ using PackedSpectrum = packed_float3;
 
 #define GET_SPECTRUM_CHANNEL(v, i) (((ccl_private float *)(&(v)))[i])
 
-CCL_NAMESPACE_END
+}

@@ -6,7 +6,7 @@
 
 #include "util/types_int3.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 #if !defined(__KERNEL_METAL__)
 ccl_device_inline int3 min(const int3 a, const int3 b)
@@ -79,4 +79,4 @@ ccl_device_inline int3 operator-(const int3 a, const int3 b)
 }
 #endif /* !__KERNEL_METAL__ */
 
-CCL_NAMESPACE_END
+}

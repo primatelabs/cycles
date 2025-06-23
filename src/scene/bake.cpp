@@ -10,7 +10,7 @@
 #include "scene/stats.h"
 #include "session/buffers.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 bool BakeManager::get_baking() const
 {
@@ -101,4 +101,4 @@ bool BakeManager::need_update() const
   return need_update_;
 }
 
-CCL_NAMESPACE_END
+}

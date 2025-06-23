@@ -11,7 +11,7 @@
 
 #include "util/math_fast.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 struct HairBsdf {
   SHADER_CLOSURE_BASE;
@@ -258,4 +258,4 @@ ccl_device int bsdf_hair_transmission_sample(const ccl_private ShaderClosure *sc
   return LABEL_TRANSMIT | LABEL_GLOSSY;
 }
 
-CCL_NAMESPACE_END
+}

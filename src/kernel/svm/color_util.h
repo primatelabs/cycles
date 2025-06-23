@@ -8,7 +8,7 @@
 
 #include "util/color.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 ccl_device float3 svm_mix_blend(const float t, const float3 col1, const float3 col2)
 {
@@ -406,4 +406,4 @@ ccl_device float3 svm_separate_color(NodeCombSepColorType type, const float3 col
   }
 }
 
-CCL_NAMESPACE_END
+}

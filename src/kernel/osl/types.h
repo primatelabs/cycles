@@ -11,7 +11,7 @@
 #include "util/defines.h"
 #include "util/types_float3.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 #if defined(__KERNEL_GPU__)
 /* Strings are represented by their hashes on the GPU. */
@@ -155,4 +155,4 @@ struct OSLTextureOptions {};
 #define OSL_TEXTURE_HANDLE_SLOT(handle) \
   ((unsigned int)((uintptr_t)(handle) & ((uintptr_t)0x3FFFFFFF)))
 
-CCL_NAMESPACE_END
+}

@@ -10,7 +10,7 @@
 #include <util/unique_ptr.h>
 #include <util/vector.h>
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 class BVHMulti : public BVH {
  public:
@@ -25,4 +25,4 @@ class BVHMulti : public BVH {
                         const vector<Object *> &objects) override;
 };
 
-CCL_NAMESPACE_END
+}

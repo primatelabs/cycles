@@ -20,7 +20,7 @@
 
 #include "util/hash.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /*
  * Computes a single dimension of a sample from an Owen-scrambled
@@ -200,4 +200,4 @@ ccl_device float4 sobol_burley_sample_4D(uint index,
                      sobol_burley(index, 3, seed ^ 0x1524cc56));
 }
 
-CCL_NAMESPACE_END
+}

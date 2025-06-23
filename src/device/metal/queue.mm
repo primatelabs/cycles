@@ -16,7 +16,7 @@
 #  include "util/string.h"
 #  include "util/time.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* MetalDeviceQueue */
 
@@ -857,6 +857,6 @@ void *MetalDeviceQueue::native_queue()
   return mtlCommandQueue_;
 }
 
-CCL_NAMESPACE_END
+}
 
 #endif /* WITH_METAL */

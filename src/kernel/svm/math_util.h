@@ -10,7 +10,7 @@
 #include "util/math.h"
 #include "util/types.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 ccl_device void svm_vector_math(ccl_private float *value,
                                 ccl_private float3 *vector,
@@ -269,4 +269,4 @@ ccl_device float3 svm_math_wavelength_color_xyz(const float lambda_nm)
   return color;
 }
 
-CCL_NAMESPACE_END
+}

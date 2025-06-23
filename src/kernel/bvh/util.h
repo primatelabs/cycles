@@ -8,7 +8,7 @@
 #include "kernel/integrator/state.h"
 #include "kernel/types.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 ccl_device_inline bool intersection_ray_valid(const ccl_private Ray *ray)
 {
@@ -310,4 +310,4 @@ ccl_device_forceinline bool intersection_skip_shadow_already_recoded(KernelGloba
   return false;
 }
 
-CCL_NAMESPACE_END
+}

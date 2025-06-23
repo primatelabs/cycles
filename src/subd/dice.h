@@ -14,7 +14,7 @@
 
 #include "subd/subpatch.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 class Camera;
 class Mesh;
@@ -79,4 +79,4 @@ class EdgeDice {
   float scale_factor(const SubPatch &sub, const int Mu, const int Mv);
 };
 
-CCL_NAMESPACE_END
+}

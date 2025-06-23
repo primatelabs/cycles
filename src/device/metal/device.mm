@@ -16,7 +16,7 @@
 #include "util/set.h"
 #include "util/system.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 #ifdef WITH_METAL
 
@@ -152,4 +152,4 @@ string device_metal_capabilities()
 
 #endif
 
-CCL_NAMESPACE_END
+}

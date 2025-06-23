@@ -10,7 +10,7 @@
 #include "util/log.h"
 #include "util/time.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Lookup Tables */
 
@@ -116,4 +116,4 @@ void LookupTables::remove_table(size_t *offset)
   assert(table != lookup_tables.end());
 }
 
-CCL_NAMESPACE_END
+}

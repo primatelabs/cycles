@@ -12,7 +12,7 @@
 #include "util/array.h"
 #include "util/string.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 class Device;
 class DeviceScene;
@@ -230,4 +230,4 @@ class SVMCompiler {
   bool compile_failed;
 };
 
-CCL_NAMESPACE_END
+}

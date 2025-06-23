@@ -19,7 +19,7 @@
 
 #  include "util/vector.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 class Hair;
 class Mesh;
@@ -65,6 +65,6 @@ class BVHEmbree : public BVH {
   enum RTCBuildQuality build_quality;
 };
 
-CCL_NAMESPACE_END
+}
 
 #endif /* WITH_EMBREE */

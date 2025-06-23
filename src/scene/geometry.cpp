@@ -31,7 +31,7 @@
 #include "util/progress.h"
 #include "util/task.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Geometry */
 
@@ -1137,4 +1137,4 @@ void GeometryManager::collect_statistics(const Scene *scene, RenderStats *stats)
   }
 }
 
-CCL_NAMESPACE_END
+}

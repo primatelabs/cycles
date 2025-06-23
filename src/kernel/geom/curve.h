@@ -9,7 +9,7 @@
 #include "kernel/geom/attribute.h"
 #include "kernel/geom/motion_curve.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Curve Primitive
  *
@@ -233,4 +233,4 @@ ccl_device_inline void curvebounds(ccl_private float *lower,
 
 #endif /* __HAIR__ */
 
-CCL_NAMESPACE_END
+}

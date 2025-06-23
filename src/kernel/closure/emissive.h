@@ -9,7 +9,7 @@
 
 #include "kernel/types.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* BACKGROUND CLOSURE */
 
@@ -62,4 +62,4 @@ ccl_device Spectrum emissive_simple_eval(const float3 Ng, const float3 wi)
   return make_spectrum(res);
 }
 
-CCL_NAMESPACE_END
+}

@@ -11,7 +11,7 @@
 #include "util/image.h"
 #include "util/unique_ptr.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 OIIOOutputDriver::OIIOOutputDriver(const string_view filepath,
                                    const string_view pass,
@@ -76,4 +76,4 @@ void OIIOOutputDriver::write_render_tile(const Tile &tile)
   image_output->close();
 }
 
-CCL_NAMESPACE_END
+}

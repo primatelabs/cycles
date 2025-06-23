@@ -14,7 +14,7 @@
 #include "util/color.h"
 #include "util/texture.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* NOTE(@nsirgien): With SYCL we can't declare __constant__ global variable, which will be
  * accessible from device code, like it has been done for Cycles CUDA backend. So, the backend will
@@ -53,4 +53,4 @@ using KernelGlobals = ccl_global KernelGlobalsGPU *ccl_restrict;
 #define kernel_data_fetch(name, index) __##name[index]
 #define kernel_data_array(name) __##name
 
-CCL_NAMESPACE_END
+}

@@ -10,7 +10,7 @@
 #include "util/map.h"
 #include "util/task.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Utility Functions */
 
@@ -675,4 +675,4 @@ bool DenoiserPipeline::run()
   return true;
 }
 
-CCL_NAMESPACE_END
+}

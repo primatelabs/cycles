@@ -21,7 +21,7 @@
 
 #include "kernel/camera/camera.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 static float shutter_curve_eval(float x, array<float> &shutter_curve)
 {
@@ -851,4 +851,4 @@ int Camera::motion_step(const float time) const
   return -1;
 }
 
-CCL_NAMESPACE_END
+}

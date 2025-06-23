@@ -10,7 +10,7 @@
 #include <SDL.h>
 #include <epoxy/gl.h>
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* --------------------------------------------------------------------
  * OpenGLDisplayDriver.
@@ -389,4 +389,4 @@ void OpenGLDisplayDriver::vertex_buffer_update(const Params &params)
   glUnmapBuffer(GL_ARRAY_BUFFER);
 }
 
-CCL_NAMESPACE_END
+}

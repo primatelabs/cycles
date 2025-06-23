@@ -4,7 +4,7 @@
 
 #include "scene/image.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 class SkyLoader : public ImageLoader {
  private:
@@ -34,4 +34,4 @@ class SkyLoader : public ImageLoader {
   bool equals(const ImageLoader & /*other*/) const override;
 };
 
-CCL_NAMESPACE_END
+}

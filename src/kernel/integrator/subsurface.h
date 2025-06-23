@@ -14,7 +14,7 @@
 #include "kernel/integrator/subsurface_random_walk.h"
 #include "kernel/integrator/surface_shader.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 #ifdef __SUBSURFACE__
 
@@ -250,4 +250,4 @@ ccl_device_inline bool subsurface_scatter(KernelGlobals kg, IntegratorState stat
 
 #endif /* __SUBSURFACE__ */
 
-CCL_NAMESPACE_END
+}

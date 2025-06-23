@@ -12,7 +12,7 @@
 
 #include "util/types.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 class BVHBuild;
 
@@ -95,4 +95,4 @@ class BVHObjectBinning : public BVHRange {
   }
 };
 
-CCL_NAMESPACE_END
+}

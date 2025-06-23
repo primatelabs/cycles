@@ -8,7 +8,7 @@
 
 #include "kernel/film/write.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 #ifdef __DENOISING_FEATURES__
 ccl_device_forceinline void film_write_denoising_features_surface(KernelGlobals kg,
@@ -133,4 +133,4 @@ ccl_device_forceinline void film_write_denoising_features_volume(KernelGlobals k
 }
 #endif /* __DENOISING_FEATURES__ */
 
-CCL_NAMESPACE_END
+}

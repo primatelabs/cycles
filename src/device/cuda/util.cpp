@@ -7,7 +7,7 @@
 #  include "device/cuda/util.h"
 #  include "device/cuda/device_impl.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 CUDAContextScope::CUDAContextScope(CUDADevice *device) : device(device)
 {
@@ -44,6 +44,6 @@ int cuewCompilerVersion()
 }
 #  endif
 
-CCL_NAMESPACE_END
+}
 
 #endif /* WITH_CUDA */

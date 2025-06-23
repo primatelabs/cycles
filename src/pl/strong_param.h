@@ -6,7 +6,7 @@
 
 #include <type_traits>
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /// StrongParam is used to construct an implementation of a derived type
 /// that lets you pass strongly typed parameters. It implicitly converts TO
@@ -114,4 +114,4 @@ template<typename Tag, typename Basetype> struct StrongParam {
     using StrongParam::StrongParam; \
   }
 
-CCL_NAMESPACE_END
+}

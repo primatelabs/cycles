@@ -9,7 +9,7 @@
 #include "util/path.h"
 #include "util/unique_ptr.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 OIIOImageLoader::OIIOImageLoader(const string &filepath) : filepath(filepath) {}
 
@@ -263,4 +263,4 @@ bool OIIOImageLoader::equals(const ImageLoader &other) const
   return filepath == other_loader.filepath;
 }
 
-CCL_NAMESPACE_END
+}

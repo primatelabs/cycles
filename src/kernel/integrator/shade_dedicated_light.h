@@ -10,7 +10,7 @@
 
 #include "kernel/integrator/shade_surface.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 #ifdef __SHADOW_LINKING__
 
@@ -240,4 +240,4 @@ ccl_device void integrator_shade_dedicated_light(KernelGlobals kg,
   integrator_shade_surface_next_kernel<DEVICE_KERNEL_INTEGRATOR_SHADE_DEDICATED_LIGHT>(kg, state);
 }
 
-CCL_NAMESPACE_END
+}

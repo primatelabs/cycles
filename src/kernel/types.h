@@ -29,7 +29,7 @@
 
 #include "kernel/svm/types.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 // NOLINTBEGIN
 
@@ -1871,4 +1871,4 @@ enum {
   DEVICE_KERNEL_INTEGRATOR_NUM = DEVICE_KERNEL_INTEGRATOR_MEGAKERNEL + 1,
 };
 
-CCL_NAMESPACE_END
+}

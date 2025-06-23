@@ -8,7 +8,7 @@
 #include "util/math_float3.h"
 #include "util/math_float4.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Ray Intersection */
 
@@ -449,4 +449,4 @@ ccl_device_inline bool ray_cone_intersect(const float3 axis,
   return valid && !t_range->is_empty();
 }
 
-CCL_NAMESPACE_END
+}

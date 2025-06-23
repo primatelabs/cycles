@@ -8,7 +8,7 @@
 #include "util/unique_ptr.h"
 #include "util/vector.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 class Device;
 class DeviceInfo;
@@ -26,4 +26,4 @@ void device_hip_info(vector<DeviceInfo> &devices);
 
 string device_hip_capabilities();
 
-CCL_NAMESPACE_END
+}

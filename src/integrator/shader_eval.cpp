@@ -15,7 +15,7 @@
 #include "util/progress.h"
 #include "util/tbb.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 ShaderEval::ShaderEval(Device *device, Progress &progress) : device_(device), progress_(progress)
 {
@@ -169,4 +169,4 @@ bool ShaderEval::eval_gpu(Device *device,
   return true;
 }
 
-CCL_NAMESPACE_END
+}

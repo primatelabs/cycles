@@ -13,7 +13,7 @@
 #  include "../../guardedalloc/MEM_guardedalloc.h"
 #endif
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Internal use only. */
 void util_guarded_mem_alloc(const size_t n);
@@ -159,4 +159,4 @@ size_t util_guarded_get_mem_peak();
     } \
   } while (false)
 
-CCL_NAMESPACE_END
+}

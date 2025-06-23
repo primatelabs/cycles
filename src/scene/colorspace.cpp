@@ -17,7 +17,7 @@
 namespace OCIO = OCIO_NAMESPACE;
 #endif
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Builtin colorspaces. */
 string u_colorspace_auto;
@@ -482,4 +482,4 @@ template void ColorSpaceManager::to_scene_linear(string, ushort *, size_t, bool,
 template void ColorSpaceManager::to_scene_linear(string, half *, size_t, bool, bool);
 template void ColorSpaceManager::to_scene_linear(string, float *, size_t, bool, bool);
 
-CCL_NAMESPACE_END
+}

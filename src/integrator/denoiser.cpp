@@ -19,7 +19,7 @@
 #include "util/openimagedenoise.h"
 #include "util/progress.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Check whether given device is single (not a MultiDevice). */
 static bool is_single_device(const Device *device)
@@ -264,4 +264,4 @@ Device *Denoiser::get_denoiser_device() const
   return denoiser_device_;
 }
 
-CCL_NAMESPACE_END
+}

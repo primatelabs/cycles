@@ -9,7 +9,7 @@
 #include "util/defines.h"
 #include "util/guarded_allocator.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Stack allocator for the use with STL. */
 template<int SIZE, typename T> class ccl_try_align(16) StackAllocator
@@ -145,4 +145,4 @@ template<int SIZE, typename T> class ccl_try_align(16) StackAllocator
   T data_[SIZE];
 };
 
-CCL_NAMESPACE_END
+}

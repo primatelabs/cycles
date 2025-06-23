@@ -6,7 +6,7 @@
 
 #include "util/string.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* ******** Tests for string_printf() ******** */
 
@@ -305,4 +305,4 @@ TEST(string_endswith, basic)
   EXPECT_FALSE(string_endswith("Hello", "WorldHello"));
 }
 
-CCL_NAMESPACE_END
+}

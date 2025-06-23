@@ -7,7 +7,7 @@
 #include "util/math_fast.h"
 #include "util/projection.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Given a random number, sample a direction that makes an angle of theta with direction D. */
 ccl_device float3 phase_sample_direction(const float3 D, const float cos_theta, const float rand)
@@ -307,4 +307,4 @@ ccl_device void phase_mie_fitted_parameters(float d,
   }
 }
 
-CCL_NAMESPACE_END
+}

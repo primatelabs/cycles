@@ -10,7 +10,7 @@
 #include "util/thread.h"
 #include "util/unique_ptr.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 class BufferParams;
 
@@ -185,4 +185,4 @@ class PathTraceDisplay {
   } texture_buffer_state_;
 };
 
-CCL_NAMESPACE_END
+}

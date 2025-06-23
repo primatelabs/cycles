@@ -15,7 +15,7 @@
 
 #  define MAX_SAMPLE_BUFFER_LENGTH 4096
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 class MetalDevice;
 
@@ -119,6 +119,6 @@ class MetalDeviceQueue : public DeviceQueue {
   bool has_captured_to_disk_ = false;
 };
 
-CCL_NAMESPACE_END
+}
 
 #endif /* WITH_METAL */

@@ -8,7 +8,7 @@
 #include "util/types_float2.h"
 #include "util/types_float4.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 ccl_device_inline float2 zero_float2()
 {
@@ -254,4 +254,4 @@ ccl_device_inline float2 safe_divide_float2_float(const float2 a, const float b)
   return (b != 0.0f) ? a / b : zero_float2();
 }
 
-CCL_NAMESPACE_END
+}

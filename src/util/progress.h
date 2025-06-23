@@ -16,7 +16,7 @@
 #include "util/thread.h"
 #include "util/time.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 class Progress {
  public:
@@ -352,4 +352,4 @@ class Progress {
   string error_message;
 };
 
-CCL_NAMESPACE_END
+}

@@ -29,7 +29,7 @@
 
 #endif
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 #ifdef WITH_OSL
 
@@ -1597,4 +1597,4 @@ void OSLCompiler::parameter_texture_ies(const char * /*name*/, int /*svm_slot*/)
 
 #endif /* WITH_OSL */
 
-CCL_NAMESPACE_END
+}

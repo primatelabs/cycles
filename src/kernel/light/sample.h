@@ -18,7 +18,7 @@
 
 #include "kernel/sample/mis.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Evaluate shader on light. */
 ccl_device_noinline_cpu Spectrum
@@ -541,4 +541,4 @@ ccl_device_inline float light_sample_mis_weight_forward_background(KernelGlobals
   return light_sample_mis_weight_forward(kg, mis_ray_pdf, pdf);
 }
 
-CCL_NAMESPACE_END
+}

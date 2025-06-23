@@ -10,7 +10,7 @@
 
 #include "pl/error.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 namespace {
 
@@ -139,4 +139,4 @@ bool PNGImageOutput::write_image(
   return true;
 }
 
-CCL_NAMESPACE_END
+}

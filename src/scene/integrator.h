@@ -11,7 +11,7 @@
 #include "integrator/adaptive_sampling.h"
 #include "integrator/guiding.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 class Device;
 class DeviceScene;
@@ -128,4 +128,4 @@ class Integrator : public Node {
   GuidingParams get_guiding_params(const Device *device) const;
 };
 
-CCL_NAMESPACE_END
+}

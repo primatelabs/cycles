@@ -17,7 +17,7 @@
 #    include <hiprt/hiprt_types.h>
 #  endif
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 class Mesh;
 class Hair;
@@ -128,6 +128,6 @@ class HIPRTDevice : public HIPDevice {
   device_vector<float2> prims_time;
   device_vector<int> prim_time_offset;
 };
-CCL_NAMESPACE_END
+}
 
 #endif

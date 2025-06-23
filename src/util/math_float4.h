@@ -8,7 +8,7 @@
 #include "util/math_base.h"
 #include "util/types_float4.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 ccl_device_inline float4 zero_float4()
 {
@@ -636,4 +636,4 @@ ccl_device_inline float4 __int4_as_float4(const int4 i)
 }
 #endif /* !defined(__KERNEL_METAL__) && !defined(__KERNEL_ONEAPI__) */
 
-CCL_NAMESPACE_END
+}

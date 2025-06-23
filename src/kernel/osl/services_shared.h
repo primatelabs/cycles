@@ -9,7 +9,7 @@
 #include "kernel/geom/motion_triangle.h"
 #include "kernel/geom/triangle.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* TODO: deduplicate function `set_attribute_float3()` in CPU and GPU. */
 
@@ -56,4 +56,4 @@ ccl_device bool attribute_bump_map_normal(KernelGlobals kg,
   return true;
 }
 
-CCL_NAMESPACE_END
+}

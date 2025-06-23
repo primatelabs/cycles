@@ -8,7 +8,7 @@
 
 #include "kernel/types.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 class DeviceQueue;
 
@@ -54,4 +54,4 @@ class PassAccessorGPU : public PassAccessor {
   DeviceQueue *queue_;
 };
 
-CCL_NAMESPACE_END
+}

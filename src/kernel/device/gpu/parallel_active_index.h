@@ -4,7 +4,7 @@
 
 #pragma once
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Given an array of states, build an array of indices for which the states
  * are active.
@@ -192,4 +192,4 @@ __device__
 
 #endif
 
-CCL_NAMESPACE_END
+}

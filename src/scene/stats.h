@@ -9,7 +9,7 @@
 #include "util/string.h"
 #include "util/vector.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Named statistics entry, which corresponds to a size. There is no real
  * semantic around the units of size, it just should be the same for all
@@ -212,4 +212,4 @@ class SceneUpdateStats {
   void clear();
 };
 
-CCL_NAMESPACE_END
+}

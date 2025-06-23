@@ -21,7 +21,7 @@
 #    define oidnExecuteFilterAsync oidnExecuteFilter
 #  endif
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 #  if OIDN_VERSION < 20300
 static const char *oidn_device_type_to_string(const OIDNDeviceType type)
@@ -551,6 +551,6 @@ void OIDNDenoiserGPU::release_all_resources()
   }
 }
 
-CCL_NAMESPACE_END
+}
 
 #endif

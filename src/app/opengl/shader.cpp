@@ -11,7 +11,7 @@
 
 #include <epoxy/gl.h>
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* --------------------------------------------------------------------
  * OpenGLShader.
@@ -195,4 +195,4 @@ void OpenGLShader::destroy_shader()
   shader_program_ = 0;
 }
 
-CCL_NAMESPACE_END
+}

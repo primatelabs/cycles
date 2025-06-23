@@ -12,7 +12,7 @@
 #include "pl/param_value.h"
 #include "pl/type_desc.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 static constexpr TypeDesc TypeRGBA(TypeDesc::FLOAT, TypeDesc::VEC4, TypeDesc::COLOR);
 static constexpr TypeDesc TypeFloatArray4(TypeDesc::FLOAT,
@@ -22,4 +22,4 @@ static constexpr TypeDesc TypeFloatArray4(TypeDesc::FLOAT,
 
 using std::string;
 
-CCL_NAMESPACE_END
+}

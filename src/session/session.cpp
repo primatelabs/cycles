@@ -25,7 +25,7 @@
 #include "util/task.h"
 #include "util/time.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 Session::Session(const SessionParams &params_, const SceneParams &scene_params)
     : params(params_), render_scheduler_(tile_manager_, params)
@@ -782,4 +782,4 @@ void Session::process_full_buffer_from_disk(string_view filename)
   path_trace_->process_full_buffer_from_disk(filename);
 }
 
-CCL_NAMESPACE_END
+}

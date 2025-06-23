@@ -31,7 +31,7 @@
 
 #include "app/cycles_xml.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* XML reading state */
 
@@ -857,4 +857,4 @@ void xml_read_file(Scene *scene, const char *filepath)
   scene->params.bvh_type = BVH_TYPE_STATIC;
 }
 
-CCL_NAMESPACE_END
+}

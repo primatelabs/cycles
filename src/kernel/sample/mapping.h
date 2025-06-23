@@ -10,7 +10,7 @@
 #include "util/math.h"
 #include "util/projection.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Distribute 2D uniform random samples on [0, 1] over unit disk [-1, 1], with concentric mapping
  * to better preserve stratification for some RNG sequences. */
@@ -208,4 +208,4 @@ ccl_device float2 regular_polygon_sample(const float corners, float rotation, co
   return make_float2(cr * p.x - sr * p.y, sr * p.x + cr * p.y);
 }
 
-CCL_NAMESPACE_END
+}

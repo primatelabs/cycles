@@ -11,7 +11,7 @@
 #include "util/unique_ptr.h"
 #include "util/vector.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 struct Node;
 struct NodeType;
@@ -400,4 +400,4 @@ struct NodeType {
     type->register_output(string(#name), string(ui_name), SocketType::ENUM); \
   }
 
-CCL_NAMESPACE_END
+}

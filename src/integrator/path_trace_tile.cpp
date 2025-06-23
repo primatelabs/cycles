@@ -9,7 +9,7 @@
 #include "scene/pass.h"
 #include "session/buffers.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 PathTraceTile::PathTraceTile(PathTrace &path_trace)
     : OutputDriver::Tile(path_trace.get_render_tile_offset(),
@@ -99,4 +99,4 @@ bool PathTraceTile::set_pass_pixels(const string_view pass_name,
   return path_trace_.set_render_tile_pixels(pass_accessor, source);
 }
 
-CCL_NAMESPACE_END
+}

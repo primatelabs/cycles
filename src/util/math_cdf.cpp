@@ -8,7 +8,7 @@
 
 #include "util/algorithm.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Invert pre-calculated CDF function. */
 void util_cdf_invert(const int resolution,
@@ -59,4 +59,4 @@ void util_cdf_invert(const int resolution,
   }
 }
 
-CCL_NAMESPACE_END
+}

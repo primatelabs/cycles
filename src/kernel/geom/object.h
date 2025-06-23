@@ -17,7 +17,7 @@
 #include "kernel/globals.h"
 #include "kernel/types.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Object attributes, for now a fixed size and contents */
 
@@ -512,4 +512,4 @@ ccl_device_inline void bvh_instance_pop(const ccl_private Ray *ray,
 #define object_dir_transform_auto object_dir_transform
 #define object_normal_transform_auto object_normal_transform
 
-CCL_NAMESPACE_END
+}

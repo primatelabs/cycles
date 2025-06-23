@@ -6,7 +6,7 @@
 
 #include "util/vector.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 class BoundBox;
 class BVHObjectBinning;
@@ -55,4 +55,4 @@ class BVHUnaligned {
   const vector<Object *> &objects_;
 };
 
-CCL_NAMESPACE_END
+}

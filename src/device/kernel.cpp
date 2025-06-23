@@ -10,7 +10,7 @@
 #  include "util/log.h"
 #endif
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 bool device_kernel_has_shading(DeviceKernel kernel)
 {
@@ -205,4 +205,4 @@ bool DeviceKernelMask::operator<(const DeviceKernelMask &other) const
 }
 #endif
 
-CCL_NAMESPACE_END
+}

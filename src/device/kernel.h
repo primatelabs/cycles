@@ -13,7 +13,7 @@
 #  include <iosfwd>
 #endif
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* DeviceKernel */
 
@@ -34,4 +34,4 @@ struct DeviceKernelMask : public std::bitset<DEVICE_KERNEL_NUM> {
 string device_kernel_mask_as_string(DeviceKernelMask mask);
 #endif
 
-CCL_NAMESPACE_END
+}

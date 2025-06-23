@@ -19,7 +19,7 @@
 #include "kernel/geom/attribute.h"
 #include "kernel/geom/object.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 #ifdef __VOLUME__
 
@@ -97,4 +97,4 @@ ccl_device float4 volume_attribute_float4(KernelGlobals kg,
 
 #endif
 
-CCL_NAMESPACE_END
+}

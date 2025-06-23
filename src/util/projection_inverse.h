@@ -6,7 +6,7 @@
 
 #include "util/defines.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 ccl_device_forceinline bool projection_inverse_impl(ccl_private float R[4][4],
                                                     ccl_private float M[4][4])
@@ -92,4 +92,4 @@ ccl_device_forceinline bool projection_inverse_impl(ccl_private float R[4][4],
   return true;
 }
 
-CCL_NAMESPACE_END
+}

@@ -7,7 +7,7 @@
 #include "util/system.h"
 #include "util/types.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 static bool validate_cpu_capabilities()
 {
@@ -114,4 +114,4 @@ TEST(TEST_CATEGORY_NAME, float8_shuffle)
   compare_vector_vector(res2, make_vfloat8(0.4f, 0.3f, 2.0f, 1.0f, 0.8f, 0.7f, 6.0f, 5.0f));
 }
 
-CCL_NAMESPACE_END
+}

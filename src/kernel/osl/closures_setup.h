@@ -17,7 +17,7 @@
 
 #include "kernel/osl/types.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 #define OSL_CLOSURE_STRUCT_BEGIN(Upper, lower) \
   struct ccl_align(8) Upper##Closure \
@@ -1253,4 +1253,4 @@ ccl_device void osl_closure_rayleigh_setup(KernelGlobals kg,
   sd->flag |= volume_rayleigh_setup(volume);
 }
 
-CCL_NAMESPACE_END
+}

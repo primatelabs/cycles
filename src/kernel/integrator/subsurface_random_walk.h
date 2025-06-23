@@ -11,7 +11,7 @@
 
 #include "util/color.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 #ifdef __SUBSURFACE__
 
@@ -459,4 +459,4 @@ ccl_device_inline bool subsurface_random_walk(KernelGlobals kg,
 
 #endif /* __SUBSURFACE__ */
 
-CCL_NAMESPACE_END
+}

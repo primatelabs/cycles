@@ -10,7 +10,7 @@
 #include "util/aligned_malloc.h"
 #include "util/vector.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Simplified version of vector, serving multiple purposes:
  * - somewhat faster in that it does not clear memory on resize/alloc,
@@ -307,4 +307,4 @@ template<typename T, const size_t alignment = MIN_ALIGNMENT_CPU_DATA_TYPES> clas
   size_t capacity_;
 };
 
-CCL_NAMESPACE_END
+}

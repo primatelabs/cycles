@@ -15,7 +15,7 @@
 #include "util/boundbox.h"
 #include "util/types.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* SSE replacements */
 
@@ -274,4 +274,4 @@ void BVHObjectBinning::split(BVHReference *prims,
   left_o = BVHObjectBinning(BVHRange(lgeom_bounds, lcent_bounds, start(), N / 2), prims);
 }
 
-CCL_NAMESPACE_END
+}

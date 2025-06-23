@@ -7,7 +7,7 @@
 #include "kernel/geom/object.h"
 #include "kernel/svm/util.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Vector Transform */
 
@@ -127,4 +127,4 @@ ccl_device_noinline void svm_node_vector_transform(KernelGlobals kg,
   }
 }
 
-CCL_NAMESPACE_END
+}

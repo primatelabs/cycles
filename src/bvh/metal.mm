@@ -8,7 +8,7 @@
 
 #  include "util/unique_ptr.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 unique_ptr<BVH> bvh_metal_create(const BVHParams &params,
                                  const vector<Geometry *> &geometry,
@@ -18,6 +18,6 @@ unique_ptr<BVH> bvh_metal_create(const BVHParams &params,
   return make_unique<BVHMetal>(params, geometry, objects, device);
 }
 
-CCL_NAMESPACE_END
+}
 
 #endif /* WITH_METAL */

@@ -39,7 +39,7 @@
 #    include "kernel/device/cpu/bvh.h"
 #  endif
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 static_assert(Object::MAX_MOTION_STEPS <= RTC_MAX_TIME_STEP_COUNT,
               "Object and Embree max motion steps inconsistent");
@@ -728,6 +728,6 @@ void BVHEmbree::refit(Progress &progress)
   rtcCommitScene(scene);
 }
 
-CCL_NAMESPACE_END
+}
 
 #endif /* WITH_EMBREE */

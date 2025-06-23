@@ -8,7 +8,7 @@
 #include "util/types_float4.h"
 #include "util/types_int4.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 #ifndef __KERNEL_GPU__
 ccl_device_inline int4 operator+(const int4 a, const int4 b)
@@ -288,4 +288,4 @@ template<size_t i0> ccl_device_forceinline int4 shuffle(const int4 b)
 }
 #endif
 
-CCL_NAMESPACE_END
+}

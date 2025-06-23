@@ -9,7 +9,7 @@
 /* #define static_assert triggers a bug in some clang-format versions, disable
  * format for entire file to keep results consistent. */
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 #if defined(CYCLES_CUBIN_CC)
 #  define static_assert(statement, message)
@@ -18,4 +18,4 @@ CCL_NAMESPACE_BEGIN
 #define static_assert_align(st, align) \
   static_assert((sizeof(st) % (align) == 0), "Structure must be strictly aligned")  // NOLINT
 
-CCL_NAMESPACE_END
+}

@@ -14,7 +14,7 @@
 #include "kernel/integrator/state_util.h"
 #include "kernel/sample/pattern.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 ccl_device_inline void integrate_camera_sample(KernelGlobals kg,
                                                const int sample,
@@ -107,4 +107,4 @@ ccl_device bool integrator_init_from_camera(KernelGlobals kg,
   return true;
 }
 
-CCL_NAMESPACE_END
+}

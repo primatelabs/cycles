@@ -8,7 +8,7 @@
 
 #include "util/string.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 class OIIOOutputDriver : public OutputDriver {
  public:
@@ -25,4 +25,4 @@ class OIIOOutputDriver : public OutputDriver {
   LogFunction log_;
 };
 
-CCL_NAMESPACE_END
+}

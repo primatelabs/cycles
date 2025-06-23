@@ -8,7 +8,7 @@
 
 #include "util/types.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Device-side graphics interoperability support.
  *
@@ -27,4 +27,4 @@ class DeviceGraphicsInterop {
   virtual void unmap() = 0;
 };
 
-CCL_NAMESPACE_END
+}

@@ -5,7 +5,7 @@
 #include "util/guarded_allocator.h"
 #include "util/stats.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 static Stats global_stats(Stats::static_init);
 
@@ -33,4 +33,4 @@ size_t util_guarded_get_mem_peak()
   return global_stats.mem_peak;
 }
 
-CCL_NAMESPACE_END
+}

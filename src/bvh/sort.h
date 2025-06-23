@@ -7,7 +7,7 @@
 
 #pragma once
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 class BVHReference;
 class BVHUnaligned;
@@ -20,4 +20,4 @@ void bvh_reference_sort(const int start,
                         const BVHUnaligned *unaligned_heuristic = nullptr,
                         const Transform *aligned_space = nullptr);
 
-CCL_NAMESPACE_END
+}

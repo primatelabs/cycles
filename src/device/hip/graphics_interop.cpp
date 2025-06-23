@@ -9,7 +9,7 @@
 #  include "device/hip/device_impl.h"
 #  include "device/hip/util.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 HIPDeviceGraphicsInterop::HIPDeviceGraphicsInterop(HIPDeviceQueue *queue)
     : queue_(queue), device_(static_cast<HIPDevice *>(queue->device))
@@ -88,6 +88,6 @@ void HIPDeviceGraphicsInterop::unmap()
                     hipGraphicsUnmapResources(1, &hip_graphics_resource_, queue_->stream()));
 }
 
-CCL_NAMESPACE_END
+}
 
 #endif

@@ -6,7 +6,7 @@
 
 #include <iostream>
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 #define PL_CHECK(expr) \
   { \
@@ -20,4 +20,4 @@ CCL_NAMESPACE_BEGIN
     std::cerr << __FILE__ << ":" << __LINE__ << " not implemented" << std::endl; \
   }
 
-CCL_NAMESPACE_END
+}

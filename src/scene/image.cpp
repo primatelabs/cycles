@@ -21,7 +21,7 @@
 #  include <OSL/oslexec.h>
 #endif
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 namespace {
 
@@ -964,4 +964,4 @@ bool ImageManager::need_update() const
   return need_update_;
 }
 
-CCL_NAMESPACE_END
+}

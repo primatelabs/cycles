@@ -6,7 +6,7 @@
 
 #include "kernel/svm/util.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 ccl_device float invert(const float color, const float factor)
 {
@@ -31,4 +31,4 @@ ccl_device_noinline void svm_node_invert(ccl_private ShaderData *sd,
   }
 }
 
-CCL_NAMESPACE_END
+}

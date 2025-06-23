@@ -4,7 +4,7 @@
 
 #pragma once
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /*
  * Utility functions for work stealing
@@ -40,4 +40,4 @@ ccl_device_inline void get_work_pixel(const ccl_global KernelWorkTile *tile,
   *sample = tile->start_sample + sample_offset;
 }
 
-CCL_NAMESPACE_END
+}

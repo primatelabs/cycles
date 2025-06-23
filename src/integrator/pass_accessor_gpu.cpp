@@ -8,7 +8,7 @@
 
 #include "session/buffers.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 PassAccessorGPU::PassAccessorGPU(DeviceQueue *queue,
                                  const PassAccessInfo &pass_access_info,
@@ -107,4 +107,4 @@ DEFINE_PASS_ACCESSOR(float4, FLOAT4);
 
 #undef DEFINE_PASS_ACCESSOR
 
-CCL_NAMESPACE_END
+}

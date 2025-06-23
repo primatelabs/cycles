@@ -6,7 +6,7 @@
 
 #include "kernel/svm/util.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Vector Rotate */
 
@@ -77,4 +77,4 @@ ccl_device_noinline void svm_node_vector_rotate(ccl_private ShaderData *sd,
   }
 }
 
-CCL_NAMESPACE_END
+}

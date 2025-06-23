@@ -8,7 +8,7 @@
 
 #include "kernel/bvh/util.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Motion Point Primitive
  *
@@ -67,4 +67,4 @@ ccl_device_inline float4 motion_point(KernelGlobals kg,
 
 #endif
 
-CCL_NAMESPACE_END
+}

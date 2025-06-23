@@ -21,7 +21,7 @@
 #include "util/time.h"
 #include "util/types.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* --------------------------------------------------------------------
  * Internal functions.
@@ -661,4 +661,4 @@ bool TileManager::read_full_buffer_from_disk(const string_view filename,
   return true;
 }
 
-CCL_NAMESPACE_END
+}

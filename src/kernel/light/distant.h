@@ -10,7 +10,7 @@
 
 #include "util/math_fast.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 ccl_device_inline void distant_light_uv(KernelGlobals kg,
                                         const ccl_global KernelLight *klight,
@@ -164,4 +164,4 @@ ccl_device_forceinline bool distant_light_tree_parameters(const float3 centroid,
   return true;
 }
 
-CCL_NAMESPACE_END
+}

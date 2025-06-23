@@ -10,7 +10,7 @@
 
 #include "util/half.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 #define KERNEL_NAME_JOIN(x, y, z) x##_##y##_##z
 #define KERNEL_NAME_EVAL(arch, name) KERNEL_NAME_JOIN(kernel, arch, name)
@@ -38,4 +38,4 @@ void kernel_global_memory_copy(KernelGlobalsCPU *kg,
 #define KERNEL_ARCH cpu_avx2
 #include "kernel/device/cpu/kernel_arch.h"
 
-CCL_NAMESPACE_END
+}

@@ -10,7 +10,7 @@
 #include "kernel/geom/motion_point.h"
 #include "kernel/geom/object.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Point primitive intersection functions. */
 
@@ -124,4 +124,4 @@ ccl_device_inline void point_shader_setup(KernelGlobals kg,
 
 #endif
 
-CCL_NAMESPACE_END
+}

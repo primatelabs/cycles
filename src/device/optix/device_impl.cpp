@@ -26,7 +26,7 @@
 #  define __KERNEL_OPTIX__
 #  include "kernel/device/optix/globals.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 #  if OPTIX_ABI_VERSION >= 55
 static void execute_optix_task(TaskPool &pool, OptixTask task, OptixResult &failure_reason)
@@ -1794,6 +1794,6 @@ void OptiXDevice::update_launch_params(const size_t offset, void *data, const si
   cuda_assert(cuMemcpyHtoD(launch_params.device_pointer + offset, data, data_size));
 }
 
-CCL_NAMESPACE_END
+}
 
 #endif /* WITH_OPTIX */

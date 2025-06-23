@@ -14,7 +14,7 @@
 #    include <cuda.h>
 #  endif
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 class CUDADevice;
 
@@ -39,6 +39,6 @@ class CUDADeviceKernels {
   bool loaded = false;
 };
 
-CCL_NAMESPACE_END
+}
 
 #endif /* WITH_CUDA */

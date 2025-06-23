@@ -11,7 +11,7 @@
 
 #include "kernel/sample/mapping.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 struct DiffuseBsdf {
   SHADER_CLOSURE_BASE;
@@ -109,4 +109,4 @@ ccl_device int bsdf_translucent_sample(const ccl_private ShaderClosure *sc,
   return LABEL_TRANSMIT | LABEL_DIFFUSE;
 }
 
-CCL_NAMESPACE_END
+}

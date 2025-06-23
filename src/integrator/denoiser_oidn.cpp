@@ -15,7 +15,7 @@
 #include "util/openimagedenoise.h"
 #include "util/path.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 thread_mutex OIDNDenoiser::mutex_;
 
@@ -667,4 +667,4 @@ uint OIDNDenoiser::get_device_type_mask() const
   return DEVICE_MASK_CPU;
 }
 
-CCL_NAMESPACE_END
+}

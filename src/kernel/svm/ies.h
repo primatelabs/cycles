@@ -8,7 +8,7 @@
 
 #include "kernel/util/ies.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 ccl_device_noinline void svm_node_ies(KernelGlobals kg,
                                       ccl_private ShaderData * /*sd*/,
@@ -35,4 +35,4 @@ ccl_device_noinline void svm_node_ies(KernelGlobals kg,
   }
 }
 
-CCL_NAMESPACE_END
+}

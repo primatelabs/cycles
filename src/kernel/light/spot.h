@@ -10,7 +10,7 @@
 #include "util/math_fast.h"
 #include "util/math_intersect.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Transform vector to spot light's local coordinate system. */
 ccl_device float3 spot_light_to_local(KernelGlobals kg,
@@ -344,4 +344,4 @@ ccl_device_forceinline bool spot_light_tree_parameters(const ccl_global KernelLi
   return true;
 }
 
-CCL_NAMESPACE_END
+}

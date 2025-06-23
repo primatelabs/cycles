@@ -10,7 +10,7 @@
 #  include "device/cuda/graphics_interop.h"
 #  include "device/cuda/kernel.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* CUDADeviceQueue */
 
@@ -228,6 +228,6 @@ unique_ptr<DeviceGraphicsInterop> CUDADeviceQueue::graphics_interop_create()
   return make_unique<CUDADeviceGraphicsInterop>(this);
 }
 
-CCL_NAMESPACE_END
+}
 
 #endif /* WITH_CUDA */

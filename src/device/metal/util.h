@@ -17,7 +17,7 @@
 
 #  define metal_printf VLOG(4) << string_printf
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 enum AppleGPUArchitecture {
   APPLE_M1,
@@ -59,6 +59,6 @@ class MetalBufferPool {
   void process_command_buffer_completion(id<MTLCommandBuffer> command_buffer);
 };
 
-CCL_NAMESPACE_END
+}
 
 #endif /* WITH_METAL */

@@ -6,9 +6,9 @@
 
 #include <string>
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 std::string this_program_path();
 
-CCL_NAMESPACE_END
+}
 

@@ -16,7 +16,7 @@
 #  include <opensubdiv/far/primvarRefiner.h>
 #  include <opensubdiv/far/topologyRefinerFactory.h>
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Directly use some OpenSubdiv namespaces for brevity. */
 namespace Far = OpenSubdiv::Far;
@@ -88,6 +88,6 @@ struct OsdPatch final : Patch {
       const override;
 };
 
-CCL_NAMESPACE_END
+}
 
 #endif

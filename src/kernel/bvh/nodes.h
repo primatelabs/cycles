@@ -5,7 +5,7 @@
 #include "kernel/geom/object.h"
 #include "kernel/globals.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 // TODO(sergey): Look into avoid use of full Transform and use 3x3 matrix and
 // 3-vector which might be faster.
@@ -147,4 +147,4 @@ ccl_device_forceinline int bvh_node_intersect(KernelGlobals kg,
   return bvh_aligned_node_intersect(kg, P, idir, tmin, tmax, node_addr, visibility, dist);
 }
 
-CCL_NAMESPACE_END
+}

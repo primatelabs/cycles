@@ -18,7 +18,7 @@
 #include "util/thread.h"
 #include "util/unique_ptr.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 class BufferParams;
 class Device;
@@ -251,4 +251,4 @@ class Session {
   unique_ptr<PathTrace> path_trace_;
 };
 
-CCL_NAMESPACE_END
+}

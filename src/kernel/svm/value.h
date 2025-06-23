@@ -6,7 +6,7 @@
 
 #include "kernel/svm/util.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Value Nodes */
 
@@ -34,4 +34,4 @@ ccl_device int svm_node_value_v(KernelGlobals kg,
   return offset;
 }
 
-CCL_NAMESPACE_END
+}

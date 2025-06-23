@@ -30,7 +30,7 @@
 #include "util/types_float3.h"
 #include "util/types_float4.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 ccl_device_inline float madd(const float a, const float b, const float c)
 {
@@ -642,4 +642,4 @@ ccl_device_inline float fast_inv_cbrtf(const float x)
   return y;
 }
 
-CCL_NAMESPACE_END
+}

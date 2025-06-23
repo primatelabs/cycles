@@ -14,7 +14,7 @@
 #  define snprintf _snprintf
 #endif
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 #ifdef WITH_CYCLES_LOGGING
 static bool is_verbosity_set()
@@ -83,4 +83,4 @@ std::ostream &operator<<(std::ostream &os, const float3 &value)
   return os;
 }
 
-CCL_NAMESPACE_END
+}

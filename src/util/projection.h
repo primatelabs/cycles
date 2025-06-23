@@ -6,7 +6,7 @@
 
 #include "util/transform.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 ccl_device float2 direction_to_spherical(const float3 dir)
 {
@@ -81,13 +81,13 @@ struct PerspectiveMotionTransform {
   ProjectionTransform post;
 };
 
-CCL_NAMESPACE_END
+}
 
 #if !defined(__KERNEL_METAL__)
 #  include "util/projection_inverse.h"
 #endif
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Functions */
 
@@ -280,4 +280,4 @@ ccl_device_inline ProjectionTransform projection_orthographic(const float znear,
 
 #endif /* __KERNEL_GPU__ */
 
-CCL_NAMESPACE_END
+}

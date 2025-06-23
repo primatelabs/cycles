@@ -9,7 +9,7 @@
 
 #include "graph/node.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 class Device;
 class DeviceScene;
@@ -62,4 +62,4 @@ class ParticleSystemManager {
   bool need_update() const;
 };
 
-CCL_NAMESPACE_END
+}

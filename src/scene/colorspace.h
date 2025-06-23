@@ -6,7 +6,7 @@
 
 #include "util/param.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 extern string u_colorspace_auto;
 extern string u_colorspace_raw;
@@ -52,4 +52,4 @@ class ColorSpaceManager {
   static void is_builtin_colorspace(string colorspace, bool &is_scene_linear, bool &is_srgb);
 };
 
-CCL_NAMESPACE_END
+}

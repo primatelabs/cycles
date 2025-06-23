@@ -9,7 +9,7 @@
 #include "kernel/bvh/types.h"
 #include "kernel/bvh/util.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Payload types.
  *
@@ -558,4 +558,4 @@ ccl_device_intersect bool scene_intersect_volume(KernelGlobals kg,
 }
 #endif
 
-CCL_NAMESPACE_END
+}

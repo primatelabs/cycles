@@ -6,7 +6,7 @@
 
 #include "kernel/svm/util.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Checker */
 
@@ -54,4 +54,4 @@ ccl_device_noinline void svm_node_tex_checker(KernelGlobals kg,
   }
 }
 
-CCL_NAMESPACE_END
+}

@@ -19,7 +19,7 @@
 
 #include "kernel/geom/triangle.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Time interpolation of vertex positions and normals */
 
@@ -250,4 +250,4 @@ ccl_device_inline float3 motion_triangle_smooth_normal(KernelGlobals kg,
   return is_zero(N) ? Ng : N;
 }
 
-CCL_NAMESPACE_END
+}

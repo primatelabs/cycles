@@ -22,7 +22,7 @@
 #include "kernel/closure/bsdf_principled_hair_huang.h"
 // clang-format on
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Returns the square of the roughness of the closure if it has roughness,
  * 0 for singular closures and 1 otherwise. */
@@ -665,4 +665,4 @@ ccl_device_inline Spectrum bsdf_albedo(KernelGlobals kg,
   return albedo;
 }
 
-CCL_NAMESPACE_END
+}

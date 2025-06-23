@@ -15,7 +15,7 @@
 #  include <Alembic/AbcCoreFactory/All.h>
 #  include <Alembic/AbcGeom/All.h>
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 class AlembicProcedural;
 class Geometry;
@@ -562,6 +562,6 @@ class AlembicProcedural : public Procedural {
   }
 };
 
-CCL_NAMESPACE_END
+}
 
 #endif

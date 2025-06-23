@@ -14,7 +14,7 @@
 
 #include "kernel/util/differential.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Bump Eval Nodes */
 
@@ -57,4 +57,4 @@ ccl_device_noinline void svm_node_leave_bump_eval(KernelGlobals kg,
   sd->dP = stack_load_float(stack, offset + 3);
 }
 
-CCL_NAMESPACE_END
+}

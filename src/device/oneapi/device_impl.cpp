@@ -33,7 +33,7 @@ extern "C" RTCDevice rtcNewSYCLDevice(sycl::context context, const char *config)
 extern "C" bool rtcIsSYCLDeviceSupported(const sycl::device sycl_device);
 #  endif
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 static std::vector<sycl::device> available_sycl_devices();
 static int parse_driver_build_version(const sycl::device &device);
@@ -1606,6 +1606,6 @@ int OneapiDevice::get_max_num_threads_per_multiprocessor()
   return 0;
 }
 
-CCL_NAMESPACE_END
+}
 
 #endif

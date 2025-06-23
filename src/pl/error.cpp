@@ -4,6 +4,6 @@
 
 #include "pl/error.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
-CCL_NAMESPACE_END
+}

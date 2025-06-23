@@ -8,7 +8,7 @@
 
 #include "kernel/closure/volume_util.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* HENYEY-GREENSTEIN CLOSURE */
 
@@ -61,4 +61,4 @@ ccl_device int volume_henyey_greenstein_sample(const ccl_private ShaderData *sd,
   return LABEL_VOLUME_SCATTER;
 }
 
-CCL_NAMESPACE_END
+}

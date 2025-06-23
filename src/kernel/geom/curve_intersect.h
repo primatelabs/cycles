@@ -9,7 +9,7 @@
 #include "kernel/geom/motion_curve.h"
 #include "kernel/geom/object.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Curve primitive intersection functions.
  *
@@ -776,4 +776,4 @@ ccl_device_inline void curve_shader_setup(KernelGlobals kg,
 
 #endif
 
-CCL_NAMESPACE_END
+}

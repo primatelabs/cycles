@@ -7,7 +7,7 @@
 
 #include "util/log.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 ConstantFolder::ConstantFolder(ShaderGraph *graph,
                                ShaderNode *node,
@@ -589,4 +589,4 @@ void ConstantFolder::fold_mapping(NodeMappingType type) const
   }
 }
 
-CCL_NAMESPACE_END
+}

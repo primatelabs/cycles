@@ -9,7 +9,7 @@
 #include "device/device.h"
 #include "device/memory.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 class DeviceScene {
  public:
@@ -91,4 +91,4 @@ class DeviceScene {
   DeviceScene(Device *device);
 };
 
-CCL_NAMESPACE_END
+}

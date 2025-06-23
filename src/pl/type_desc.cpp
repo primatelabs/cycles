@@ -6,7 +6,7 @@
 
 #include "pl/error.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 namespace {
 
@@ -64,4 +64,4 @@ bool TypeDesc::is_floating_point() const noexcept
   return isfloat[basetype];
 }
 
-CCL_NAMESPACE_END
+}

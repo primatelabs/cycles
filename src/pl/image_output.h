@@ -9,7 +9,7 @@
 #include "pl/image_spec.h"
 #include "pl/type_desc.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 class ImageOutput {
  protected:
@@ -62,4 +62,4 @@ class ImageOutput {
   std::string geterror(bool clear = true) const;
 };
 
-CCL_NAMESPACE_END
+}

@@ -9,7 +9,7 @@
 
 #include "util/progress.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 class BakeManager {
  public:
@@ -38,4 +38,4 @@ class BakeManager {
   bool use_seed_ = false;
 };
 
-CCL_NAMESPACE_END
+}

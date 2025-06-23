@@ -10,7 +10,7 @@
 #    include "hipew.h"
 #  endif
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 class HIPDevice;
 class HIPDeviceQueue;
@@ -47,6 +47,6 @@ class HIPDeviceGraphicsInterop : public DeviceGraphicsInterop {
   hipGraphicsResource hip_graphics_resource_ = nullptr;
 };
 
-CCL_NAMESPACE_END
+}
 
 #endif

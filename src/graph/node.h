@@ -12,7 +12,7 @@
 #include "util/param.h"
 #include "util/types.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 class MD5Hash;
 struct Node;
@@ -232,4 +232,4 @@ struct Node {
   void dereference_all_used_nodes();
 };
 
-CCL_NAMESPACE_END
+}

@@ -8,7 +8,7 @@
 
 #include "util/transform.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 TEST(BoundBox, transformed)
 {
@@ -27,4 +27,4 @@ TEST(BoundBox, transformed)
   }
 }
 
-CCL_NAMESPACE_END
+}

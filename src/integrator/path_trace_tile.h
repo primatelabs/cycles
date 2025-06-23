@@ -6,7 +6,7 @@
 
 #include "session/output_driver.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* PathTraceTile
  *
@@ -30,4 +30,4 @@ class PathTraceTile : public OutputDriver::Tile {
   mutable bool copied_from_device_;
 };
 
-CCL_NAMESPACE_END
+}

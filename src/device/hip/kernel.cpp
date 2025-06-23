@@ -7,7 +7,7 @@
 #  include "device/hip/kernel.h"
 #  include "device/hip/device_impl.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 void HIPDeviceKernels::load(HIPDevice *device)
 {
@@ -52,6 +52,6 @@ bool HIPDeviceKernels::available(DeviceKernel kernel) const
   return kernels_[(int)kernel].function != nullptr;
 }
 
-CCL_NAMESPACE_END
+}
 
 #endif /* WITH_HIP */

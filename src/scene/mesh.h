@@ -19,7 +19,7 @@
 #include "util/types.h"
 #include "util/unique_ptr.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 class Attribute;
 class BVH;
@@ -243,4 +243,4 @@ class Mesh : public Geometry {
   void clear(bool preserve_shaders, bool preserve_voxel_data);
 };
 
-CCL_NAMESPACE_END
+}

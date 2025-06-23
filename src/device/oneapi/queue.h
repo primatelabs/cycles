@@ -13,7 +13,7 @@
 
 #  include "util/unique_ptr.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 class OneapiDevice;
 class device_memory;
@@ -51,6 +51,6 @@ class OneapiDeviceQueue : public DeviceQueue {
   unique_ptr<KernelContext> kernel_context_;
 };
 
-CCL_NAMESPACE_END
+}
 
 #endif /* WITH_ONEAPI */

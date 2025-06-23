@@ -9,7 +9,7 @@
 
 #include "kernel/camera/projection.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /**
  * @brief Test #fisheye_lens_polynomial_to_direction and its inverse
@@ -411,4 +411,4 @@ TYPED_TEST(PanoramaProjection, round_trip)
   }
 }
 
-CCL_NAMESPACE_END
+}

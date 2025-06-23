@@ -10,7 +10,7 @@
 #include "util/transform.h"
 #include "util/types.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 ccl_device float3 svm_mapping(NodeMappingType type,
                               const float3 vector,
@@ -34,4 +34,4 @@ ccl_device float3 svm_mapping(NodeMappingType type,
   }
 }
 
-CCL_NAMESPACE_END
+}

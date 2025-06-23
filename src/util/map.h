@@ -7,7 +7,7 @@
 #include <map>
 #include <unordered_map>
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 using std::map;
 using std::pair;
@@ -21,4 +21,4 @@ template<typename T> static void map_free_memory(T &data)
   data.swap(empty_data);
 }
 
-CCL_NAMESPACE_END
+}

@@ -11,7 +11,7 @@
 
 #  include "device/hip/util.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 class HIPDevice;
 class device_memory;
@@ -51,6 +51,6 @@ class HIPDeviceQueue : public DeviceQueue {
   void assert_success(hipError_t result, const char *operation);
 };
 
-CCL_NAMESPACE_END
+}
 
 #endif /* WITH_HIP */

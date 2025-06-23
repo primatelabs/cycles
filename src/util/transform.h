@@ -15,7 +15,7 @@
 #  include "util/system.h"
 #endif
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Affine transformation, stored as 4x3 matrix. */
 
@@ -612,4 +612,4 @@ Transform transform_from_viewplane(BoundBox2D &viewplane);
 #define transform_direction_auto transform_direction
 #define transform_direction_transposed_auto transform_direction_transposed
 
-CCL_NAMESPACE_END
+}

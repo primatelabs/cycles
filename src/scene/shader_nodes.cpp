@@ -29,7 +29,7 @@
 #include "kernel/svm/math_util.h"
 #include "kernel/svm/ramp_util.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Texture Mapping */
 
@@ -7916,4 +7916,4 @@ void VectorDisplacementNode::compile(OSLCompiler &compiler)
   compiler.add(this, "node_vector_displacement");
 }
 
-CCL_NAMESPACE_END
+}

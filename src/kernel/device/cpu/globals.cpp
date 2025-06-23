@@ -8,7 +8,7 @@
 #include "util/guiding.h"  // IWYU pragma: keep
 #include "util/profiling.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 ThreadKernelGlobalsCPU::ThreadKernelGlobalsCPU(const KernelGlobalsCPU &kernel_globals,
                                                OSLGlobals *osl_globals,
@@ -40,4 +40,4 @@ void ThreadKernelGlobalsCPU::stop_profiling()
   cpu_profiler_.remove_state(&profiler);
 }
 
-CCL_NAMESPACE_END
+}

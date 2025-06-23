@@ -12,7 +12,7 @@
 
 #include "kernel/types.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Layout of BVH tree.
  *
@@ -322,4 +322,4 @@ struct BVHSpatialStorage {
   vector<BVHReference> new_references;
 };
 
-CCL_NAMESPACE_END
+}

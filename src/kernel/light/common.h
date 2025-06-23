@@ -8,7 +8,7 @@
 
 #include "kernel/sample/mapping.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Light Sample Result */
 
@@ -83,4 +83,4 @@ ccl_device_inline bool is_light_shader_visible_to_path(const int shader, const u
   return true;
 }
 
-CCL_NAMESPACE_END
+}

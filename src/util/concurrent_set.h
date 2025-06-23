@@ -12,8 +12,8 @@
 
 #include <tbb/concurrent_set.h>
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 using tbb::concurrent_set;
 
-CCL_NAMESPACE_END
+}

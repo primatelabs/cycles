@@ -22,7 +22,7 @@
 
 #include "kernel/osl/compat.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 class Scene;
 struct ShaderData;
@@ -331,4 +331,4 @@ class OSLRenderServices : public OSL::RendererServices {
   int device_type_;
 };
 
-CCL_NAMESPACE_END
+}

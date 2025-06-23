@@ -20,7 +20,7 @@
 #  include <TargetConditionals.h>
 #  include <crt_externs.h>
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 class MetalDevice;
 
@@ -1444,6 +1444,6 @@ void MetalDevice::update_bvh(BVHMetal *bvh_metal)
   }
 }
 
-CCL_NAMESPACE_END
+}
 
 #endif

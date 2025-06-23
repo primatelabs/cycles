@@ -6,7 +6,7 @@
 
 #include "util/types_base.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 #ifndef __KERNEL_NATIVE_VECTOR_TYPES__
 struct float2 {
@@ -48,4 +48,4 @@ ccl_device_inline void print_float2(const ccl_private char *label, const float2 
 #endif
 }
 
-CCL_NAMESPACE_END
+}

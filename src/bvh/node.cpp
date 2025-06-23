@@ -10,7 +10,7 @@
 #include "bvh/build.h"
 #include "bvh/bvh.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* BVH Node */
 
@@ -208,4 +208,4 @@ void LeafNode::print(const int depth) const
   printf("leaf node %d to %d\n", lo, hi);
 }
 
-CCL_NAMESPACE_END
+}

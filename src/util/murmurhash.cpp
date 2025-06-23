@@ -27,7 +27,7 @@ ccl_device_inline uint32_t rotl32(const uint32_t x, int8_t r)
 #  define BIG_CONSTANT(x) (x##LLU)
 #endif
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Block read - if your platform needs to do endian-swapping or can only
  * handle aligned reads, do the conversion here. */
@@ -114,4 +114,4 @@ float util_hash_to_float(const uint32_t hash)
   return f;
 }
 
-CCL_NAMESPACE_END
+}

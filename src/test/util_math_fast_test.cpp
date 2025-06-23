@@ -7,7 +7,7 @@
 #include "util/math.h"
 #include "util/math_fast.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 TEST(math, fast_sinf)
 {
@@ -53,4 +53,4 @@ TEST(math, fast_cosf)
   EXPECT_NEAR(fast_cosf(-78431.5f), 0.06855299586f, 2e-4f);
 }
 
-CCL_NAMESPACE_END
+}

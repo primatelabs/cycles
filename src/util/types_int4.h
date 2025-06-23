@@ -6,7 +6,7 @@
 
 #include "util/types_base.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 #ifndef __KERNEL_NATIVE_VECTOR_TYPES__
 
@@ -89,4 +89,4 @@ ccl_device_inline void print_int4(const ccl_private char *label, const int4 a)
 #endif
 }
 
-CCL_NAMESPACE_END
+}

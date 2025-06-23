@@ -6,7 +6,7 @@
 
 #include "util/task.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 namespace {
 
@@ -42,4 +42,4 @@ TEST(util_task, multiple_times)
   }
 }
 
-CCL_NAMESPACE_END
+}

@@ -21,7 +21,7 @@
 
 #include "util/progress.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 void GeometryManager::device_update_mesh(Device * /*unused*/,
                                          DeviceScene *dscene,
@@ -166,4 +166,4 @@ void GeometryManager::device_update_mesh(Device * /*unused*/,
   }
 }
 
-CCL_NAMESPACE_END
+}

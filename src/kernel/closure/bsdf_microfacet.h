@@ -13,7 +13,7 @@
 
 #include "util/math_fast.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 enum MicrofacetType {
   BECKMANN,
@@ -1066,4 +1066,4 @@ ccl_device int bsdf_microfacet_beckmann_sample(KernelGlobals kg,
       kg, sc, Ng, wi, rand, eval, wo, pdf, sampled_roughness, eta);
 }
 
-CCL_NAMESPACE_END
+}

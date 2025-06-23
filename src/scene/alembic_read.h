@@ -11,7 +11,7 @@
 
 #  include "util/vector.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 class AlembicProcedural;
 class AttributeRequestSet;
@@ -138,6 +138,6 @@ void read_attributes(AlembicProcedural *proc,
                      const AttributeRequestSet &requested_attributes,
                      Progress &progress);
 
-CCL_NAMESPACE_END
+}
 
 #endif

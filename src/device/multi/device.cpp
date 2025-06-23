@@ -16,7 +16,7 @@
 #include "util/list.h"
 #include "util/map.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 class MultiDevice : public Device {
  public:
@@ -579,4 +579,4 @@ unique_ptr<Device> device_multi_create(const DeviceInfo &info,
   return make_unique<MultiDevice>(info, stats, profiler, headless);
 }
 
-CCL_NAMESPACE_END
+}

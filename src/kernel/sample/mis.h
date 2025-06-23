@@ -9,7 +9,7 @@
 
 #include "util/defines.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Multiple importance sampling utilities. */
 
@@ -38,4 +38,4 @@ ccl_device float max_heuristic(const float a, const float b)
   return (a > b) ? 1.0f : 0.0f;
 }
 
-CCL_NAMESPACE_END
+}

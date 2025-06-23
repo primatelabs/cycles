@@ -9,7 +9,7 @@
 #include "kernel/svm/util.h"
 #include "util/math_base.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 ccl_device_noinline void svm_node_vertex_color(KernelGlobals kg,
                                                ccl_private ShaderData *sd,
@@ -114,4 +114,4 @@ ccl_device_noinline void svm_node_vertex_color_bump_dy(KernelGlobals kg,
   }
 }
 
-CCL_NAMESPACE_END
+}

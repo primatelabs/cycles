@@ -10,7 +10,7 @@
 
 #  include "device/optix/util.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Implementation of denoising API which uses the OptiX denoiser. */
 class OptiXDenoiser : public DenoiserGPU {
@@ -59,6 +59,6 @@ class OptiXDenoiser : public DenoiserGPU {
   bool use_pass_motion_ = false;
 };
 
-CCL_NAMESPACE_END
+}
 
 #endif

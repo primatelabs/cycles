@@ -7,7 +7,7 @@
 #include "util/string.h"
 #include "util/vector.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Merge OpenEXR multi-layer renders. */
 
@@ -25,4 +25,4 @@ class ImageMerger {
   string output;
 };
 
-CCL_NAMESPACE_END
+}

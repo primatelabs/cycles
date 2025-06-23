@@ -13,7 +13,7 @@
 
 #include "pl/error.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 using std::string_view;
 
@@ -448,4 +448,4 @@ template<typename P> struct BaseTypeFromC<P *> {
   static const TypeDesc::BASETYPE value = TypeDesc::PTR;
 };
 
-CCL_NAMESPACE_END
+}

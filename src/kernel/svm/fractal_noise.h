@@ -6,7 +6,7 @@
 
 #include "kernel/svm/noise.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Fractal Brownian motion. */
 
@@ -547,4 +547,4 @@ ccl_device_noinline float noise_ridged_multi_fractal(float4 p,
   return value;
 }
 
-CCL_NAMESPACE_END
+}

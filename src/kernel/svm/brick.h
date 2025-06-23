@@ -6,7 +6,7 @@
 
 #include "kernel/svm/util.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Brick */
 
@@ -145,4 +145,4 @@ ccl_device_noinline int svm_node_tex_brick(KernelGlobals kg,
   return offset;
 }
 
-CCL_NAMESPACE_END
+}

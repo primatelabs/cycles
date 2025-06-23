@@ -8,7 +8,7 @@
 #include "util/types_float3.h"
 #include "util/types_int4.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 #ifndef __KERNEL_NATIVE_VECTOR_TYPES__
 struct int4;
@@ -122,4 +122,4 @@ ccl_device_inline void print_float4(const ccl_private char *label, const float4 
 #endif
 }
 
-CCL_NAMESPACE_END
+}

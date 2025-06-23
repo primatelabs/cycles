@@ -9,7 +9,7 @@
 #  include "integrator/denoiser_gpu.h"
 #  include "util/openimagedenoise.h"  // IWYU pragma: keep
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Implementation of a GPU denoiser which uses OpenImageDenoise library. */
 class OIDNDenoiserGPU : public DenoiserGPU {
@@ -83,6 +83,6 @@ class OIDNDenoiserGPU : public DenoiserGPU {
   int max_mem_ = 768;
 };
 
-CCL_NAMESPACE_END
+}
 
 #endif

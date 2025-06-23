@@ -38,7 +38,7 @@
 
 #pragma once
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Data structures */
 
@@ -273,4 +273,4 @@ using ConstIntegratorShadowState = int;
 
 #endif /* !__KERNEL_GPU__ */
 
-CCL_NAMESPACE_END
+}

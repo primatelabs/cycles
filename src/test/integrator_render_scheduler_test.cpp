@@ -6,7 +6,7 @@
 
 #include "integrator/render_scheduler.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 TEST(IntegratorRenderScheduler, calculate_resolution_divider_for_resolution)
 {
@@ -22,4 +22,4 @@ TEST(IntegratorRenderScheduler, calculate_resolution_for_divider)
   EXPECT_EQ(calculate_resolution_for_divider(1920, 1080, 4), 360);
 }
 
-CCL_NAMESPACE_END
+}

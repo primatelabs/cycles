@@ -12,7 +12,7 @@
 #    include "hipew.h"
 #  endif
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 class HIPDevice;
 
@@ -37,6 +37,6 @@ class HIPDeviceKernels {
   bool loaded = false;
 };
 
-CCL_NAMESPACE_END
+}
 
 #endif /* WITH_HIP */

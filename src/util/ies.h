@@ -7,7 +7,7 @@
 #include "util/string.h"
 #include "util/vector.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 class IESFile {
  public:
@@ -40,4 +40,4 @@ class IESFile {
   enum IESType { TYPE_A = 3, TYPE_B = 2, TYPE_C = 1 } type;
 };
 
-CCL_NAMESPACE_END
+}

@@ -4,7 +4,7 @@
 
 #pragma once
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 #ifdef __VOLUME__
 
@@ -222,4 +222,4 @@ ccl_device VolumeSampleMethod volume_stack_sample_method(KernelGlobals kg, Integ
 
 #endif /* __VOLUME__*/
 
-CCL_NAMESPACE_END
+}

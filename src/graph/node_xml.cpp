@@ -10,7 +10,7 @@
 #include "util/string.h"
 #include "util/transform.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 static bool xml_read_boolean(const char *value)
 {
@@ -434,4 +434,4 @@ xml_node xml_write_node(Node *node, xml_node xml_root)
   return xml_node;
 }
 
-CCL_NAMESPACE_END
+}

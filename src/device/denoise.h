@@ -6,7 +6,7 @@
 
 #include "graph/node.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 enum DenoiserType {
   DENOISER_OPTIX = 2,
@@ -82,4 +82,4 @@ class DenoiseParams : public Node {
   DenoiseParams();
 };
 
-CCL_NAMESPACE_END
+}

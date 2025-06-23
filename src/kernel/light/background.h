@@ -13,7 +13,7 @@
 
 #include "util/math_intersect.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Background Light */
 
@@ -497,4 +497,4 @@ ccl_device_forceinline bool background_light_tree_parameters(const float3 centro
   return true;
 }
 
-CCL_NAMESPACE_END
+}

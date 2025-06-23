@@ -7,7 +7,7 @@
 #include "util/array.h"
 #include "util/types.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 class Device;
 class DeviceScene;
@@ -41,4 +41,4 @@ class ParticleCurveData {
   array<float> curvekey_time;
 };
 
-CCL_NAMESPACE_END
+}

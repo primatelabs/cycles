@@ -12,7 +12,7 @@
 
 #include "util/string.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 class Device;
 class DeviceScene;
@@ -84,4 +84,4 @@ class Film : public Node {
   void finalize_passes(Scene *scene, const bool use_denoise);
 };
 
-CCL_NAMESPACE_END
+}

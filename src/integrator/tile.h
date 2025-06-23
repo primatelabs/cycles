@@ -8,7 +8,7 @@
 
 #include "util/types_int2.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 struct TileSize {
   TileSize() = default;
@@ -43,4 +43,4 @@ TileSize tile_calculate_best_size(const bool accel_rt,
                                   const int max_num_path_states,
                                   const float scrambling_distance);
 
-CCL_NAMESPACE_END
+}

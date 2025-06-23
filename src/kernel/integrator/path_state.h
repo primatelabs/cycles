@@ -8,7 +8,7 @@
 
 #include "kernel/sample/pattern.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Initialize queues, so that the this path is considered terminated.
  * Used for early outputs in the camera ray initialization, as well as initialization of split
@@ -406,4 +406,4 @@ ccl_device_inline float path_state_rng_light_termination(KernelGlobals kg,
   return 0.0f;
 }
 
-CCL_NAMESPACE_END
+}

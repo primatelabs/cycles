@@ -15,7 +15,7 @@
 #include "util/math.h"
 #include "util/time.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 NODE_DEFINE(Background)
 {
@@ -141,4 +141,4 @@ Shader *Background::get_shader(const Scene *scene)
   return (use_shader) ? ((shader) ? shader : scene->default_background) : scene->default_empty;
 }
 
-CCL_NAMESPACE_END
+}

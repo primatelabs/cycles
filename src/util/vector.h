@@ -9,7 +9,7 @@
 
 #include "util/guarded_allocator.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Own subclass-ed version of std::vector. Subclass is needed because:
  *
@@ -38,4 +38,4 @@ class vector : public std::vector<value_type, allocator_type> {
   }
 };
 
-CCL_NAMESPACE_END
+}

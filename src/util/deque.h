@@ -6,8 +6,8 @@
 
 #include <deque>
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 using std::deque;
 
-CCL_NAMESPACE_END
+}

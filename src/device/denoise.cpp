@@ -4,7 +4,7 @@
 
 #include "device/denoise.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 const char *denoiserTypeToHumanReadable(DenoiserType type)
 {
@@ -88,4 +88,4 @@ NODE_DEFINE(DenoiseParams)
 
 DenoiseParams::DenoiseParams() : Node(get_node_type()) {}
 
-CCL_NAMESPACE_END
+}

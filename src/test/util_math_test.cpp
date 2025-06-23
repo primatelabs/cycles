@@ -6,7 +6,7 @@
 
 #include "util/math.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 TEST(math, next_power_of_two)
 {
@@ -46,4 +46,4 @@ TEST(math, reverse_integer_bits)
   EXPECT_EQ(reverse_integer_bits(0xAAAAAAAA), 0x55555555);
 }
 
-CCL_NAMESPACE_END
+}

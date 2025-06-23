@@ -12,7 +12,7 @@
 #include "util/log.h"
 #include "util/time.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* --------------------------------------------------------------------
  * Render scheduler.
@@ -1277,4 +1277,4 @@ int calculate_resolution_for_divider(const int width,
   return resolution / resolution_divider;
 }
 
-CCL_NAMESPACE_END
+}

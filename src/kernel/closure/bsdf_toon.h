@@ -11,7 +11,7 @@
 
 #include "kernel/sample/mapping.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 struct ToonBsdf {
   SHADER_CLOSURE_BASE;
@@ -186,4 +186,4 @@ ccl_device int bsdf_glossy_toon_sample(const ccl_private ShaderClosure *sc,
   return LABEL_NONE;
 }
 
-CCL_NAMESPACE_END
+}

@@ -10,7 +10,7 @@
 
 #include "util/math_intersect.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 ccl_device_inline bool point_light_sample(KernelGlobals kg,
                                           const ccl_global KernelLight *klight,
@@ -235,4 +235,4 @@ ccl_device_forceinline bool point_light_tree_parameters(const ccl_global KernelL
   return true;
 }
 
-CCL_NAMESPACE_END
+}

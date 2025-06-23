@@ -17,7 +17,7 @@
 
 #  include "device/memory.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 class BVHHIPRT : public BVH {
  public:
@@ -52,6 +52,6 @@ class BVHHIPRT : public BVH {
   Device *device;
 };
 
-CCL_NAMESPACE_END
+}
 
 #endif

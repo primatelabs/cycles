@@ -4,7 +4,7 @@
 
 /* Note: this file has a non-standard extension so it is skipped by clang-format. */
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Precomputed BSDF albedo tables for various microfacet distributions. */
 
@@ -1282,4 +1282,4 @@ static const float table_ggx_gen_schlick_s[4096] = {
   0.000000f, 0.559516f, 0.644881f, 0.698590f, 0.736655f, 0.762997f, 0.778331f, 0.782183f, 0.773776f, 0.752689f, 0.719302f, 0.675070f, 0.622442f, 0.564517f, 0.504549f, 0.445448f
 };
 
-CCL_NAMESPACE_END
+}

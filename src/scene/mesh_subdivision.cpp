@@ -13,7 +13,7 @@
 #include "util/algorithm.h"
 #include "util/vector.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 void Mesh::tessellate(SubdParams &params)
 {
@@ -164,4 +164,4 @@ void Mesh::tessellate(SubdParams &params)
   // TODO: Free subd base data? Or will this break interactive updates?
 }
 
-CCL_NAMESPACE_END
+}

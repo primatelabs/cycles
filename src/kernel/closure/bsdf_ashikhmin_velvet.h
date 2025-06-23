@@ -11,7 +11,7 @@
 
 #include "kernel/sample/mapping.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 struct VelvetBsdf {
   SHADER_CLOSURE_BASE;
@@ -131,4 +131,4 @@ ccl_device int bsdf_ashikhmin_velvet_sample(const ccl_private ShaderClosure *sc,
   return LABEL_REFLECT | LABEL_DIFFUSE;
 }
 
-CCL_NAMESPACE_END
+}

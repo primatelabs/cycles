@@ -20,7 +20,7 @@
 
 #include "util/progress.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 BVHStackEntry::BVHStackEntry(const BVHNode *n, const int i) : node(n), idx(i) {}
 
@@ -645,4 +645,4 @@ void BVH2::pack_instances(size_t nodes_size, size_t leaf_nodes_size)
   }
 }
 
-CCL_NAMESPACE_END
+}

@@ -7,7 +7,7 @@
 #include "scene/pointcloud.h"
 #include "scene/scene.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* PointCloud Point */
 
@@ -293,4 +293,4 @@ PrimitiveType PointCloud::primitive_type() const
   return has_motion_blur() ? PRIMITIVE_MOTION_POINT : PRIMITIVE_POINT;
 }
 
-CCL_NAMESPACE_END
+}

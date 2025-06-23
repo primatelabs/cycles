@@ -15,7 +15,7 @@
 #include "util/math.h"
 #include "util/types.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* DiagSplit */
 
@@ -567,4 +567,4 @@ void DiagSplit::split_patches(const Patch *patches, const size_t patches_byte_st
   }
 }
 
-CCL_NAMESPACE_END
+}

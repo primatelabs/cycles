@@ -7,7 +7,7 @@
 #include "kernel/svm/fractal_noise.h"
 #include "kernel/svm/util.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* The following offset functions generate random offsets to be added to texture
  * coordinates to act as a seed since the noise functions don't have seed values.
@@ -368,4 +368,4 @@ ccl_device_noinline int svm_node_tex_noise(KernelGlobals kg,
   return node_offset;
 }
 
-CCL_NAMESPACE_END
+}

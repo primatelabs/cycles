@@ -41,7 +41,7 @@
 #include "util/progress.h"
 #include "util/task.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 CPUDevice::CPUDevice(const DeviceInfo &info_, Stats &stats_, Profiler &profiler_, bool headless_)
     : Device(info_, stats_, profiler_, headless_), texture_info(this, "texture_info", MEM_GLOBAL)
@@ -324,4 +324,4 @@ bool CPUDevice::load_kernels(const uint /*kernel_features*/)
   return true;
 }
 
-CCL_NAMESPACE_END
+}

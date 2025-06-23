@@ -6,7 +6,7 @@
 
 #include "kernel/film/write.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 ccl_device_inline void film_write_aov_pass_value(KernelGlobals kg,
                                                  ConstIntegratorState state,
@@ -29,4 +29,4 @@ ccl_device_inline void film_write_aov_pass_color(KernelGlobals kg,
                          make_float4(color, 1.0f));
 }
 
-CCL_NAMESPACE_END
+}

@@ -22,7 +22,7 @@
 
 #include "kernel/integrator/guiding.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 #ifdef __VOLUME__
 
@@ -528,4 +528,4 @@ ccl_device_inline void volume_shader_eval(KernelGlobals kg,
 
 #endif /* __VOLUME__ */
 
-CCL_NAMESPACE_END
+}

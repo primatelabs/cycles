@@ -22,7 +22,7 @@
 #  include "device/hiprt/device_impl.h"
 #endif
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 bool device_hip_init()
 {
@@ -325,4 +325,4 @@ string device_hip_capabilities()
 #endif /* WITH_HIP */
 }
 
-CCL_NAMESPACE_END
+}

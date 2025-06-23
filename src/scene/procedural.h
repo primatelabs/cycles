@@ -8,7 +8,7 @@
 
 #include "util/unique_ptr_vector.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 class Progress;
 class Scene;
@@ -65,4 +65,4 @@ class ProceduralManager {
   bool need_update() const;
 };
 
-CCL_NAMESPACE_END
+}

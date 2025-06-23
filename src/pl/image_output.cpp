@@ -10,7 +10,7 @@
 #include "pl/error.h"
 #include "pl/png_image_output.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 ImageOutput::ImageOutput() {}
 
@@ -49,4 +49,4 @@ std::string ImageOutput::geterror(bool clear) const
   return std::string();
 }
 
-CCL_NAMESPACE_END
+}

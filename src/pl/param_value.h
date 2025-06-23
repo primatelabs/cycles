@@ -10,7 +10,7 @@
 #include "pl/strong_param.h"
 #include "pl/type_desc.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 using std::string;
 
@@ -334,4 +334,4 @@ class ParamValue {
   void clear_value() noexcept;
 };
 
-CCL_NAMESPACE_END
+}

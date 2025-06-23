@@ -17,7 +17,7 @@
 #include "util/unique_ptr_vector.h"
 #include "util/vector.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 class AttributeRequestSet;
 class Scene;
@@ -372,4 +372,4 @@ class ShaderGraph : public NodeOwner {
   void verify_volume_output();
 };
 
-CCL_NAMESPACE_END
+}

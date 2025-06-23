@@ -8,7 +8,7 @@
 #include "util/param.h"
 #include "util/xml.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 struct Node;
 
@@ -19,4 +19,4 @@ struct XMLReader {
 void xml_read_node(XMLReader &reader, Node *node, const xml_node xml_node);
 xml_node xml_write_node(Node *node, const xml_node xml_root);
 
-CCL_NAMESPACE_END
+}

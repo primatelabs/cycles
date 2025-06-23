@@ -9,7 +9,7 @@
 
 #include "kernel/svm/types.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Stack */
 
@@ -137,4 +137,4 @@ ccl_device_forceinline void svm_unpack_node_uchar4(const uint i,
   *w = ((i >> 24) & 0xFF);
 }
 
-CCL_NAMESPACE_END
+}

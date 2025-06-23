@@ -8,7 +8,7 @@
 
 #include "session/buffers.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Implementation of Denoiser which uses a device-specific denoising implementation, running on a
  * GPU device queue. It makes sure the to-be-denoised buffer is available on the denoising device
@@ -164,4 +164,4 @@ class DenoiserGPU : public Denoiser {
   };
 };
 
-CCL_NAMESPACE_END
+}

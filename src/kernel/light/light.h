@@ -17,7 +17,7 @@
 #include "kernel/light/triangle.h"
 #include "kernel/sample/lcg.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Light info. */
 
@@ -496,4 +496,4 @@ ccl_device bool light_sample_from_intersection(KernelGlobals kg,
   return true;
 }
 
-CCL_NAMESPACE_END
+}

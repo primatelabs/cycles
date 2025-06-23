@@ -22,7 +22,7 @@
 #  include "util/simd.h"          // IWYU pragma: export
 #endif
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Types
  *
@@ -69,7 +69,7 @@ ccl_device_inline bool is_power_of_two(const size_t x)
   return (x & (x - 1)) == 0;
 }
 
-CCL_NAMESPACE_END
+}
 
 /* Device side printf only tested on CUDA, may work on more GPU devices. */
 #if !defined(__KERNEL_GPU__) || defined(__KERNEL_CUDA__)

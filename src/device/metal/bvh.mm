@@ -19,7 +19,7 @@
 #  include "device/metal/bvh.h"
 #  include "device/metal/util.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 #  define BVH_status(...) \
     { \
@@ -1290,6 +1290,6 @@ bool BVHMetal::build(Progress &progress,
   }
 }
 
-CCL_NAMESPACE_END
+}
 
 #endif /* WITH_METAL */

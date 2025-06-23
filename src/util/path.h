@@ -14,7 +14,7 @@
 #include "util/string.h"
 #include "util/vector.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* program paths */
 void path_init(const string &path = "", const string &user_path = "");
@@ -66,4 +66,4 @@ bool path_cache_kernel_exists_and_mark_used(const string &path);
 void path_cache_kernel_mark_added_and_clear_old(const string &path,
                                                 const size_t max_old_kernel_of_same_type = 5);
 
-CCL_NAMESPACE_END
+}

@@ -12,7 +12,7 @@
 #include "kernel/sample/mapping.h"
 #include "kernel/util/colorspace.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 #ifdef __OSL__
 
@@ -91,4 +91,4 @@ ccl_device int bsdf_diffuse_ramp_sample(const ccl_private ShaderClosure *sc,
 
 #endif /* __OSL__ */
 
-CCL_NAMESPACE_END
+}

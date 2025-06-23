@@ -11,7 +11,7 @@
 
 #include "session/display_driver.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 class OpenGLDisplayDriver : public DisplayDriver {
  public:
@@ -115,4 +115,4 @@ class OpenGLDisplayDriver : public DisplayDriver {
   std::function<void()> gl_context_disable_ = nullptr;
 };
 
-CCL_NAMESPACE_END
+}

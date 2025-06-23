@@ -41,7 +41,7 @@
 
 #include "kernel/util/ies.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* RenderServices implementation */
 
@@ -1645,4 +1645,4 @@ bool OSLRenderServices::getmessage(OSL::ShaderGlobals *sg,
   return false;
 }
 
-CCL_NAMESPACE_END
+}

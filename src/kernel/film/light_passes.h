@@ -11,7 +11,7 @@
 #include "kernel/sample/pattern.h"
 #include "util/atomic.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* --------------------------------------------------------------------
  * BSDF Evaluation
@@ -658,4 +658,4 @@ ccl_device_inline void film_write_surface_emission(KernelGlobals kg,
       kg, state, contribution, buffer, kernel_data.film.pass_emission, lightgroup);
 }
 
-CCL_NAMESPACE_END
+}

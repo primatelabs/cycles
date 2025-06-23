@@ -9,7 +9,7 @@
 #include "kernel/globals.h"
 #include "kernel/sample/lcg.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* For an intersection with the given distance isect_t from the ray origin increase the number
  * of hits (when needed) and return an index within local_isect->hits where intersection is to
@@ -56,4 +56,4 @@ ccl_device_forceinline int local_intersect_get_record_index(
 }
 #endif /* __BVH_LOCAL__ */
 
-CCL_NAMESPACE_END
+}

@@ -14,7 +14,7 @@
 #include "pl/image_output.h"
 #include "pl/image_spec.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 template<typename T>
 void util_image_resize_pixels(const vector<T> &input_pixels,
@@ -99,6 +99,6 @@ template<> inline half util_image_multiply_native(half a, half b)
   return float_to_half_image(half_to_float_image(a) * half_to_float_image(b));
 }
 
-CCL_NAMESPACE_END
+}
 
 #include "util/image_impl.h"  // IWYU pragma: export

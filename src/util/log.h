@@ -11,7 +11,7 @@
 
 #include <iosfwd>
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 #if (!defined(WITH_CYCLES_LOGGING) || defined(__KERNEL_GPU__)) && !defined(OMIT_CYCLES_LOGGING)
 class StubStream {
@@ -90,4 +90,4 @@ void util_logging_verbosity_set(const int verbosity);
 std::ostream &operator<<(std::ostream &os, const int2 &value);
 std::ostream &operator<<(std::ostream &os, const float3 &value);
 
-CCL_NAMESPACE_END
+}

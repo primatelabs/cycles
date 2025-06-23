@@ -11,7 +11,7 @@
 #include "util/math_fast.h"
 #include "util/progress.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 float OrientationBounds::calculate_measure() const
 {
@@ -650,4 +650,4 @@ LightTreeLightLink operator+(const LightTreeLightLink &a, const LightTreeLightLi
   return c;
 }
 
-CCL_NAMESPACE_END
+}

@@ -21,7 +21,7 @@
 #include "kernel/geom/motion_triangle.h"
 #include "kernel/geom/motion_triangle_intersect.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Setup of motion triangle specific parts of ShaderData, moved into this one
  * function to more easily share computation of interpolated positions and
@@ -69,4 +69,4 @@ ccl_device_noinline void motion_triangle_shader_setup(KernelGlobals kg, ccl_priv
   }
 }
 
-CCL_NAMESPACE_END
+}

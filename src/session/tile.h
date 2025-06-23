@@ -12,7 +12,7 @@
 #include "util/string.h"
 #include "util/unique_ptr.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 class DenoiseParams;
 class Scene;
@@ -178,4 +178,4 @@ class TileManager {
   } write_state_;
 };
 
-CCL_NAMESPACE_END
+}

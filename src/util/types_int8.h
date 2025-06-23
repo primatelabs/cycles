@@ -7,7 +7,7 @@
 #include "util/types_base.h"
 #include "util/types_int4.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 struct vfloat8;
 
@@ -91,4 +91,4 @@ ccl_device_inline vint8 make_vint8(const int4 a, const int4 b)
 #endif
 }
 
-CCL_NAMESPACE_END
+}

@@ -7,7 +7,7 @@
 /* Functions to display a simple OpenGL window using SDL, simplified to the
  * bare minimum we need to reduce boilerplate code in tests apps. */
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 using WindowInitFunc = void (*)();
 using WindowExitFunc = void (*)();
@@ -33,4 +33,4 @@ void window_redraw();
 bool window_opengl_context_enable();
 void window_opengl_context_disable();
 
-CCL_NAMESPACE_END
+}

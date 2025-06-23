@@ -6,7 +6,7 @@
 
 #include "util/hash.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Linear Congruential Generator */
 
@@ -41,4 +41,4 @@ ccl_device_inline uint lcg_state_init(const uint rng_hash,
   return hash_uint3(rng_hash ^ scramble, rng_offset, sample);
 }
 
-CCL_NAMESPACE_END
+}

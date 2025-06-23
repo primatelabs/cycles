@@ -4,7 +4,7 @@
 
 #pragma once
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Parallel prefix sum.
  *
@@ -39,4 +39,4 @@ __device__ void gpu_parallel_prefix_sum(const int global_id,
   }
 }
 
-CCL_NAMESPACE_END
+}

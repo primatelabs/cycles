@@ -15,7 +15,7 @@
 #include "kernel/svm/util.h"
 #include "util/math_base.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Texture Coordinate Node */
 
@@ -499,4 +499,4 @@ ccl_device_noinline void svm_node_tangent(KernelGlobals kg,
   stack_store_float3(stack, tangent_offset, tangent);
 }
 
-CCL_NAMESPACE_END
+}

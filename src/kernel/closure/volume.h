@@ -11,7 +11,7 @@
 #include "kernel/closure/volume_henyey_greenstein.h"
 #include "kernel/closure/volume_rayleigh.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* VOLUME EXTINCTION */
 
@@ -172,4 +172,4 @@ ccl_device int volume_sample_channel(Spectrum albedo,
   return SPECTRUM_CHANNELS - 1;
 }
 
-CCL_NAMESPACE_END
+}

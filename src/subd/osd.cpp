@@ -248,7 +248,7 @@ void TopologyRefinerFactory<OsdMesh>::reportInvalidTopology(TopologyError /*err_
 }
 }  // namespace OpenSubdiv::OPENSUBDIV_VERSION::Far
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* OsdMesh */
 
@@ -400,6 +400,6 @@ void OsdPatch::eval(
   }
 }
 
-CCL_NAMESPACE_END
+}
 
 #endif

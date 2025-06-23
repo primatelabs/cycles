@@ -7,7 +7,7 @@
 #include "util/array.h"
 #include <utility>
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 class DisjointSet {
  private:
@@ -57,4 +57,4 @@ class DisjointSet {
   }
 };
 
-CCL_NAMESPACE_END
+}

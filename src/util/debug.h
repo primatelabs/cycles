@@ -8,7 +8,7 @@
 
 #include "bvh/params.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Global storage for all sort of flags used to fine-tune behavior of particular
  * areas for the development purposes, without officially exposing settings to
@@ -143,4 +143,4 @@ inline DebugFlags &DebugFlags()
   return DebugFlags::get();
 }
 
-CCL_NAMESPACE_END
+}

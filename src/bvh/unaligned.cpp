@@ -13,7 +13,7 @@
 #include "util/boundbox.h"
 #include "util/transform.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 BVHUnaligned::BVHUnaligned(const vector<Object *> &objects) : objects_(objects) {}
 
@@ -152,4 +152,4 @@ Transform BVHUnaligned::compute_node_transform(const BoundBox &bounds,
          space;
 }
 
-CCL_NAMESPACE_END
+}

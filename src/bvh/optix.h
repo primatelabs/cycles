@@ -14,7 +14,7 @@
 
 #  include "util/unique_ptr.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 class BVHOptiX : public BVH {
  public:
@@ -30,6 +30,6 @@ class BVHOptiX : public BVH {
   ~BVHOptiX() override;
 };
 
-CCL_NAMESPACE_END
+}
 
 #endif /* WITH_OPTIX */

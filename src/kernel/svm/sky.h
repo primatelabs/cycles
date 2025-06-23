@@ -12,7 +12,7 @@
 
 #include "util/color.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Sky texture */
 
@@ -342,4 +342,4 @@ ccl_device_noinline int svm_node_tex_sky(KernelGlobals kg,
   return offset;
 }
 
-CCL_NAMESPACE_END
+}

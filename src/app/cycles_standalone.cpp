@@ -35,7 +35,7 @@
 #  include "opengl/window.h"
 #endif
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 struct Options {
   unique_ptr<Session> session;
@@ -628,7 +628,7 @@ static void options_parse(const int argc, const char **argv)
   }
 }
 
-CCL_NAMESPACE_END
+}
 
 using namespace ccl;
 

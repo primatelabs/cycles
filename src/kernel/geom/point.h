@@ -10,7 +10,7 @@
 #include "kernel/geom/motion_point.h"
 #include "kernel/geom/object.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Point Primitive
  *
@@ -107,4 +107,4 @@ ccl_device float3 point_motion_center_location(KernelGlobals kg, const ccl_priva
 
 #endif /* __POINTCLOUD__ */
 
-CCL_NAMESPACE_END
+}

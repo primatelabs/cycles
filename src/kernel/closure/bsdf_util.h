@@ -13,7 +13,7 @@
 
 #include "util/color.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* Compute fresnel reflectance for perpendicular (aka S-) and parallel (aka P-) polarized light.
  * If requested by the caller, r_phi is set to the phase shift on reflection.
@@ -447,4 +447,4 @@ ccl_device Spectrum fresnel_iridescence(KernelGlobals kg,
   return saturate(xyz_to_rgb(kg, R));
 }
 
-CCL_NAMESPACE_END
+}

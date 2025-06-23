@@ -10,7 +10,7 @@
 
 #include "kernel/types.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 class Device;
 class Progress;
@@ -50,4 +50,4 @@ class ShaderEval {
   Progress &progress_;
 };
 
-CCL_NAMESPACE_END
+}

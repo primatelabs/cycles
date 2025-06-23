@@ -8,7 +8,7 @@
 
 #include "kernel/closure/volume_util.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 /* FOURNIER-FORAND CLOSURE */
 
@@ -70,4 +70,4 @@ ccl_device int volume_fournier_forand_sample(const ccl_private ShaderData *sd,
   return LABEL_VOLUME_SCATTER;
 }
 
-CCL_NAMESPACE_END
+}

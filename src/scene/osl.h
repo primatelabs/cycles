@@ -23,7 +23,7 @@
 #  include <OSL/oslquery.h>
 #endif
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 class Device;
 class DeviceScene;
@@ -205,4 +205,4 @@ class OSLCompiler {
   static std::atomic<int> texture_shared_unique_id;
 };
 
-CCL_NAMESPACE_END
+}

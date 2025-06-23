@@ -9,7 +9,7 @@
 #  include "device/cuda/device_impl.h"
 #  include "device/cuda/util.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 CUDADeviceGraphicsInterop::CUDADeviceGraphicsInterop(CUDADeviceQueue *queue)
     : queue_(queue), device_(static_cast<CUDADevice *>(queue->device))
@@ -88,6 +88,6 @@ void CUDADeviceGraphicsInterop::unmap()
                      cuGraphicsUnmapResources(1, &cu_graphics_resource_, queue_->stream()));
 }
 
-CCL_NAMESPACE_END
+}
 
 #endif

@@ -6,7 +6,7 @@
 
 #include "kernel/osl/globals.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 OSLThreadData::OSLThreadData(OSLGlobals *osl_globals, const int thread_index)
     : globals(osl_globals), thread_index(thread_index)
@@ -55,4 +55,4 @@ OSLThreadData::OSLThreadData(OSLThreadData &&other) noexcept
   other.oiio_thread_info = nullptr;
 }
 
-CCL_NAMESPACE_END
+}

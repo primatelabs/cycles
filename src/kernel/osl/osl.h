@@ -17,7 +17,7 @@
 
 #include "kernel/util/differential.h"
 
-CCL_NAMESPACE_BEGIN
+namespace ccl {
 
 ccl_device_inline void shaderdata_to_shaderglobals(KernelGlobals kg,
                                                    ccl_private ShaderData *sd,
@@ -223,4 +223,4 @@ ccl_device_inline void osl_eval_nodes(KernelGlobals kg,
 
 #endif
 
-CCL_NAMESPACE_END
+}
