@@ -24,6 +24,7 @@
 #  include <x86intrin.h>
 #elif defined(__KERNEL_NEON__)
 #  define SSE2NEON_PRECISE_MINMAX 1
+#  define SSE2NEON_SUPPRESS_WARNINGS 1
 #  include <sse2neon.h>
 #endif
 

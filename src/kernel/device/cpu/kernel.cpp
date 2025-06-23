@@ -4,44 +4,7 @@
 
 /* CPU kernel entry points */
 
-/* On x86-64, our minimum is SSE4.2, so avoid the extra kernel and compile this
- * one with SSE4.2 intrinsics.
- */
-#if defined(__x86_64__) || defined(_M_X64)
-#  define __KERNEL_SSE__
-#  define __KERNEL_SSE2__
-#  define __KERNEL_SSE3__
-#  define __KERNEL_SSSE3__
-#  define __KERNEL_SSE42__
-#endif
-
-/* When building kernel for native machine detect kernel features from the flags
- * set by compiler.
- */
-#ifdef WITH_KERNEL_NATIVE
-#  ifdef __SSE4_2__
-#    ifndef __KERNEL_SSE42__
-#      define __KERNEL_SSE42__
-#    endif
-#  endif
-#  ifdef __AVX__
-#    ifndef __KERNEL_SSE__
-#      define __KERNEL_SSE__
-#    endif
-#    define __KERNEL_AVX__
-#  endif
-#  ifdef __AVX2__
-#    ifndef __KERNEL_SSE__
-#      define __KERNEL_SSE__
-#    endif
-#    define __KERNEL_AVX2__
-#  endif
-#endif
-
-/* quiet unused define warnings */
-#if defined(__KERNEL_SSE2__)
-/* do nothing */
-#endif
+#include "kernel/device/cpu/arch.h"
 
 #include "kernel/device/cpu/globals.h"
 
