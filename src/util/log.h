@@ -13,7 +13,7 @@
 
 CCL_NAMESPACE_BEGIN
 
-#if !defined(WITH_CYCLES_LOGGING) || defined(__KERNEL_GPU__)
+#if (!defined(WITH_CYCLES_LOGGING) || defined(__KERNEL_GPU__)) && !defined(OMIT_CYCLES_LOGGING)
 class StubStream {
  public:
   template<class T> StubStream &operator<<(const T &)
