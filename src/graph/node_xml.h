@@ -4,11 +4,9 @@
 
 #pragma once
 
-#ifdef WITH_PUGIXML
-
-#  include "util/map.h"
-#  include "util/param.h"
-#  include "util/xml.h"
+#include "util/map.h"
+#include "util/param.h"
+#include "util/xml.h"
 
 CCL_NAMESPACE_BEGIN
 
@@ -22,5 +20,3 @@ void xml_read_node(XMLReader &reader, Node *node, const xml_node xml_node);
 xml_node xml_write_node(Node *node, const xml_node xml_root);
 
 CCL_NAMESPACE_END
-
-#endif /* WITH_PUGIXML */

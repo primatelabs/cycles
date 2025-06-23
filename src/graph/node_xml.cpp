@@ -2,15 +2,13 @@
  *
  * SPDX-License-Identifier: Apache-2.0 */
 
-#ifdef WITH_PUGIXML
+#include <sstream>
 
-#  include <sstream>
+#include "graph/node_xml.h"
+#include "graph/node.h"
 
-#  include "graph/node_xml.h"
-#  include "graph/node.h"
-
-#  include "util/string.h"
-#  include "util/transform.h"
+#include "util/string.h"
+#include "util/transform.h"
 
 CCL_NAMESPACE_BEGIN
 
@@ -437,5 +435,3 @@ xml_node xml_write_node(Node *node, xml_node xml_root)
 }
 
 CCL_NAMESPACE_END
-
-#endif /* WITH_PUGIXML */
