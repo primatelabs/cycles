@@ -4,6 +4,8 @@
 
 #include "pl/png_image_output.h"
 
+#include <fstream>
+
 #include <png.h>
 
 #include "pl/error.h"
@@ -55,7 +57,7 @@ PNGImageOutput::~PNGImageOutput()
 bool PNGImageOutput::open(string_view filename, const ImageSpec &spec)
 {
   spec_ = spec;
-  ofs_.open(filename, std::ios::out | std::ios::binary);
+  ofs_.open(string{filename}, std::ios::out | std::ios::binary);
 
   return !ofs_.fail();
 }
@@ -133,6 +135,8 @@ bool PNGImageOutput::write_image(
 
   png_write_end(png_ptr, info_ptr);
   png_destroy_write_struct(&png_ptr, &info_ptr);
+
+  return true;
 }
 
 CCL_NAMESPACE_END

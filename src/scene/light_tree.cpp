@@ -3,9 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0 */
 
 #include "scene/light_tree.h"
+
+#include <array>
+
 #include "scene/mesh.h"
 #include "scene/object.h"
-
 #include "util/math_fast.h"
 #include "util/progress.h"
 

@@ -4,6 +4,7 @@
 
 #include "util/time.h"
 
+#include <cmath>
 #include <cstdlib>
 
 #if !defined(_WIN32)

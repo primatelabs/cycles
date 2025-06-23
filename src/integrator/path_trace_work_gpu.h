@@ -4,6 +4,8 @@
 
 #pragma once
 
+#include <climits>
+
 #include "kernel/integrator/state.h"
 
 #include "device/graphics_interop.h"

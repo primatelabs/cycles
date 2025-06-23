@@ -4,6 +4,7 @@
 
 #pragma once
 
+#include <limits>
 #include <string_view>
 
 CCL_NAMESPACE_BEGIN

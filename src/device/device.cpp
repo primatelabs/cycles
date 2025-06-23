@@ -62,6 +62,12 @@ void Device::build_bvh(BVH *bvh, Progress &progress, bool refit)
   }
 }
 
+void *Device::get_guiding_device() const
+{
+  LOG(ERROR) << "Request guiding field from a device which does not support it.";
+  return nullptr;
+}
+
 unique_ptr<Device> Device::create(const DeviceInfo &info,
                                   Stats &stats,
                                   Profiler &profiler,

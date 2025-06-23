@@ -4,6 +4,8 @@
 
 #include "pl/param_value.h"
 
+#include <cstring>
+
 #include "pl/error.h"
 
 CCL_NAMESPACE_BEGIN
